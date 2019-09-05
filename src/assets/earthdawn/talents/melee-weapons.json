@@ -1,0 +1,8 @@
+{
+  "name": "Melee Weapons",
+  "action": "standard",
+  "strain": 0,
+  "attr": "dex",
+  "skill_use": "novice",
+  "desc": "The adept makes an attack in close combat with a hand-held weapon, like a sword, axe, or dagger. He makes a Melee Weapons test against the target’s Physical Defense. If successful, the attack hits the target and the adept makes a Damage test for the weapon used. See Close Combat, p. 391, for more information."
+}

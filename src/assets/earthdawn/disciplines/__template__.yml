@@ -1,0 +1,25 @@
+name: <name>
+durability: 4
+thread_type: <type>
+novice_talent_options:
+  - First Talent
+  - Second Talent
+journeyman_talent_options:
+  - First Talent
+  - Second Talent
+
+circles:
+  first:
+    defense:
+      mystic: 1
+      physical: 1
+      social: 1
+    free_talents:
+      - "First Talent"
+    initiative: 1
+    karma:
+      on_interaction_tests: true
+      on_damage_tests:
+        - melee
+    talents:
+      - Avoid Blow

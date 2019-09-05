@@ -1,0 +1,38 @@
+name: Forge Weapon
+action: sustained
+strain: 0
+attr: per
+skill_use: no
+examples:
+  - Relayn is a Novice Weaponsmith with Rank 3 in Forge Weapon. While her master
+    has been called away on business, a Warrior comes into the shop looking to
+    have the enhancement on his axe renewed. The axe has been forged with a +5
+    bonus. Relayn can renew the enhancement with her own Forge Weapon talent,
+    but the axe will be reduced to only having a +3 bonus—Relayn’s rank in Forge
+    Weapon.
+
+description:
+  The adept performs a ritual to magically improve the Damage Step of a weapon,
+  including melee, missile, and thrown weapons, but not ammunition, like arrows
+  or bolts. The work must be carried out at a properly equipped forge or
+  workshop. The ritual requires eight hours a day for seven consecutive days,
+  after which the adept makes a Forge Weapon test against a Difficulty Number 6+
+  the number of forge enhancements the item currently has.
+  
+  For each success the weapon’s Damage Step is increased by +1. This talent can
+  be used on mundane or magical weapons.
+  
+  The adept cannot forge a weapon’s bonus higher than his Forge Weapon rank. For
+  example, an adept with Forge Weapon at Rank 4 can perform increases up to +4,
+  regardless of whether he forged the previous increases himself.
+  
+  Damage Step increases last for a year and a day from the date of the last
+  successful forging. Additional Forge Weapon tests can be made at any time to
+  extend the duration, but any bonuses beyond those allowed by the smith’s rank
+  in Forge Weapon are lost.
+  
+  The services of smiths can be bought in larger cities, but the more skilled
+  the smith, the higher the cost. The typical cost is 50 silver times the
+  smith’s rank in Forge Weapon per attempt. It is typical for half the fee to be
+  paid up front, with the rest paid on delivery after successful use of the
+  talent.

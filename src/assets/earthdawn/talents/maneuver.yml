@@ -1,0 +1,11 @@
+name: Maneuver
+action: simple
+strain: 1
+attr: dex
+skill_use: novice
+description:
+  The adept uses fancy footwork and mobility to gain a superior position against
+  a single opponent. He makes a Maneuver test against his target’s Physical
+  Defense, each success grants a +2 bonus to his Physical Defense from attacks
+  by that target, and to the first close combat Attack test made against that
+  target that round.

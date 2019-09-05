@@ -1,0 +1,80 @@
+name: Swordsmaster
+durability: 7
+thread_type: Weapon Weaving
+
+novice_talent_options:
+  - Acrobatic Defense
+  - Anticipate Blow
+  - Danger Sense
+  - Distract
+  - Impressive Display
+  - Speak Language
+  - Tiger Spring
+  - Unarmed Combat
+  - Winning Smile
+  - Wound Balance
+
+journeyman_talent_options:
+  - Cobra Strike
+  - Engaging Banter
+  - Etiquette
+  - Gliding Strike
+  - Graceful Exit
+  - Lasting Impression
+  - Lion Heart
+  - Spot Armor Flaw
+  - Sprint
+  - Swift Kick
+
+circles:
+  first:
+    talents:
+      - Avoid Blow
+      - Maneuver
+      - Melee Weapons
+      - Taunt
+      - Thread Weaving
+
+  second:
+    defense:
+      social: 1
+    talents:
+      - First Impression
+
+  third:
+    karma:
+      on_interaction_tests: true
+    talents:
+      - Riposte
+
+  fourth:
+    defense:
+      physical: 1
+    talents:
+      - Heartening Laugh
+    journeyman_talent_option: true
+
+  fifth:
+    karma:
+      on_damage_tests:
+        - melee
+    talents:
+      - Size Up,
+      - Second Weapon
+
+  sixth:
+    defense:
+      social: 2
+    talents:
+      - Disarm
+
+  seventh:
+    initiative: 1,
+    talents:
+      - Resist Taunt
+
+  eighth:
+    defense:
+      physical: 2
+    talents:
+      - Second Attack

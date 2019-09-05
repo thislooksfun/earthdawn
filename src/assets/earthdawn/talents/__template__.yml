@@ -1,0 +1,9 @@
+name: <name>
+action: free|simple|standard|sustained
+strain: 1
+attr: NULL|dex|str|tou|per|wil|cha
+skill_use: no|novice|journeyman
+examples:
+  - Some example
+description:
+  <The description>

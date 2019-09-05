@@ -1,0 +1,32 @@
+
+name: Weaponsmith
+durability: 5
+thread_type: Thread Smithing
+
+novice_talent_options:
+  - Avoid Blow
+  - Awareness
+  - Danger Sense
+  - Disarm Trap
+  - Fireblood
+  - First Impression
+  - Haggle
+  - Read and Write Language
+  - Shield Bash
+  - Speak Language
+
+journeyman_talent_options:
+
+circles:
+  first:
+    free_talents:
+      - Craftsman
+    karma:
+      on_craft_item: true
+      on_repair_item: true
+    talents:
+      - Forge Weapon
+      - Item History
+      - Melee Weapons
+      - Steel Thought
+      - Thread Weaving

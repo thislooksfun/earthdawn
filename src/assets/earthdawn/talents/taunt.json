@@ -1,0 +1,8 @@
+{
+  "name": "Taunt",
+  "action": "simple",
+  "strain": 0,
+  "attr": "cha",
+  "skill_use": "novice",
+  "desc": "The adept distracts a character (who must be able to understand him) by insulting and humiliating him. He makes a Taunt test against the target’s Social Defense. If successful, the target incurs a –1 test penalty and subtracts –1 from his Social Defense for each success achieved, for a number of rounds equal to the adept’s Taunt rank."
+}

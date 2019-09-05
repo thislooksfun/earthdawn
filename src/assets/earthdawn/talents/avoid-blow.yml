@@ -1,0 +1,13 @@
+name: Avoid Blow
+action: free
+strain: 1
+attr: dex
+skill_use: novice
+description:
+  The adept avoids injury by dodging or parrying blows directed against him.
+  When attacked in close or ranged combat, the adept may make an Avoid Blow test
+  against his opponent’s Attack test result. If successful, the adept avoids the
+  blow—he sees the attack coming and dodges or parries it at the last moment.
+  The adept can avoid a maximum number of attacks equal to his Avoid Blow rank
+  each round, but only one attempt per Attack test. An adept cannot use Avoid
+  Blow if he is blindsided or surprised by his attacker.

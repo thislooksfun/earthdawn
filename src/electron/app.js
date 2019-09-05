@@ -1,13 +1,25 @@
 import { app, BrowserWindow } from 'electron'
 
+const Config = require('electron-config');
+const config = new Config();
+
 let win
 
 function createWindow() {
-  win = new BrowserWindow({width: 800, height: 600})
+  let opts = {
+    width: 800,
+    height: 600,
+  };
+  Object.assign(opts, config.get('winBounds'))
+  win = new BrowserWindow(opts)
 
   win.loadFile('dist/index.html')
 
   win.webContents.openDevTools()
+
+  win.on('close', () => {
+    config.set('winBounds', win.getBounds())
+  })
 
   win.on('closed', () => {
     win = null

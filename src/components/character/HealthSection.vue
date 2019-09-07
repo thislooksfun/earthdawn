@@ -12,7 +12,7 @@
     ></base-button>
     <div class="health-bar">
       <health-bar
-        :damage="health.totalDamage"
+        :damage="health.currentDamage"
         :unconsciousness="health.unconsciousnessThreshold"
         :death="health.deathThreshold"
         :disabled="disabled"
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import decorate from '@/charDecorator'
 import HealthBar from "./HealthBar";
 export default {
   props: {
@@ -66,18 +67,14 @@ export default {
     valid() {
       const dt = this.health.deathThreshold;
       const ut = this.health.unconsciousnessThreshold;
-      return dt > 0 && ut > 0 && dt > ut && this.health.totalDamage >= 0;
+      const cd = this.health.currentDamage;
+      return dt > 0 && ut > 0 && dt > ut && cd >= 0;
     },
     invalid() {
       return !this.valid;
     },
     health() {
-      const base = this.char.health
-      return {
-        totalDamage: base.currentDamage,
-        unconsciousnessThreshold: 46,
-        deathThreshold: 55,
-      }
+      return decorate(this.char).health
     }
   }
 };

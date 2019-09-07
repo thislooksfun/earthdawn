@@ -1,4 +1,5 @@
-import calculateStepForValue from "@/helper/characteristics/calculateStepForValue";
+// Offset v by 1 so the math works easier
+const calculateStepForValue = (v) => 2 + Math.floor((v - 1) / 3);
 
 export default function (char) {
   // Extract the base attributes for the race

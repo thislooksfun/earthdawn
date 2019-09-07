@@ -1,9 +1,9 @@
-import calculateHealthRatingsFor from '@/helper/calculateHealthRatingsFor'
+import decorate from '@/charDecorator'
 
 const clamp = (x, min, max) => Math.min(max, Math.max(x, min));
 
 const addAndClampDamage = (char, dmg) => {
-  const { deathThreshold } = calculateHealthRatingsFor(char);
+  const { health: { deathThreshold } } = decorate(char);
   char.health.currentDamage = clamp(char.health.currentDamage + dmg, 0, deathThreshold)
 };
 

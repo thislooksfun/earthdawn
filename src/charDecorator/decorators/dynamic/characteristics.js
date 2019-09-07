@@ -1,40 +1,36 @@
-
-/*
-5:  10,  15,  20,  25,  30
-10: 40,  50,  60,  70,  80
-15: 95,  110, 125, 140, 155
-20: 175, 195, 215, 235, 255
-25: 280, 305, 330, 355, 380
-30: 
-*/
-
+// Offset v by 1 so the math works easier
+const defenseRatingForValue = (v) => 2 + Math.floor((v - 1) / 2);
 
 export default function (char) {
   char.characteristics = {
     get defense() {
       return {
-        physical: 0,
-        mystic: 0,
-        social: 0
+        physical: defenseRatingForValue(char.attrs.dex.val) + char._effects._sum('physicalDefense'),
+        mystic: defenseRatingForValue(char.attrs.per.val) + char._effects._sum('mysticDefense'),
+        social: defenseRatingForValue(char.attrs.cha.val) + char._effects._sum('socialDefense'),
       }
     },
 
     get armor() {
+      // There is no base stat for armor, only those given by items and/or
+      // other abilities, all of which expose the result via effects.
       return {
-        physical: 0,
-        mystic: 0,
+        physical: char._effects._sum('physicalArmor'),
+        mystic: char._effects._sum('mysticArmor'),
       }
     },
 
     get shield() {
+      // There is no base stat for shield, only those given by items and/or
+      // other abilities, all of which expose the result via effects.
       return {
-        physical: 0,
-        mystic: 0,
+        physical: char._effects._sum('physicalShield'),
+        mystic: char._effects._sum('mysticShield'),
       }
     },
 
     get movementRate() {
-      return char.race.baseStats.movementRate;
+      return char.race.baseStats.movementRate + char._effects._sum('movementRate');
     },
 
     get carryingCapacity() {
@@ -47,11 +43,11 @@ export default function (char) {
       for (let i = 0; i < strVal; i++) {
         cc += 5 * Math.floor(i / 5);
       }
-      return cc
+      return cc + char._effects._sum('carryingCapacity')
     },
 
     get initiative() {
-      return 0;
+      return char.attrs.dex.step + char._effects._sum('initiative');
     },
   }
 }

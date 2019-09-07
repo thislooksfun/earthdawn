@@ -19,22 +19,23 @@
 </template>
 
 <script>
-import CharacterHeader from "@/components/character/CharacterHeader";
-import HealthSection from "@/components/character/HealthSection";
-// import HealthSection from '@/components/character/HealthSection'
+import CharacterHeader from "./characterSheet/CharacterHeader";
+import HealthSection from "./characterSheet/HealthSection";
 
 export default {
   components: {
     CharacterHeader,
     HealthSection
   },
+  props: {
+    uuid: {
+      type: String,
+      default: null
+    }
+  },
   data() {
-    const uuid = this.$route.params.uuid;
-    const char = this.$store.state.Characters.characters[uuid];
-    return {
-      uuid,
-      char,
-    };
+    const char = this.$store.state.Characters.characters[this.uuid];
+    return { char };
   },
   methods: {
     toggleEditMode() {

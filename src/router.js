@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import SplashScreen from '@/views/SplashScreen'
-import CharacterSheet from './views/CharacterSheet'
+import CharacterView from './views/CharacterView'
 
 Vue.use(Router)
 
@@ -25,7 +25,7 @@ export default new Router({
     {
       path: '/character/:uuid',
       name: 'character',
-      component: CharacterSheet
+      component: CharacterView
     }
   ]
 })

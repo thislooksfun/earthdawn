@@ -4,7 +4,7 @@ import calcCharacteristicStepForValue from './characteristics/calculateStepForVa
 import calcWoundThresholdForValue from './characteristics/calculateWoundThresholdForValue'
 import calcRecoveryTestsForValue from './characteristics/calculateRecoveryTestsForValue'
 
-import applyEffectsFor from './effects/applyEffectsFor'
+import applyEffectsFor from '@/charDecorator/effects/applyEffectsFor'
 
 export default function (char) {
   const { tou } = calculateAttributesFor(char)

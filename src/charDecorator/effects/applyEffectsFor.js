@@ -1,6 +1,6 @@
 import collectEffectsFor from './collectEffectsFor'
 
-import effectApplicators from './applicators'
+// import effectApplicators from './applicators'
 
 export default function (char, obj) {
   const effects = collectEffectsFor(char);

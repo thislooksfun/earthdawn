@@ -97,10 +97,12 @@ export default {
     },
   },
   skills: {
-    // name: {
-    //   rank: 4,
-    //   isTalent: false
-    // }
+    "Speak Language": {
+      rank: 2
+    },
+    "Read and Write Language": {
+      rank: 1
+    }
   },
 
   // Talent Knacks

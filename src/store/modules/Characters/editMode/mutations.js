@@ -73,4 +73,13 @@ export default {
   REMOVE_SKILL(state, { uuid, skill }) {
     Vue.delete(state.characters[uuid].skills, skill);
   },
+  
+  
+  // Languages
+  SET_SPOKEN_LANGUAGES(state, { uuid, languages }) {
+    state.characters[uuid].languages.spoken = languages
+  },
+  SET_LITERATE_LANGUAGES(state, { uuid, languages }) {
+    state.characters[uuid].languages.literate = languages
+  },
 }

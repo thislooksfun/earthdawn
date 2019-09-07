@@ -82,4 +82,17 @@ export default {
   SET_LITERATE_LANGUAGES(state, { uuid, languages }) {
     state.characters[uuid].languages.literate = languages
   },
+  
+  
+  CREATION_WIZARD_NEXT_STAGE(state, { uuid }) {
+    // TODO: UPDATE THE MAX STAGE
+    if (state.characters[uuid].creationWizardStage == 9) {
+      state.characters[uuid].creationWizardStage = null
+    } else {
+      state.characters[uuid].creationWizardStage++;
+    }
+  },
+  CREATION_WIZARD_PREV_STAGE(state, {uuid}) {
+    state.characters[uuid].creationWizardStage--;
+  },
 }

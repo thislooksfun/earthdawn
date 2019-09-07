@@ -85,4 +85,12 @@ export default {
   removeSkill({ commit }, { skill }) {
     commit('REMOVE_SKILL', { uuid: routedUUID(), skill });
   },
+
+
+  creationWizardPrevStage({ commit }) {
+    commit('CREATION_WIZARD_PREV_STAGE', { uuid: routedUUID() });
+  },
+  creationWizardNextStage({ commit }) {
+    commit('CREATION_WIZARD_NEXT_STAGE', { uuid: routedUUID() });
+  },
 }

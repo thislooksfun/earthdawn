@@ -1,9 +1,27 @@
 <template>
   <div class="character-wizard">
     <h1>Character Creation Wizard</h1>
-    
-    <div class="solid padded block">
-      <basic-info :uuid="uuid" />
+
+    <div v-if="char.inWizardStage == 'basicInfo'" class="solid padded block">
+      <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />
+    </div>
+
+    <div class="solid padded block navigation">
+      <base-button
+        class="wizard-nav nav-back"
+        block
+        type="secondary"
+        :disabled="char.inWizardStage == 'basicInfo'"
+        @click="prevStage"
+      >Back</base-button>
+
+      <base-button
+        class="wizard-nav nav-next"
+        block
+        type="primary"
+        :disabled="!stageComplete"
+        @click="nextStage"
+      >Next</base-button>
     </div>
   </div>
 </template>
@@ -13,7 +31,7 @@ import BasicInfo from "./newCharacterWizard/BasicInfo";
 
 export default {
   components: {
-    BasicInfo,
+    BasicInfo
   },
   data() {
     const uuid = this.$route.params.uuid;
@@ -21,7 +39,19 @@ export default {
     return {
       uuid,
       char,
+      stageComplete: false,
     };
+  },
+  methods: {
+    prevStage() {
+      this.$store.dispatch("ccNextWizardStage");
+    },
+    nextStage() {
+      this.$store.dispatch("ccPrevWizardStage");
+    },
+    currentStageOnCompletionChange(completed) {
+      this.stageComplete = completed;
+    },
   },
 };
 </script>
@@ -44,6 +74,25 @@ export default {
     padding: 1rem;
     &.lightly {
       padding: 0.5rem;
+    }
+  }
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: "prev next";
+  column-gap: 1rem;
+
+  .wizard-nav {
+    margin: 0;
+
+    .nav-back {
+      grid-area: prev;
+    }
+    .nav-next {
+      grid-area: next;
     }
   }
 }

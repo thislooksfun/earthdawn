@@ -11,38 +11,30 @@
     </label>
 
     <label>
-      <span class="label">Discipline:</span>
-
-      <select v-model="discipline">
-        <option disabled value>Please select one</option>
-        <option
-          v-for="(d, name) in disciplines"
-          :key="name"
-          :value="name"
-        >{{name}}</option>
-      </select>
-    </label>
-    
-    <label>
       <span class="label">Race:</span>
 
       <select v-model="race">
         <option disabled value>Please select one</option>
-        <option
-          v-for="(r, name) in races.singular"
-          :key="name"
-          :value="name"
-        >{{name}}</option>
+        <option v-for="(r, name) in races.singular" :key="name" :value="name">{{name}}</option>
       </select>
     </label>
-    
-    {{char.languages}}
+
+    <label>
+      <span class="label">Discipline:</span>
+
+      <select v-model="discipline">
+        <option disabled value>Please select one</option>
+        <option v-for="(d, name) in disciplines" :key="name" :value="name">{{name}}</option>
+      </select>
+    </label>
   </div>
 </template>
 
 <script>
-import disciplines from 'Disciplines'
-import races from 'Races'
+import disciplines from "Disciplines";
+import races from "Races";
+
+const filledOut = f => f && f != "";
 
 export default {
   props: {
@@ -62,6 +54,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetName", value);
+        this.$emit("completed", this.completed);
       }
     },
     playerName: {
@@ -70,6 +63,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetPlayerName", value);
+        this.$emit("completed", this.completed);
       }
     },
     discipline: {
@@ -78,6 +72,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetDiscipline", value);
+        this.$emit("completed", this.completed);
       }
     },
     race: {
@@ -86,8 +81,24 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetRace", value);
+        this.$emit("completed", this.completed);
       }
+    },
+
+    completed() {
+      return (
+        filledOut(this.char.name) &&
+        filledOut(this.char.playerName) &&
+        filledOut(this.char.discipline) &&
+        filledOut(this.char.race)
+      );
     }
+  },
+  mounted() {
+    this.$emit("completed", this.completed);
+  },
+  updated() {
+    this.$emit("completed", this.completed);
   }
 };
 </script>
@@ -111,18 +122,37 @@ $argon-blue: #5e72e4;
       color: #888;
     }
 
-    input {
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-position: right 75%;
+      background-repeat: no-repeat;
+      background-image: url("../../assets/dropdownArrow.svg");
+      padding-right: 1.5rem;
+
+      cursor: pointer;
+
+      option {
+        font-size: 1rem;
+      }
+    }
+
+    input,
+    select {
       width: 100%;
       padding-top: 1.25rem;
 
-      &[type="text"] {
-        border: 0;
-        border-bottom: 2px solid black;
+      background-color: white;
 
-        &:focus {
-          outline: none;
-          border-color: $argon-blue;
-        }
+      border: 0;
+      border-radius: 0;
+      border-bottom: 2px solid black;
+
+      margin-bottom: 1rem;
+
+      &:focus {
+        outline: none;
+        border-color: $argon-blue;
       }
     }
   }

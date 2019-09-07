@@ -2,6 +2,7 @@
 // Example: setName -> ccSetName
 
 import router from '@/router'
+import races from 'Races'
 const routedUUID = () => router.currentRoute.params.uuid;
 
 export default {
@@ -21,7 +22,11 @@ export default {
     commit('SET_PASSION', { uuid: routedUUID(), passion });
   },
   setRace({ commit }, race) {
+    const racialLang = races.singular[race].spokenLanguage
+    const languages = (racialLang == null) ? ["Throalic"] : ["Throalic", racialLang]
+
     commit('SET_RACE', { uuid: routedUUID(), race });
+    commit('SET_SPOKEN_LANGUAGES', { uuid: routedUUID(), languages });
   },
   
   

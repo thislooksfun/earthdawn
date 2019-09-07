@@ -110,8 +110,8 @@ export default {
 
   // Languages
   languages: {
-    spoken: {},
-    literate: {}
+    spoken: ["Throalic"],
+    literate: ["Throalic"]
   },
 
   // Half Magic

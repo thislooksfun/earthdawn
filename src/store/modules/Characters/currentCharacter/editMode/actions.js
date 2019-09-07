@@ -28,29 +28,29 @@ export default {
     commit('SET_RACE', { uuid: routedUUID(), race });
     commit('SET_SPOKEN_LANGUAGES', { uuid: routedUUID(), languages });
   },
-  
-  
+
+
   setDiscipline({ commit }, discipline) {
     commit('SET_DISCIPLINE', { uuid: routedUUID(), discipline });
   },
   setCircle({ commit }, circle) {
     commit('SET_CIRCLE', { uuid: routedUUID(), circle });
   },
-  
-  
+
+
   // TODO: Figure out exact API for these
   // setLegendPoints() {},
   // setKarma() {},
-  
-  
+
+
   addWeapon({ commit }, weapon) {
     commit('ADD_WEAPON', { uuid: routedUUID(), weapon });
   },
   removeWeapon({ commit }, weapon) {
     commit('REMOVE_WEAPON', { uuid: routedUUID(), weapon });
   },
-  
-  
+
+
   // Discipline Talents
   addDisciplineTalent({ commit }, { talent, free = false, rank = 0 }) {
     commit('ADD_DISCIPLINE_TALENT', { uuid: routedUUID(), talent, free, rank });
@@ -62,7 +62,7 @@ export default {
     commit('REMOVE_DISCIPLINE_TALENT', { uuid: routedUUID(), talent });
   },
 
-  
+
   // Other Talents
   addOtherTalent({ commit }, { talent, rank = 0 }) {
     commit('ADD_OTHER_TALENT', { uuid: routedUUID(), talent, rank });
@@ -73,8 +73,8 @@ export default {
   removeOtherTalent({ commit }, { talent }) {
     commit('REMOVE_OTHER_TALENT', { uuid: routedUUID(), talent });
   },
-  
-  
+
+
   // Skills
   addSkill({ commit }, { skill, isTalent = false, rank = 0 }) {
     commit('ADD_SKILL', { uuid: routedUUID(), skill, isTalent, rank });

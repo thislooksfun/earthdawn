@@ -11,6 +11,7 @@ function deepFindAll(obj, key, cb) {
   }
 }
 
+// TODO: Track where effects come from
 export default function (char) {
   char._effects = {
     // This is a common effect, so we add a shortcut

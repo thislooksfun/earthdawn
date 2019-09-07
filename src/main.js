@@ -1,10 +1,15 @@
 import Vue from 'vue'
+
+import BootstrapVue from 'bootstrap-vue'
+import Argon from 'vue-argon-theme'
+
 import App from './App'
 import router from './router'
 import store from './store'
 
-import Argon from 'vue-argon-theme'
+
 Vue.use(Argon);
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 

@@ -1,0 +1,34 @@
+name:
+  singular: Singular Racial Name
+  plural: Plural Racial Name
+
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: -1
+    str: -1
+    tou: -1
+    per: -1
+    wil: -1
+    cha: -1
+  movementRate: -1
+  karmaMod: -1
+
+racialAbilities:
+  Some Name:
+    effects!:
+      woundThreshold: 3
+    description:
+      The description of the ability
+
+
+# Flavor
+
+quote:
+  text: the quote at the top of the section
+  by: who the quote is by
+
+description: 
+  The description of the race

@@ -1,0 +1,79 @@
+name:
+  singular: Obsidiman
+  plural: Obsidimen
+
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 8
+    str: 18
+    tou: 13
+    per: 9
+    wil: 10
+    cha: 9
+  movementRate: 10
+  karmaMod: 3
+
+racialAbilities:
+  Increased Wound Threshold:
+    effects!:
+      woundThreshold: 3
+    description:
+      Add +3 to the Wound Threshold of obsidimen to represent this race’s
+      inherent resistance to damage because of their stone-like skin.
+  Natural Armor:
+    effects!:
+      physicalArmor: 3
+      canUseLivingArmor: true
+      canUseNonLivingArmor: false
+    description:
+      Obsidimen have very tough skin, which serves them as armor. Obsidiman skin
+      has a Physical Armor Rating of 3. However, obsidimen can only wear other
+      types of living armor, which add their protection to the character’s
+      Natural Armor. (See Armor and Shields, p. 411; types of armor considered
+      “living” are indicated as such in the armor’s description.)
+
+
+# Flavor
+
+quote:
+  text:
+    We are born of the bones of the earth. Remember, as you travel among the
+    other races, that their time is but a breath of wind. They are a flame that
+    burns brightly and is gone. You must watch and remember, so that the other
+    children of the earth are not forgotten.
+  by: Elder Yantar of the Cliffside Brotherhood
+
+description: 
+  "Obsidimen are tall, averaging around seven feet, but their massive build
+  makes them appear squat from a distance. Obsidimen weigh an average of 900
+  pounds, and their craggy skin and body tissue incorporate many of the
+  properties of stone. Despite this rocky appearance, obsidimen are flesh and
+  blood, and need food, water, and air to survive just as any other Namegiver.
+  
+  Obsidimen are sexless, born fully-grown from a Liferock: large stone
+  formations naturally imbued with powerful elemental magic. These formations
+  are rare, and usu- ally found in wild or remote areas. Obsidimen from the same
+  Liferock call themselves a brotherhood, and the skin colors of a brotherhood
+  commonly resemble the domi- nant stone of the area, with some individuals
+  showing metallic highlights or veins of semi-precious gems.
+  
+  Their blood, unlike the other races, is bluish-grey. They have no body hair,
+  and their ears are internal, covered over by a thin flap of skin.
+  
+  Obsidimen spend the first century of their life attached to their Liferock.
+  During this time, the obsidiman communes with the spirits of other obsidimen
+  in a state called the Dreaming. After this time, they emerge with a Name, and
+  are free to travel as they wish.
+  
+  The natural lifespan of an obsidiman is measured in centuries, with
+  individuals commonly reaching 900 years or more.
+  
+  Obsidimen tend to be slow and deliberate as befits their size, and the
+  hastiness of the other races often mystifies and unsettles them. Their primary
+  loyalty is to their brotherhood, and obsidimen do not form larger communities.
+  
+  Much like the stones they resemble, they are steady and patient, but when
+  angered they are as implacable as an avalanche."

@@ -1,4 +1,5 @@
 import router from '@/router'
+const routedUUID = () => router.currentRoute.params.uuid;
 
 export default {
   allCharacters: (state) => {
@@ -8,8 +9,9 @@ export default {
     }
     return ch
   },
-  selectedCharacter: (state) => {
-    const uuid = router.currentRoute.params.uuid
+  
+  currentCharacter: (state) => {
+    const uuid = routedUUID()
     return uuid == null ? null : state.characters[uuid];
-  }
+  },
 }

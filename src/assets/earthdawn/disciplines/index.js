@@ -1,6 +1,6 @@
 /**
- * The file enables `src/assets/earthdawn/disciplines` to import all discipline
- * modules in a one-shot manner. There should not be any reason to edit this file.
+ * The file enables `Disciplines` to import all discipline modules in a one-shot
+ * manner. There should not be any reason to edit this file.
  */
 
 const files = require.context('.', false, /\.yml$/);

@@ -29,32 +29,18 @@ export default {
   height: 100vh;
 
   display: grid;
-  grid-template-columns: 15em auto;
+  grid-template-columns: 15rem auto;
   grid-template-rows: auto;
   grid-template-areas: "sidebar main";
   
 
   .sidebar {
+    height: 100vh;
     grid-area: sidebar;
-    
-    background-color: rgba(0, 0, 255, 0.5);
   }
 
   .main {
     grid-area: main;
-    
-    background-color: rgba(0, 255, 0, 0.5);
-  }
-}
-
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #42b983;
-    &.router-link-exact-active {
-      color: #2c3e50;
-    }
   }
 }
 </style>

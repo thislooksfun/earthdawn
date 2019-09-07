@@ -1,6 +1,16 @@
 const path = require('path')
 
 module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'Disciplines$': path.join(__dirname, 'src/assets/earthdawn/disciplines'),
+        'Races$':       path.join(__dirname, 'src/assets/earthdawn/races'),
+        'Skills$':      path.join(__dirname, 'src/assets/earthdawn/skills'),
+        'Talents$':     path.join(__dirname, 'src/assets/earthdawn/talents'),
+      },
+    },
+  },
   chainWebpack: config => {
     config.module
       .rule('yaml')
@@ -8,11 +18,13 @@ module.exports = {
       .use('js-yaml-loader')
       .loader('js-yaml-loader')
       .end()
-    
-    
-    //this path is specific to my project
-    config.resolve.alias
-      .set('Disciplines$', path.join(__dirname, 'src/assets/earthdawn/disciplines'))
-      .set('Talents$', path.join(__dirname, 'src/assets/earthdawn/talents'));
   },
+  pluginOptions: {
+    electronBuilder: {
+      chainWebpackMainProcess: config => {
+        config.resolve.alias
+          .set('@', path.join(__dirname, 'src/'));
+      },
+    },
+  }
 }

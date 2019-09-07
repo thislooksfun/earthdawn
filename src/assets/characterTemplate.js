@@ -1,21 +1,23 @@
 export default {
+  editMode: true,
+
   // Basic info
-  name: "Bijan Behzadi",
-  playerName: "John Doe",
+  name: "New Character",
+  playerName: null,
   portrait: null, // can be passed a photo (path or data)
-  description: "",
+  description: null,
 
   // Passion
   passion: null,
 
   // Race
-  race: "Obsidiman",
+  race: null,
   // attributes: {},       (calculated from race)
   // racialAbilities: [],  (calculated from race)
 
   // Discipline
-  discipline: "Swordsmaster",
-  circle: 2,
+  discipline: null,
+  circle: 1,
 
   // Legend Points
   legendPoints: {
@@ -35,8 +37,9 @@ export default {
 
   // Karma
   karma: {
-    current: 0,
-    max: 7,
+    used: 0,
+    // current: 0  (calculated from max - used)
+    // max: 0,     (calculated from race)
     delivered: 0,
   },
 
@@ -44,8 +47,8 @@ export default {
   health: {
     recoveryTests: {
       remaining: 0,
-      perDay: 3,
-      step: 7,
+      //   perDay: 3,  (calculated from attributes [tou])
+      //   step: 7,    (calculated from attributes [tou step])
     },
 
     // woundThreshold: 13,   (calculated from attributes [tou])
@@ -56,73 +59,68 @@ export default {
 
     bloodMagic: 0,
     currentDamage: 0,
-    currentStrain: 0,
   },
 
   // Weapons
-  weapons: [
-    "Troll's Sword",
-    "Wooden Spear",
-    "Dagger",
-  ],
+  weapons: {
+    _choices: [
+      {
+        "Dagger": {},
+        "Knife": {},
+        "_other": {
+          "type": "weapon",
+          "opts": {
+            "size": [1, 2]
+          },
+        },
+      }
+    ],
+
+    // name: {},
+    // other: {note: ''},
+    // custom: {custom: true, data: { <the data> }},
+    // bound: {threadRank: 4},
+  },
 
   // Talents
   talents: {
     discipline: {
-      "Avoid Blow": 3,
-      "Maneuver": 3,
-      "Melee Weapons": 4,
-      "Taunt": 2,
-      "Thread Weaving": 2,
-      "Wound Balance": 3,
+      // name: {
+      //   free: false,
+      //   rank: 4,
+      // }
     },
     other: {
-      "Tiger Spring": 3
+      // name: {
+      //   rank: 4,
+      // }
     },
   },
   skills: {
-    "Speak Language": 3,
-    "Read and Write Language": 1,
-    "Dancing": 1,
-    "Racial Lore": 2,
-    "Danger Sense": 1,
-    "Distract": 1,
-    "Etiquette": 1,
-    "First Impression": 1,
-    "Navigation": 1,
-    "Research": 1,
-    "Swift Kick": 1,
+    // name: {
+    //   rank: 4,
+    //   isTalent: false
+    // }
   },
 
   // Talent Knacks
-  talentKnacks: {
-
-  },
+  talentKnacks: {},
 
   // Languages
   languages: {
-    spoken: [
-      "Throalic",
-      "Obsidiman",
-      "T'Skrang",
-    ],
-    literate: [
-      "Throalic"
-    ]
+    spoken: {},
+    literate: {}
   },
 
   // Half Magic
-  halfMagic: [],
+  halfMagic: {},
 
   // Faith Points
   faithPoints: 0,
 
   // Armor and Shield
-  armor: [
-  ],
-  shield: [
-    "Footman's Shield",
-  ],
+  armor: {},
+  shield: {},
 
   // Blood Magic
   bloodMagic: {},
@@ -131,10 +129,37 @@ export default {
   threadMagic: {},
 
   // Equipment
-  equipment: [
-    "Adventurer's Kit",
-    "Traveler's Garb",
-  ],
+  equipment: {
+    "Adventurer's Kit": {
+      subItems: {
+        "Backpack": { _container: true },
+        "Bedroll": {},
+        "Flint & Steel": {},
+        "Torch": {},
+        "Waterskin": {},
+        "Large Sack": { _container: true }
+      }
+    },
+    "Artisan Tools": {
+      note: "Relevant to character's Artisan skill.",
+      warning: "Needs gamemaster approval.",
+    },
+    "Grimoire": { _conditions: ['disciplineIsMagician'] },
+    "Traveler's Garb": {
+      subItems: {
+        _choices: [
+          {
+            "Robe": {},
+            "Breeches": {}
+          },
+        ],
+        "Soft Boots": {},
+        "Shirt": {},
+        "Belt": {},
+        "Traveller's Cloak": {},
+      }
+    },
+  },
 
   // Money and Treasures
   money: {

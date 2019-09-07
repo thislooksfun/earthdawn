@@ -2,7 +2,7 @@
   <div class="character-wizard">
     <h1>Character Creation Wizard</h1>
 
-    <div v-if="char.inWizardStage == 'basicInfo'" class="solid padded block">
+    <div v-if="char.creationWizardStage == 0" class="solid padded block">
       <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />
     </div>
 
@@ -11,7 +11,7 @@
         class="wizard-nav nav-back"
         block
         type="secondary"
-        :disabled="char.inWizardStage == 'basicInfo'"
+        :disabled="char.creationWizardStage == 0"
         @click="prevStage"
       >Back</base-button>
 
@@ -21,7 +21,7 @@
         type="primary"
         :disabled="!stageComplete"
         @click="nextStage"
-      >Next</base-button>
+      >{{char.creationWizardStage == 0 ? 'Finish' : 'Next'}}</base-button>
     </div>
   </div>
 </template>
@@ -44,10 +44,10 @@ export default {
   },
   methods: {
     prevStage() {
-      this.$store.dispatch("ccNextWizardStage");
+      this.$store.dispatch("ccCreationWizardPrevStage");
     },
     nextStage() {
-      this.$store.dispatch("ccPrevWizardStage");
+      this.$store.dispatch("ccCreationWizardNextStage");
     },
     currentStageOnCompletionChange(completed) {
       this.stageComplete = completed;

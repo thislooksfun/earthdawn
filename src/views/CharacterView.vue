@@ -1,10 +1,10 @@
 <template>
   <div class="character-view">
-    <div v-if="char.inWizardStage != null" class="wizard">
+    <div v-if="char.creationWizardStage != null" class="wizard">
       <new-character-wizard :uuid="uuid" />
     </div>
     
-    <div v-if="char.inWizardStage == null" class="wizard">
+    <div v-if="char.creationWizardStage == null" class="wizard">
       <character-sheet :uuid="uuid" />
     </div>
   </div>

@@ -1,5 +1,5 @@
 export default {
-  inWizardStage: 'basicInfo',
+  creationWizardStage: 0,
   editMode: true,
 
   // Basic info

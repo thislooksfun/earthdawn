@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
+$argon-blue: #5e72e4;
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,6 +43,56 @@ export default {
 
   .main {
     grid-area: main;
+  }
+  
+  label {
+    position: relative;
+
+    display: block;
+    font-size: 2rem;
+
+    .label {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      font-size: 1.25rem;
+
+      color: #888;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-position: right 75%;
+      background-repeat: no-repeat;
+      background-image: url("./assets/dropdownArrow.svg");
+      padding-right: 1.5rem;
+
+      cursor: pointer;
+
+      option {
+        font-size: 1rem;
+      }
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding-top: 1.25rem;
+
+      background-color: white;
+
+      border: 0;
+      border-radius: 0;
+      border-bottom: 2px solid black;
+
+      margin-bottom: 1rem;
+
+      &:focus {
+        outline: none;
+        border-color: $argon-blue;
+      }
+    }
   }
 }
 </style>

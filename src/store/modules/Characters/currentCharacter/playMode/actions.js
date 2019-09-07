@@ -6,7 +6,6 @@ const routedUUID = () => router.currentRoute.params.uuid;
 
 export default {
   dealDamage({ commit }, {type, dmg}) {
-    console.log(`Dealing ${dmg} damage of type ${type}`)
     const uuid = routedUUID()
     // const char = getters.charForUUID(uuid)
     const char = {
@@ -15,10 +14,11 @@ export default {
         mystic: 0,
       }
     }
+    
     const armor = type == 'strain' ? 0 : char.armor[type];
-    console.log(`Relevant Armor: ${armor}`);
     const amount = Math.max(dmg - armor, 0)
-    console.log(`Resulting amount: ${amount}`)
+    
+    console.log(`Dealing ${amount} damage of type ${type}\n(raw damage: ${dmg}, relevant armor: ${armor})`)
     
     commit('DEAL_DAMAGE', { uuid, amount });
   },

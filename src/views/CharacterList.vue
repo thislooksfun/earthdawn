@@ -53,6 +53,8 @@ export default {
       if (uuids.length == (fromDeleteCharacter ? 1 : 0)) {
         this.createAndSelectNewCharacter();
       } else {
+        // If the UUID we are about to delete is the current first character,
+        // select the second one instead.
         const uuid =
           fromDeleteCharacter && deletingUUID == uuids[0] ? uuids[1] : uuids[0];
 

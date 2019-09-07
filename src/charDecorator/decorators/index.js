@@ -1,4 +1,4 @@
-// // Import manually so we can manually define order
+// Import manually so we can manually define order
 import staticDecorators from './static'
 import attributes from './attributes'
 import dynamicDecorators from './dynamic'

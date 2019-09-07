@@ -1,11 +1,11 @@
 // // Import manually so we can manually define order
-import beforeAttrs from './beforeAttrs'
+import staticDecorators from './static'
 import attributes from './attributes'
-import afterAttrs from './afterAttrs'
+import dynamicDecorators from './dynamic'
 
 // Manually define order
 export default [
-  ...beforeAttrs,
+  ...staticDecorators,
   attributes,
-  ...afterAttrs,
+  ...dynamicDecorators,
 ]

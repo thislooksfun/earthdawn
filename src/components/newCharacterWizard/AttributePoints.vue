@@ -1,5 +1,11 @@
 <template>
   <div class="attribute-points">
+    <div class="labelled-row">
+      <span class="label">Attribute Points:</span>
+      <span class="value">25</span>
+    </div>
+
+    <!-- Attributes -->
     <div
       v-for="attrName in ['dex', 'str', 'tou', 'per', 'wil', 'cha']"
       :key="attrName"
@@ -49,10 +55,29 @@
       </div>
     </div>
 
-    <div>Attribute Points: {{attributePoints}}</div>
-    <!-- <div>dex: {{currentAttrs.dex.val}}</div> -->
-    <!-- <div>str: {{currentAttrs.str.val}}</div> -->
-    <div>effects: {{char['effects!']}}</div>
+    <div class="labelled-row section-end">
+      <div class="label">
+        <span>Remaining Points:</span>
+      </div>
+      <span class="value">{{attributePoints}}</span>
+    </div>
+    
+    <div class="labelled-row">
+      <div class="label">
+        <span>Base Karma:</span>
+        <sup
+          v-b-tooltip.hover.top
+          title="Any remaining Attribute Points increase your maximum karma."
+          style="cursor: help"
+        >?</sup>
+      </div>
+      <span class="value">{{dChar.race.baseStats.karmaMod}}</span>
+    </div>
+
+    <div class="bottom labelled-row">
+      <span class="label">Max Karma:</span>
+      <span class="value">{{dChar.karma.max}}</span>
+    </div>
   </div>
 </template>
 
@@ -99,6 +124,8 @@ export default {
   methods: {
     addEffectAndEmit(attrName, value) {
       this.$store.dispatch("ccAddEffect", { name: `${attrName}Val`, value });
+      // Put leftover points into the max karma
+      this.$store.dispatch("ccAddEffect", { name: 'karmaMax', value: this.attributePoints });
       this.$emit("completed", this.attributePoints >= 0);
     },
   },
@@ -139,6 +166,8 @@ export default {
   },
   // This stage is complete from the start
   mounted() {
+    // Put leftover points into the max karma
+    this.$store.dispatch("ccAddEffect", { name: 'karmaMax', value: this.attributePoints });
     this.$emit("completed", this.attributePoints >= 0);
   },
 };
@@ -146,13 +175,42 @@ export default {
 
 <style scoped lang="scss">
 .attribute-points {
-  .attribute {
-    $height: 2.25rem;
-    height: $height;
-    line-height: $height;
+  .labelled-row {
+    grid-area: cost;
+
+    border-bottom: 1px solid #aaa;
+    &.section-end {
+      border-bottom-width: 2px;
+    }
+    &.bottom {
+      border-bottom: 0;
+    }
 
     display: grid;
-    grid-template-columns: 3rem 4.15rem auto 2.5rem 2.5rem;
+    grid-template-columns: auto 2.25rem;
+    grid-template-rows: auto;
+    grid-template-areas: "label value";
+
+    .label {
+      grid-area: label;
+      display: inline-block;
+      text-align: right;
+      padding-right: 0.5rem;
+    }
+    .value {
+      border-left: 1px solid #aaa;
+
+      grid-area: value;
+      display: inline-block;
+      text-align: right;
+    }
+  }
+
+  .attribute {
+    line-height: 2.25rem;
+
+    display: grid;
+    grid-template-columns: 3rem 4.15rem auto 2.5rem 2.25rem;
     grid-template-rows: auto;
     grid-template-areas: "attrname attrbase main result cost";
 
@@ -165,14 +223,19 @@ export default {
     .attrbase {
       grid-area: attrbase;
 
+      display: grid;
+      grid-template-columns: 2.65rem 1.25rem;
+      grid-template-rows: auto;
+      grid-template-areas: "baselabel baseval";
+
       .baselabel {
+        grid-area: baselabel;
         display: inline-block;
-        width: 2.65rem;
         text-align: left;
       }
       .baseval {
+        grid-area: baseval;
         display: inline-block;
-        width: 1.25rem;
         text-align: right;
       }
     }
@@ -210,14 +273,19 @@ export default {
     .result {
       grid-area: result;
 
+      display: grid;
+      grid-template-columns: 0.75rem 1.25rem;
+      grid-template-rows: auto;
+      grid-template-areas: "resultlabel resultval";
+
       .resultlabel {
+        grid-area: resultlabel;
         display: inline-block;
-        width: 0.75rem;
         text-align: center;
       }
       .resultval {
+        grid-area: resultval;
         display: inline-block;
-        width: 1.25rem;
         text-align: right;
       }
     }
@@ -227,14 +295,19 @@ export default {
       border-left: 1px solid #aaa;
       padding-left: 0.25rem;
 
+      display: grid;
+      grid-template-columns: 0.75rem auto;
+      grid-template-rows: auto;
+      grid-template-areas: "costmod costval";
+
       .costmod {
+        grid-area: costmod;
         display: inline-block;
-        width: 0.75rem;
         text-align: center;
       }
       .costval {
+        grid-area: costval;
         display: inline-block;
-        width: 1.25rem;
         text-align: right;
       }
     }

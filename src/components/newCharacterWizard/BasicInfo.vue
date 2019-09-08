@@ -97,8 +97,5 @@ export default {
   mounted() {
     this.$emit("completed", this.completed);
   },
-  updated() {
-    this.$emit("completed", this.completed);
-  }
 };
 </script>

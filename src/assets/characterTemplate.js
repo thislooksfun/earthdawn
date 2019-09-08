@@ -2,6 +2,10 @@ export default {
   creationWizardStage: 0,
   editMode: true,
 
+  // Storage of any miscellaneous effects that need to be applied (i.e.
+  // attribute modifiers)
+  "effects!": {},
+  
   // Basic info
   name: "New Character",
   playerName: null,

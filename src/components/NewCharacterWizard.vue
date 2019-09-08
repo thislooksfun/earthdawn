@@ -55,6 +55,14 @@ export default {
       this.stageComplete = completed;
     },
   },
+  computed: {
+    isLastStage() {
+      return this.stage == 5;
+    },
+    stage() {
+      return this.char.creationWizardStage;
+    },
+  },
 };
 </script>
 

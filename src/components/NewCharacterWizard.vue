@@ -12,6 +12,23 @@
       <attribute-points :uuid="uuid" @completed="currentStageOnCompletionChange" />
     </div>
 
+    <div v-if="stage == 2" class="solid padded block">
+      <!-- <talent-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+    </div>
+
+    <!-- This only applies to spellcasters -->
+    <div v-if="stage == 3" class="solid padded block">
+      <!-- <spell-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+    </div>
+
+    <div v-if="stage == 4" class="solid padded block">
+      <!-- <skill-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+    </div>
+
+    <div v-if="stage == 5" class="solid padded block">
+      <!-- <flesh-out-character :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+    </div>
+
     <div class="solid padded block navigation">
       <base-button
         class="wizard-nav nav-back"

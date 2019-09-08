@@ -9,7 +9,7 @@ import store from './store'
 
 
 Vue.use(Argon);
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 

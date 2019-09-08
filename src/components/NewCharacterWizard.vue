@@ -1,6 +1,8 @@
 <template>
   <div class="character-wizard">
-    <h1>Character Creation Wizard</h1>
+    <div class="solid lightly padded centered block">
+      <h1>Character Creation Wizard</h1>
+    </div>
 
     <div v-if="char.creationWizardStage == 0" class="solid padded block">
       <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />

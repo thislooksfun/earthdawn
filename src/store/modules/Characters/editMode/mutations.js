@@ -95,4 +95,7 @@ export default {
   CREATION_WIZARD_PREV_STAGE(state, {uuid}) {
     state.characters[uuid].creationWizardStage--;
   },
+  ADD_EFFECT(state, {uuid, name, value}) {
+    state.characters[uuid]['effects!'][name] = value;
+  }
 }

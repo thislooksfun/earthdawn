@@ -96,6 +96,6 @@ export default {
     state.characters[uuid].creationWizardStage--;
   },
   ADD_EFFECT(state, {uuid, name, value}) {
-    state.characters[uuid]['effects!'][name] = value;
+    Vue.set(state.characters[uuid]['effects!'], name, value);
   }
 }

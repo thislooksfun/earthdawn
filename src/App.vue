@@ -45,7 +45,14 @@ $argon-blue: #5e72e4;
     grid-area: main;
   }
   
-  label {
+  
+  // Global styles
+  
+  h1 {
+    margin: 0;
+  }
+  
+  label:not(.inline) {
     position: relative;
 
     display: block;

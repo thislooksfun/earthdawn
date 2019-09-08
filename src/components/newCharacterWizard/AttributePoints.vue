@@ -170,7 +170,7 @@ export default {
     $height: 2.25rem;
     height: $height;
     line-height: $height;
-    
+
     display: grid;
     grid-template-columns: 3rem 4.15rem auto 2.5rem 2.5rem;
     grid-template-rows: auto;
@@ -203,7 +203,7 @@ export default {
       label {
         margin-left: 0.5rem;
         margin-bottom: 0;
-        
+
         &.toomuch {
           color: red;
         }
@@ -215,7 +215,7 @@ export default {
         //   cursor: pointer;
         //   height: 0;
         //   width: 0;
-          
+
         //   & ~ .radio-block {
         //     background-color: blue;
         //   }
@@ -229,10 +229,10 @@ export default {
 
     .result {
       grid-area: result;
-      
+
       .resultlabel {
         display: inline-block;
-        width: .75rem;
+        width: 0.75rem;
         text-align: center;
       }
       .resultval {

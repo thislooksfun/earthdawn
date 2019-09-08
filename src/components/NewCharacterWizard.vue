@@ -13,17 +13,17 @@
         class="wizard-nav nav-back"
         block
         type="secondary"
-        :disabled="char.creationWizardStage == 0"
-        @click="prevStage"
+        :disabled="stage == 0"
+        @click="goToPrevStage"
       >Back</base-button>
 
       <base-button
         class="wizard-nav nav-next"
         block
-        type="primary"
+        :type="isLastStage ? 'success' : 'primary'"
         :disabled="!stageComplete"
-        @click="nextStage"
-      >{{char.creationWizardStage == 0 ? 'Finish' : 'Next'}}</base-button>
+        @click="goToNextStage"
+      >{{isLastStage ? 'Finish' : 'Next'}}</base-button>
     </div>
   </div>
 </template>
@@ -45,10 +45,10 @@ export default {
     };
   },
   methods: {
-    prevStage() {
+    goToPrevStage() {
       this.$store.dispatch("ccCreationWizardPrevStage");
     },
-    nextStage() {
+    goToNextStage() {
       this.$store.dispatch("ccCreationWizardNextStage");
     },
     currentStageOnCompletionChange(completed) {

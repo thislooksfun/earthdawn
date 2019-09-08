@@ -4,7 +4,7 @@
       <h1>Character Creation Wizard</h1>
     </div>
 
-    <div v-if="char.creationWizardStage == 0" class="solid padded block">
+    <div v-if="stage == 0" class="solid padded block">
       <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />
     </div>
 

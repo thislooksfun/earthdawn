@@ -1,140 +1,58 @@
 <template>
   <div class="attribute-points">
-    <div class="radiogroup">
-      <span class="label">DEX:</span>
+    <div
+      v-for="attrName in ['dex', 'str', 'tou', 'per', 'wil', 'cha']"
+      :key="attrName"
+      class="attribute"
+    >
+      <span class="attrname">{{attrName.toUpperCase()}}:</span>
+      <div class="attrbase">
+        <span class="baselabel">Base:</span>
+        <span class="baseval">{{baseAttrs[attrName]}}</span>
+      </div>
 
-      <label
-        v-for="mod in modifiers"
-        :key="mod.effect"
-        class="inline"
-        v-b-tooltip.hover.down
-        :title="mod.humanCost"
-      >
-        <input
-          type="radio"
-          name="dexmod"
-          :value="mod.effect"
-          :disabled="costs[mod.effect] > (attributePoints + costs[dexMod])"
-          v-model="dexMod"
-        />
-        {{mod.humanEffect}}
-        <!-- TODO: Convert all labels over to this form (with buttons and hidden <input>s) -->
-        <!-- <base-button
-          size="sm"
-          :type="dexMod == mod.effect ? 'primary' : 'secondary'"
-          @click.passive="console.log('click')"
-        >{{mod.humanEffect}}</base-button>-->
-      </label>
+      <div class="radiogroup">
+        <label
+          v-for="mod in modifiers"
+          :key="mod.effect"
+          class="inline"
+          :class="{toomuch: costs[mod.effect] > (attributePoints + costs[mods[attrName]])}"
+          v-b-tooltip.hover.down
+          :title="mod.humanCost"
+        >
+          <input
+            type="radio"
+            :name="`${attrName}mod`"
+            :value="mod.effect"
+            :disabled="costs[mod.effect] > (attributePoints + costs[mods[attrName]])"
+            :checked="mods[attrName] == mod.effect"
+            @change="addEffectAndEmit(attrName, mod.effect)"
+          />
+          {{mod.humanEffect}}
+          <!-- TODO: Convert all labels over to this form (with buttons and hidden <input>s) -->
+          <!-- <base-button
+            size="sm"
+            :type="dexMod == mod.effect ? 'primary' : 'secondary'"
+            @click.passive="console.log('click')"
+          >{{mod.humanEffect}}</base-button>-->
+        </label>
+      </div>
+
+      <div class="result">
+        <span class="resultlabel">=</span>
+        <span class="resultval">{{currentAttrs[attrName].val}}</span>
+      </div>
+
+      <div class="cost">
+        <span class="costmod">{{costs[mods[attrName]] >= 0 ? '-' : '+' }}</span>
+        <span class="costval">{{Math.abs(costs[mods[attrName]])}}</span>
+      </div>
     </div>
 
-    <div class="radiogroup">
-      <span class="label">STR:</span>
-
-      <label
-        v-for="mod in modifiers"
-        :key="mod.effect"
-        class="inline"
-        v-b-tooltip.hover.down
-        :title="mod.humanCost"
-      >
-        <input
-          type="radio"
-          name="strmod"
-          :value="mod.effect"
-          :disabled="costs[mod.effect] > (attributePoints + costs[strMod])"
-          v-model="strMod"
-        />
-        {{mod.humanEffect}}
-      </label>
-    </div>
-
-    <div class="radiogroup">
-      <span class="label">TOU:</span>
-
-      <label
-        v-for="mod in modifiers"
-        :key="mod.effect"
-        class="inline"
-        v-b-tooltip.hover.down
-        :title="mod.humanCost"
-      >
-        <input
-          type="radio"
-          name="toumod"
-          :value="mod.effect"
-          :disabled="costs[mod.effect] > (attributePoints + costs[touMod])"
-          v-model="touMod"
-        />
-        {{mod.humanEffect}}
-      </label>
-    </div>
-
-    <div class="radiogroup">
-      <span class="label">PER:</span>
-
-      <label
-        v-for="mod in modifiers"
-        :key="mod.effect"
-        class="inline"
-        v-b-tooltip.hover.down
-        :title="mod.humanCost"
-      >
-        <input
-          type="radio"
-          name="permod"
-          :value="mod.effect"
-          :disabled="costs[mod.effect] > (attributePoints + costs[perMod])"
-          v-model="perMod"
-        />
-        {{mod.humanEffect}}
-      </label>
-    </div>
-
-    <div class="radiogroup">
-      <span class="label">WIL:</span>
-
-      <label
-        v-for="mod in modifiers"
-        :key="mod.effect"
-        class="inline"
-        v-b-tooltip.hover.down
-        :title="mod.humanCost"
-      >
-        <input
-          type="radio"
-          name="wilmod"
-          :value="mod.effect"
-          :disabled="costs[mod.effect] > (attributePoints + costs[wilMod])"
-          v-model="wilMod"
-        />
-        {{mod.humanEffect}}
-      </label>
-    </div>
-
-    <div class="radiogroup">
-      <span class="label">CHA:</span>
-
-      <label
-        v-for="mod in modifiers"
-        :key="mod.effect"
-        class="inline"
-        v-b-tooltip.hover.down
-        :title="mod.humanCost"
-      >
-        <input
-          type="radio"
-          name="chamod"
-          :value="mod.effect"
-          :disabled="costs[mod.effect] > (attributePoints + costs[chaMod])"
-          v-model="chaMod"
-        />
-        {{mod.humanEffect}}
-      </label>
-    </div>
-    Attribute Points: {{attributePoints}}
-    dex: {{currentAttrs.dex.val}}
-    str: {{currentAttrs.str.val}}
-    effects: {{char['effects!']}}
+    <div>Attribute Points: {{attributePoints}}</div>
+    <!-- <div>dex: {{currentAttrs.dex.val}}</div> -->
+    <!-- <div>str: {{currentAttrs.str.val}}</div> -->
+    <div>effects: {{char['effects!']}}</div>
   </div>
 </template>
 
@@ -149,9 +67,7 @@ export default {
     },
   },
   data() {
-    const char = this.$store.state.Characters.characters[this.uuid];
     return {
-      char,
       modifiers: [
         {
           effect: -2,
@@ -193,71 +109,43 @@ export default {
     };
   },
   methods: {
-    addEffectAndEmit({ name, value }) {
-      this.$store.dispatch("ccAddEffect", { name, value });
+    addEffectAndEmit(attrName, value) {
+      this.$store.dispatch("ccAddEffect", { name: `${attrName}Val`, value });
       this.$emit("completed", this.attributePoints >= 0);
     },
   },
   computed: {
-    dexMod: {
-      get() {
-        return this.currentAttrs.dex.val - this.baseAttrs.dex;
-      },
-      set(value) {
-        this.addEffectAndEmit({ name: "dexVal", value });
-      },
-    },
-    strMod: {
-      get() {
-        return this.currentAttrs.str.val - this.baseAttrs.str;
-      },
-      set(value) {
-        this.addEffectAndEmit({ name: "strVal", value });
-      },
-    },
-    touMod: {
-      get() {
-        return this.currentAttrs.tou.val - this.baseAttrs.tou;
-      },
-      set(value) {
-        this.addEffectAndEmit({ name: "touVal", value });
-      },
-    },
-    perMod: {
-      get() {
-        return this.currentAttrs.per.val - this.baseAttrs.per;
-      },
-      set(value) {
-        this.addEffectAndEmit({ name: "perVal", value });
-      },
-    },
-    wilMod: {
-      get() {
-        return this.currentAttrs.wil.val - this.baseAttrs.wil;
-      },
-      set(value) {
-        this.addEffectAndEmit({ name: "wilVal", value });
-      },
-    },
-    chaMod: {
-      get() {
-        return this.currentAttrs.cha.val - this.baseAttrs.cha;
-      },
-      set(value) {
-        this.addEffectAndEmit({ name: "chaVal", value });
-      },
+    mods() {
+      return {
+        dex: this.currentAttrs.dex.val - this.baseAttrs.dex,
+        str: this.currentAttrs.str.val - this.baseAttrs.str,
+        tou: this.currentAttrs.tou.val - this.baseAttrs.tou,
+        per: this.currentAttrs.per.val - this.baseAttrs.per,
+        wil: this.currentAttrs.wil.val - this.baseAttrs.wil,
+        cha: this.currentAttrs.cha.val - this.baseAttrs.cha,
+      };
     },
 
     attributePoints() {
+      const keys = Object.keys(this.mods);
+      const mods = keys.map(k => this.mods[k]);
+      const costs = keys.map(k => this.costs[this.mods[k]]);
+      const cost = costs.reduce((t, v) => t + v)
+      
+      console.log('keys', keys);
+      console.log('mods', mods);
+      console.log('costs', costs);
+      console.log('cost', cost);
+      
       return (
         25 -
-        this.costs[this.dexMod] -
-        this.costs[this.strMod] -
-        this.costs[this.touMod] -
-        this.costs[this.perMod] -
-        this.costs[this.wilMod] -
-        this.costs[this.chaMod]
+        Object.keys(this.mods)
+          .map(k => this.costs[this.mods[k]])
+          .reduce((t, v) => t + v)
       );
+    },
+    char() {
+      return this.$store.state.Characters.characters[this.uuid];
     },
     dChar() {
       return decorate(this.char);
@@ -278,26 +166,96 @@ export default {
 
 <style scoped lang="scss">
 .attribute-points {
-  .radiogroup {
-    label {
-      margin-left: 0.5rem;
+  .attribute {
+    $height: 2.25rem;
+    height: $height;
+    line-height: $height;
+    
+    display: grid;
+    grid-template-columns: 3rem 4.15rem auto 2.5rem 2.5rem;
+    grid-template-rows: auto;
+    grid-template-areas: "attrname attrbase main result cost";
 
-      input[type="radio"] {
-        // position: absolute;
-        // opacity: 0;
-        // cursor: pointer;
-        // height: 0;
-        // width: 0;
+    border-bottom: 1px solid #aaa;
+
+    .attrname {
+      grid-area: attrname;
+    }
+
+    .attrbase {
+      grid-area: attrbase;
+
+      .baselabel {
+        display: inline-block;
+        width: 2.65rem;
+        text-align: left;
       }
+      .baseval {
+        display: inline-block;
+        width: 1.25rem;
+        text-align: right;
+      }
+    }
 
-      input[type="radio"] {
-        & ~ .radio-block {
-          background-color: blue;
-        }
+    .radiogroup {
+      grid-area: main;
 
-        &:checked ~ .radio-block {
+      label {
+        margin-left: 0.5rem;
+        margin-bottom: 0;
+        
+        &.toomuch {
           color: red;
         }
+
+        // TODO: Implement this at some point
+        // input[type="radio"] {
+        //   position: absolute;
+        //   opacity: 0;
+        //   cursor: pointer;
+        //   height: 0;
+        //   width: 0;
+          
+        //   & ~ .radio-block {
+        //     background-color: blue;
+        //   }
+
+        //   &:checked ~ .radio-block {
+        //     color: red;
+        //   }
+        // }
+      }
+    }
+
+    .result {
+      grid-area: result;
+      
+      .resultlabel {
+        display: inline-block;
+        width: .75rem;
+        text-align: center;
+      }
+      .resultval {
+        display: inline-block;
+        width: 1.25rem;
+        text-align: right;
+      }
+    }
+
+    .cost {
+      grid-area: cost;
+      border-left: 1px solid #aaa;
+      padding-left: 0.25rem;
+
+      .costmod {
+        display: inline-block;
+        width: 0.75rem;
+        text-align: center;
+      }
+      .costval {
+        display: inline-block;
+        width: 1.25rem;
+        text-align: right;
       }
     }
   }

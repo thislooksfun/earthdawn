@@ -8,6 +8,10 @@
       <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />
     </div>
 
+    <div v-if="stage == 1" class="solid padded block">
+      <attribute-points :uuid="uuid" @completed="currentStageOnCompletionChange" />
+    </div>
+
     <div class="solid padded block navigation">
       <base-button
         class="wizard-nav nav-back"
@@ -30,10 +34,12 @@
 
 <script>
 import BasicInfo from "./newCharacterWizard/BasicInfo";
+import AttributePoints from "./newCharacterWizard/AttributePoints";
 
 export default {
   components: {
-    BasicInfo
+    BasicInfo,
+    AttributePoints,
   },
   data() {
     const uuid = this.$route.params.uuid;

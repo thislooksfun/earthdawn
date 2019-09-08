@@ -67,46 +67,34 @@ export default {
     },
   },
   data() {
-    return {
-      modifiers: [
-        {
-          effect: -2,
-          humanEffect: "-2",
-          humanCost: "Gain +2 Attribute Points",
-        },
-        { effect: -1, humanEffect: "-1", humanCost: "Gain +1 Attribute Point" },
-        { effect: 0, humanEffect: "+0", humanCost: "Costs 0 Attribute Points" },
-        { effect: 1, humanEffect: "+1", humanCost: "Costs 1 Attribute Point" },
-        { effect: 2, humanEffect: "+2", humanCost: "Costs 2 Attribute Points" },
-        { effect: 3, humanEffect: "+3", humanCost: "Costs 3 Attribute Points" },
-        { effect: 4, humanEffect: "+4", humanCost: "Costs 5 Attribute Points" },
-        { effect: 5, humanEffect: "+5", humanCost: "Costs 7 Attribute Points" },
-        { effect: 6, humanEffect: "+6", humanCost: "Costs 9 Attribute Points" },
-        {
-          effect: 7,
-          humanEffect: "+7",
-          humanCost: "Costs 12 Attribute Points",
-        },
-        {
-          effect: 8,
-          humanEffect: "+8",
-          humanCost: "Costs 15 Attribute Points",
-        },
-      ],
-      costs: {
-        "-2": -2,
-        "-1": -1,
-        "0": 0,
-        "1": 1,
-        "2": 2,
-        "3": 3,
-        "4": 5,
-        "5": 7,
-        "6": 9,
-        "7": 12,
-        "8": 15,
-      },
+    const costs = {
+      "-2": -2,
+      "-1": -1,
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 5,
+      "5": 7,
+      "6": 9,
+      "7": 12,
+      "8": 15,
     };
+
+    const humanCostFor = v => {
+      const c = costs[v];
+      const ac = Math.abs(c);
+      return `${c < 0 ? "Gain" : "Costs"} ${
+        c < 0 ? "+" : ""
+      }${ac} Attribute Point${ac != 1 ? "s" : ""}`;
+    };
+    const modifiers = [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8].map(v => ({
+      effect: v,
+      humanEffect: `${v >= 0 ? "+" : ""}${v}`,
+      humanCost: humanCostFor(v),
+    }));
+
+    return { modifiers, costs };
   },
   methods: {
     addEffectAndEmit(attrName, value) {
@@ -116,27 +104,19 @@ export default {
   },
   computed: {
     mods() {
-      return {
-        dex: this.currentAttrs.dex.val - this.baseAttrs.dex,
-        str: this.currentAttrs.str.val - this.baseAttrs.str,
-        tou: this.currentAttrs.tou.val - this.baseAttrs.tou,
-        per: this.currentAttrs.per.val - this.baseAttrs.per,
-        wil: this.currentAttrs.wil.val - this.baseAttrs.wil,
-        cha: this.currentAttrs.cha.val - this.baseAttrs.cha,
-      };
+      const mods = {};
+      Object.keys(this.baseAttrs).forEach(
+        a => (mods[a] = this.currentAttrs[a].val - this.baseAttrs[a])
+      );
+      return mods;
     },
 
     attributePoints() {
       const keys = Object.keys(this.mods);
       const mods = keys.map(k => this.mods[k]);
       const costs = keys.map(k => this.costs[this.mods[k]]);
-      const cost = costs.reduce((t, v) => t + v)
-      
-      console.log('keys', keys);
-      console.log('mods', mods);
-      console.log('costs', costs);
-      console.log('cost', cost);
-      
+      const cost = costs.reduce((t, v) => t + v);
+
       return (
         25 -
         Object.keys(this.mods)

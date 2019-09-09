@@ -149,11 +149,6 @@ export default {
     },
 
     attributePoints() {
-      const keys = Object.keys(this.mods);
-      const mods = keys.map(k => this.mods[k]);
-      const costs = keys.map(k => this.costs[this.mods[k]]);
-      const cost = costs.reduce((t, v) => t + v);
-
       return (
         25 -
         Object.keys(this.mods)

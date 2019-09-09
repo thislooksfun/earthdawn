@@ -103,16 +103,17 @@ export default {
     isLastStage() {
       return this.stage == "flesh-out";
     },
-    dChar() {
-      return decorate(this.char);
-    },
     stage() {
       const s = this.char.creationWizardStage;
-      const spellcaster = this.dChar.discipline.isSpellcaster;
 
       if (s == 0) return "basic-info";
       if (s == 1) return "attribute-points";
       if (s == 2) return "talent-ranks";
+
+      // Only calculate this after stage 0 as the decorating process requires
+      // both race and discipline to be set.
+      const spellcaster = decorate(this.char).discipline.isSpellcaster;
+
       if (spellcaster && s == 3) return "spell-ranks";
       if (s == (spellcaster ? 4 : 3)) return "skill-ranks";
       if (s == (spellcaster ? 5 : 4)) return "flesh-out";

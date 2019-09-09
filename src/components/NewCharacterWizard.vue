@@ -4,31 +4,38 @@
       <h1>Character Creation Wizard</h1>
     </div>
 
-    <div v-if="stage == 0" class="solid padded block">
+    <div v-if="stage == 'invalid'" class="solid padded block">
+      <span
+        >Something went wrong! If you see this message, please let me
+        know.</span
+      >
+    </div>
+
+    <div v-if="stage == 'basic-info'" class="solid padded block">
       <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />
     </div>
 
-    <div v-if="stage == 1" class="solid padded block">
+    <div v-if="stage == 'attribute-points'" class="solid padded block">
       <attribute-points
         :uuid="uuid"
         @completed="currentStageOnCompletionChange"
       />
     </div>
 
-    <div v-if="stage == 2" class="solid padded block">
+    <div v-if="stage == 'talent-ranks'" class="solid padded block">
       <!-- <talent-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
     </div>
 
     <!-- This only applies to spellcasters -->
-    <div v-if="stage == 3" class="solid padded block">
+    <div v-if="stage == 'spell-ranks'" class="solid padded block">
       <!-- <spell-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
     </div>
 
-    <div v-if="stage == 4" class="solid padded block">
+    <div v-if="stage == 'skill-ranks'" class="solid padded block">
       <!-- <skill-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
     </div>
 
-    <div v-if="stage == 5" class="solid padded block">
+    <div v-if="stage == 'flesh-out'" class="solid padded block">
       <!-- <flesh-out-character :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
     </div>
 
@@ -37,7 +44,7 @@
         class="wizard-nav nav-back"
         block
         type="secondary"
-        :disabled="stage == 0"
+        :disabled="stage == 'basic-info'"
         @click="goToPrevStage"
         >Back</base-button
       >
@@ -55,6 +62,8 @@
 </template>
 
 <script>
+import decorate from "@/charDecorator";
+
 import BasicInfo from "./newCharacterWizard/BasicInfo";
 import AttributePoints from "./newCharacterWizard/AttributePoints";
 
@@ -73,6 +82,9 @@ export default {
     };
   },
   methods: {
+    goToFirstStage() {
+      this.$store.dispatch("ccCreationWizardFirstStage");
+    },
     goToPrevStage() {
       this.$store.dispatch("ccCreationWizardPrevStage");
     },
@@ -85,10 +97,34 @@ export default {
   },
   computed: {
     isLastStage() {
-      return this.stage == 5;
+      return this.stage == "flesh-out";
+    },
+    dChar() {
+      return decorate(this.char);
     },
     stage() {
-      return this.char.creationWizardStage;
+      const s = this.char.creationWizardStage;
+      const spellcaster = this.dChar.discipline.isSpellcaster;
+
+      if (s == 0) return "basic-info";
+      if (s == 1) return "attribute-points";
+      if (s == 2) return "talent-ranks";
+      if (spellcaster && s == 3) return "spell-ranks";
+      if (s == (spellcaster ? 4 : 3)) return "skill-ranks";
+      if (s == (spellcaster ? 5 : 4)) return "flesh-out";
+
+      // Something went wrong! This line of code should never be reached.
+      // If it was, reset the stage to a known state (the beginning).
+
+      // TODO: Log with Sentry as well.
+
+      // Use setTimeout() so the function call fully triggers Vue to update.
+      // Calling mutating methods within computed properties does weird things
+      // to the UI state.
+      setTimeout(() => this.goToFirstStage(), 0);
+
+      // Default return so linters stop complaining
+      return "";
     },
   },
 };

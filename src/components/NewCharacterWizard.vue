@@ -89,7 +89,11 @@ export default {
       this.$store.dispatch("ccCreationWizardPrevStage");
     },
     goToNextStage() {
-      this.$store.dispatch("ccCreationWizardNextStage");
+      if (this.isLastStage) {
+        this.$store.dispatch("ccCreationWizardClose");
+      } else {
+        this.$store.dispatch("ccCreationWizardNextStage");
+      }
     },
     currentStageOnCompletionChange(completed) {
       this.stageComplete = completed;

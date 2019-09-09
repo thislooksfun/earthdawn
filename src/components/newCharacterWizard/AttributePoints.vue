@@ -70,20 +70,19 @@
     </div>
 
     <div class="labelled-row">
-      <div class="label">
-        <span>Base Karma:</span>
-        <sup
-          v-b-tooltip.hover.top
-          title="Any remaining Attribute Points increase your maximum karma."
-          style="cursor: help"
-          >?</sup
-        >
-      </div>
+      <span class="label">Base Karma:</span>
       <span class="value">{{ dChar.race.baseStats.karmaMod }}</span>
     </div>
 
     <div class="bottom labelled-row">
-      <span class="label">Max Karma:</span>
+      <span class="label"
+        >Max Karma:<sup
+          v-b-tooltip.hover.top
+          title="Any remaining Attribute Points increase your maximum karma."
+          style="cursor: help"
+          >?</sup
+        ></span
+      >
       <span class="value">{{ dChar.karma.max }}</span>
     </div>
   </div>

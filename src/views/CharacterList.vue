@@ -4,22 +4,24 @@
 
     <ul>
       <li
-        v-for="(char, uuid) in characters"
-        :key="uuid"
+        v-for="char in sortedCharacters"
+        :key="char.uuid"
         class="character"
-        :class="{ selected: $route.params.uuid == uuid }"
+        :class="{ selected: $route.params.uuid == char.uuid }"
       >
         <div class="button">
           <base-button
             type="danger"
             size="sm"
             icon="fa fa-trash-o"
-            @click="deleteCharacter(char.name, uuid)"
-            style="font-size: 0.75rem"
+            @click="deleteCharacter(char.name, char.uuid)"
+            style="font-size: 0.9rem"
           ></base-button>
         </div>
         <div class="link">
-          <router-link :to="`/character/${uuid}`">{{ char.name }}</router-link>
+          <router-link :to="`/character/${char.uuid}`">{{
+            char.name
+          }}</router-link>
         </div>
       </li>
       <li style="text-align: center; margin-top: 1em;">
@@ -33,11 +35,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      characters: this.$store.state.Characters.characters,
-    };
-  },
   methods: {
     deleteCharacter(name, uuid) {
       const confirmMsg = `Are you sure you want to delete ${name}? This action cannot be undone.`;
@@ -49,8 +46,7 @@ export default {
       }
     },
     selectFirstCharacter(fromDeleteCharacter, deletingUUID) {
-      const characters = this.$store.state.Characters.characters;
-      const uuids = Object.keys(characters);
+      const uuids = this.sortedCharacters.map((c) => c.uuid);
 
       if (uuids.length == (fromDeleteCharacter ? 1 : 0)) {
         this.createAndSelectNewCharacter();
@@ -68,6 +64,18 @@ export default {
     },
     createAndSelectNewCharacter() {
       this.$store.dispatch("createAndSelectNewCharacter");
+    },
+  },
+  computed: {
+    sortedCharacters() {
+      const chars = Object.values(this.$store.state.Characters.characters);
+      return chars.sort((a, b) => {
+        // Sort based on name first, and UUID second (so sort order is still
+        // defined if two characters have the same name).
+        if (a.name + a.uuid < b.name + b.uuid) return -1;
+        if (a.name + a.uuid > b.name + b.uuid) return 1;
+        return 0;
+      });
     },
   },
   mounted() {
@@ -112,7 +120,7 @@ export default {
         border-bottom: 1px solid #aaa;
 
         display: grid;
-        grid-template-columns: 2rem auto;
+        grid-template-columns: 2.25rem auto;
         grid-template-rows: auto;
         grid-template-areas: "button link";
 
@@ -126,12 +134,15 @@ export default {
           a {
             display: block;
             width: 100%;
-
-            .selected & {
-              background-color: rgba(0, 0, 0, 0.5);
-              color: white;
-            }
           }
+        }
+      }
+
+      &.selected {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        a {
+          color: white;
         }
       }
     }

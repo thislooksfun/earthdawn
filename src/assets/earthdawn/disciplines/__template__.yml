@@ -1,4 +1,5 @@
 name: <name>
+isSpellcaster: false
 durability: 4
 thread_type: <type>
 novice_talent_options:

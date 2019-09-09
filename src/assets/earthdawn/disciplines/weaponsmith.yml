@@ -1,4 +1,5 @@
 name: Weaponsmith
+isSpellcaster: false
 durability: 5
 thread_type: Thread Smithing
 

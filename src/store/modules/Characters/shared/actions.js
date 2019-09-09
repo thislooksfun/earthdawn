@@ -1,4 +1,4 @@
-import template from "@/assets/characterTemplate";
+import template from "@/assets/earthdawn/characterTemplate";
 import router from "@/router";
 const cloneDeep = require("lodash/cloneDeep");
 

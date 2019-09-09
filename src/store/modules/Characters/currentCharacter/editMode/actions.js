@@ -81,6 +81,9 @@ export default {
     commit("REMOVE_SKILL", { uuid: routedUUID(), skill });
   },
 
+  creationWizardFirstStage({ commit }) {
+    commit("CREATION_WIZARD_FIRST_STAGE", { uuid: routedUUID() });
+  },
   creationWizardPrevStage({ commit }) {
     commit("CREATION_WIZARD_PREV_STAGE", { uuid: routedUUID() });
   },

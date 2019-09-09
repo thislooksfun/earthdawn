@@ -5,7 +5,7 @@ export default {
   // Storage of any miscellaneous effects that need to be applied (i.e.
   // attribute modifiers)
   "effects!": {},
-  
+
   // Basic info
   name: "New Character",
   playerName: null,
@@ -70,15 +70,15 @@ export default {
   weapons: {
     _choices: [
       {
-        "Dagger": {},
-        "Knife": {},
-        "_other": {
-          "type": "weapon",
-          "opts": {
-            "size": [1, 2]
+        Dagger: {},
+        Knife: {},
+        _other: {
+          type: "weapon",
+          opts: {
+            size: [1, 2],
           },
         },
-      }
+      },
     ],
 
     // name: {},
@@ -103,11 +103,11 @@ export default {
   },
   skills: {
     "Speak Language": {
-      rank: 2
+      rank: 2,
     },
     "Read and Write Language": {
-      rank: 1
-    }
+      rank: 1,
+    },
   },
 
   // Talent Knacks
@@ -116,7 +116,7 @@ export default {
   // Languages
   languages: {
     spoken: ["Throalic"],
-    literate: ["Throalic"]
+    literate: ["Throalic"],
   },
 
   // Half Magic
@@ -139,32 +139,32 @@ export default {
   equipment: {
     "Adventurer's Kit": {
       subItems: {
-        "Backpack": { _container: true },
-        "Bedroll": {},
+        Backpack: { _container: true },
+        Bedroll: {},
         "Flint & Steel": {},
-        "Torch": {},
-        "Waterskin": {},
-        "Large Sack": { _container: true }
-      }
+        Torch: {},
+        Waterskin: {},
+        "Large Sack": { _container: true },
+      },
     },
     "Artisan Tools": {
       note: "Relevant to character's Artisan skill.",
       warning: "Needs gamemaster approval.",
     },
-    "Grimoire": { _conditions: ['disciplineIsMagician'] },
+    Grimoire: { _conditions: ["disciplineIsMagician"] },
     "Traveler's Garb": {
       subItems: {
         _choices: [
           {
-            "Robe": {},
-            "Breeches": {}
+            Robe: {},
+            Breeches: {},
           },
         ],
         "Soft Boots": {},
-        "Shirt": {},
-        "Belt": {},
+        Shirt: {},
+        Belt: {},
         "Traveller's Cloak": {},
-      }
+      },
     },
   },
 
@@ -173,7 +173,7 @@ export default {
     copper: 0,
     silver: 100,
     gold: 0,
-    other: null
+    other: null,
   },
 
   // Water and Food Supplies
@@ -183,4 +183,4 @@ export default {
       "Trail Rations": "1 week",
     },
   },
-}
+};

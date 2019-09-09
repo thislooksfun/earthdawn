@@ -2,13 +2,23 @@
 
 <template>
   <div class="health-wrapper">
-    <div class="health" v-b-tooltip.hover.down :title="`${damage} damage taken`">
+    <div
+      class="health"
+      v-b-tooltip.hover.down
+      :title="`${damage} damage taken`"
+    >
       <!-- TODO: Add aria? -->
 
       <div class="text-underlay">
         <!-- If the character is still alive-->
-        <div v-if="alive" class="health-bar" :style="`width: ${maxUntilDeadWidth};`">
-          <span v-if="unconscious" class="hp-info">{{ hitpointsUntilDead }} hp until dead</span>
+        <div
+          v-if="alive"
+          class="health-bar"
+          :style="`width: ${maxUntilDeadWidth};`"
+        >
+          <span v-if="unconscious" class="hp-info"
+            >{{ hitpointsUntilDead }} hp until dead</span
+          >
         </div>
 
         <!-- If the character is conscious -->
@@ -17,7 +27,9 @@
           class="health-bar until-unconscious"
           :style="`width: ${maxUntilUnconsciousWidth};`"
         >
-          <span class="hp-info">{{ hitpointsUntilUnconscious }} hp until unconscious</span>
+          <span class="hp-info"
+            >{{ hitpointsUntilUnconscious }} hp until unconscious</span
+          >
         </div>
       </div>
 
@@ -45,7 +57,9 @@
           :class="{ animated: damage >= unconsciousness }"
           :style="`width: ${untilDeadWidth};`"
         >
-          <span v-if="unconscious" class="hp-info">{{ hitpointsUntilDead }} hp until dead</span>
+          <span v-if="unconscious" class="hp-info"
+            >{{ hitpointsUntilDead }} hp until dead</span
+          >
         </div>
 
         <!-- If the character is conscious -->
@@ -55,7 +69,9 @@
           :class="computedClassesUntilUnconscious"
           :style="`width: ${untilUnconsciousWidth};`"
         >
-          <span class="hp-info">{{ hitpointsUntilUnconscious }} hp until unconscious</span>
+          <span class="hp-info"
+            >{{ hitpointsUntilUnconscious }} hp until unconscious</span
+          >
         </div>
       </div>
     </div>
@@ -106,37 +122,37 @@ export default {
   props: {
     striped: {
       type: Boolean,
-      description: "Whether health is striped"
+      description: "Whether health is striped",
     },
     animated: {
       type: Boolean,
       description:
-        "Whether health is animated (works only with `striped` prop together)"
+        "Whether health is animated (works only with `striped` prop together)",
     },
     height: {
       type: Number,
       default: 20,
-      description: "Health line height"
+      description: "Health line height",
     },
     unconsciousness: {
       type: Number,
       default: 0,
-      description: "Unconsciousness threshold"
+      description: "Unconsciousness threshold",
     },
     death: {
       type: Number,
       default: 0,
-      description: "Death threshold"
+      description: "Death threshold",
     },
     damage: {
       type: Number,
       default: 0,
-      description: "Amount of damage previously taken"
+      description: "Amount of damage previously taken",
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     // Earthdawn keeps track of how much damage you've taken, not how many
@@ -221,8 +237,8 @@ export default {
         : this.damage < 2 * third
         ? "health-hurt" // yellow
         : "health-critical"; //red
-    }
-  }
+    },
+  },
 };
 </script>
 

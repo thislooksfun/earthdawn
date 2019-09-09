@@ -1,5 +1,8 @@
 <template>
-  <div class="character-header" :class="{editMode: char.editMode, playMode: !char.editMode}">
+  <div
+    class="character-header"
+    :class="{ editMode: char.editMode, playMode: !char.editMode }"
+  >
     <!-- Edit Mode -->
     <h1 v-if="char.editMode" class="editing">
       Name:
@@ -13,7 +16,9 @@
     </h1>
 
     <!-- Play Mode -->
-    <h1 v-if="!char.editMode">{{name}}: Circle {{circle}} {{race}} {{discipline}}</h1>
+    <h1 v-if="!char.editMode">
+      {{ name }}: Circle {{ circle }} {{ race }} {{ discipline }}
+    </h1>
   </div>
 </template>
 
@@ -22,19 +27,19 @@ export default {
   props: {
     uuid: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   methods: {
     saveCharName({ data }) {
       console.log("Setting name to", data);
       this.$store.dispatch("ccSetName", data);
-    }
+    },
   },
   data() {
     const char = this.$store.state.Characters.characters[this.uuid];
     return {
-      char
+      char,
     };
   },
   computed: {
@@ -44,7 +49,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetName", value);
-      }
+      },
     },
     circle: {
       get() {
@@ -52,7 +57,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetCircle", value);
-      }
+      },
     },
     discipline: {
       get() {
@@ -60,7 +65,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetDiscipline", value);
-      }
+      },
     },
     race: {
       get() {
@@ -68,9 +73,9 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetRace", value);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 

@@ -15,7 +15,9 @@
 
       <select v-model="race">
         <option disabled value>Please select one</option>
-        <option v-for="(r, name) in races.singular" :key="name" :value="name">{{name}}</option>
+        <option v-for="(r, name) in races.singular" :key="name" :value="name">{{
+          name
+        }}</option>
       </select>
     </label>
 
@@ -24,7 +26,9 @@
 
       <select v-model="discipline">
         <option disabled value>Please select one</option>
-        <option v-for="(d, name) in disciplines" :key="name" :value="name">{{name}}</option>
+        <option v-for="(d, name) in disciplines" :key="name" :value="name">{{
+          name
+        }}</option>
       </select>
     </label>
   </div>
@@ -40,8 +44,8 @@ export default {
   props: {
     uuid: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     const char = this.$store.state.Characters.characters[this.uuid];
@@ -55,7 +59,7 @@ export default {
       set(value) {
         this.$store.dispatch("ccSetName", value);
         this.$emit("completed", this.completed);
-      }
+      },
     },
     playerName: {
       get() {
@@ -64,7 +68,7 @@ export default {
       set(value) {
         this.$store.dispatch("ccSetPlayerName", value);
         this.$emit("completed", this.completed);
-      }
+      },
     },
     discipline: {
       get() {
@@ -73,7 +77,7 @@ export default {
       set(value) {
         this.$store.dispatch("ccSetDiscipline", value);
         this.$emit("completed", this.completed);
-      }
+      },
     },
     race: {
       get() {
@@ -82,7 +86,7 @@ export default {
       set(value) {
         this.$store.dispatch("ccSetRace", value);
         this.$emit("completed", this.completed);
-      }
+      },
     },
 
     completed() {
@@ -92,7 +96,7 @@ export default {
         filledOut(this.char.discipline) &&
         filledOut(this.char.race)
       );
-    }
+    },
   },
   mounted() {
     this.$emit("completed", this.completed);

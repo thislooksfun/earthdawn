@@ -9,7 +9,10 @@
     </div>
 
     <div v-if="stage == 1" class="solid padded block">
-      <attribute-points :uuid="uuid" @completed="currentStageOnCompletionChange" />
+      <attribute-points
+        :uuid="uuid"
+        @completed="currentStageOnCompletionChange"
+      />
     </div>
 
     <div v-if="stage == 2" class="solid padded block">
@@ -36,7 +39,8 @@
         type="secondary"
         :disabled="stage == 0"
         @click="goToPrevStage"
-      >Back</base-button>
+        >Back</base-button
+      >
 
       <base-button
         class="wizard-nav nav-next"
@@ -44,7 +48,8 @@
         :type="isLastStage ? 'success' : 'primary'"
         :disabled="!stageComplete"
         @click="goToNextStage"
-      >{{isLastStage ? 'Finish' : 'Next'}}</base-button>
+        >{{ isLastStage ? "Finish" : "Next" }}</base-button
+      >
     </div>
   </div>
 </template>

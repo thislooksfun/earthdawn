@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import CharacterList from './views/CharacterList'
+import CharacterList from "./views/CharacterList";
 export default {
   components: {
-    CharacterList
-  }
-}
+    CharacterList,
+  },
+};
 </script>
 
 <style lang="scss">
@@ -34,7 +34,6 @@ $argon-blue: #5e72e4;
   grid-template-columns: 15rem auto;
   grid-template-rows: auto;
   grid-template-areas: "sidebar main";
-  
 
   .sidebar {
     height: 100vh;
@@ -44,14 +43,13 @@ $argon-blue: #5e72e4;
   .main {
     grid-area: main;
   }
-  
-  
+
   // Global styles
-  
+
   h1 {
     margin: 0;
   }
-  
+
   label:not(.inline) {
     position: relative;
 

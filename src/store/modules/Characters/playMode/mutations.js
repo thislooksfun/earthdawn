@@ -1,10 +1,16 @@
-import decorate from '@/charDecorator'
+import decorate from "@/charDecorator";
 
 const clamp = (x, min, max) => Math.min(max, Math.max(x, min));
 
 const addAndClampDamage = (char, dmg) => {
-  const { health: { deathThreshold } } = decorate(char);
-  char.health.currentDamage = clamp(char.health.currentDamage + dmg, 0, deathThreshold)
+  const {
+    health: { deathThreshold },
+  } = decorate(char);
+  char.health.currentDamage = clamp(
+    char.health.currentDamage + dmg,
+    0,
+    deathThreshold
+  );
 };
 
 export default {
@@ -17,4 +23,4 @@ export default {
   CAUSE_WOUNDS(state, { uuid, wounds }) {
     state.characters[uuid].health.wounds += wounds;
   },
-}
+};

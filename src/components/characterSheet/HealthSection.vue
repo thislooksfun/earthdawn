@@ -32,21 +32,21 @@
 </template>
 
 <script>
-import decorate from '@/charDecorator'
+import decorate from "@/charDecorator";
 import HealthBar from "./HealthBar";
 export default {
   props: {
     uuid: {
       type: String,
-      default: null
+      default: null,
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   components: {
-    HealthBar
+    HealthBar,
   },
   data() {
     const char = this.$store.state.Characters.characters[this.uuid];
@@ -56,10 +56,10 @@ export default {
   },
   methods: {
     deal1Damage() {
-      this.$store.dispatch("ccDealDamage", {type: "physical", dmg: 1})
+      this.$store.dispatch("ccDealDamage", { type: "physical", dmg: 1 });
     },
     recover1Health() {
-      this.$store.dispatch("ccRecoverHealth", 1)
+      this.$store.dispatch("ccRecoverHealth", 1);
     },
   },
   computed: {
@@ -74,9 +74,9 @@ export default {
       return !this.valid;
     },
     health() {
-      return decorate(this.char).health
-    }
-  }
+      return decorate(this.char).health;
+    },
+  },
 };
 </script>
 

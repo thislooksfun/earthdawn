@@ -1,10 +1,10 @@
-import state from './state'
+import state from "./state";
 
-import editMode from './editMode'
-import playMode from './playMode'
-import shared from './shared'
+import editMode from "./editMode";
+import playMode from "./playMode";
+import shared from "./shared";
 
-import cc from './currentCharacter'
+import cc from "./currentCharacter";
 
 export default {
   state,
@@ -27,4 +27,4 @@ export default {
     ...shared.getters,
     ...cc.getters,
   },
-}
+};

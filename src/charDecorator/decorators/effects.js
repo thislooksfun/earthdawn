@@ -4,7 +4,7 @@ function deepFindAll(obj, key, cb) {
       const el = obj[k];
       if (k == key) {
         cb(el);
-      } else if (typeof el === 'object') {
+      } else if (typeof el === "object") {
         deepFindAll(el, key, cb);
       }
     }
@@ -12,18 +12,18 @@ function deepFindAll(obj, key, cb) {
 }
 
 // TODO: Track where effects come from
-export default function (char) {
+export default function(char) {
   char._effects = {
     // This is a common effect, so we add a shortcut
     _sum: function(efct) {
-      return (this[efct] || [0]).reduce((s, n) => s + n)
-    }
+      return (this[efct] || [0]).reduce((s, n) => s + n);
+    },
   };
-  
-  deepFindAll(char, 'effects!', (mods) => {
+
+  deepFindAll(char, "effects!", mods => {
     for (const mod in mods) {
       char._effects[mod] = char._effects[mod] || [];
       char._effects[mod].push(mods[mod]);
     }
-  })
+  });
 }

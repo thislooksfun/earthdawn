@@ -5,5 +5,4 @@ attr: NULL|dex|str|tou|per|wil|cha
 skill_use: no|novice|journeyman
 examples:
   - Some example
-description:
-  <The description>
+description: <The description>

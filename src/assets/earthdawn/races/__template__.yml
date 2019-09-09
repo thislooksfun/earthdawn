@@ -21,9 +21,7 @@ racialAbilities:
   Some Name:
     effects!:
       woundThreshold: 3
-    description:
-      The description of the ability
-
+    description: The description of the ability
 
 # Flavor
 
@@ -31,5 +29,4 @@ quote:
   text: the quote at the top of the section
   by: who the quote is by
 
-description: 
-  The description of the race
+description: The description of the race

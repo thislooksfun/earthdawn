@@ -23,7 +23,9 @@
         </div>
       </li>
       <li style="text-align: center; margin-top: 1em;">
-        <base-button type="success" @click="createAndSelectNewCharacter()">New Character</base-button>
+        <base-button type="success" @click="createAndSelectNewCharacter()"
+          >New Character</base-button
+        >
       </li>
     </ul>
   </div>
@@ -33,7 +35,7 @@
 export default {
   data() {
     return {
-      characters: this.$store.state.Characters.characters
+      characters: this.$store.state.Characters.characters,
     };
   },
   methods: {
@@ -66,11 +68,11 @@ export default {
     },
     createAndSelectNewCharacter() {
       this.$store.dispatch("createAndSelectNewCharacter");
-    }
+    },
   },
   mounted() {
     this.selectFirstCharacter();
-  }
+  },
 };
 </script>
 

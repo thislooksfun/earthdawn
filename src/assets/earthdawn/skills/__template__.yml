@@ -4,5 +4,4 @@ strain: 1
 attr: NULL|dex|str|tou|per|wil|cha
 examples:
   - Some example
-description:
-  <The description>
+description: <The description>

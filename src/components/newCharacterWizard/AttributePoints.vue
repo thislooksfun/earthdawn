@@ -11,10 +11,10 @@
       :key="attrName"
       class="attribute"
     >
-      <span class="attrname">{{attrName.toUpperCase()}}:</span>
+      <span class="attrname">{{ attrName.toUpperCase() }}:</span>
       <div class="attrbase">
         <span class="baselabel">Base:</span>
-        <span class="baseval">{{baseAttrs[attrName]}}</span>
+        <span class="baseval">{{ baseAttrs[attrName] }}</span>
       </div>
 
       <div class="radiogroup">
@@ -22,7 +22,10 @@
           v-for="mod in modifiers"
           :key="mod.effect"
           class="inline"
-          :class="{toomuch: costs[mod.effect] > (attributePoints + costs[mods[attrName]])}"
+          :class="{
+            toomuch:
+              costs[mod.effect] > attributePoints + costs[mods[attrName]],
+          }"
           v-b-tooltip.hover.down
           :title="mod.humanCost"
         >
@@ -30,11 +33,13 @@
             type="radio"
             :name="`${attrName}mod`"
             :value="mod.effect"
-            :disabled="costs[mod.effect] > (attributePoints + costs[mods[attrName]])"
+            :disabled="
+              costs[mod.effect] > attributePoints + costs[mods[attrName]]
+            "
             :checked="mods[attrName] == mod.effect"
             @change="addEffectAndEmit(attrName, mod.effect)"
           />
-          {{mod.humanEffect}}
+          {{ mod.humanEffect }}
           <!-- TODO: Convert all labels over to this form (with buttons and hidden <input>s) -->
           <!-- <base-button
             size="sm"
@@ -46,12 +51,14 @@
 
       <div class="result">
         <span class="resultlabel">=</span>
-        <span class="resultval">{{currentAttrs[attrName].val}}</span>
+        <span class="resultval">{{ currentAttrs[attrName].val }}</span>
       </div>
 
       <div class="cost">
-        <span class="costmod">{{costs[mods[attrName]] >= 0 ? '-' : '+' }}</span>
-        <span class="costval">{{Math.abs(costs[mods[attrName]])}}</span>
+        <span class="costmod">{{
+          costs[mods[attrName]] >= 0 ? "-" : "+"
+        }}</span>
+        <span class="costval">{{ Math.abs(costs[mods[attrName]]) }}</span>
       </div>
     </div>
 
@@ -59,9 +66,9 @@
       <div class="label">
         <span>Remaining Points:</span>
       </div>
-      <span class="value">{{attributePoints}}</span>
+      <span class="value">{{ attributePoints }}</span>
     </div>
-    
+
     <div class="labelled-row">
       <div class="label">
         <span>Base Karma:</span>
@@ -69,14 +76,15 @@
           v-b-tooltip.hover.top
           title="Any remaining Attribute Points increase your maximum karma."
           style="cursor: help"
-        >?</sup>
+          >?</sup
+        >
       </div>
-      <span class="value">{{dChar.race.baseStats.karmaMod}}</span>
+      <span class="value">{{ dChar.race.baseStats.karmaMod }}</span>
     </div>
 
     <div class="bottom labelled-row">
       <span class="label">Max Karma:</span>
-      <span class="value">{{dChar.karma.max}}</span>
+      <span class="value">{{ dChar.karma.max }}</span>
     </div>
   </div>
 </template>
@@ -125,7 +133,10 @@ export default {
     addEffectAndEmit(attrName, value) {
       this.$store.dispatch("ccAddEffect", { name: `${attrName}Val`, value });
       // Put leftover points into the max karma
-      this.$store.dispatch("ccAddEffect", { name: 'karmaMax', value: this.attributePoints });
+      this.$store.dispatch("ccAddEffect", {
+        name: "karmaMax",
+        value: this.attributePoints,
+      });
       this.$emit("completed", this.attributePoints >= 0);
     },
   },
@@ -167,7 +178,10 @@ export default {
   // This stage is complete from the start
   mounted() {
     // Put leftover points into the max karma
-    this.$store.dispatch("ccAddEffect", { name: 'karmaMax', value: this.attributePoints });
+    this.$store.dispatch("ccAddEffect", {
+      name: "karmaMax",
+      value: this.attributePoints,
+    });
     this.$emit("completed", this.attributePoints >= 0);
   },
 };

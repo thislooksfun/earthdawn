@@ -5,7 +5,8 @@
         block
         :type="char.editMode ? 'primary' : 'secondary'"
         @click="toggleEditMode"
-      >Switch to {{char.editMode ? 'Play' : 'Edit'}} Mode</base-button>
+        >Switch to {{ char.editMode ? "Play" : "Edit" }} Mode</base-button
+      >
     </div>
 
     <div class="solid lightly padded block">
@@ -25,13 +26,13 @@ import HealthSection from "./characterSheet/HealthSection";
 export default {
   components: {
     CharacterHeader,
-    HealthSection
+    HealthSection,
   },
   props: {
     uuid: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     const char = this.$store.state.Characters.characters[this.uuid];
@@ -39,8 +40,8 @@ export default {
   },
   methods: {
     toggleEditMode() {
-      this.$store.dispatch("ccToggleEditMode")
-    }
+      this.$store.dispatch("ccToggleEditMode");
+    },
   },
 };
 </script>

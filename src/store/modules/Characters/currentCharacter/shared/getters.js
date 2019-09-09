@@ -1,11 +1,11 @@
 // All getters defined in this file will be prefixed with 'cc'
 // Example: characterName -> ccCharacterName
 
-import races from 'Races'
+import races from "Races";
 
 export default {
   attributes: (state, getters) => {
-    const char = getters.currentCharacter
+    const char = getters.currentCharacter;
     if (char == null) return {}; //no character selected
 
     // Character races are always stored in the singular form
@@ -17,14 +17,14 @@ export default {
     return attrs;
   },
   health: (state, getters) => {
-    const char = getters.currentCharacter
+    const char = getters.currentCharacter;
     if (char == null) return {}; //no character selected
 
     // Grab a reference to the character's health object
     // const a = getters.ccAttributes
     // const h = char.health;
 
-    // Calculate 
+    // Calculate
     /*
     // Health
     health: {
@@ -45,5 +45,5 @@ export default {
       currentStrain: 0,
     },
     */
-  }
-}
+  },
+};

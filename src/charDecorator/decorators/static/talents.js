@@ -1,4 +1,4 @@
-import talents from 'Talents'
+import talents from "Talents";
 
 function decorateTalents(ts) {
   for (const talent in ts) {
@@ -6,11 +6,11 @@ function decorateTalents(ts) {
     ts[talent] = {
       ...talents[talent],
       ...ts[talent],
-    }
+    };
   }
 }
 
-export default function (char) {
+export default function(char) {
   decorateTalents(char.talents.discipline);
   decorateTalents(char.talents.other);
 }

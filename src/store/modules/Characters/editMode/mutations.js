@@ -79,6 +79,9 @@ export default {
     state.characters[uuid].languages.literate = languages;
   },
 
+  CREATION_WIZARD_FIRST_STAGE(state, { uuid }) {
+    state.characters[uuid].creationWizardStage = 0;
+  },
   CREATION_WIZARD_NEXT_STAGE(state, { uuid }) {
     // TODO: UPDATE THE MAX STAGE
     if (state.characters[uuid].creationWizardStage == 9) {

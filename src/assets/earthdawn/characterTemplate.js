@@ -1,6 +1,6 @@
 export default {
   creationWizardStage: 0,
-  editMode: true,
+  editMode: false,
 
   // Storage of any miscellaneous effects that need to be applied (i.e.
   // attribute modifiers)

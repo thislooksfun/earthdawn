@@ -126,6 +126,7 @@ export default {
       // Use setTimeout() so the function call fully triggers Vue to update.
       // Calling mutating methods within computed properties does weird things
       // to the UI state.
+      // eslint-disable-next-line vue/no-async-in-computed-properties
       setTimeout(() => this.goToFirstStage(), 0);
 
       // Default return so linters stop complaining

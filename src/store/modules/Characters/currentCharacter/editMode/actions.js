@@ -90,6 +90,9 @@ export default {
   creationWizardNextStage({ commit }) {
     commit("CREATION_WIZARD_NEXT_STAGE", { uuid: routedUUID() });
   },
+  creationWizardClose({ commit }) {
+    commit("CREATION_WIZARD_CLOSE", { uuid: routedUUID() });
+  },
   addEffect({ commit }, { name, value }) {
     commit("ADD_EFFECT", { uuid: routedUUID(), name, value });
   },

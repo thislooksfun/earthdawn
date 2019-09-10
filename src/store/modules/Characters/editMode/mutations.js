@@ -59,6 +59,7 @@ export default {
     state.characters[uuid].languages.literate = languages;
   },
 
+  // Creation Wizard
   CREATION_WIZARD_FIRST_STAGE(state, { uuid }) {
     state.characters[uuid].creationWizardStage = 0;
   },
@@ -71,6 +72,8 @@ export default {
   CREATION_WIZARD_PREV_STAGE(state, { uuid }) {
     state.characters[uuid].creationWizardStage--;
   },
+
+  // Misc
   ADD_EFFECT(state, { uuid, name, value }) {
     Vue.set(state.characters[uuid]["effects!"], name, value);
   },

@@ -47,27 +47,9 @@ export default {
     }
   },
 
-  // Other Talents
-  ADD_OTHER_TALENT(state, { uuid, talent, rank }) {
-    Vue.set(state.characters[uuid].talents.other, talent, { rank });
-  },
-  SET_OTHER_TALENT_RANK(state, { uuid, talent, rank }) {
-    state.characters[uuid].talents.other[talent].rank = rank;
-  },
-  REMOVE_OTHER_TALENT(state, { uuid, talent }) {
-    Vue.delete(state.characters[uuid].talents.other, talent);
-  },
+  // TODO: Implement Talent Options
 
-  // Skills
-  ADD_SKILL(state, { uuid, skill, isTalent, rank }) {
-    Vue.set(state.characters[uuid].skills, skill, { isTalent, rank });
-  },
-  SET_SKILL_RANK(state, { uuid, skill, rank }) {
-    state.characters[uuid].skills[skill].rank = rank;
-  },
-  REMOVE_SKILL(state, { uuid, skill }) {
-    Vue.delete(state.characters[uuid].skills, skill);
-  },
+  // TODO: Implement Skills
 
   // Languages
   SET_SPOKEN_LANGUAGES(state, { uuid, languages }) {

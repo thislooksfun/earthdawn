@@ -59,6 +59,7 @@ export default {
 
   // TODO: Implement Skills
 
+  // Creation Wizard
   creationWizardFirstStage({ commit }) {
     commit("CREATION_WIZARD_FIRST_STAGE", { uuid: routedUUID() });
   },
@@ -71,7 +72,29 @@ export default {
   creationWizardClose({ commit }) {
     commit("CREATION_WIZARD_CLOSE", { uuid: routedUUID() });
   },
+
+  // Misc
   addEffect({ commit }, { name, value }) {
     commit("ADD_EFFECT", { uuid: routedUUID(), name, value });
   },
+  // 'circle' is 1-based
+  // TODO: Implement this:
+  // circleUp({ commit, dispatch, state }, { circle }) {
+  //   // const uuid = routedUUID();
+  //   // // NOTE: This creates a CLONE of the character object, so any setters here
+  //   // // won't work (though they shouldn't be used outside of the mutator itself
+  //   // // anyway).
+  //   // const char = decorate(state.characters[uuid]);
+
+  //   // // Set circle
+  //   // commit("SET_CIRCLE", { uuid, circle });
+
+  //   // // Create any missing talent slots
+  //   // commit("ADD_TALENT_OPTIONS_UNTIL", { uuid, circle });
+
+  //   // Assign discipline talents
+  //   // circle index here is 0-based
+  //   const dTalents = char.discipline.circle[circle - 1];
+  //   console.log(dTalents);
+  // },
 };

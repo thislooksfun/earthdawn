@@ -12,7 +12,8 @@
     "postuninstall": "electron-builder install-app-deps",
     "test:unit": "vue-cli-service test:unit",
     "prettier:check": "prettier --check '**/*'",
-    "prettier:fix": "prettier --write '**/*'"
+    "prettier:fix": "prettier --write '**/*'",
+    "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron"
   },
   "main": "background.js",
   "dependencies": {

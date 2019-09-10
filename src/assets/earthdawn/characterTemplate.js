@@ -89,18 +89,15 @@ export default {
 
   // Talents
   talents: {
-    discipline: {
-      // name: {
-      //   free: false,
-      //   rank: 4,
-      // }
-    },
-    other: {
-      // name: {
-      //   rank: 4,
-      // }
-    },
+    // <name>: <rank> || "free",
   },
+  // array is keyed on the 0-based circle of the slot
+  talentOptions: [
+    // {
+    //   name: 'name',
+    //   rank: 4,
+    // },
+  ],
   skills: {
     "Speak Language": {
       rank: 2,

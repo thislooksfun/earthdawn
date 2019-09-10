@@ -3,29 +3,29 @@ isSpellcaster: false
 durability: 7
 thread_type: Weapon Weaving
 
-novice_talent_options:
-  - Acrobatic Defense
-  - Anticipate Blow
-  - Danger Sense
-  - Distract
-  - Impressive Display
-  - Speak Language
-  - Tiger Spring
-  - Unarmed Combat
-  - Winning Smile
-  - Wound Balance
-
-journeyman_talent_options:
-  - Cobra Strike
-  - Engaging Banter
-  - Etiquette
-  - Gliding Strike
-  - Graceful Exit
-  - Lasting Impression
-  - Lion Heart
-  - Spot Armor Flaw
-  - Sprint
-  - Swift Kick
+talent_options:
+  novice:
+    - Acrobatic Defense
+    - Anticipate Blow
+    - Danger Sense
+    - Distract
+    - Impressive Display
+    - Speak Language
+    - Tiger Spring
+    - Unarmed Combat
+    - Winning Smile
+    - Wound Balance
+  journeyman:
+    - Cobra Strike
+    - Engaging Banter
+    - Etiquette
+    - Gliding Strike
+    - Graceful Exit
+    - Lasting Impression
+    - Lion Heart
+    - Spot Armor Flaw
+    - Sprint
+    - Swift Kick
 
 circles:
   first:

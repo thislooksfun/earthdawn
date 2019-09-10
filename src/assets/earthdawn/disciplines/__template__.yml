@@ -2,12 +2,13 @@ name: <name>
 isSpellcaster: false
 durability: 4
 thread_type: <type>
-novice_talent_options:
-  - First Talent
-  - Second Talent
-journeyman_talent_options:
-  - First Talent
-  - Second Talent
+talent_options:
+  novice:
+    - First Talent
+    - Second Talent
+  journeyman:
+    - First Talent
+    - Second Talent
 
 circles:
   first:

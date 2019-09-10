@@ -38,15 +38,13 @@ export default {
     Vue.delete(state.characters[uuid].weapons, weapon);
   },
 
-  // Discipline Talents
-  ADD_DISCIPLINE_TALENT(state, { uuid, talent, free, rank }) {
-    Vue.set(state.characters[uuid].talents.discipline, talent, { free, rank });
-  },
-  SET_DISCIPLINE_TALENT_RANK(state, { uuid, talent, rank }) {
-    state.characters[uuid].talents.discipline[talent].rank = rank;
-  },
-  REMOVE_DISCIPLINE_TALENT(state, { uuid, talent }) {
-    Vue.delete(state.characters[uuid].talents.discipline, talent);
+  // Talents
+  SET_TALENT_RANK(state, { uuid, talent, rank }) {
+    if (rank == 0) {
+      Vue.delete(state.characters[uuid].talents, talent);
+    } else {
+      Vue.set(state.characters[uuid].talents, talent, rank);
+    }
   },
 
   // Other Talents

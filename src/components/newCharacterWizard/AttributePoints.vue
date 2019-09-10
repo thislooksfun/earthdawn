@@ -17,36 +17,20 @@
         <span class="baseval">{{ baseAttrs[attrName] }}</span>
       </div>
 
-      <div class="radiogroup">
-        <label
+      <div class="modgroup">
+        <base-button
           v-for="mod in modifiers"
           :key="mod.effect"
-          class="inline"
-          :class="{
-            toomuch:
-              costs[mod.effect] > attributePoints + costs[mods[attrName]],
-          }"
+          size="sm"
+          :type="mods[attrName] == mod.effect ? 'primary' : 'secondary'"
+          :disabled="
+            costs[mod.effect] > attributePoints + costs[mods[attrName]]
+          "
           v-b-tooltip.hover.down
           :title="mod.humanCost"
+          @click="addEffectAndEmit(attrName, mod.effect)"
+          >{{ mod.humanEffect }}</base-button
         >
-          <input
-            type="radio"
-            :name="`${attrName}mod`"
-            :value="mod.effect"
-            :disabled="
-              costs[mod.effect] > attributePoints + costs[mods[attrName]]
-            "
-            :checked="mods[attrName] == mod.effect"
-            @change="addEffectAndEmit(attrName, mod.effect)"
-          />
-          {{ mod.humanEffect }}
-          <!-- TODO: Convert all labels over to this form (with buttons and hidden <input>s) -->
-          <!-- <base-button
-            size="sm"
-            :type="dexMod == mod.effect ? 'primary' : 'secondary'"
-            @click.passive="console.log('click')"
-          >{{mod.humanEffect}}</base-button>-->
-        </label>
       </div>
 
       <div class="result">
@@ -248,34 +232,10 @@ export default {
       }
     }
 
-    .radiogroup {
+    .modgroup {
       grid-area: main;
 
-      label {
-        margin-left: 0.5rem;
-        margin-bottom: 0;
-
-        &.toomuch {
-          color: red;
-        }
-
-        // TODO: Implement this at some point
-        // input[type="radio"] {
-        //   position: absolute;
-        //   opacity: 0;
-        //   cursor: pointer;
-        //   height: 0;
-        //   width: 0;
-
-        //   & ~ .radio-block {
-        //     background-color: blue;
-        //   }
-
-        //   &:checked ~ .radio-block {
-        //     color: red;
-        //   }
-        // }
-      }
+      margin-left: 1rem;
     }
 
     .result {

@@ -50,14 +50,9 @@ export default {
   },
 
   // Discipline Talents
-  addDisciplineTalent({ commit }, { talent, free = false, rank = 0 }) {
-    commit("ADD_DISCIPLINE_TALENT", { uuid: routedUUID(), talent, free, rank });
-  },
-  setDisciplineTalentRank({ commit }, { talent, rank = 0 }) {
-    commit("SET_DISCIPLINE_TALENT_RANK", { uuid: routedUUID(), talent, rank });
-  },
-  removeDisciplineTalent({ commit }, { talent }) {
-    commit("REMOVE_DISCIPLINE_TALENT", { uuid: routedUUID(), talent });
+  setTalentRank({ commit }, { talent, rank }) {
+    console.log(`Setting talent ${talent} to rank ${rank}`);
+    commit("SET_TALENT_RANK", { uuid: routedUUID(), talent, rank });
   },
 
   // Other Talents

@@ -46,7 +46,7 @@ export default {
       }
     },
     selectFirstCharacter(fromDeleteCharacter, deletingUUID) {
-      const uuids = this.sortedCharacters.map((c) => c.uuid);
+      const uuids = this.sortedCharacters.map(c => c.uuid);
 
       if (uuids.length == (fromDeleteCharacter ? 1 : 0)) {
         this.createAndSelectNewCharacter();

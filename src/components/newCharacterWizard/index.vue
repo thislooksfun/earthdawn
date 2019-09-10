@@ -2,6 +2,7 @@
   <div class="character-wizard">
     <div class="solid lightly padded centered block">
       <h1>Character Creation Wizard</h1>
+      (Stage: {{ stage }})
     </div>
 
     <div v-if="stage == 'invalid'" class="solid padded block">
@@ -23,7 +24,7 @@
     </div>
 
     <div v-if="stage == 'talent-ranks'" class="solid padded block">
-      <!-- <talent-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+      <talent-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" />
     </div>
 
     <!-- This only applies to spellcasters -->
@@ -66,11 +67,13 @@ import decorate from "@/charDecorator";
 
 import BasicInfo from "./BasicInfo";
 import AttributePoints from "./AttributePoints";
+import TalentRanks from "./TalentRanks";
 
 export default {
   components: {
     BasicInfo,
     AttributePoints,
+    TalentRanks,
   },
   data() {
     const uuid = this.$route.params.uuid;

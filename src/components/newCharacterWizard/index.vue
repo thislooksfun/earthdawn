@@ -64,8 +64,8 @@
 <script>
 import decorate from "@/charDecorator";
 
-import BasicInfo from "./newCharacterWizard/BasicInfo";
-import AttributePoints from "./newCharacterWizard/AttributePoints";
+import BasicInfo from "./BasicInfo";
+import AttributePoints from "./AttributePoints";
 
 export default {
   components: {

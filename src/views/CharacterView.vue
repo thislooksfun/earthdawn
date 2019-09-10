@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import NewCharacterWizard from "@/components/NewCharacterWizard";
-import CharacterSheet from "@/components/CharacterSheet";
+import NewCharacterWizard from "@/components/newCharacterWizard";
+import CharacterSheet from "@/components/characterSheet";
 
 export default {
   components: {

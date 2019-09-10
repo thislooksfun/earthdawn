@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import CharacterHeader from "./characterSheet/CharacterHeader";
-import HealthSection from "./characterSheet/HealthSection";
+import CharacterHeader from "./CharacterHeader";
+import HealthSection from "./HealthSection";
 
 export default {
   components: {

@@ -3,6 +3,7 @@
 
 import router from "@/router";
 import races from "Races";
+
 const routedUUID = () => router.currentRoute.params.uuid;
 
 export default {

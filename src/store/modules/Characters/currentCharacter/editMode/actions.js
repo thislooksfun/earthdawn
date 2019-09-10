@@ -55,27 +55,9 @@ export default {
     commit("SET_TALENT_RANK", { uuid: routedUUID(), talent, rank });
   },
 
-  // Other Talents
-  addOtherTalent({ commit }, { talent, rank = 0 }) {
-    commit("ADD_OTHER_TALENT", { uuid: routedUUID(), talent, rank });
-  },
-  setOtherTalentRank({ commit }, { talent, rank = 0 }) {
-    commit("SET_OTHER_TALENT_RANK", { uuid: routedUUID(), talent, rank });
-  },
-  removeOtherTalent({ commit }, { talent }) {
-    commit("REMOVE_OTHER_TALENT", { uuid: routedUUID(), talent });
-  },
+  // TODO: Implement Talent Options
 
-  // Skills
-  addSkill({ commit }, { skill, isTalent = false, rank = 0 }) {
-    commit("ADD_SKILL", { uuid: routedUUID(), skill, isTalent, rank });
-  },
-  setSkillRank({ commit }, { skill, rank = 0 }) {
-    commit("SET_SKILL_RANK", { uuid: routedUUID(), skill, rank });
-  },
-  removeSkill({ commit }, { skill }) {
-    commit("REMOVE_SKILL", { uuid: routedUUID(), skill });
-  },
+  // TODO: Implement Skills
 
   creationWizardFirstStage({ commit }) {
     commit("CREATION_WIZARD_FIRST_STAGE", { uuid: routedUUID() });

@@ -23,6 +23,17 @@ export default function(char) {
           // DESC: #12
           return free ? char.circle : char._stored.talents[name] || 0;
         },
+        get step() {
+          if (this.attr) {
+            return this.rank + char.attrs[this.attr].step;
+          } else {
+            return this.rank;
+          }
+        },
+        get actionDice() {
+          // TODO: Implement step -> action dice conversion
+          return `Dice for step ${this.step}`;
+        },
       };
     })
     // Convert from array to object

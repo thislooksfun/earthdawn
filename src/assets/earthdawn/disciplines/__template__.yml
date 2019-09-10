@@ -11,8 +11,8 @@ talent_options:
     - Second Talent
 
 circles:
-  first:
-    defense:
+  # First circle
+  - defense:
       mystic: 1
       physical: 1
       social: 1

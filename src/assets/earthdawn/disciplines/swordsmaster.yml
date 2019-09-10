@@ -28,54 +28,54 @@ talent_options:
     - Swift Kick
 
 circles:
-  first:
-    talents:
-      - Avoid Blow
-      - Maneuver
-      - Melee Weapons
-      - Taunt
-      - Thread Weaving
+  # First circle
+  - talents:
+    - Avoid Blow
+    - Maneuver
+    - Melee Weapons
+    - Taunt
+    - Thread Weaving
 
-  second:
-    defense:
+  # Second circle
+  - defense:
       social: 1
     talents:
       - First Impression
 
-  third:
-    karma:
+  # Third circle
+  - karma:
       on_interaction_tests: true
     talents:
       - Riposte
 
-  fourth:
-    defense:
+  # Fourth circle
+  - defense:
       physical: 1
     talents:
       - Heartening Laugh
     journeyman_talent_option: true
 
-  fifth:
-    karma:
+  # Fifth circle
+  - karma:
       on_damage_tests:
         - melee
     talents:
       - Size Up,
       - Second Weapon
 
-  sixth:
-    defense:
+  # Sixth circle
+  - defense:
       social: 2
     talents:
       - Disarm
 
-  seventh:
-    initiative: 1,
+  # Seventh circle
+  - initiative: 1,
     talents:
       - Resist Taunt
 
-  eighth:
-    defense:
+  # Eighth circle
+  - defense:
       physical: 2
     talents:
       - Second Attack

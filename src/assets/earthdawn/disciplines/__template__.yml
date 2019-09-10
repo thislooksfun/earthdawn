@@ -1,8 +1,8 @@
 name: <name>
 isSpellcaster: false
 durability: 4
-thread_type: <type>
-talent_options:
+threadType: <type>
+talentOptions:
   novice:
     - First Talent
     - Second Talent
@@ -16,7 +16,7 @@ circles:
       mystic: 1
       physical: 1
       social: 1
-    free_talents:
+    freeTalents:
       - "First Talent"
     initiative: 1
     karma:

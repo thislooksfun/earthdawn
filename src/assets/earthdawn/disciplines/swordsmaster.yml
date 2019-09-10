@@ -1,9 +1,9 @@
 name: Swordsmaster
 isSpellcaster: false
 durability: 7
-thread_type: Weapon Weaving
+threadType: Weapon Weaving
 
-talent_options:
+talentOptions:
   novice:
     - Acrobatic Defense
     - Anticipate Blow

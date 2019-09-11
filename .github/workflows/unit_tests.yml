@@ -23,7 +23,7 @@ jobs:
         env:
           CI: true
       - name: Codecov
-        run: npm run codecov
+        run: npm run upload_coverage
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Snyk

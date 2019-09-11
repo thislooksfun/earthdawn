@@ -17,8 +17,7 @@
     "prettier:fix": "prettier --write '**/*'",
     "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron",
     "snyk:test": "snyk test",
-    "snyk:monitor": "snyk monitor",
-    "codecov:upload": "codecov"
+    "snyk:monitor": "snyk monitor"
   },
   "main": "background.js",
   "dependencies": {
@@ -46,7 +45,6 @@
     "babel-jest": "^23.6.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "codecov": "^3.5.0",
     "electron": "^6.0.7",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",

@@ -38,9 +38,11 @@ jobs:
 
       # After test
       - name: Upload coverage report to Codecov
-        run: npm run codecov:upload --silent
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage/lcov.info
+          flags: unittests
       - name: Monitor for vulnerabilities
         run: npm run snyk:monitor --silent
         env:

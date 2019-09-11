@@ -43,7 +43,7 @@ jobs:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./coverage/lcov.info
           flags: unittests
-          name: Node.js ${{ matrix.node-version }}
+          name: Node.js@${{ matrix.node-version }}
       - name: Monitor for vulnerabilities
         run: npm run snyk:monitor --silent
         env:

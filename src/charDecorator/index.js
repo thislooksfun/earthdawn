@@ -9,7 +9,7 @@ export default function(char) {
   // Store a reference to the underlying stored value, in case any decorators
   // want to see the raw stored value before any decoration took place.
   c._stored = char;
-  
+
   // Apply each decorator
   decorators.forEach(d => d(c));
 

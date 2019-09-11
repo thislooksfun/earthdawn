@@ -30,11 +30,11 @@ talentOptions:
 circles:
   # First circle
   - talents:
-    - Avoid Blow
-    - Maneuver
-    - Melee Weapons
-    - Taunt
-    - Thread Weaving
+      - Avoid Blow
+      - Maneuver
+      - Melee Weapons
+      - Taunt
+      - Thread Weaving
 
   # Second circle
   - defense:

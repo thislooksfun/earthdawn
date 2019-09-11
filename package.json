@@ -15,7 +15,9 @@
     "test:unit:cover": "vue-cli-service test:unit --coverage",
     "prettier:check": "prettier --check '**/*'",
     "prettier:fix": "prettier --write '**/*'",
-    "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron"
+    "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron",
+    "snyk_monitor": "snyk monitor",
+    "upload_coverage": "codecov"
   },
   "main": "background.js",
   "dependencies": {
@@ -43,12 +45,14 @@
     "babel-jest": "^23.6.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "codecov": "^3.5.0",
     "electron": "^6.0.7",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "prettier": "1.18.2",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
+    "snyk": "^1.226.2",
     "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
   }

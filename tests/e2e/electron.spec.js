@@ -6,27 +6,33 @@ chai.should();
 chai.use(chaiAsPromised);
 
 describe("Application launch", function() {
-  this.timeout(30000);
+  let app;
+  let stopServe;
 
   beforeEach(function() {
+    // TODO: THIS CALL IS BUGGED
+    // BODY: Calling this function causes it to open as many windows as it can
+    // BODY: until it times out
+    // BODY: (pending nklayman/vue-cli-plugin-electron-builder#467)
+
     return testWithSpectron().then(instance => {
-      this.app = instance.app;
-      this.stopServe = instance.stopServe;
+      app = instance.app;
+      stopServe = instance.stopServe;
     });
-  });
+  }, 30000);
 
   beforeEach(function() {
-    chaiAsPromised.transferPromiseness = this.app.transferPromiseness;
+    chaiAsPromised.transferPromiseness = app.transferPromiseness;
   });
 
   afterEach(function() {
-    if (this.app && this.app.isRunning()) {
-      return this.stopServe();
+    if (app && app.isRunning()) {
+      return stopServe();
     }
   });
 
   it("opens a window", function() {
-    return this.app.client
+    return app.client
       .getWindowCount()
       .should.eventually.have.at.least(1)
       .browserWindow.isMinimized()

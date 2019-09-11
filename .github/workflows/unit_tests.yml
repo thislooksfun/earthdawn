@@ -1,0 +1,50 @@
+name: Unit Tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+      # Setup
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+
+      # npm run <script> --slient suppresses any npm ELIFECYCLE errors, but does
+      # not silence the script output.
+
+      # Static analysis
+      - name: Lint
+        run: npm run prettier:check --silent
+      - name: Test for known vulnerabilities
+        run: npm run snyk:test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      # Test
+      - name: Test
+        run: npm run test:unit:cover --silent
+        env:
+          CI: true
+
+      # After test
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: Node.js@${{ matrix.node-version }}
+      - name: Monitor for vulnerabilities
+        run: npm run snyk:monitor --silent
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

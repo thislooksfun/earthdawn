@@ -23,6 +23,9 @@ yarn-error.log*
 # Electron-builder output
 /dist_electron
 
+# Coverage report
+/coverage
+
 # Binary files
 *.ico
 *.png

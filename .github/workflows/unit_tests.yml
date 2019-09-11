@@ -23,6 +23,6 @@ jobs:
         env:
           CI: true
       - name: Codecov
-      - run: codecov
+        run: codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

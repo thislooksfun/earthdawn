@@ -11,22 +11,37 @@ jobs:
         node-version: [8.x, 10.x, 12.x]
 
     steps:
+      # Setup
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      # The --slient suppresses any npm ELIFECYCLE errors, but does not silence
-      # script output.
-      - run: npm run test:unit:cover --silent
+
+      # npm run <script> --slient suppresses any npm ELIFECYCLE errors, but does
+      # not silence the script output.
+
+      # Static analysis
+      - name: Lint
+        run: npm run prettier:check --silent
+      - name: Test for known vulnerabilities
+        run: npm run snyk:test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      # Test
+      - name: Test
+        run: npm run test:unit:cover --silent
         env:
           CI: true
-      - name: Codecov
-        run: npm run upload_coverage
+
+      # After test
+      - name: Upload coverage report to Codecov
+        run: npm run codecov:upload --silent
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      - name: Snyk
-        run: npm run snyk_monitor
+      - name: Monitor for vulnerabilities
+        run: npm run snyk:monitor --silent
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

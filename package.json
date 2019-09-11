@@ -16,8 +16,9 @@
     "prettier:check": "prettier --check '**/*'",
     "prettier:fix": "prettier --write '**/*'",
     "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron",
-    "snyk_monitor": "snyk monitor",
-    "upload_coverage": "codecov"
+    "snyk:test": "snyk test",
+    "snyk:monitor": "snyk monitor",
+    "codecov:upload": "codecov"
   },
   "main": "background.js",
   "dependencies": {

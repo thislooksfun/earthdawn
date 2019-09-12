@@ -1,5 +1,7 @@
 # earthdawn
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/thislooksfun/earthdawn.svg)](https://greenkeeper.io/)
+
 ## Project setup
 
 ```

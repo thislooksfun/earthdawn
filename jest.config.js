@@ -13,7 +13,7 @@ module.exports = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
-  setupFilesAfterEnv: "./tests/setup/expect.js",
+  setupFilesAfterEnv: ["./tests/setup/expect.js"],
   snapshotSerializers: ["jest-serializer-vue"],
   testMatch: [
     "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)",

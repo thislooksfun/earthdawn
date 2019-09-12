@@ -1,0 +1,72 @@
+pull_request_rules:
+  # Automatic Merging (humans)
+  - name: Automatic merge for master when tagged and CI passes
+    conditions:
+      # Tagged ready
+      - label=ready-to-merge
+
+      # CI test success
+      - status-success=Unit Tests / build (10.x) (push)
+      - status-success=Unit Tests / build (12.x) (push)
+      # Style check
+      - status-success=restyled
+      # Security check
+      - status-success=DeepScan
+      - status-success=security/snyk - package.json (thislooksfun)
+      #   LGTM uses status neutral and success to both mean all is well
+      - "-status-failure=LGTM analysis: JavaScript"
+      # Coverage check
+      - status-success=codecov/patch
+      - status-success=codecov/project
+      # Not WIP
+      - status-success=WIP
+      # On master branch
+      - base=master
+    actions:
+      merge:
+        method: merge
+        strict: true
+
+  # Automatic Merging (bots)
+  - name: Automatic merge for Greenkeeper pull requests
+    conditions:
+      # Was sent from Greenkeeper
+      - author=greenkeeper[bot]
+      - status-success=greenkeeper/verify
+
+      # CI test success
+      - status-success=Unit Tests / build (10.x) (push)
+      - status-success=Unit Tests / build (12.x) (push)
+      # Style check
+      - status-success=restyled
+      # Security check
+      - status-success=DeepScan
+      - status-success=security/snyk - package.json (thislooksfun)
+      #   LGTM uses status neutral and success to both mean all is well
+      - "-status-failure=LGTM analysis: JavaScript"
+      # Coverage check
+      - status-success=codecov/patch
+      - status-success=codecov/project
+      # Not WIP
+      - status-success=WIP
+      # On master branch
+      - base=master
+    actions:
+      merge:
+        method: merge
+        strict: true
+
+  # Quality of life
+  - name: Remove outdated reviews
+    conditions:
+      - base=master
+    actions:
+      dismiss_reviews: {}
+
+  - name: Assign me
+    conditions:
+      - -author=greenkeeper[bot]
+      - base=master
+    actions:
+      assign:
+        - thislooksfun

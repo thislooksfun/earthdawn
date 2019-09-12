@@ -45,4 +45,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 <!-- Links -->
 
 [mergify]: https://mergify.io
-[mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/<owner>/<repo>&style=flat-square
+[mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/thislooksfun/earthdawn&style=flat-square

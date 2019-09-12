@@ -89,8 +89,8 @@ restylers:
   # - pg_format
   # - php-cs-fixer
   - prettier
-  - prettier-markdown
-  - prettier-yaml
+  # - prettier-markdown
+  # - prettier-yaml
   # - prettier-ruby
   # - reorder-python-imports
   # - rubocop

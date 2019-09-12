@@ -5,10 +5,12 @@ jest.mock("Disciplines", () => {
   return { TestDiscipline: { name: "TestDiscipline" } };
 });
 
-it("should work", () => {
-  const char = { discipline: "TestDiscipline" };
-  // Decorators work in-place
-  disciplineDecorator(char);
+describe("Discipline Decorator", () => {
+  it("should replace char.discipline in place", () => {
+    const char = { discipline: "TestDiscipline" };
+    // Decorators work in place
+    disciplineDecorator(char);
 
-  expect(char.discipline).to.deep.equal({ name: "TestDiscipline" });
+    expect(char.discipline).to.deep.equal({ name: "TestDiscipline" });
+  });
 });

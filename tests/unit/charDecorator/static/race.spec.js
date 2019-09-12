@@ -5,10 +5,12 @@ jest.mock("Races", () => {
   return { singular: { TestRace: { name: "TestRace" } } };
 });
 
-it("should work", () => {
-  const char = { race: "TestRace" };
-  // Decorators work in-place
-  raceDecorator(char);
+describe("Race Decorator", () => {
+  it("should replace char.race in place", () => {
+    const char = { race: "TestRace" };
+    // Decorators work in place
+    raceDecorator(char);
 
-  expect(char.race).to.deep.equal({ name: "TestRace" });
+    expect(char.race).to.deep.equal({ name: "TestRace" });
+  });
 });

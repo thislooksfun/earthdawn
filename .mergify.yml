@@ -6,8 +6,8 @@ pull_request_rules:
       - label=ready-to-merge
 
       # CI test success
-      - status-success=Unit Tests / build (10.x) (push)
-      - status-success=Unit Tests / build (12.x) (push)
+      - status-success=Unit Tests (10.x)
+      - status-success=Unit Tests (12.x)
       # Style check
       - status-success=restyled
       # Security check
@@ -35,8 +35,8 @@ pull_request_rules:
       - status-success=greenkeeper/verify
 
       # CI test success
-      - status-success=Unit Tests / build (10.x) (push)
-      - status-success=Unit Tests / build (12.x) (push)
+      - status-success=Unit Tests (10.x)
+      - status-success=Unit Tests (12.x)
       # Style check
       - status-success=restyled
       # Security check

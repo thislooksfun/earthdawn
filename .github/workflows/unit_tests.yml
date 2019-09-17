@@ -3,7 +3,7 @@ name: Unit Tests
 on: [push]
 
 jobs:
-  build:
+  Unit Tests:
     runs-on: ubuntu-latest
 
     strategy:

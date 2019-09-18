@@ -8,8 +8,6 @@ pull_request_rules:
       # CI test success
       - status-success=unit-tests (10.x)
       - status-success=unit-tests (12.x)
-      # Style check
-      - status-success=restyled
       # Security check
       - status-success=DeepScan
       - status-success=security/snyk - package.json (thislooksfun)
@@ -37,8 +35,6 @@ pull_request_rules:
       # CI test success
       - status-success=unit-tests (10.x)
       - status-success=unit-tests (12.x)
-      # Style check
-      - status-success=restyled
       # Security check
       - status-success=DeepScan
       - status-success=security/snyk - package.json (thislooksfun)

@@ -1,6 +1,6 @@
 function deepFindAll(obj, except, key, cb) {
   for (const k in obj) {
-    if (obj.hasOwnProperty(k)) {
+    if (Object.prototype.hasOwnProperty.call(obj, k)) {
       const el = obj[k];
       if (k == key) {
         cb(el);

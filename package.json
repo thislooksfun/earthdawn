@@ -23,7 +23,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.28",
-    "core-js": "^2.6.5",
+    "core-js": "^2.6.9",
     "electron-config": "^2.0.0",
     "electron-window-state": "^5.0.3",
     "js-yaml-loader": "^1.2.2",

@@ -5,7 +5,7 @@ function deepFindAll(obj, except, key, cb) {
       if (k == key) {
         cb(el);
       } else if (typeof el === "object" && k != except) {
-        deepFindAll(el, key, cb);
+        deepFindAll(el, except, key, cb);
       }
     }
   }

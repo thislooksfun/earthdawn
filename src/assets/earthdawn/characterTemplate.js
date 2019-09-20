@@ -89,7 +89,7 @@ export default {
 
   // Talents
   talents: {
-    // <name>: <rank> || "free",
+    // <name>: <rank>,
   },
   // array is keyed on the 0-based circle of the slot
   talentOptions: [

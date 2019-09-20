@@ -127,7 +127,7 @@ describe("Health decorator", () => {
 
       it("should be from the toughness val + the effects sum", () => {
         // Stub the effect sum calculator to always return non-0 for the
-        // deathThreshold key
+        // recoveryTestsPerDay key
         char._effects._sum = x => (x == "recoveryTestsPerDay" ? 3 : 0);
         expect(char.health.recoveryTests.perDay).to.eql(expectedCount + 3);
       });
@@ -154,7 +154,7 @@ describe("Health decorator", () => {
 
       it("should be from the toughness step + the effects sum", () => {
         // Stub the effect sum calculator to always return non-0 for the
-        // deathThreshold key
+        // recoveryTestStep key
         char._effects._sum = x => (x == "recoveryTestStep" ? 3 : 0);
         expect(char.health.recoveryTests.step).to.eql(expectedStep + 3);
       });

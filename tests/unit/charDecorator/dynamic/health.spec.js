@@ -86,6 +86,35 @@ describe("Health decorator", () => {
     });
   });
 
+  describe("char.health.woundThreshold", () => {
+    // The wound threshold is calculated as from the toughness value. The
+    // toughness value defined above is
+
+    // The tou value defined above is 10. The wound threshold is  calculated
+    // from that value. The expected wound threshold for a value of 10 is 7.
+    const expectedThreshold = 7;
+
+    beforeEach(() => {
+      healthDecorator(char);
+    });
+
+    it("should be a getter", () => {
+      const getter = getGetter(char.health, "woundThreshold");
+      expect(getter).to.be.a("function");
+    });
+
+    it("should be calculated from the toughness val", () => {
+      expect(char.health.woundThreshold).to.eql(expectedThreshold);
+    });
+
+    it("should be calculated from the toughness val + the effects sum", () => {
+      // Stub the effect sum calculator to always return non-0 for the
+      // woundThreshold key
+      char._effects._sum = x => (x == "woundThreshold" ? 3 : 0);
+      expect(char.health.woundThreshold).to.eql(expectedThreshold + 3);
+    });
+  });
+
   describe("recoveryTests", () => {
     beforeEach(() => {
       char.health.recoveryTests = {};

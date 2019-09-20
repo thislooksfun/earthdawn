@@ -1,6 +1,5 @@
 import attributesDecorator from "@/charDecorator/decorators/attributes";
-
-const getterFor = (obj, key) => Object.getOwnPropertyDescriptor(obj, key).get;
+import getGetter from "@t/utils/get-getter";
 
 const attrNames = ["dex", "str", "tou", "per", "wil", "cha"];
 
@@ -9,7 +8,7 @@ describe("Attributes decorator", () => {
     // Need to make a simple empty "struct" so it doesn't error
     const char = { race: { baseStats: { attrs: {} } } };
     attributesDecorator(char);
-    expect(getterFor(char.attrs, attr)).to.be.a("function");
+    expect(getGetter(char.attrs, attr)).to.be.a("function");
   });
 
   describe.each(attrNames)("calculations for %s", attr => {

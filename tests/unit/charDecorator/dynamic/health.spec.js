@@ -70,13 +70,11 @@ describe("Health decorator", () => {
     });
 
     it("should be a getter", () => {
-      healthDecorator(char);
       const getter = getGetter(char.health, "deathThreshold");
       expect(getter).to.be.a("function");
     });
 
     it("should be calculated from the unconsciousnessThreshold + toughness step", () => {
-      healthDecorator(char);
       expect(char.health.deathThreshold).to.eql(expectedThreshold);
     });
 
@@ -84,7 +82,6 @@ describe("Health decorator", () => {
       // Stub the effect sum calculator to always return non-0 for the
       // deathThreshold key
       char._effects._sum = x => (x == "deathThreshold" ? 3 : 0);
-      healthDecorator(char);
       expect(char.health.deathThreshold).to.eql(expectedThreshold + 3);
     });
   });
@@ -120,13 +117,11 @@ describe("Health decorator", () => {
       });
 
       it("should be a getter", () => {
-        healthDecorator(char);
         const getter = getGetter(char.health.recoveryTests, "perDay");
         expect(getter).to.be.a("function");
       });
 
       it("should be from the toughness val", () => {
-        healthDecorator(char);
         expect(char.health.recoveryTests.perDay).to.eql(expectedCount);
       });
 
@@ -134,7 +129,6 @@ describe("Health decorator", () => {
         // Stub the effect sum calculator to always return non-0 for the
         // deathThreshold key
         char._effects._sum = x => (x == "recoveryTestsPerDay" ? 3 : 0);
-        healthDecorator(char);
         expect(char.health.recoveryTests.perDay).to.eql(expectedCount + 3);
       });
     });
@@ -150,13 +144,11 @@ describe("Health decorator", () => {
       });
 
       it("should be a getter", () => {
-        healthDecorator(char);
         const getter = getGetter(char.health.recoveryTests, "step");
         expect(getter).to.be.a("function");
       });
 
       it("should be from the toughness step", () => {
-        healthDecorator(char);
         expect(char.health.recoveryTests.step).to.eql(expectedStep);
       });
 
@@ -164,7 +156,6 @@ describe("Health decorator", () => {
         // Stub the effect sum calculator to always return non-0 for the
         // deathThreshold key
         char._effects._sum = x => (x == "recoveryTestStep" ? 3 : 0);
-        healthDecorator(char);
         expect(char.health.recoveryTests.step).to.eql(expectedStep + 3);
       });
     });

@@ -9,52 +9,36 @@ export default function(char) {
     },
   } = char;
 
+  const calculateFor = attr => {
+    const val = baseAttrs[attr] + char._effects._sum(`${attr}Val`);
+    const step_raw =
+      calculateStepForValue(val) + char._effects._sum(`${attr}Step`);
+    const step = step_raw - char.health.wounds;
+    return { val, step_raw, step };
+  };
+
   // Use getters as these rely on other parameters
   char.attrs = {
     // Physical
     get dex() {
-      const val = baseAttrs.dex + char._effects._sum("dexVal");
-      const step_raw =
-        calculateStepForValue(val) + char._effects._sum("dexStep");
-      const step = step_raw - char.health.wounds;
-      return { val, step_raw, step };
+      return calculateFor("dex");
     },
     get str() {
-      const val = baseAttrs.str + char._effects._sum("strVal");
-      const step_raw =
-        calculateStepForValue(val) + char._effects._sum("strStep");
-      const step = step_raw - char.health.wounds;
-      return { val, step_raw, step };
+      return calculateFor("str");
     },
     get tou() {
-      const val = baseAttrs.tou + char._effects._sum("touVal");
-      const step_raw =
-        calculateStepForValue(val) + char._effects._sum("touStep");
-      const step = step_raw - char.health.wounds;
-      return { val, step_raw, step };
+      return calculateFor("tou");
     },
 
     // Mental
     get per() {
-      const val = baseAttrs.per + char._effects._sum("perVal");
-      const step_raw =
-        calculateStepForValue(val) + char._effects._sum("perStep");
-      const step = step_raw - char.health.wounds;
-      return { val, step_raw, step };
+      return calculateFor("per");
     },
     get wil() {
-      const val = baseAttrs.wil + char._effects._sum("wilVal");
-      const step_raw =
-        calculateStepForValue(val) + char._effects._sum("wilStep");
-      const step = step_raw - char.health.wounds;
-      return { val, step_raw, step };
+      return calculateFor("wil");
     },
     get cha() {
-      const val = baseAttrs.cha + char._effects._sum("chaVal");
-      const step_raw =
-        calculateStepForValue(val) + char._effects._sum("chaStep");
-      const step = step_raw - char.health.wounds;
-      return { val, step_raw, step };
+      return calculateFor("cha");
     },
   };
 }

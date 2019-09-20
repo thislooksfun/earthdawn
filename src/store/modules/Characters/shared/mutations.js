@@ -7,7 +7,15 @@ export default {
   },
 
   SAVE_CHARACTER(state, character) {
-    character.uuid = character.uuid || uuidv4();
+    if (character.uuid == null) {
+      // Ensure that, in the *astronomically* small chance that two UUIDs
+      // conflict that no characters will be overwritten.
+      let uuid;
+      do {
+        uuid = uuidv4();
+      } while (state.characters[uuid] != null);
+      character.uuid = uuid;
+    }
     Vue.set(state.characters, character.uuid, character);
   },
   DELETE_CHARACTER(state, uuid) {

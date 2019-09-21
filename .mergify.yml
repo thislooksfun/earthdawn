@@ -11,8 +11,7 @@ pull_request_rules:
       # Security check
       - status-success=DeepScan
       - status-success=security/snyk - package.json (thislooksfun)
-      #   LGTM uses status neutral and success to both mean all is well
-      - "-status-failure=LGTM analysis: JavaScript"
+      - "status-neutral=LGTM analysis: JavaScript"
       # Coverage check
       - status-success=codecov/patch
       - status-success=codecov/project
@@ -38,8 +37,7 @@ pull_request_rules:
       # Security check
       - status-success=DeepScan
       - status-success=security/snyk - package.json (thislooksfun)
-      #   LGTM uses status neutral and success to both mean all is well
-      - "-status-failure=LGTM analysis: JavaScript"
+      - "status-neutral=LGTM analysis: JavaScript"
       # Coverage check
       - status-success=codecov/patch
       - status-success=codecov/project

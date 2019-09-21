@@ -3,36 +3,47 @@ const defenseRatingForValue = v => 2 + Math.floor((v - 1) / 2);
 
 export default function(char) {
   char.characteristics = {
-    get defense() {
-      return {
-        physical:
+    defense: {
+      get physical() {
+        return (
           defenseRatingForValue(char.attrs.dex.val) +
-          char._effects._sum("physicalDefense"),
-        mystic:
+          char._effects._sum("physicalDefense")
+        );
+      },
+      get mystic() {
+        return (
           defenseRatingForValue(char.attrs.per.val) +
-          char._effects._sum("mysticDefense"),
-        social:
+          char._effects._sum("mysticDefense")
+        );
+      },
+      get social() {
+        return (
           defenseRatingForValue(char.attrs.cha.val) +
-          char._effects._sum("socialDefense"),
-      };
+          char._effects._sum("socialDefense")
+        );
+      },
     },
 
-    get armor() {
-      // There is no base stat for armor, only those given by items and/or
-      // other abilities, all of which expose the result via effects.
-      return {
-        physical: char._effects._sum("physicalArmor"),
-        mystic: char._effects._sum("mysticArmor"),
-      };
+    // There is no base stat for armor, only those given by items and/or
+    // other abilities, all of which expose the result via effects.
+    armor: {
+      get physical() {
+        return char._effects._sum("physicalArmor");
+      },
+      get mystic() {
+        return char._effects._sum("mysticArmor");
+      },
     },
 
-    get shield() {
-      // There is no base stat for shield, only those given by items and/or
-      // other abilities, all of which expose the result via effects.
-      return {
-        physical: char._effects._sum("physicalShield"),
-        mystic: char._effects._sum("mysticShield"),
-      };
+    // There is no base stat for shield, only those given by items and/or
+    // other abilities, all of which expose the result via effects.
+    shield: {
+      get physical() {
+        return char._effects._sum("physicalShield");
+      },
+      get mystic() {
+        return char._effects._sum("mysticShield");
+      },
     },
 
     get movementRate() {
@@ -48,8 +59,8 @@ export default function(char) {
       // Base value
       let cc = 5;
       // Sum up to desired level
-      for (let i = 0; i < strVal; i++) {
-        cc += 5 * Math.floor(i / 5);
+      for (let i = 0; i <= strVal; i++) {
+        cc += 5 * Math.ceil(i / 5);
       }
       return cc + char._effects._sum("carryingCapacity");
     },

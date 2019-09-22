@@ -1,0 +1,122 @@
+name:
+  singular: Orc
+  plural: Orcs
+
+spokenLanguage: Or'zet
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 10
+    str: 13
+    tou: 11
+    per: 10
+    wil: 8
+    cha: 9
+  movementRate: 12
+  karmaMod: 5
+
+racialAbilities:
+  Gahad:
+    description:
+      Gahad is largely a roleplaying concept, best described as a physical
+      sensation similar to intense heartburn.
+
+      It is triggered by certain circumstances or situations, causing orks to
+      feel a drive to eradicate the situation triggering the gahad or take
+      revenge on the perpetrator. Each ork experiences gahad in response to
+      unique circumstances or stimuli, and different orks feel this impulse to
+      greater or lesser degrees.
+
+      For groups that want to use some game rules to enforce gahad, they should
+      describe a couple of impulses that always trigger gahad, using short sentences.
+
+      For example, a player might specify that “Grisalk’s gahad is triggered
+      when his mother is insulted.” The player may specify limits or exceptions
+      for these triggers, for example that “Grisalk’s gahad is triggered when
+      his mother is insulted, except by someone in the family.”
+
+      When his gahad is triggered, the player may choose to have his character
+      give in to it or try to resist the impulse. To resist gahad, the character
+      has to succeed at a Willpower (6) Test, requiring a success level based on
+      how severe the trigger is. In the above example, an ambiguous comment
+      about Grisalk’s mother may only require a single success, while an obvious
+      and vicious obscenity could require three (or more) successes.
+
+      Successfully resisting, or “swallowing”, gahad causes a gahad hangover.
+      The hangover begins within an hour of swallowing gahad and lasts for one
+      hour per success required on the original Willpower Test. The hangover
+      manifests as localized pains and cramps, headaches, and in extreme cases,
+      hallucinations about the object of the trigger. While it lasts, the
+      character is considered Harried (p. 388).
+
+      When giving in to gahad (or if the attempt to resist it fails), the
+      character is driven to end the stimuli that triggered gahad, or take
+      revenge on a character that caused it. In the above example, Grisalk would
+      react violently towards the person who insulted his mother or, if the
+      insult consisted of an obscene picture drawn on a wall, he would destroy
+      the picture. This drive lasts for as long as the hangover would have
+      lasted, regardless of whether or not a resistance test was attempted. The
+      character gets a +1 bonus to any Action or Effect test made towards ending
+      the stimulus or taking revenge, for example to attack the insulting party
+      or tear down the wall.
+
+      Gahad is not intended to be a game mechanic giving orks a test bonus on
+      every flimsy excuse. The use and application of gahad, and the bonuses or
+      penalties it confers, are always at the discretion of the gamemaster. In
+      addition, violent reactions, while common, are not a requirement to a
+      triggered gahad—any kind of forceful, decisive action could satisfy the
+      urge to act.
+
+  Low-Light Vision:
+    description:
+      Low-Light Vision allows a character to see at much lower light levels than
+      humans. For a character with Low-Light Vision, a single torch easily
+      illuminates a 30-yard by 30-yard meeting hall.
+
+      Starlight provides plenty of light on a clear night, and even on a night
+      shrouded by thick cloud cover the character can see as well as a human
+      sees at dusk. Characters with Low-Light Vision are no more susceptible to
+      flash-blindness than humans. Complete darkness—the complete absence of
+      light—will render a character with Low-Light Vision unable to see, like
+      other characters requiring normal vision.
+
+# Flavor
+
+quote:
+  text: Much of our history and culture has been forgotten, swallowed by the
+    jungle and lost to the Scourge. Today we are free, but we must never forget
+    where we came from, and why we fight.
+  by: Rogan Crossbite, rider with Asok’s Armbreakers
+
+description:
+  Orks are tall and powerfully built, averaging about six feet in height and
+  weighing over 200 pounds. They are more muscular than humans, and two large
+  lower canines protrude from their mouth and cover their upper lip. Their body
+  hair is coarse, and facial and head hair is frequently the texture of fine
+  wire. Skin color ranges from beige to olive green, with tan, pinkish-white, or
+  ebony possible, but less common.
+
+  Orks are impulsive and their emotions burn swift and hot, a trait they call
+  gahad. They anger quickly, and are just as quick to form friendships. When an
+  ork is driven to act, they act, and some individuals report physical
+  discomfort when they “swallow their gahad.” While this tendency can cause
+  problems for their companions, orks generally consider gahad as a positive
+  thing, a spiritual fire pushing them forward.
+
+  With a lifespan averaging only 40 years, orks tend to seize life by the throat
+  and get the most out of it they can. Given their emotional and impulsive
+  natures, ork families tend to be sprawling affairs of half-siblings, aunts,
+  uncles and cousins.
+
+  The most common social group is a tribe or clan, living a nomadic existence on
+  the plains of Barsaive. Even the reborn kingdom of Cara Fahd is not much more
+  than an affiliation of multiple tribes and clans. Still, the orks are taking
+  to nation-building as fiercely as anything else they attempt.
+
+  While all the races have faced the prospect of slavery at the hands of the
+  Theran Empire, the orks have a longer and deeper history with the institution.
+  Ork legends tell that at one time, they were all slaves until they won their
+  freedom centuries before the Scourge. As a result of this cultural legacy,
+  many orks believe freedom to be one of the highest ideals in existence.

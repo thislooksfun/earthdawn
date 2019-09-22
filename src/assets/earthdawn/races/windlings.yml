@@ -1,0 +1,117 @@
+name:
+  singular: Windling
+  plural: Windlings
+
+spokenLanguage: Windling
+
+baseStats:
+  attrs:
+    dex: 11
+    str: 4
+    tou: 8
+    per: 11
+    wil: 10
+    cha: 12
+  movementRate: 6
+  karmaMod: 6
+
+racialAbilities:
+  Astral Sight:
+    # TODO: Figure out talent effects
+    # BODY: This racial ability allows windlings to learn the talent Astral
+    # BODY: Sight at rank 0. This talent should be added to the "talents"
+    # BODY: section. In order to do so, however, the most rebust way would be to
+    # BODY: make it an effect that adds a talent.
+    # effects!:
+    #   talents:
+    #     Astral Sight: 0, novice
+    description:
+      All windlings have access to the Astral Sight Talent (see p. 129).
+      Windling adepts starting play with no Ranks assigned to their Astral Sight
+      talent know it at Rank 0. They may purchase Ranks for the talent during
+      the game using Legend Points, just like other talents, treating it as a
+      Novice talent.
+  Flight:
+    effects!:
+      canFly: true
+      flyingMovementRate: 16
+    description:
+      "Windlings can fly, but it is not their primary method of movement. Flying
+      tires them quickly and windlings usually limit their flights to short
+      periods of around fifteen to twenty minutes. When flying for extended
+      periods of time, a windling may suffer Strain. After 20 minutes in flight
+      a windling must make a Toughness (5) test. Failure means the character
+      takes 1 Strain. Each five-minute period spent flying beyond the additional
+      twenty minutes requires an additional Toughness test with a cumulative +2
+      modifier.
+
+      Brief interruptions do not reset the time spent flying, it reduces it on a
+      one-to-one basis: a windling who has spent twenty minutes in flight and
+      then rests five minutes can only fly for five more minutes before having
+      to make Toughness Tests again.
+
+      Though windling wings are durable, they become heavy and fragile when wet,
+      severely impairing the windling’s ability to fly. When soaked with water,
+      like falling into a stream or in heavy rain, their flight duration is
+      reduced from twenty minutes to five, and the Difficulty Number of the
+      Toughness tests increases by +2 every minute, instead of every five. When
+      flying with wet wings, the windling is considered Harried (see p. 388).
+      Windling wings dry within ten minutes of being in a dry place, or within
+      five minutes of being in a warm place, such as in front of a fire."
+  Increased Physical Defense:
+    effects!:
+      physicalDefense: 2
+    description: The natural mobility of windlings, combined with their small
+      size, adds +2 to their Physical Defense.
+
+# Flavor
+
+quote:
+  text:
+    Do not mistake size of body for size of heart. We may be small in stature,
+    but we make up for it in spirit. We live life with a passion that none can
+    match. We’ll guard your back and protect your loved ones. Look to the skies!
+    An army of windlings is a terrible thing, aren’t you glad it was only me?
+  by: Bonal, Swordmaster
+
+description:
+  "Windlings are small winged Namegivers, standing around 18 inches tall and
+  weighing about 13 pounds. Windlings have paired wings similar to a dragonfly,
+  and can fly for limited stretches at a time. A windling’s skin and hair color
+  match the brightest-colored features of their home environment: the icy white
+  of a snowy mountain, the red and yellow of wildflowers, even the glazed blue
+  of city roof tiles. After a windling has lived in the same place for three or
+  four months, their skin color will change to match their new home.
+
+  They have almost no body hair, but the hair on their heads is thick and rich
+  for their size. Their ears come to an even sharper point than elven ears.
+
+  Windlings mature slowly, reaching adulthood by around age thirty, though their
+  general attitude can frequently come across as childlike, even in older
+  individuals. The average windling lifespan is roughly 170 years, and they do
+  not appear to physi- cally age during their lifetime.
+
+  While their small size and somewhat fragile nature makes them more aware of
+  the world’s dangers, windlings love traveling and experiencing new things.
+  Indeed, they have a passion and zest for life that few can equal, though their
+  curiosity and fascination with new experiences can come across as flighty and
+  unfocused.
+
+  Windlings typically live in forested areas, in dwellings made from the local
+  environment. Their society is best described as haphazard—members of a clan
+  frequently bring back practices and fads they pick up in their travels, so
+  there can be little con- sistency from village to village. There are tales of
+  windling nobles, but scholars believe this to be no more than a rumor.
+
+  Windlings frequently have a live and let live attitude, but their ability to
+  fly gives them a strong love of freedom and as a general rule they abhor
+  slavery.
+
+  They are a gregarious and outgoing people, and their love of life is
+  frequently expressed through finding the bright side of things. They have a
+  reputation among the other races as in- corrigible pranksters, and their
+  almost permanent perky and optimistic attitude can come across as grating.
+
+  Perhaps more than any other Namegiver race, windlings are in tune with the
+  magic of the world. Almost all windlings can sense the magical world, and
+  windling adepts have been known to develop this ability to high degrees."

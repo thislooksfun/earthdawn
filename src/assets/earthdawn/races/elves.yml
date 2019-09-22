@@ -1,0 +1,56 @@
+name:
+  singular: Elf
+  plural: Elves
+
+spokenLanguage: Sperethiel
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 12
+    str: 10
+    tou: 8
+    per: 11
+    wil: 11
+    cha: 11
+  movementRate: 14
+  karmaMod: 4
+
+racialAbilities:
+  Low-Light Vision:
+    description:
+      Low-Light Vision allows a character to see at much lower light levels than
+      humans. For a character with Low-Light Vision, a single torch easily
+      illuminates a 30-yard by 30-yard meeting hall.
+
+      Starlight provides plenty of light on a clear night, and even on a night
+      shrouded by thick cloud cover the character can see as well as a human
+      sees at dusk. Characters with Low-Light Vision are no more susceptible to
+      flash-blindness than humans. Complete darkness—the complete absence of
+      light—will render a character with Low-Light Vision unable to see, like
+      other characters requiring normal vision.
+
+# Flavor
+
+quote:
+  text: the quote at the top of the section
+  by: who the quote is by
+
+description: The description of the race
+# Elves
+# The loss of Wyrm Wood and the corruption of the elven court is a tragedy. It is made worse by Alachia’s insistence that her court is still the
+# center of our culture. Any who speak out against this state of
+# affairs finds themselves in one of her many dungeons. This
+# should not stand, but many of our kin would rather ignore these truths than face them.
+#  — Monus Byre, leader of the Seekers of the Heart
+# Elves are tall and thin, averaging over six feet in height and weighing about 150 pounds. Their facial features ap- pear symmetrical, almost uncannily so, and even other rac- es tend to find elves attractive. Skin color can vary, ranging from almost pure white to tan, brown, even midnight black. Some rare individuals are even pale green, or an iridescent mother-of-pearl color called cetharel. Their body hair is fine and sparse, but facial and head hair
+# is commonly long and luxuriant with colors ranging from white blond to brown, and black, with naturally occurring blue, violet or metallic colors being rare but not unheard of.
+# Elves have long, pointed ears and move with a natural grace, but their slight build makes them a little more sus- ceptible to injury. They reach physical maturity in their
+# early twenties, and have a natural lifespan of nearly
+# three hundred years—though some individuals have been known to live longer.
+# Elves revere nature and beauty, and have an affinity with magic and the natural world. They prefer living in open areas, especially ones that blend into the environ- ment. These traits, along with their keen vision and grace, result in artists and ma- gicians being common. Those of a more martial bent are attracted to the Archer and Swordmaster Disciplines.
+# 45
+
+#  Elves are mainly loyal to their family, feeling that blood ties are the most binding relationship in their lives. Tribal or national ties are weaker, though it is not uncom- mon for an elf to view their village or town as an extended family.
+# Prior to the Scourge, Wyrm Wood was seen as the center of elven culture, and most elves felt some loyalty to the court. These days, however, the Ritual of Thorns and the court’s isolationist attitudes have led some elves to see themselves as a lost people, and the Blood Elves are an all too painful reminder of how the Horrors were not responsible for all that was lost during the Scourge.

@@ -6,6 +6,4 @@ files.keys().forEach(key => {
   decorators.push(files(key).default);
 });
 
-console.log("decorators", decorators);
-
 export default decorators;

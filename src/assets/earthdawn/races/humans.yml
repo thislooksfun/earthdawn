@@ -1,0 +1,66 @@
+name:
+  singular: Human
+  plural: Humans
+
+spokenLanguage: Human
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 10
+    str: 10
+    tou: 10
+    per: 10
+    wil: 10
+    cha: 10
+  movementRate: 12
+  karmaMod: 5
+
+racialAbilities:
+  Versatility:
+    effects!:
+      knownTalents:
+        Versatility: 0
+    description:
+      "Human adepts have a special racial talent available to them from First
+      Circle: Versatility. This talent al- lows them to learn talents from
+      Disciplines other than their own (see the Talents chapter, p. 118, for a
+      full description).
+
+      Human adepts starting play with no Ranks assigned to their Versatility
+      talent know it at Rank 0. They may purchase ranks for it during the game
+      using Legend Points, just like other talents, treating it as a Novice
+      talent. Non-adept humans cannot learn the Versatility talent."
+
+# Flavor
+
+quote:
+  text: We may not be as strong as the trolls, or as swift as the elves. We do
+    not have the numbers of the orks, or the kingdoms of the dwarfs. What we
+    lack in those areas, we make up for in adaptability. While we may sometimes
+    be overlooked, Barsaive would not be where it is without us. We fill in the
+    gaps left by the other races, the grease that keeps the wheel of
+    civilization turning.
+  by: Kelryn Stormspear, commander of the Far Strider Mercenaries
+
+description:
+  Humans average between five and a half and six feet tall, and weigh 160
+  pounds. They produce less body hair than most other races except elves. Skin
+  tone ranges from pinkish-white to tan and dark chocolate. Their ears are small
+  and rounded. Humans reach physical maturity in their teens, and tend to live
+  about seventy-five years, though some can live up to a century.
+
+  Humans are scattered across the land, living alongside the other races of
+  Barsaive. They are seldom the largest racial group in a town or city, but they
+  are found almost everywhere. In many communities, they take on the roles other
+  races are not as suited to. The only consistent thing that can be said about
+  humans is that they can be found just about anywhere, doing just about
+  anything.
+
+  Humans feel a natural loyalty to their family, but easily trans- fer that
+  loyalty to larger social groups like cities and kingdoms. However, they do not
+  have the same tendency to organize that dwarfs do, so large, dedicated human
+  communities remain rare. This doesn’t prevent humans from rising to
+  influential positions in other places, but humans in pres- ent-day Barsaive
+  sometimes seem to be happiest when they can fill in where they are needed.

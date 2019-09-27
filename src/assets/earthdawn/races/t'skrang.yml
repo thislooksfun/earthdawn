@@ -1,0 +1,60 @@
+name:
+  singular: T'skrang
+  plural: T'skrang
+
+spokenLanguage: T'skrang
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 11
+    str: 10
+    tou: 11
+    per: 10
+    wil: 10
+    cha: 11
+  movementRate: 12
+  karmaMod: 4
+
+racialAbilities:
+  Tail Combat:
+    # TODO: Figure out weapon effects
+    # BODY: This racial ability allows T'skrang to use their tails in combat
+    # BODY: as a weapon. This attack should be added to the "weapons" section
+    # BODY: once that is implemented. In order to do so, however, the most
+    # BODY: rebust way would be to make it an effect that adds a weapon.
+    # effects!:
+    #   weapons:
+    #     - tail
+    description: T’skrang often make use of their tails when engaged in combat.
+      A t’skrang can use his tail to whip at opponents in unarmed combat much
+      like striking with an arm or kicking with a leg, using an appropriate
+      unarmed combat talent or skill for any Attack tests. The Damage Step used
+      is the character’s Strength Step, unless modified by abilities that
+      enhance unarmed combat Damage. A t’skrang may also attach a melee weapon
+      of up to Size 2 to his tail, and this is treated as an Attached Weapon
+      (see p. 406). Tail Combat allows t’skrang to use the Tail Attack Combat
+      Option (see p. 386).
+
+# Flavor
+
+quote:
+  text: Why are you obsessed with origins? The story of my people changes with
+    the river, flowing from the high springs down to the sea. Ride the waves
+    before you, and navigate tomorrow’s rapids when the current takes you there.
+    magic have—thus far—met with failure.
+  by: K’dan Whitecrest, Captain of the Dauntless
+
+description:
+  T’skrang are reptilian beings that stand 5 feet 9 inches tall on average, with a tail that adds another five to six feet in length. They typically weigh around 200 pounds, of which the tail can be as much as a quarter. Skin color ranges from yellow-green to emerald and aquamarine, with deep blue and sunset red variants also possible. T’sk- rang are hairless, but most individuals sport a head crest of some sort. Their ears are small and cauliflower-shaped.
+  T’skrang are semi-aquatic, living on and around the lakes and rivers of Barsaive. They love to swim and tend to get irritable when they can’t regularly submerge them-
+  selves in water.
+  Their villages and towns are frequently housed in underwater domes, with tow-
+  ers that reach to the water’s surface, with facilities to dock riverboats and ferries. These communities are made up of tightly-knit, com- munal groups called nialls, with the entire niall an extended family that follows a matriarch called a lahala. Sometimes several nialls will band together to form an aropagoi, or
+  great house, which will follow a shivalahala.
+  T’skrang lay eggs, which take eight to ten months to hatch. The eggs of a niall are incubated together in a special room in the village, and after hatching the young are raised together. As a result, t’skrang do not generally know who their egg-mother is, and
+  view their egg-mates as siblings.
+  Young t’skrang come into the world with their gender unknown. When they undergo puberty after their first decade, their sex is revealed. T’skrang live an average of 80 years, though tales of individuals living well over a century are not unheard of. The t’skrang are known as merchants and traders, sailing their riverboats up and down the length of the Serpent Riv- er and its tributaries. The riverboats are driven by magical engines powered by elemental air and fire, and their op- eration is a closely guarded secret. Attempts by dwarf scholars and engi- neers to unlock the mysteries of this
+
+  T’skrang have a flair for the dramatic, and their culture reveres the ideals of fear- lessness, passion, and bravery. Other races frequently interpret this as mere bravado. Because of the communal nature of their villages, t’skrang do very well in groups, and are a sociable people. They frequently consider other Namegivers as dull and boring, while the other races consider them flamboyant and foolish.

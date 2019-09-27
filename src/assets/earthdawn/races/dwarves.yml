@@ -1,0 +1,81 @@
+name:
+  singular: Dwarf
+  plural: Dwarves
+
+spokenLanguage: Throalic
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 9
+    str: 10
+    tou: 12
+    per: 11
+    wil: 11
+    cha: 10
+  movementRate: 10
+  karmaMod: 4
+
+racialAbilities:
+  Heat Sight:
+    description:
+      Characters with Heat Sight can see heat radiated by another character or
+      object, which translates into different colors. The colors depend on the
+      relative heat given out by an object. The hottest objects show up as
+      white, with the spectrum dropping through red, orange, yellow, green,
+      blue, and down into violet or even black for the coldest objects.
+
+      Heat Sight tends to fade into the background the more light is present,
+      but it allows the character to see in the dark, at the expense of detail.
+
+      Magical effects that limit normal sight, for example magical darkness,
+      also affect Heat Sight, and Heat Sight does not penetrate objects.
+  Strong Back:
+    effects!:
+      carryingCapacityStrVal: 2
+    description:
+      Dwarf characters have a +2 bonus to their Strength for the purposes of
+      determining carrying capacity.
+
+# Flavor
+
+quote:
+  text: Our trade caravans travel the land, carrying our goods to the elves,
+    humans, t’skrang, and even the orks. Those same caravans bring their riches
+    home to us. But just because we trade with the other races, it doesn’t mean
+    we want them living next door.
+  by: Amelanna of House Chaozun
+
+description:
+  Dwarfs are short and stocky, averaging just over four feet in height, and
+  weighing about 120 pounds. Their hair is thick and abundant, especially the
+  hair on their heads, and male dwarfs commonly grow long beards, well-groomed
+  and sometimes braided into elaborate patterns. Their skin tones range from
+  pale pinkish-white to dark ebony, largely divided along tribal lines.
+
+  Dwarfs are broad-chested, tough, and strong for their size. Their short legs
+  are ill-suited to running, and also make it difficult for them to swim or ride
+  horses. As a result, dwarfs prefer riding in carts, using ponies, or other
+  animals better suited to their propor- tions. Their ears are gently pointed,
+  less so than elves and windlings. Dwarfs reach physical maturity in their late
+  teens, and tend to live for about 100 years.
+
+  Dwarfs have an affinity for the earth, feeling a kinship with stone and metal.
+  This, coupled with a strong inclination for organization and attention to
+  detail, makes them a race of builders and craftsmen. Indeed, this tendency is
+  what led the Therans to appoint the dwarfs of Throal as the province’s
+  administrators before the Scourge, and helped Throal become the dominant power
+  in Barsaive in the decades after the Scourge.
+
+  A dwarf’s first loyalty is to their family and tribe, but they easily transfer
+  that loyalty to their home town, city, or kingdom. Dwarfs prefer to live close
+  to, or even under, the earth, with multiple generations of extended family
+  under the same roof.
+
+  While loyal and efficient, dwarfs can be quick to latch onto a single solution
+  and stubbornly resist change. Dwarfs frequently come across as curt or lacking
+  in social graces, but at the same time they can be friendly and open to those
+  they consider friends. There is nothing a dwarf likes more than talking about
+  his craft to those who show an interest—much to the chagrin of those who don’t
+  care to explore a subject in exhaustive detail.

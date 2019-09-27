@@ -1,0 +1,83 @@
+name:
+  singular: Troll
+  plural: Trolls
+
+spokenLanguage: Troll
+
+# Starting Information
+
+baseStats:
+  attrs:
+    dex: 10
+    str: 14
+    tou: 12
+    per: 9
+    wil: 11
+    cha: 10
+  movementRate: 14
+  karmaMod: 2
+
+racialAbilities:
+  Heat Sight:
+    description:
+      Characters with Heat Sight can see heat radiated by another character or
+      object, which translates into different colors. The colors depend on the
+      relative heat given out by an object. The hottest objects show up as
+      white, with the spectrum dropping through red, orange, yellow, green,
+      blue, and down into violet or even black for the coldest objects.
+
+      Heat Sight tends to fade into the background the more light is present,
+      but it allows the character to see in the dark, at the expense of detail.
+
+      Magical effects that limit normal sight, for example magical darkness,
+      also affect Heat Sight, and Heat Sight does not penetrate objects.
+
+# Flavor
+
+quote:
+  text: Honor is the blood and bone of our people. The other races may use the
+    word, but do not understand it as we do. Our highland cousins forget this,
+    and their anger lessens us all. Act with honor in all things. Respect those
+    who do the same, and remember those who do not.
+  by: Shara Spearcraft, Weaponsmith
+
+description:
+  "Trolls are massive, standing eight and a half feet tall and weighing 500
+  pounds or more on average. Many trolls sport pronounced lower canines similar
+  to orks. Skin color ranges from beige to olive and dark brown, and their skin
+  has a rough texture with minor ridges and plating made of trolthelia, a
+  material similar to rhinoceros horn or deer antler. Trolthelia is also the
+  material that makes up a troll’s most prominent physical feature, the horns
+  that grow from their heads. These horns grow slowly throughout a troll’s life,
+  frequently into asymmetrical shapes.
+
+  Some isolated clans have practices that shape their horns, while others may
+  inscribe runic designs into them.
+
+  Strong and tough, trolls reach maturity in their early teens and live into
+  their fifties. They live primarily in the mountain- ous regions of Barsaive,
+  and due to their size and weight find it difficult to live among the other
+  races. They frequently feel a kinship with obsidimen, who they call “rock
+  brothers”, and find their serenity deeply moving.
+
+  Trolls are fiercely loyal to their families, and organize themselves into
+  clans and moots—an alliance of several clans.
+
+  The largest population of trolls in Barsaive—the Crystal Raiders of the
+  Twilight Peaks—are known for their airships, which they use to raid lowland
+  settlements and caravans, carrying the spoils back to their mountain homes.
+  The clans of the Twilight Peaks are believed to have been the originators of
+  the Sky Raider Discipline, and trolls are the most common race to practice
+  that Discipline to this day.
+
+  Trolls place great value on honor, following complex rules and guidelines for
+  personal behavior that frequently baffle other races. There are three main
+  concepts in troll honor: katorr, kat’ral, and katera, loosely translated as
+  personal, clan, and racial honor. Individual trolls define these values in
+  different ways and to varying degrees, and a troll that lives among other
+  Namegivers is less likely to react violently to an insult than a Crystal
+  Raider, but a troll will defend his honor if he believes it has been slighted.
+  Highland trolls guilty of crimes against honor will sometimes have their horns
+  cut off, marking them as kava, or “mud people”, and exiled from troll society.
+  Some trolls voluntarily undergo this punishment as a way of maintaining
+  personal honor, and take pride in their status as outcasts."

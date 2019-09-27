@@ -89,7 +89,7 @@ export default {
 
   // Talents
   talents: {
-    // <name>: <rank> || "free",
+    // <name>: <rank>,
   },
   // array is keyed on the 0-based circle of the slot
   talentOptions: [
@@ -99,12 +99,8 @@ export default {
     // },
   ],
   skills: {
-    "Speak Language": {
-      rank: 2,
-    },
-    "Read and Write Language": {
-      rank: 1,
-    },
+    "Speak Language": 2,
+    "Read and Write Language": 1,
   },
 
   // Talent Knacks

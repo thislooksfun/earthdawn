@@ -5,8 +5,12 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "Talents": ["src/assets/earthdawn/talents"],
-      "Disciplines": ["src/assets/earthdawn/disciplines"]
+      "@t/*": ["tests/*"],
+
+      "Disciplines": ["src/assets/earthdawn/disciplines"],
+      "Races": ["src/assets/earthdawn/races"],
+      "Skills": ["src/assets/earthdawn/skills"],
+      "Talents": ["src/assets/earthdawn/talents"]
     }
   },
   "exclude": ["node_modules", "dist"]

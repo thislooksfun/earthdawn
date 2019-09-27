@@ -1,5 +1,9 @@
 const chai = require("chai");
 
+// "Stub" the "require.context" function
+import registerRequireContextHook from "babel-plugin-require-context-hook/register";
+registerRequireContextHook();
+
 // Code taken from https://medium.com/@RubenOostinga/combining-chai-and-jest-matchers-d12d1ffd0303
 // on Sept 11, 2019
 // ================

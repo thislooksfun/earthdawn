@@ -1,24 +1,39 @@
 name: <name>
 isSpellcaster: false
-durability: 4
+durability: -1
 threadType: <type>
+importantAttrs:
+  - cha
+  - dex
+  - wil
+
+description: <desc>
+
+karmaRitual: <ritual>
+
+artisanSkills:
+  - Skill 1
+  - Skill 2
+
+halfMagic: <desc>
+
 talentOptions:
   novice:
-    - First Talent
-    - Second Talent
+    - First
+    - Second
   journeyman:
-    - First Talent
-    - Second Talent
+    - First
+    - Second
 
 circles:
   # First circle
-  - defense:
-      mystic: 1
-      physical: 1
-      social: 1
+  - circleEffects:
+      mysticDefense: 1
+      physicalDefense: 1
+      socialDefense: 1
+      initiative: 1
     freeTalents:
       - "First Talent"
-    initiative: 1
     karma:
       on_interaction_tests: true
       on_damage_tests:

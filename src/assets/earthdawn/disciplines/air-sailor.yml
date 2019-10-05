@@ -93,7 +93,7 @@ circles:
       on_interaction_tests: true
     talents:
       - Heartening Laugh
-    # TODO: Implment Actions
+    # TODO: Implement Actions
     # BODY: Some disciplines grant an action that can be taken that is neither
     # BODY: a talent or a skill, and thus needs to be treated seperately.
     actions:

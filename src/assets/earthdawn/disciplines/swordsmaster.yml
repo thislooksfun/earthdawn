@@ -2,6 +2,9 @@ name: Swordsmaster
 isSpellcaster: false
 durability: 7
 threadType: Weapon Weaving
+importantAttrs:
+  - cha
+  - dex
 
 talentOptions:
   novice:

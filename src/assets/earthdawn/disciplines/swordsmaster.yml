@@ -70,7 +70,7 @@ circles:
       - Disarm
 
   # Seventh circle
-  - initiative: 1,
+  - initiative: 1
     talents:
       - Resist Taunt
 

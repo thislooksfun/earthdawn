@@ -34,15 +34,53 @@
           <td>{{ talent.step }}</td>
           <td>{{ talent.actionDice }}</td>
         </tr>
+
+        <tr>
+          <td colspan="7">
+            <center><b>Talent Options</b></center>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <select v-model="talentOptionName">
+              <option disabled value>Please select one</option>
+              <option
+                v-for="t in availableTalentOptions"
+                :key="t.name"
+                :value="t.name"
+                >{{ t.name }}</option
+              >
+            </select>
+          </td>
+          <td>{{ talentOption.action }}</td>
+          <td>{{ talentOption.strain }}</td>
+          <td>{{ talentOption.attr }}</td>
+          <td>
+            <base-button
+              v-for="r in [0, 1, 2, 3]"
+              :key="r"
+              size="sm"
+              :type="talentOption.rank == r ? 'primary' : 'secondary'"
+              :disabled="
+                talentOptionName == '' ||
+                  r > remainingPoints + talentOption.rank
+              "
+              @click="setTalentOptionRank(r)"
+              >{{ r }}</base-button
+            >
+          </td>
+          <td>{{ talentOption.step }}</td>
+          <td>{{ talentOption.actionDice }}</td>
+        </tr>
       </tbody>
     </table>
-
-    <!-- TODO: Implement talent options -->
   </div>
 </template>
 
 <script>
 import decorate from "@/charDecorator";
+import talents from "Talents";
 
 export default {
   props: {
@@ -59,6 +97,9 @@ export default {
     setTalentRank(talent, rank) {
       this.$store.dispatch("ccSetTalentRank", { talent, rank });
     },
+    setTalentOptionRank(rank) {
+      this.talentOptionRank = rank;
+    },
   },
   computed: {
     dChar() {
@@ -67,15 +108,46 @@ export default {
     talents() {
       return this.dChar.talents;
     },
+    availableTalentOptions() {
+      return this.dChar.discipline.talentOptions.novice
+        .map(name => talents[name])
+        .reduce((o, t) => ({ ...o, [t.name]: t }), {});
+    },
+    talentOptionRank: {
+      get() {
+        return this.talentOption.rank || 0;
+      },
+      set(rank) {
+        this.$store.dispatch("ccSetTalentOption", {
+          slot: 0,
+          name: this.talentOptionName,
+          rank,
+        });
+      },
+    },
+    talentOptionName: {
+      get() {
+        return this.talentOption.name || "";
+      },
+      set(name) {
+        this.$store.dispatch("ccSetTalentOption", { slot: 0, name, rank: 0 });
+      },
+    },
+    talentOption() {
+      return this.dChar.talentOptions[0] || {};
+    },
     remainingPoints() {
       return (
         8 -
-        // TODO: Factor in talent options... somehow
         Object.values(this.dChar.talents)
           .map(t => t.rank)
-          .reduce((t, v) => t + v, 0)
+          .reduce((t, v) => t + v, 0) -
+        this.talentOptionRank
       );
     },
+  },
+  mounted() {
+    this.$emit("completed", true);
   },
 };
 </script>

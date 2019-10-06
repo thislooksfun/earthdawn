@@ -1,0 +1,15 @@
+name: Danger Sense
+attr: dex
+action: free
+strain: 1
+skill_use: novice
+description:
+  The adept develops a supernatural awareness of danger, allowing him to react
+  more quickly in hazardous situations. This talent may be used when the adept
+  might be Surprised, or when he is trying to avoid a trap or other danger. He
+  makes a Danger Sense test against the Initiative test result of the trap or
+  hazard. If successful, he may act normally, possibly avoiding harm. If being
+  ambushed or otherwise surprised by an attack, the adept avoids the penalty for
+  being surprised if the result of his Danger Sense test is higher than the
+  Initiative result of the attacker. This talent only detects hazards or threats
+  within Danger Sense rank x10 yards.

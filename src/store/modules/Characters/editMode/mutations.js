@@ -47,7 +47,10 @@ export default {
     }
   },
 
-  // TODO: Implement Talent Options
+  // Talent Options
+  SET_TALENT_OPTION(state, { uuid, slot, name, rank }) {
+    Vue.set(state.characters[uuid].talentOptions, slot, { name, rank });
+  },
 
   // TODO: Implement Skills
 

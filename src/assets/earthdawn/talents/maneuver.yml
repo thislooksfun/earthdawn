@@ -1,7 +1,7 @@
 name: Maneuver
+attr: dex
 action: simple
 strain: 1
-attr: dex
 skill_use: novice
 description:
   The adept uses fancy footwork and mobility to gain a superior position against

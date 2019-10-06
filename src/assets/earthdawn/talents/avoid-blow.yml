@@ -1,7 +1,7 @@
 name: Avoid Blow
+attr: dex
 action: free
 strain: 1
-attr: dex
 skill_use: novice
 description:
   The adept avoids injury by dodging or parrying blows directed against him.

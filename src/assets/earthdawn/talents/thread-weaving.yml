@@ -1,7 +1,7 @@
 name: Thread Weaving
+attr: per
 action: standard
 strain: 0
-attr: per
 skill_use: no
 examples:
   - Silar knows the Thread Weaving talent at Rank 3, allowing him to have up to

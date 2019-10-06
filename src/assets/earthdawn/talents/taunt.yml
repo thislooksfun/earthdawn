@@ -1,7 +1,7 @@
 name: Taunt
+attr: cha
 action: simple
 strain: 1
-attr: cha
 skill_use: novice
 description: # Modified for clarity
   The adept distracts a character (who must be able to understand him) by

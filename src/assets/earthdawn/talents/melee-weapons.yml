@@ -1,7 +1,7 @@
 name: Melee Weapons
+attr: dex
 action: standard
 strain: 0
-attr: dex
 skill_use: novice
 description:
   The adept makes an attack in close combat with a hand-held weapon, like a

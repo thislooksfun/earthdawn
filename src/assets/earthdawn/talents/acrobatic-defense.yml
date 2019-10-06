@@ -1,0 +1,15 @@
+name: Acrobatic Defense
+attr: dex
+action: simple
+strain: 1
+skill_use: novice
+description:
+  The adept flips, spins, somersaults, or performs similar acrobatic maneuvers,
+  making him harder to hit. He must be able to move and have sufficient space to
+  maneuver in. The adept makes an Acrobatic Defense test against the highest
+  Physical Defense of any opponents in close combat range (2 yards). The adept
+  adds +2 to his Physical Defense for each success scored for the remainder of
+  the round. If the adept is knocked down or otherwise finds his movement
+  restricted, he loses this bonus.
+
+  Acrobatic Defense cannot be used in the same round as Anticipate Blow.

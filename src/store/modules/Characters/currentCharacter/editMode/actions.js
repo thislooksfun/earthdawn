@@ -55,7 +55,13 @@ export default {
     commit("SET_TALENT_RANK", { uuid: routedUUID(), talent, rank });
   },
 
-  // TODO: Implement Talent Options
+  // Talent Options
+  setTalentOption({ commit }, { slot, name, rank }) {
+    console.log(
+      `Setting talent option slot ${slot} to ${name} at rank ${rank}`
+    );
+    commit("SET_TALENT_OPTION", { uuid: routedUUID(), slot, name, rank });
+  },
 
   // TODO: Implement Skills
 

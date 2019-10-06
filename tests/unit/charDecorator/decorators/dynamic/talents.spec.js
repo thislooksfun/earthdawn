@@ -131,4 +131,72 @@ describe("Talents decorator", () => {
       });
     });
   });
+
+  describe("Mapping talent options", () => {
+    beforeEach(() => {
+      // Stub talent options
+      char._stored.talentOptions = [
+        { name: "TestTalent1", rank: 0 },
+        { name: "TestTalent2", rank: 3 },
+      ];
+      // Apply decorator
+      talentsDecorator(char);
+    });
+
+    it("should augment the character's stored talent option with the full talent", () => {
+      expect(char.talentOptions.length).to.eql(2);
+      expect(char.talentOptions[0].name).to.eql("TestTalent1");
+      expect(char.talentOptions[1].name).to.eql("TestTalent2");
+      // Use some arbetrary key (foo) just to test that it is being passed
+      // through
+      expect(char.talentOptions[0].foo).to.eql("bar1");
+      expect(char.talentOptions[1].foo).to.eql("bar2");
+    });
+
+    describe.each(["rank", "step", "actionDice"])(
+      "char.talentOptions[circle].%s",
+      key => {
+        it("should be a getter", () => {
+          const getter = getGetter(char.talentOptions[0], key);
+          expect(getter).to.be.a("function");
+        });
+      }
+    );
+
+    describe("char.talentOptions[circle].rank", () => {
+      it("should return the stored rank", () => {
+        expect(char.talentOptions[0].rank).to.eql(0);
+        expect(char.talentOptions[1].rank).to.eql(3);
+      });
+    });
+
+    describe("char.talentOptions[circle].step", () => {
+      describe("If the talent has no associated attribute", () => {
+        it("should return the rank", () => {
+          expect(char.talentOptions[0].step).to.eql(char.talentOptions[0].rank);
+        });
+      });
+      describe("If the talent has an associated attribute", () => {
+        it("should return the rank plus the attr step", () => {
+          // Stub the attr step
+          char.attrs = { dex: { step: 4 } };
+          expect(char.talentOptions[1].step).to.eql(
+            char.talentOptions[1].rank + 4
+          );
+        });
+      });
+    });
+
+    describe("char.talentOptions[circle].actionDice", () => {
+      beforeEach(() => {
+        // Stub the attr step
+        char.attrs = { dex: { step: 4 } };
+      });
+
+      it("should return the action dice for the given step", () => {
+        expect(char.talentOptions[0].actionDice).to.eql("ad for step 0");
+        expect(char.talentOptions[1].actionDice).to.eql("ad for step 7");
+      });
+    });
+  });
 });

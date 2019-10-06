@@ -21,7 +21,7 @@ describe("Talents decorator", () => {
   beforeEach(() => {
     // Stub a character
     char = {
-      _stored: { talents: {} },
+      _stored: { talents: {}, talentOptions: [] },
       discipline: { circles: [] },
       circle: 3,
       // Stub the effect sum calculator to always return 0.

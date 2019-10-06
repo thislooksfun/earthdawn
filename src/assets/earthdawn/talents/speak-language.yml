@@ -1,0 +1,64 @@
+name: Speak Language
+attr: per
+action: standard
+strain: 1
+skill_use: no
+description:
+  "The adept magically learns to communicate with others in different languages.
+  Using this talent he can learn a number of languages equal to his Speak
+  Language rank. If he has not reached this maximum, the adept can attempt to
+  learn a new language by listening to a fluent speaker for at least one minute,
+  then making a Speak Language test against the language’s Learning Difficulty.
+  If successful, he learns the language and notes it on his Character Record
+  Sheet. If the test fails, the adept cannot attempt to learn that specific
+  language again until he improves his Speak Language rank.
+
+  The Learning Difficulty for the different racial languages is shown in the
+  Language Table. The numbers reflect the difficulty of learning the base
+  “racial” versions of these languages. Dialects are considered different
+  languages for the purposes of this talent (see below).
+
+  When speaking a language learned through this talent, the adept makes a Speak
+  Language test against the Learning Difficulty of the language. The success
+  level determines how well they communicate.
+
+  Simple sentences or ideas, such as “Which way to the sheriff?” may only
+  require a single success; normal conversation that includes idioms or jargon
+  require two; technical conversations or other discussions filled with
+  specialized jargon require three successes; conversations about philosophy, or
+  other abstract ideas, may require four or more. Partial successes may convey
+  more or less detail at the gamemaster’s discretion.
+
+  The effect of each test lasts for a number of hours equal to the adept’s Speak
+  Language rank, allowing communication at the level achieved by the test
+  result.
+
+  If the adept requires more complex conversation, he must make another Speak
+  Language test. The Strain cost reflects the concentration required to
+  establish and maintain communication.
+
+  Dialects:
+  Languages are often complex and most possess many different variations, called
+  dialects. These dialects are sometimes regional, others by city, or even by
+  kaer. The Learning Difficulty of a dialect is based on the original language,
+  usually the base DN +2, but higher difficulties are possible. The adept must
+  know how to speak the base language before he can attempt to learn a dialect
+  of that language. If the adept knows the base language of a dialect, he can
+  communicate, but his ability to do so may be limited at the gamemaster’s
+  discretion.
+
+  There is a non-magical version of this talent, but it is different enough that
+  it is covered in more depth in the Skills chapter, p. 182.
+
+  Language Table
+  - Dwarf*: 5
+  - Sperethiel (Elf): 6
+  - Human: 6
+  - Or'zet (Orc): 6
+  - Troll: 6
+  - Obsidiman: 7
+  - T'skrang: 7
+  - Windling: 7
+
+  *All characters beginning play with the Dwarf language know the Throalic
+  dialect."

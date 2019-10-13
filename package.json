@@ -55,5 +55,10 @@
     "snyk": "^1.226.2",
     "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "core-js"
+    ]
   }
 }

@@ -48,56 +48,56 @@ pull_request_rules:
         method: merge
         strict: true
 
-  # Automatic Merging (bots)
-  - name: "Automatic merge for Greenkeeper pull requests (LGTM: neutral)"
-    conditions:
-      # Was sent from Greenkeeper
-      - author=greenkeeper[bot]
-      - status-success=greenkeeper/verify
+  # # Automatic Merging (bots)
+  # - name: "Automatic merge for Greenkeeper pull requests (LGTM: neutral)"
+  #   conditions:
+  #     # Was sent from Greenkeeper
+  #     - author=greenkeeper[bot]
+  #     - status-success=greenkeeper/verify
 
-      # CI test success
-      - status-success=unit-tests (10.x)
-      - status-success=unit-tests (12.x)
-      # Security check
-      - status-success=DeepScan
-      - status-success=security/snyk - package.json (thislooksfun)
-      - "status-neutral=LGTM analysis: JavaScript"
-      # Coverage check
-      - status-success=codecov/patch
-      - status-success=codecov/project
-      # Not WIP
-      - status-success=WIP
-      # On master branch
-      - base=master
-    actions:
-      merge:
-        method: merge
-        strict: true
-  # This rule is (hopefully) temporary, pending Mergifyio/mergify-engine#501
-  - name: "Automatic merge for Greenkeeper pull requests (LGTM: success)"
-    conditions:
-      # Was sent from Greenkeeper
-      - author=greenkeeper[bot]
-      - status-success=greenkeeper/verify
+  #     # CI test success
+  #     - status-success=unit-tests (10.x)
+  #     - status-success=unit-tests (12.x)
+  #     # Security check
+  #     - status-success=DeepScan
+  #     - status-success=security/snyk - package.json (thislooksfun)
+  #     - "status-neutral=LGTM analysis: JavaScript"
+  #     # Coverage check
+  #     - status-success=codecov/patch
+  #     - status-success=codecov/project
+  #     # Not WIP
+  #     - status-success=WIP
+  #     # On master branch
+  #     - base=master
+  #   actions:
+  #     merge:
+  #       method: merge
+  #       strict: true
+  # # This rule is (hopefully) temporary, pending Mergifyio/mergify-engine#501
+  # - name: "Automatic merge for Greenkeeper pull requests (LGTM: success)"
+  #   conditions:
+  #     # Was sent from Greenkeeper
+  #     - author=greenkeeper[bot]
+  #     - status-success=greenkeeper/verify
 
-      # CI test success
-      - status-success=unit-tests (10.x)
-      - status-success=unit-tests (12.x)
-      # Security check
-      - status-success=DeepScan
-      - status-success=security/snyk - package.json (thislooksfun)
-      - "status-success=LGTM analysis: JavaScript"
-      # Coverage check
-      - status-success=codecov/patch
-      - status-success=codecov/project
-      # Not WIP
-      - status-success=WIP
-      # On master branch
-      - base=master
-    actions:
-      merge:
-        method: merge
-        strict: true
+  #     # CI test success
+  #     - status-success=unit-tests (10.x)
+  #     - status-success=unit-tests (12.x)
+  #     # Security check
+  #     - status-success=DeepScan
+  #     - status-success=security/snyk - package.json (thislooksfun)
+  #     - "status-success=LGTM analysis: JavaScript"
+  #     # Coverage check
+  #     - status-success=codecov/patch
+  #     - status-success=codecov/project
+  #     # Not WIP
+  #     - status-success=WIP
+  #     # On master branch
+  #     - base=master
+  #   actions:
+  #     merge:
+  #       method: merge
+  #       strict: true
 
   # Quality of life
   - name: Delete head branch after merge

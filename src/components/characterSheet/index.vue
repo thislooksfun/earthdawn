@@ -68,5 +68,8 @@ export default {
       padding: 0.5rem;
     }
   }
+  &.centered {
+    text-align: center;
+  }
 }
 </style>

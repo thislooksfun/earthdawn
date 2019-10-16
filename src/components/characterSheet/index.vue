@@ -48,12 +48,14 @@ export default {
 
 <style scoped lang="scss">
 .character-sheet {
-  position: relative;
   top: 0;
   padding: 1rem;
   background-color: #ddd;
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+
 .block {
   margin-bottom: 1rem;
 

@@ -52,7 +52,13 @@ export default {
     Vue.set(state.characters[uuid].talentOptions, slot, { name, rank });
   },
 
-  // TODO: Implement Skills
+  // Skills
+  ADD_SKILL(state, { uuid, name, rank, type }) {
+    if (name in state.characters[uuid].skills) {
+      throw new Error(`Skill ${name} already exists!`);
+    }
+    Vue.set(state.characters[uuid].skills, name, { rank, type });
+  },
 
   // Languages
   SET_SPOKEN_LANGUAGES(state, { uuid, languages }) {

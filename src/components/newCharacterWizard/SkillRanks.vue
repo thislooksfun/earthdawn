@@ -122,7 +122,19 @@
           <td colspan="7">Other Skills</td>
         </tr>
         <tr v-for="(skill, name) in skillGroups.other" :key="name">
-          <td>{{ name }}</td>
+          <td>
+            <div class="other-skill">
+              <span class="name">{{ name }}</span>
+              <base-button
+                type="danger"
+                size="sm"
+                icon="fa fa-trash-o"
+                @click="removeSkill(name)"
+                style="font-size: 0.9rem"
+                class="remove-btn"
+              ></base-button>
+            </div>
+          </td>
           <td>{{ skill.action }}</td>
           <td>{{ skill.strain }}</td>
           <td>{{ skill.attr }}</td>
@@ -144,32 +156,29 @@
     </table>
 
     <div class="new-skill">
-      <select>
+      <select v-model="selectedSkill">
         <option disabled value>Please select one</option>
-        <option v-for="(s, name) in skills" :key="name" :value="name">{{
+        <option v-for="name in availableSkillNames" :key="name" :value="name">{{
           name
         }}</option>
       </select>
 
       <base-button
+        class="add-skill-btn"
         type="primary"
-        :disabled="remainingPoints == 0"
-        @click="addSkill()"
+        size="sm"
+        :disabled="remainingPoints == 0 || !selectedSkill"
+        @click="addSelectedSkill()"
         >Add Skill</base-button
       >
     </div>
-
-    <br />
-    <pre>{{ JSON.stringify(char.skills, null, 2) }}</pre>
-    <div>{{ skills }}</div>
   </div>
 </template>
 
 <script>
 import decorate from "@/charDecorator";
 import skills from "Skills";
-
-console.log(skills);
+import talents from "Talents";
 
 const upperFirst = require("lodash/upperFirst");
 
@@ -182,23 +191,43 @@ export default {
   },
   data() {
     const char = this.$store.state.Characters.characters[this.uuid];
-    return { char, skills };
+    return { char, selectedSkill: "" };
   },
   methods: {
     setSkillRank(name, rank) {
       this.$store.dispatch("ccSetSkillRank", { name, rank });
     },
-    // setSkillOptionRank(rank) {
-    //   this.skillOptionRank = rank;
-    // },
     prettyGroupName(group) {
       return upperFirst(group.slice(1)) + " Skills";
     },
-    addSkill() {},
+    addSelectedSkill() {
+      // Nothing selected
+      if (!this.selectedSkill) return;
+      this.$store.dispatch("ccAddSkill", { name: this.selectedSkill, rank: 1 });
+    },
+    removeSkill(name) {
+      this.$store.dispatch("ccRemoveSkill", { name });
+    },
   },
   computed: {
     dChar() {
       return decorate(this.char);
+    },
+    availableSkillNames() {
+      return Object.keys(this.learnableSkills).filter(
+        s => !(s in this.char.skills)
+      );
+    },
+    learnableSkills() {
+      const noviceTalents = Object.keys(talents)
+        .filter(t => talents[t].skill_use === "novice")
+        .reduce((o, t) => ({ ...o, [t]: talents[t] }), {});
+      // Add the talents first so that skills can override the talents if a
+      // specific skill version exists
+      return {
+        ...noviceTalents,
+        ...skills,
+      };
     },
     skillGroups() {
       return this.dChar.skills;
@@ -209,34 +238,6 @@ export default {
     readWriteLang() {
       return this.skillGroups.language["Read and Write Language"];
     },
-    // availableSkillOptions() {
-    //   return this.dChar.discipline.skillOptions.novice
-    //     .map(name => skills[name])
-    //     .reduce((o, t) => ({ ...o, [t.name]: t }), {});
-    // },
-    // skillOptionRank: {
-    //   get() {
-    //     return this.skillOption.rank || 0;
-    //   },
-    //   set(rank) {
-    //     this.$store.dispatch("ccSetSkillOption", {
-    //       slot: 0,
-    //       name: this.skillOptionName,
-    //       rank,
-    //     });
-    //   },
-    // },
-    // skillOptionName: {
-    //   get() {
-    //     return this.skillOption.name || "";
-    //   },
-    //   set(name) {
-    //     this.$store.dispatch("ccSetSkillOption", { slot: 0, name, rank: 0 });
-    //   },
-    // },
-    // skillOption() {
-    //   return this.dChar.skillOptions[0] || {};
-    // },
     remainingPoints() {
       const skillz = this.dChar.skills;
 
@@ -272,6 +273,28 @@ export default {
     td {
       padding: 0.25rem 0.5rem;
     }
+  }
+}
+
+.new-skill {
+  margin-top: 0.25rem;
+
+  select {
+    margin-right: 1rem;
+  }
+}
+
+.other-skill {
+  display: grid;
+  grid-template-columns: auto 2rem;
+  grid-template-rows: auto;
+  grid-template-areas: "name remove-btn";
+
+  .name {
+    grid-area: name;
+  }
+  .remove-btn {
+    grid-area: remove-btn;
   }
 }
 </style>

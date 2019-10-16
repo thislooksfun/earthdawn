@@ -72,6 +72,10 @@ export default {
     console.log(`Setting skill ${name} to rank ${rank}`);
     commit("SET_SKILL_RANK", { uuid: routedUUID(), name, rank });
   },
+  removeSkill({ commit }, { name }) {
+    console.log(`Removing skill ${name}`);
+    commit("REMOVE_SKILL", { uuid: routedUUID(), name });
+  },
 
   // Creation Wizard
   creationWizardFirstStage({ commit }) {

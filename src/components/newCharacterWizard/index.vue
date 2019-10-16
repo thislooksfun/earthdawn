@@ -165,6 +165,8 @@ export default {
   padding: 1rem;
   background-color: #ddd;
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .block {

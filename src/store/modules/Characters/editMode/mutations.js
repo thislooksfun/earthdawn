@@ -59,6 +59,12 @@ export default {
     }
     Vue.set(state.characters[uuid].skills, name, { rank, type });
   },
+  SET_SKILL_RANK(state, { uuid, name, rank }) {
+    if (!(name in state.characters[uuid].skills)) {
+      throw new Error(`Attempting to change rank of unknown skill ${name}`);
+    }
+    Vue.set(state.characters[uuid].skills[name], "rank", rank);
+  },
 
   // Languages
   SET_SPOKEN_LANGUAGES(state, { uuid, languages }) {

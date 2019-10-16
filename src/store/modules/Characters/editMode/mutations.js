@@ -65,6 +65,9 @@ export default {
     }
     Vue.set(state.characters[uuid].skills[name], "rank", rank);
   },
+  REMOVE_SKILL(state, { uuid, name }) {
+    Vue.delete(state.characters[uuid].skills, name);
+  },
 
   // Languages
   SET_SPOKEN_LANGUAGES(state, { uuid, languages }) {

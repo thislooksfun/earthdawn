@@ -13,31 +13,34 @@
     </div>
 
     <div v-if="stage == 'basic-info'" class="solid padded block">
-      <basic-info :uuid="uuid" @completed="currentStageOnCompletionChange" />
+      <basic-info :uuid="uuid" @completed="onStageCompletion" />
     </div>
 
     <div v-if="stage == 'attribute-points'" class="solid padded block">
-      <attribute-points
-        :uuid="uuid"
-        @completed="currentStageOnCompletionChange"
-      />
+      <attribute-points :uuid="uuid" @completed="onStageCompletion" />
     </div>
 
     <div v-if="stage == 'talent-ranks'" class="solid padded block">
-      <talent-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" />
+      <talent-ranks :uuid="uuid" @completed="onStageCompletion" />
     </div>
 
     <!-- This only applies to spellcasters -->
     <div v-if="stage == 'spell-ranks'" class="solid padded block">
-      <!-- <spell-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+      <!-- <spell-ranks :uuid="uuid" @completed="onStageCompletion" /> -->
     </div>
 
+    <div v-if="stage == 'skill-ranks::knowledge'" class="solid padded block">
+      <skill-ranks-knowledge :uuid="uuid" @completed="onStageCompletion" />
+    </div>
+    <div v-if="stage == 'skill-ranks::artisan'" class="solid padded block">
+      <skill-ranks-artisan :uuid="uuid" @completed="onStageCompletion" />
+    </div>
     <div v-if="stage == 'skill-ranks'" class="solid padded block">
-      <!-- <skill-ranks :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+      <skill-ranks :uuid="uuid" @completed="onStageCompletion" />
     </div>
 
     <div v-if="stage == 'flesh-out'" class="solid padded block">
-      <!-- <flesh-out-character :uuid="uuid" @completed="currentStageOnCompletionChange" /> -->
+      <!-- <flesh-out-character :uuid="uuid" @completed="onStageCompletion" /> -->
     </div>
 
     <div class="solid padded block navigation">
@@ -64,16 +67,27 @@
 
 <script>
 import decorate from "@/charDecorator";
+import EventBus from "@/helper/eventBus";
 
 import BasicInfo from "./BasicInfo";
 import AttributePoints from "./AttributePoints";
 import TalentRanks from "./TalentRanks";
+// import SpellRanks from "./SpellRanks";
+import SkillRanksKnowledge from "./SkillRanksKnowledge";
+import SkillRanksArtisan from "./SkillRanksArtisan";
+import SkillRanks from "./SkillRanks";
+// import FleshOutCharacter from "./FleshOutCharacter";
 
 export default {
   components: {
     BasicInfo,
     AttributePoints,
     TalentRanks,
+    // SpellRanks,
+    SkillRanksKnowledge,
+    SkillRanksArtisan,
+    SkillRanks,
+    // FleshOutCharacter,
   },
   data() {
     const uuid = this.$route.params.uuid;
@@ -89,16 +103,18 @@ export default {
       this.$store.dispatch("ccCreationWizardFirstStage");
     },
     goToPrevStage() {
+      EventBus.$emit("wizard-prev-stage");
       this.$store.dispatch("ccCreationWizardPrevStage");
     },
     goToNextStage() {
+      EventBus.$emit("wizard-next-stage");
       if (this.isLastStage) {
         this.$store.dispatch("ccCreationWizardClose");
       } else {
         this.$store.dispatch("ccCreationWizardNextStage");
       }
     },
-    currentStageOnCompletionChange(completed) {
+    onStageCompletion(completed) {
       this.stageComplete = completed;
     },
   },
@@ -118,8 +134,12 @@ export default {
       const spellcaster = decorate(this.char).discipline.isSpellcaster;
 
       if (spellcaster && s == 3) return "spell-ranks";
-      if (s == (spellcaster ? 4 : 3)) return "skill-ranks";
-      if (s == (spellcaster ? 5 : 4)) return "flesh-out";
+
+      const ss = spellcaster ? s : s + 1;
+      if (ss == 4) return "skill-ranks::knowledge";
+      if (ss == 5) return "skill-ranks::artisan";
+      if (ss == 6) return "skill-ranks";
+      if (ss == 7) return "flesh-out";
 
       // Something went wrong! This line of code should never be reached.
       // If it was, reset the stage to a known state (the beginning).

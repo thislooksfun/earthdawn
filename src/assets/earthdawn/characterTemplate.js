@@ -104,8 +104,12 @@ export default {
     // <name>: null
   },
   skills: {
-    "Speak Language": 2,
-    "Read and Write Language": 1,
+    // <name>: { rank: n }  // normal skill
+    // <name>: { rank: n, type: "knowledge"}                  // knowledge skill
+    // <name>: { rank: n, type: "artisan"}                    // artisan skill
+    // <name>: { rank: n, type: <type>, data: { <the data> }} // custom skill
+    "Speak Language": { rank: 2, type: "language" },
+    "Read and Write Language": { rank: 1, type: "language" },
   },
 
   // Talent Knacks

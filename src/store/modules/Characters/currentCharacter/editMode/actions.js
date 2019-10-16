@@ -63,7 +63,11 @@ export default {
     commit("SET_TALENT_OPTION", { uuid: routedUUID(), slot, name, rank });
   },
 
-  // TODO: Implement Skills
+  // Skills
+  addSkill({ commit }, { name, rank, type = "" }) {
+    console.log(`Adding ${type} skill ${name} of rank ${rank}`);
+    commit("ADD_SKILL", { uuid: routedUUID(), name, rank, type });
+  },
 
   // Creation Wizard
   creationWizardFirstStage({ commit }) {

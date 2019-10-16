@@ -68,6 +68,10 @@ export default {
     console.log(`Adding ${type} skill ${name} of rank ${rank}`);
     commit("ADD_SKILL", { uuid: routedUUID(), name, rank, type });
   },
+  setSkillRank({ commit }, { name, rank }) {
+    console.log(`Setting skill ${name} to rank ${rank}`);
+    commit("SET_SKILL_RANK", { uuid: routedUUID(), name, rank });
+  },
 
   // Creation Wizard
   creationWizardFirstStage({ commit }) {

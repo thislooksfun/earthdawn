@@ -36,7 +36,7 @@
               >1</base-button
             >
             <base-button
-              v-for="r in [2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              v-for="r in [2, 3]"
               :key="r"
               size="sm"
               :type="skill.rank == r ? 'primary' : 'secondary'"
@@ -60,7 +60,7 @@
           <td>{{ skill.attr }}</td>
           <td>
             <base-button
-              v-for="r in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              v-for="r in [1, 2, 3]"
               :key="r"
               size="sm"
               :type="skill.rank == r ? 'primary' : 'secondary'"
@@ -85,7 +85,7 @@
           <td>
             <base-button size="sm" type="secondary" disabled>1</base-button>
             <base-button
-              v-for="r in [2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              v-for="r in [2, 3]"
               :key="r"
               size="sm"
               :type="speakLang.rank == r ? 'primary' : 'secondary'"
@@ -104,7 +104,7 @@
           <td>{{ readWriteLang.attr }}</td>
           <td>
             <base-button
-              v-for="r in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              v-for="r in [1, 2, 3]"
               :key="r"
               size="sm"
               :type="readWriteLang.rank == r ? 'primary' : 'secondary'"
@@ -140,7 +140,7 @@
           <td>{{ skill.attr }}</td>
           <td>
             <base-button
-              v-for="r in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              v-for="r in [1, 2, 3]"
               :key="r"
               size="sm"
               :type="skill.rank == r ? 'primary' : 'secondary'"

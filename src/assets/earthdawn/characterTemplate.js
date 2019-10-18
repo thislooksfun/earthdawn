@@ -98,6 +98,9 @@ export default {
     //   rank: 4,
     // },
   ],
+  spells: {
+    // <name>: <rank>
+  },
   skills: {
     "Speak Language": 2,
     "Read and Write Language": 1,

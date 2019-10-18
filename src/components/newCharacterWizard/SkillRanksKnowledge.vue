@@ -51,7 +51,7 @@ export default {
           }
         })
         .then(() => {
-          const rank = !!this.skillName2 ? 1 : 2;
+          const rank = this.skillName2 == null ? 2 : 1;
           this.$store.dispatch("ccAddSkill", {
             name: this.skillName1,
             rank,

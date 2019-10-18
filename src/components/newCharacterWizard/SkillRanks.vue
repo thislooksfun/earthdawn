@@ -124,7 +124,15 @@
         <tr v-for="(skill, name) in skillGroups.other" :key="name">
           <td>
             <div class="other-skill">
-              <span class="name">{{ name }}</span>
+              <span class="name"
+                ><span
+                  v-if="isRedundant(name)"
+                  class="fa fa-exclamation-triangle redundant"
+                  v-b-tooltip.hover.down
+                  title="You already have this skill as a talent"
+                ></span>
+                {{ name }}</span
+              >
               <base-button
                 type="danger"
                 size="sm"
@@ -207,6 +215,16 @@ export default {
     },
     removeSkill(name) {
       this.$store.dispatch("ccRemoveSkill", { name });
+    },
+    isRedundant(name) {
+      // The character already has this skill as a talent.
+      if (name in this.dChar.talents) return true;
+      // The character chose this skill as one of their talent options.
+      console.log(this.dChar.talentOptions);
+      if (this.dChar.talentOptions.filter(o => o.name == name).length > 0)
+        return true;
+      // The character does not already have this skill as a talent.
+      return false;
     },
   },
   computed: {

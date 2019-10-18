@@ -166,9 +166,22 @@
     <div class="new-skill">
       <select v-model="selectedSkill">
         <option disabled value>Please select one</option>
-        <option v-for="name in availableSkillNames" :key="name" :value="name">{{
-          name
-        }}</option>
+        <optgroup label="Skills">
+          <option
+            v-for="name in availableSkillNames"
+            :key="name"
+            :value="name"
+            >{{ name }}</option
+          >
+        </optgroup>
+        <optgroup label="Talents as Skills">
+          <option
+            v-for="name in availableTalentNames"
+            :key="name"
+            :value="name"
+            >{{ name }}</option
+          >
+        </optgroup>
       </select>
 
       <base-button
@@ -231,21 +244,14 @@ export default {
     dChar() {
       return decorate(this.char);
     },
-    availableSkillNames() {
-      return Object.keys(this.learnableSkills).filter(
-        s => !(s in this.char.skills)
-      );
-    },
-    learnableSkills() {
+    availableTalentNames() {
       const noviceTalents = Object.keys(talents)
         .filter(t => talents[t].skill_use === "novice")
         .reduce((o, t) => ({ ...o, [t]: talents[t] }), {});
-      // Add the talents first so that skills can override the talents if a
-      // specific skill version exists
-      return {
-        ...noviceTalents,
-        ...skills,
-      };
+      return Object.keys(noviceTalents).filter(s => !(s in this.char.skills));
+    },
+    availableSkillNames() {
+      return Object.keys(skills).filter(s => !(s in this.char.skills));
     },
     skillGroups() {
       return this.dChar.skills;

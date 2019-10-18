@@ -1,28 +1,13 @@
-import spells from "Talents";
+import spells from "Spells";
 // import actionDiceForStep from "@/helper/actionDiceForStep";
 
 export default function(char) {
-  // Assign all info for each spell
-  const decoratedTalents = char._stored.spells.map(({ name }) => {
-    return {
-      ...spells[name],
-      get rank() {
-        return char._stored.spells[name];
-      },
-      // get step() {
-      //   if (this.attr) {
-      //     return this.rank + char.attrs[this.attr].step;
-      //   } else {
-      //     return this.rank;
-      //   }
-      // },
-      // get actionDice() {
-      //   // return actionDiceForStep(this.step);
-      //   return "NNNN";
-      // },
+  for (const spell in char.spells) {
+    char.spells[spell] = {
+      // Load the data from the spell
+      ...spells[char.discipline.name][spell],
+      // The character just stores the rank of the spell, add that too
+      rank: char.spells[spell],
     };
-  });
-
-  // Convert from array to object
-  char.spells = decoratedTalents.reduce((o, t) => ({ ...o, [t.name]: t }), {});
+  }
 }

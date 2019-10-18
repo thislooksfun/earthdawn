@@ -8,8 +8,6 @@
       <span class="label">Knowledge Skill 2 (optional):</span>
       <input type="text" v-model="skillName2" />
     </label>
-
-    <p>{{ dChar._stored.skills }}</p>
   </div>
 </template>
 

@@ -4,8 +4,6 @@
       <span class="label">Artisan Skill:</span>
       <input type="text" v-model="skillName" />
     </label>
-
-    <p>{{ dChar._stored.skills }}</p>
   </div>
 </template>
 

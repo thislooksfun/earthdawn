@@ -93,10 +93,7 @@ export default {
   },
   // array is keyed on the 0-based circle of the slot
   talentOptions: [
-    // {
-    //   name: 'name',
-    //   rank: 4,
-    // },
+    // { name: <name>, rank: n },
   ],
   spells: {
     // The value is technically arbetrary, but this is easier managed as an

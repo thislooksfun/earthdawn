@@ -59,6 +59,9 @@ export default {
     }
     Vue.set(state.characters[uuid].spells, name, null);
   },
+  REMOVE_SPELL(state, { uuid, name }) {
+    Vue.delete(state.characters[uuid].spells, name);
+  },
 
   // Skills
   ADD_SKILL(state, { uuid, name, rank, type }) {

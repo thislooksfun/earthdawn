@@ -1,0 +1,124 @@
+name: Archer
+isSpellcaster: false
+durability: 5
+threadType: Arrow Weaving
+importantAttrs:
+  - dex
+  - per
+
+description:
+  The Archer learns the art of the bow and crossbow, and by extension, all types
+  of ranged attacks. This Discipline stresses accuracy and speed. Most Archers
+  show greatly enhanced perceptive powers, frequently noticing things that
+  others miss.
+
+karmaRitual:
+  The Archer spends a few minutes oiling and stringing his bow, then starts
+  meditating, with the bow in front of him and his arrows fanned out beside him
+  on the ground. As he meditates, he seeks the stillness before the arrow is
+  released from the string. The Archer then fires three arrows at a target,
+  forming a rough triangle no more than a foot wide, then fires a fourth arrow
+  into the center of the triangle. The ritual is complete when the last arrow
+  hits.
+
+artisanSkills:
+  - Arrow Fletching
+  - Wood Carving
+
+halfMagic:
+  Archers may use half-magic when caring for ranged weapons and to recognize
+  different types of ranged weapons, ammunition, or their creators.
+
+talentOptions:
+  novice:
+    - Awareness
+    - Climbing
+    - Creature Analysis
+    - First Impression
+    - Impressive Display
+    - Navigation
+    - Stealthy Stride
+    - Throwing Weapons
+    - Tracking
+    - Wilderness Survival
+  journeyman:
+    - Conversation
+    - Danger Sense
+    - Distract
+    - Etiquette
+    - Evidence Analysis
+    - Resist Taunt
+    - Speak Language
+    - Steel Thought
+    - Stopping Aim
+    - Tiger Spring
+
+circles:
+  # First circle
+  - freeTalents:
+      - Call Missile
+    karma:
+      other: The adept may spend a Karma Point on Perception tests that rely on
+        sight.
+    talents:
+      - Avoid Blow
+      - Missile Weapons
+      - Mystic Aim
+      - Thread Weaving
+      - True Shot
+
+  # Second circle
+  - defense:
+      physical: 1
+    talents:
+      - Mystic Pursuit
+
+  # Third circle
+  - karma:
+      on_initiative_tests: true
+    talents:
+      - Anticipate Blow
+
+  # Fourth circle
+  - defense:
+      mystic: 1
+    talents:
+      - Long Shot
+
+  # Fifth circle
+  - karma:
+      other: The adept may spend 1 Karma Point on Damage tests made with ranged
+        weapons.
+    talents:
+      - Spot Armor Flaw
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Create Projectile
+        action: standard
+        strain: 1
+        description:
+          Once per round as a Standard action, the adept may take 1 Strain, and
+          make an Arrow Weaving (6) test. Each success creates one arrow, bolt,
+          or throwing weapon. All items created must be of the same type. The
+          projectiles last for Arrow Weaving Rank in minutes, after which they
+          disappear. They are treated as normal weapons or ammunition for the
+          purpose of talents or spells that require it.
+
+  # Sixth circle
+  - defense:
+      physical: 2
+    talents:
+      - Bank Shot
+
+  # Seventh circle
+  - initiative: 1
+    talents:
+      - Flame Arrow
+
+  # Eighth circle
+  - defense:
+      physical: 3
+    talents:
+      - Second Shot

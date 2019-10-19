@@ -26,7 +26,7 @@
 
     <!-- This only applies to spellcasters -->
     <div v-if="stage == 'spell-ranks'" class="solid padded block">
-      <!-- <spell-ranks :uuid="uuid" @completed="onStageCompletion" /> -->
+      <spell-ranks :uuid="uuid" @completed="onStageCompletion" />
     </div>
 
     <div v-if="stage == 'skill-ranks::knowledge'" class="solid padded block">
@@ -66,13 +66,13 @@
 </template>
 
 <script>
-import decorate from "@/charDecorator";
+// import decorate from "@/charDecorator";
 import EventBus from "@/helper/eventBus";
 
 import BasicInfo from "./BasicInfo";
 import AttributePoints from "./AttributePoints";
 import TalentRanks from "./TalentRanks";
-// import SpellRanks from "./SpellRanks";
+import SpellRanks from "./SpellRanks";
 import SkillRanksKnowledge from "./SkillRanksKnowledge";
 import SkillRanksArtisan from "./SkillRanksArtisan";
 import SkillRanks from "./SkillRanks";
@@ -83,7 +83,7 @@ export default {
     BasicInfo,
     AttributePoints,
     TalentRanks,
-    // SpellRanks,
+    SpellRanks,
     SkillRanksKnowledge,
     SkillRanksArtisan,
     SkillRanks,

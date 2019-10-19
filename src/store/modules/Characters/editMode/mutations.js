@@ -52,6 +52,14 @@ export default {
     Vue.set(state.characters[uuid].talentOptions, slot, { name, rank });
   },
 
+  // Spells
+  ADD_SPELL(state, { uuid, name }) {
+    if (name in state.characters[uuid].spells) {
+      throw new Error(`Spell ${name} already exists!`);
+    }
+    Vue.set(state.characters[uuid].spells, name, null);
+  },
+
   // Skills
   ADD_SKILL(state, { uuid, name, rank, type }) {
     if (name in state.characters[uuid].skills) {

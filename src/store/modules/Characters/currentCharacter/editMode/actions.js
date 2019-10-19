@@ -63,6 +63,12 @@ export default {
     commit("SET_TALENT_OPTION", { uuid: routedUUID(), slot, name, rank });
   },
 
+  // Spells
+  addSpell({ commit }, { name }) {
+    console.log(`Adding spell ${name}`);
+    commit("ADD_SPELL", { uuid: routedUUID(), name });
+  },
+
   // Skills
   addSkill({ commit }, { name, rank, type = "" }) {
     console.log(`Adding ${type} skill ${name} of rank ${rank}`);

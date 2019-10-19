@@ -16,7 +16,7 @@ files.keys().forEach(key => {
   const [discipline, circleStr] = key.split("/").slice(1, 3);
 
   // Track which circle the spell is
-  s.circle = circleStr.slice(7);
+  s.circle = parseInt(circleStr.slice(7));
 
   // Ensure that the discipline category exists
   spells[discipline] = spells[discipline.toLowerCase()] || {};

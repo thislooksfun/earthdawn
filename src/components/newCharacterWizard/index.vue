@@ -66,7 +66,7 @@
 </template>
 
 <script>
-// import decorate from "@/charDecorator";
+import decorate from "@/charDecorator";
 import EventBus from "@/helper/eventBus";
 
 import BasicInfo from "./BasicInfo";

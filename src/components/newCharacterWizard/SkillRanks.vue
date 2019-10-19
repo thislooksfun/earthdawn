@@ -222,9 +222,14 @@ export default {
       return upperFirst(group.slice(1)) + " Skills";
     },
     addSelectedSkill() {
-      // Nothing selected
-      if (!this.selectedSkill) return;
-      this.$store.dispatch("ccAddSkill", { name: this.selectedSkill, rank: 1 });
+      if (this.selectedSkill) {
+        // Ensure something else selected
+        this.$store.dispatch("ccAddSkill", {
+          name: this.selectedSkill,
+          rank: 1,
+        });
+      }
+      this.selectedSkill = "";
     },
     removeSkill(name) {
       this.$store.dispatch("ccRemoveSkill", { name });

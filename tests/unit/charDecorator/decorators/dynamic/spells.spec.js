@@ -3,11 +3,11 @@ import spellsDecorator from "@/charDecorator/decorators/dynamic/spells";
 // Mock with known, controlled spells
 jest.mock("Spells", () => {
   return {
-    DisciplineA: {
+    "discipline-a": {
       TestSpellA1: { name: `TestSpellA1 Name` },
       TestSpell2: { name: `TestSpell2 Name A` },
     },
-    DisciplineB: {
+    "discipline-b": {
       TestSpellB1: { name: `TestSpellB1 Name` },
       TestSpell2: { name: `TestSpell2 Name B` },
     },
@@ -29,7 +29,7 @@ describe("Spells decorator", () => {
   });
 
   it("should augment the character's stored spell with the full spell from the relevant discipline", () => {
-    char.discipline = { name: "DisciplineA" };
+    char.discipline = { name: "Discipline-A" };
     char.spells = { TestSpellA1: 1, TestSpell2: 2 };
     spellsDecorator(char);
     // Has replaced first spell

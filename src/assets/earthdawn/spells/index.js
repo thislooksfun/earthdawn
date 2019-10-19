@@ -19,7 +19,7 @@ files.keys().forEach(key => {
   s.circle = circleStr.slice(7);
 
   // Ensure that the discipline category exists
-  spells[discipline] = spells[discipline] || {};
+  spells[discipline] = spells[discipline.toLowerCase()] || {};
 
   // Add options for both singular and plural usage
   spells[discipline][s.name] = s;

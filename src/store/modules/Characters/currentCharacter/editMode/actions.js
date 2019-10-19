@@ -68,6 +68,10 @@ export default {
     console.log(`Adding spell ${name}`);
     commit("ADD_SPELL", { uuid: routedUUID(), name });
   },
+  removeSpell({ commit }, { name }) {
+    console.log(`Removing spell ${name}`);
+    commit("REMOVE_SPELL", { uuid: routedUUID(), name });
+  },
 
   // Skills
   addSkill({ commit }, { name, rank, type = "" }) {

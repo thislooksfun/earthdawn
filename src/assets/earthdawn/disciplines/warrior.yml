@@ -1,0 +1,124 @@
+name: Warrior
+isSpellcaster: false
+durability: 7
+threadType: War Weaving
+importantAttrs:
+  - dex
+  - str
+  - tou
+
+description:
+  Warriors are fighters and soldiers trained to use magic to enhance their
+  combat techniques. They often form groups with other Warriors, living in
+  seclusion in self-sufficient settlements similar to monastic orders.
+
+karmaRitual:
+  "The Warrior sits cross-legged, holding a weapon across his knees. After a
+  few minutes of meditation he levitates, as if using the Air Dance talent; the
+  ritual use of this talent does not cause him any Strain damage. The Warrior
+  then performs a series of four exercises: the earth defense, the water
+  defense, the fire attack, and the air attack. The ritual ends when the Warrior
+  completes the final move of the air attack."
+
+artisanSkills:
+  - Sculpting
+  - Rune Carving
+
+halfMagic:
+  Warriors can use half-magic when caring for or repairing their weapons and
+  armor, knowledge of military tactics and strategy (recognizing the safest
+  approach to a target when planning a battle, for instance) and to recall
+  events of Barsaive’s military history. They also use half-magic to recognize
+  warrior orders, famous ancient Warriors, and ancient arms and armor.
+
+talentOptions:
+  novice:
+    - Acrobatic Defense
+    - Anticipate Blow
+    - Danger Sense
+    - Distract,
+    - Fireblood
+    - Maneuver
+    - Missile Weapons
+    - Shield Bash
+    - Tactics
+    - Unarmed Combat
+  journeyman:
+    - Disarm
+    - Etiquette
+    - Leadership
+    - Life Check,
+    - Lion Heart
+    - Momentum Attack
+    - Second Weapon
+    - Spot Armor Flaw
+    - Steely Stare
+    - Swift Kick
+
+circles:
+  # First circle
+  - talents:
+      - Avoid Blow
+      - Melee Weapons
+      - Thread Weaving
+      - Tiger Spring
+      - Wood Skin
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Wound Balance
+
+  # Third circle
+  - karma:
+      on_recovery_tests: true
+    talents:
+      - Air Dance
+
+  # Fourth circle
+  - effects:
+      mysticDefense: 1
+    talents:
+      - Waterfall Slam
+
+  # Fifth circle
+  - karma:
+      other: The adept may spend a Karma Point on any Damage test made in close
+        combat.
+    talents:
+      - Earth Skin
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Battle Rites
+        action: sustained
+        strain: 0
+        description:
+          The adept spends 30 minutes in meditation and selects a talent. During
+          any encounter over the next 24 hours, the adept may activate Battle
+          Rites by spending a Karma Point as a Simple action. This allows the
+          adept to reduce the Strain cost of the selected talent by 1 once per
+          round for the duration of the encounter. Battle Rites may be used in
+          multiple encounters, but requires a Karma Point be spent for each
+          encounter.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Temper Flesh
+
+  # Seventh circle
+  - effects:
+      recoveryTestsPerDay: 1
+    talents:
+      - Crushing Blow
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 3
+    talents:
+      - Second Attack

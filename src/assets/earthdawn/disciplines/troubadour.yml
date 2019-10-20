@@ -1,0 +1,130 @@
+name: Troubadour
+isSpellcaster: false
+durability: 5
+threadType: Story Weaving
+importantAttrs:
+  - cha
+  - per
+
+description:
+  Troubadours serve as entertainers, storytellers, actors, and songsmiths. As
+  such, they represent the closest thing to a historian or scholar that common
+  people usually see.
+
+karmaRitual:
+  The Troubadour performs a ballad or skit before an audience of at least two
+  others. He can juggle, joke, tell tall tales, or sing serious legends. Half an
+  hour after he starts, the Troubadour finishes the performance with a short
+  story, ending the tale with the phrase, “And there it ends, for such is the
+  truth of the thing.”
+
+artisanSkills:
+  - Body Painting
+  - Embroidery
+  - Craftsman
+
+halfMagic:
+  Troubadours may make Half-Magic tests for knowledge of legends, myths, and
+  folklore of their home province’s lands and people. They may also make
+  Half-Magic tests to identify instruments and performing arts of different
+  areas.
+
+talentOptions:
+  novice:
+    - Avoid Blow
+    - Conversation
+    - Haggle
+    - Impressive Display
+    - Melee Weapons
+    - Read and Write Language
+    - Speak Language
+    - Taunt
+    - Throwing Weapons
+    - Winning Smile
+  journeyman:
+    - Air Speaking
+    - Blade Juggle
+    - Diplomacy
+    - Disguise Self
+    - Engaging Banter
+    - Graceful Exit
+    - Hypnotize
+    - Leadership
+    - Lion Heart
+    - Mimic Voice
+
+circles:
+  # First circle
+  - freeTalents:
+      # TODO: Add this flavor somehow
+      # BODY: Probably just add it to the skills list
+      #
+      # The adept is experienced in the ways of performing before a crowd. This
+      # talent works like the Entertainer skill (p. 196), but does not require
+      # the adept to choose a specialty.
+      - Entertainer
+    karma:
+      on_interaction_tests: true
+    talents:
+      - Emotion Song
+      - First Impression
+      - Heartening Laugh
+      - Item History
+      - Thread Weaving
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      socialDefense: 1
+    talents:
+      - Etiquette
+
+  # Third circle
+  - karma:
+      other: The adept may spend a Karma Point on any test to gain or recall
+        information.
+    talents:
+      - Empathic Sense
+
+  # Fourth circle
+  - effects:
+      mysticDefense: 1
+    talents:
+      - Research
+
+  # Fifth circle
+  - karma:
+      other: Once per round the adept may spend a Karma Point to add to another
+        character’s test by offering encouragement. The target must be able to
+        hear and/or see the Troubadour.
+    talents:
+      - Inspire Others
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: One Last Word
+        action: free
+        strain: 2
+        description:
+          If the adept fails a test against a target’s Social Defense, the adept
+          may take 2 Strain to add a Karma Die to the test result. One Last Word
+          can only be used once per failed test.
+
+  # Sixth circle
+  - effects:
+      socialDefense: 2
+    talents:
+      - Lasting Impression
+
+  # Seventh circle
+  - effects:
+      initiative: 1
+    talents:
+      - Resist Taunt
+
+  # Eighth circle
+  - effects:
+      socialDefense: 3
+    talents:
+      - Slough Blame

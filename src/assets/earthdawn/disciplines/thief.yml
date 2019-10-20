@@ -1,0 +1,124 @@
+name: Thief
+isSpellcaster: false
+durability: 5
+threadType: Thief Weaving
+importantAttrs:
+  - cha
+  - dex
+  - per
+
+description:
+  Thieves learn early to be self-reliant and how to steal. They draw power from
+  their self-confidence and the knowledge that they depend only on themselves.
+  The abundance of rumors governing Thief guilds means such groups may, in fact,
+  exist, but proof or disproof of their reality remains a secret.
+
+karmaRitual:
+  The Thief sits by himself in a darkened area and concentrates for half an hour
+  on the knowledge that he is alone in the world and can rely, first and
+  foremost, only on himself. With this firmly established in both heart and
+  mind, he sets out to use one of his Discipline talents. The ritual ends as
+  soon as the adept successfully uses the talent.
+
+artisanSkills:
+  - Acting
+  - Poetry
+
+halfMagic:
+  Thieves may use half-magic to build or bypass security measures intended to
+  prevent theft, and to recognize different types of locking mechanisms.
+
+talentOptions:
+  novice:
+    - Avoid Blow
+    - Climbing
+    - First Impression
+    - Great Leap
+    - Melee Weapons
+    - Missile Weapons
+    - Sprint
+    - Surprise Strike
+    - Taunt
+    - Throwing Weapons
+  journeyman:
+    - Blade Juggle
+    - Call Missile
+    - Dead Fall
+    - Disguise Self
+    - Graceful Exit
+    - Mimic Voice
+    - Mystic Pursuit
+    - Second Weapon
+    - Spot Armor Flaw
+    - True Sight
+
+circles:
+  # First circle
+  - freeTalents:
+      - Danger Sense
+    karma:
+      other:
+        The adept may spend a Karma Point on any Charisma-based test when the
+        adept is attempting to deceive a target.
+    talents:
+      - Awareness
+      - Lock Picking
+      - Picking Pockets
+      - Stealthy Stride
+      - Thread Weaving
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Disarm Trap
+
+  # Third circle
+  - karma:
+      on_initiative_tests: true
+    talents:
+      - Haggle
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Conceal Object
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept may spend a Karma Point on Attack tests against a Surprised or
+        Blindsided opponent.
+    talents:
+      - Engaging Banter
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Shadowcloak
+        action: simple
+        strain: 2
+        description:
+          For 2 Strain, the Difficulty Number for any tests made to detect the
+          adept are increased by +2 for a number of minutes equal to the adept’s
+          Thief Weaving Rank. This is a Simple Action.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Slough Blame
+
+  # Seventh circle
+  - effects:
+      initiative: 1
+    talents:
+      - Fast Hand
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 3
+    talents:
+      - False Sight

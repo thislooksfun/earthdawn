@@ -1,0 +1,121 @@
+name: Scout
+isSpellcaster: false
+durability: 5
+threadType: Scout Weaving
+importantAttrs:
+  - dex
+  - per
+
+description:
+  Scouts are the vanguard, the tracker, and the brave rangers who go where
+  others cannot. Scouts are masters of becoming one with their
+  environment—whether that environment is a primeval forest or the heart of the
+  city.
+
+karmaRitual:
+  The Scout allows his companions to lead him blindfolded, about ten minutes
+  walk from his starting point. The Scout meditates for ten minutes as he
+  visualizes the route back to where he began, then makes the journey, still
+  blindfolded, to his starting point. Removing the blindfold, the half-hour-long
+  ritual is complete.
+
+artisanSkills:
+  - Rune Carving
+  - Wood Carving
+
+halfMagic:
+  A Scout may use half-magic to recognize tracks and trails left by different
+  types of animals and Namegivers, know about the plants and creatures native to
+  a region, even general information on the different cultures across Barsaive.
+
+talentOptions:
+  novice:
+    - Anticipate Blow
+    - Avoid Blow
+    - Creature Analysis
+    - Disarm Trap
+    - Great Leap
+    - Lock Picking
+    - Melee Weapons
+    - Missile Weapons
+    - Read and Write Language
+    - Speak Language
+  journeyman:
+    - Animal Bond
+    - Borrow Sense
+    - Conceal Object
+    - Disguise Self
+    - Spirit Mount
+    - Spot Armor Flaw
+    - Sprint
+    - Surprise Strike
+    - Tiger Spring
+    - True Sight
+
+circles:
+  # First circle
+  - freeTalents:
+      - Navigation
+    karma:
+      other: The adept may spend a Karma Point on tests made to find something.
+    talents:
+      - Awareness
+      - Climbing
+      - Thread Weaving
+      - Tracking
+      - Wilderness Survival
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Stealthy Stride
+
+  # Third circle
+  - karma:
+      on_initiative_tests: true
+    talents:
+      - Mystic Pursuit
+
+  # Fourth circle
+  - effects:
+      mysticDefense: 1
+    talents:
+      - Danger Sense
+
+  # Fifth circle
+  - karma:
+      on_recovery_tests: true
+    talents:
+      - Evidence Analysis
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Enhanced Senses
+        action: simple
+        strain: 1
+        description:
+          For 1 Strain, the adept enhances one of his natural senses as a Simple
+          action and gains a +2 bonus to Perception tests based on the sense for
+          1 round. If that sense is unhindered, you may ignore Blindness
+          penalties by using your enhanced sense as your primary sense.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Astral Sight
+
+  # Seventh circle
+  - effects:
+      initiative: 1
+    talents:
+      - Safe Path
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Orbiting Spy

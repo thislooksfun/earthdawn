@@ -1,0 +1,122 @@
+name: Sky Raider
+isSpellcaster: false
+durability: 7
+threadType: Sky Weaving
+importantAttrs:
+  - cha
+  - dex
+  - str
+
+description:
+  Sky Raiders are ruthless pirates forming a potent force in Barsaive. Their
+  airships raid all over the province, targeting merchant caravans as well as
+  smaller towns and villages. Sky Raiders are proud, and show great loyalty to
+  other Sky Raiders—unless that raider belongs to an enemy clan or moot.
+
+karmaRitual:
+  The Sky Raider spends several minutes in silent meditation beneath the open
+  sky. Then he begins to strike his shield with a weapon, slowly at first. The
+  striking accelerates until the Sky Raider is beating his shield at a furious
+  rate. Just before the ritual ends, the Sky Raider stops, continuing to
+  meditate while his shield still resonates from the furious bashing. The ritual
+  ends when the echoes from the last drumbeat fade.
+
+artisanSkills:
+  - Painting
+  - Wood Carving
+
+halfMagic:
+  Sky Raiders use half-magic for tasks related to the upkeep, repair, and
+  building of smaller airships (like the drakkar), knowledge of different
+  airship designs and crew complements, as well as knowledge of commonly
+  followed flight paths.
+
+talentOptions:
+  novice:
+    - Air Sailing
+    - Air Speaking
+    - Avoid Blow
+    - Danger Sense
+    - Navigation
+    - Shield Bash
+    - Throwing Weapons
+    - Unarmed Combat
+    - Wilderness Survival
+    - Wind Catcher
+  journeyman:
+    - Distract
+    - First Impression
+    - Iron Constitution
+    - Leadership
+    - Lion Heart
+    - Second Weapon
+    - Sprint
+    - Swift Kick
+    - Tactics
+    - Tiger Spring
+
+circles:
+  # First circle
+  - talents:
+      - Battle Shout
+      - Climbing
+      - Fireblood
+      - Melee Weapons
+      - Thread Weaving
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Great Leap
+
+  # Third circle
+  - karma:
+      on_recovery_tests: true
+    talents:
+      - Wound Balance
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Fire Heal
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept may spend a Karma Point on Damage tests made with melee or
+        throwing weapons at or above the character’s one-handed Size limit.
+    talents:
+      - Battle Bellow
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Overwhelming Force
+        action: standard
+        strain: 2
+        # TODO: Figure out how to set another talent's strain to 0
+        description:
+          The adept no longer takes Strain when using the Aggressive Attack
+          Combat Option. If another effect grants them the same bonus, the adept
+          instead reduces the penalties by 1.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Steely Stare
+
+  # Seventh circle
+  - effects:
+      recoveryTestsPerDay: 1
+    talents:
+      - Down Strike
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 3
+    talents:
+      - Momentum Attack

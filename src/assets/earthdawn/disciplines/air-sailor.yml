@@ -1,0 +1,125 @@
+name: Air Sailor
+isSpellcaster: false
+durability: 5
+threadType: Air Weaving
+importantAttrs:
+  - cha
+  - dex
+  - wil
+
+description:
+  Air Sailors are the swashbuckling brotherhood of the sky. Air Sailors never
+  leave their fellows behind and embrace the idea of togetherness, working to
+  protect and spread civilization, rather than preying upon it.
+
+karmaRitual:
+  The Air Sailor sits alone in silent meditation under the open sky for several
+  minutes, picturing in his mind’s eye his airship sailing through the clouds at
+  the start of a long journey. The adept envisions an aerial journey he hopes to
+  make one day, imagining scenes of this journey, including the risks and
+  perils, and how his training and skills might help make the journey a safe
+  one. The ritual is complete when, half an hour later, the imagined journey
+  ends safely.
+
+artisanSkills:
+  - Rune Carving
+  - Sail Embroidery
+
+halfMagic:
+  The Air Sailor’s uses for Half-Magic include knowledge of airship designs,
+  recognition of different types of airships, commonly followed flight paths,
+  and airship crew complements. It may also cover the maintenance, repair, and
+  construction of airships.
+
+talentOptions:
+  novice:
+    - Acrobatic Defense
+    - Distract
+    - First Impression
+    - Great Leap
+    - Haggle
+    - Maneuver
+    - Navigation
+    - Speak Language
+    - Taunt
+    - Throwing Weapons
+  journeyman:
+    - Air Speaking
+    - Battle Bellow
+    - Conceal Object
+    - Engaging Banter
+    - Etiquette
+    - Graceful Exit
+    - Leadership
+    - Resist Taunt
+    - Second Weapon
+    - Surprise Strike
+
+circles:
+  # First circle
+  - freeTalents:
+      - Air Sailing
+    karma:
+      other:
+        The adept may spend Karma once per round on any action taken while on
+        board an airship.
+    talents:
+      - Avoid Blow
+      - Climbing
+      - Melee Weapons
+      - Thread Weaving
+      - Wind Catcher
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Awareness
+
+  # Third circle
+  - karma:
+      on_initiative_tests: true
+    talents:
+      - Empathic Sense
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Wound Balance
+
+  # Fifth circle
+  - karma:
+      on_interaction_tests: true
+    talents:
+      - Heartening Laugh
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Collaborate
+        action: simple
+        strain: 1
+        description:
+          Once per round as a Simple action, the adept may take 1 Strain to give
+          an ally a +2 bonus to a test towards achieving a common goal. The
+          player should describe how they are assisting their ally.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Air Dance
+
+  # Seventh circle
+  - effects:
+      recoveryTestsPerDay: 1
+    talents:
+      - Inspire Others
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 3
+    talents:
+      - Lion Heart

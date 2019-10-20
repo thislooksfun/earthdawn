@@ -71,8 +71,9 @@ circles:
       - Wind Catcher
 
   # Second circle
-  - defense:
-      physical: 1
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
     talents:
       - Awareness
 
@@ -83,8 +84,8 @@ circles:
       - Empathic Sense
 
   # Fourth circle
-  - defense:
-      social: 1
+  - effects:
+      socialDefense: 1
     talents:
       - Wound Balance
 
@@ -106,20 +107,19 @@ circles:
           player should describe how they are assisting their ally.
 
   # Sixth circle
-  - defense:
-      physical: 2
+  - effects:
+      physicalDefense: 2
     talents:
       - Air Dance
 
   # Seventh circle
-  # NOT 'effects!'. These have to be selected and applied based on the circle.
   - effects:
       recoveryTestsPerDay: 1
     talents:
       - Inspire Others
 
   # Eighth circle
-  - defense:
-      physical: 3
+  - effects:
+      physicalDefense: 3
     talents:
       - Lion Heart

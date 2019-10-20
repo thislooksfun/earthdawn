@@ -40,8 +40,9 @@ circles:
       - Thread Weaving
 
   # Second circle
-  - defense:
-      social: 1
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      socialDefense: 1
     talents:
       - First Impression
 
@@ -52,8 +53,8 @@ circles:
       - Riposte
 
   # Fourth circle
-  - defense:
-      physical: 1
+  - effects:
+      physicalDefense: 1
     talents:
       - Heartening Laugh
     journeyman_talent_option: true
@@ -67,18 +68,19 @@ circles:
       - Second Weapon
 
   # Sixth circle
-  - defense:
-      social: 2
+  - effects:
+      socialDefense: 2
     talents:
       - Disarm
 
   # Seventh circle
-  - initiative: 1
+  - effects:
+      initiative: 1
     talents:
       - Resist Taunt
 
   # Eighth circle
-  - defense:
-      physical: 2
+  - effects:
+      physicalDefense: 2
     talents:
       - Second Attack

@@ -63,8 +63,20 @@ circles:
       on_damage_tests:
         - melee
     talents:
-      - Size Up,
       - Second Weapon
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Size Up
+        action: simple
+        strain: 2
+        description:
+          As a Simple Action, the adept takes 2 Strain, and makes a Weapon
+          Weaving test against an opponent’s Mystic Defense. If successful, he
+          may ask one specific question about one of that opponent’s traits.
+          This ability works like the Creature Analysis talent (p. 136), but
+          only against Name-giver targets, and only allows one question.
 
   # Sixth circle
   - effects:

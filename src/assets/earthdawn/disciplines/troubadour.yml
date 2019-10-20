@@ -56,8 +56,8 @@ talentOptions:
 circles:
   # First circle
   - freeTalents:
-      # TODO: Add this flavor somehow
-      # BODY: Probably just add it to the skills list
+      # TODO: Add this flavor somehow (Entertainer)
+      # BODY: Probably just add it to the talents list
       #
       # The adept is experienced in the ways of performing before a crowd. This
       # talent works like the Entertainer skill (p. 196), but does not require

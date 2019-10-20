@@ -27,7 +27,8 @@ talentOptions:
 
 circles:
   # First circle
-  - circleEffects:
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
       mysticDefense: 1
       physicalDefense: 1
       socialDefense: 1

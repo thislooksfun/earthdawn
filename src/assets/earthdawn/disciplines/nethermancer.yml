@@ -1,0 +1,134 @@
+name: Nethermancer
+isSpellcaster: true
+durability: 3
+threadType: Nethermancy
+importantAttrs:
+  - cha
+  - per
+  - wil
+
+description: Nethermancers are spellcasters who specialize in the magic of the
+  netherworlds. Their interests focus on other planes, and the spirits and
+  creatures that inhabit those planes. Most people consider Nethermancers to be
+  a little “off” in an eerie sort of way, and consequently followers of this
+  Discipline are unlikely to win many popularity contests.
+
+karmaRitual:
+  The Nethermancer drinks tea with a spirit servant or other otherworldly
+  creature and talks of life beyond this world. The ritual ends after a half
+  hour has passed with the Nethermancer draining the last drop from his final
+  cup of tea.
+
+artisanSkills:
+  - Bone Carving
+  - Robe Embroidery
+
+halfMagic: Nethermancers use half-magic to recognize uses of nethermantic magic,
+  different types of undead and spirits, and magical rituals—especially blood
+  magic rituals. Nethermancers may also use half-magic to understand the effects
+  of different blood charms, as these are linked with Nethermancy. A
+  Nethermancer may use half-magic to sense the presence of spirits within 30
+  yards of his location. The Detection Difficulty for sensing a spirit is the
+  spirit’s Mystic Defense (determined by the gamemaster). If the test succeeds,
+  the Nethermancer can sense the presence of the spirit and use spells, or
+  talents such as Spirit Hold or Spirit Talk, to communicate and interact with
+  the spirit. The gamemaster may choose to make this Half-Magic test on behalf
+  of a Nethermancer character at any time, as this innate sense is always
+  active.
+
+talentOptions:
+  novice:
+    - Arcane Mutterings
+    - Avoid Blow
+    - Awareness
+    - Command Nightflyer,
+    - Dispel Magic
+    - Read and Write Language
+    - Speak Language,
+    - Standard Matrix
+    - Stealthy Stride,
+    - Suppress Curse
+  journeyman:
+    - Astral Interference
+    - Banish
+    - Blood Share
+    - Enhanced Matrix
+    - Lifesight
+    - Lion Heart
+    - Research
+    - Spirit Mount
+    - Steely Stare
+    - Tenacious Weave
+
+circles:
+  # First circle
+  - freeTalents:
+      - Standard Matrix 1
+      - Standard Matrix 2
+    talents:
+      - Astral Sight
+      - Frighten
+      - Patterncraft
+      - Spellcasting
+      - Thread Weaving
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      mysticDefense: 1
+    karma:
+      other:
+        The adept may spend a Karma Point once per round on any test against a
+        Horror, Horror Construct, or undead target.
+    talents:
+      - Steel Thought
+
+  # Third circle
+  - talents:
+      - Spirit Talk
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Spirit Hold
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept may spend a Karma Point to increase the target’s penalty from
+        a spell he is casting by 2.
+    # # TODO: Figure out how to implement this upgrade
+    # freeTalents:
+    #   _other:
+    #     One of the adept’s free Standard Matrix talents is upgraded to an
+    #     Enhanced Matrix.
+    talents:
+      - Summon [Ally Spirits]
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Blood Summon
+        description:
+          The adept may take Blood Magic Damage equal to the Strength rating of
+          a spirit being summoned to gain an extra success on a Summon test.
+          This damage may only be healed a full day after the spirit has left
+          the summoner’s service.
+
+  # Sixth circle
+  - effects:
+      mysticDefense: 2
+    talents:
+      - Willforce
+
+  # Seventh circle
+  - effects:
+      mysticArmor: 1
+    talents:
+      - Orbiting Spy
+
+  # Eighth circle
+  - effects:
+      mysticDefense: 3
+    talents: Hold Thread

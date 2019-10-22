@@ -46,7 +46,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "electron": "^6.0.7",
+    "electron": "^7.0.0",
     "eslint": "^6.3.0",
     "eslint-plugin-vue": "^5.0.0",
     "prettier": "1.18.2",

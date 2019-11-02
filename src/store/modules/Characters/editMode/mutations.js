@@ -106,4 +106,7 @@ export default {
   ADD_EFFECT(state, { uuid, name, value }) {
     Vue.set(state.characters[uuid]["effects!"], name, value);
   },
+  REMOVE_EFFECT(state, { uuid, name }) {
+    Vue.delete(state.characters[uuid]["effects!"], name);
+  },
 };

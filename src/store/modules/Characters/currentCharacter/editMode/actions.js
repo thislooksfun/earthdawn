@@ -105,6 +105,9 @@ export default {
   addEffect({ commit }, { name, value }) {
     commit("ADD_EFFECT", { uuid: routedUUID(), name, value });
   },
+  removeEffect({ commit }, { name }) {
+    commit("REMOVE_EFFECT", { uuid: routedUUID(), name });
+  },
   // 'circle' is 1-based
   // TODO: Implement this:
   // circleUp({ commit, dispatch, state }, { circle }) {

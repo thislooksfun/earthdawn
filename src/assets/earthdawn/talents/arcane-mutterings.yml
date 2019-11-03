@@ -1,0 +1,18 @@
+name: Arcane Mutterings
+attr: cha
+action: standard
+strain: 0
+skill_use: novice
+description:
+  The adept confuses others by muttering dire, largely incomprehensible,
+  warnings and making an Arcane Mutterings test against the highest Social
+  Defense among the target group, +1 for each additional character. If
+  successful, the target characters become confused and are considered Harried
+  for a number of rounds equal to the adept’s Arcane Mutterings rank. Due to the
+  disconcerting nature of the talent, this penalty also applies to the target’s
+  Social Defense. During this time, the adept must continually “mutter” or the
+  effect ends; this requires his concentration. If the adept achieves extra
+  successes, those affected by the talent will take no hostile actions against
+  the adept or his obvious companions—so long as no one takes any hostile action
+  against them. Arcane Mutterings is ineffective against targets already engaged
+  in combat.

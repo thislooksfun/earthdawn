@@ -1,0 +1,15 @@
+name: Air Speaking
+attr: per
+action: simple
+strain: 1
+skill_use: no
+description:
+  The adept communicates without vocalizing, moving his lips and mouthing the
+  words he wants to speak. He makes an Air Speaking test and compares it to the
+  Mystic Defense of each target he wishes to speak with. If successful, the
+  target hears the adept speaking as if he were conversing normally, regardless
+  of other noise in the area. If unsuccessful, the individual target does not
+  hear the adept. There is no limit to the number of targets that can be
+  affected at once, but all must be within Rank x10 yards, and all targets hear
+  the same words. The adept must speak in a language he knows. If a target does
+  not speak the language, they cannot understand what it being said.

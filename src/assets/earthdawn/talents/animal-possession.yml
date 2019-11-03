@@ -1,0 +1,24 @@
+name: Animal Possession
+attr: wil
+action: standard
+strain: 2
+skill_use: no
+description:
+  The adept places his spirit into the body of an animal by touching it and
+  making an Animal Possession test against the animal’s Mystic Defense. If
+  successful, his spirit takes possession of the animal’s body. The adept
+  controls the animal’s body for a number of hours equal to his Animal
+  Possession rank or until animal and adept touch again. While using this
+  talent, the adept’s physical form slumps into a coma-like state. He retains
+  his own intellect while in the animal’s body, but cannot perform any actions
+  that the animal is normally incapable of, such as speaking.
+
+  An unwilling animal may attempt to resist the talent at the time of possession
+  by making a Willpower test against the adept’s Animal Possession Step. If
+  successful, the animal prevents the possession occurring, although the adept
+  can try again. Otherwise the talent functions normally and the animal may take
+  no further independent actions until the possession ends. When the talent ends
+  the adept’s spirit returns to his proper body. If the host animal is killed or
+  knocked unconscious while the talent is in effect, the possession ends
+  immediately, and the adept suffers any damage dealt to the host while the
+  possession was in effect. No armor protects from this damage.

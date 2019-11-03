@@ -1,0 +1,17 @@
+name: Animal Talk
+attr: per
+action: standard
+strain: 0
+skill_use: no
+description:
+  The adept can understand animals and creatures, talking with them by imitating
+  their own forms of communication and making an Animal Talk test against the
+  target’s Mystic Defense. If successful, the adept can talk to and understand
+  the target for a number of minutes equal to his Animal Talk rank. This talent
+  does not compel the animal or creature to communicate with the adept, it
+  merely makes communication possible.
+
+  The gamemaster is advised to treat animals as if they were gamemaster
+  characters, using the rules for Social Interactions (see the Gamemaster’s
+  Guide), but he should keep in mind that animals aren’t as intelligent as
+  Namegivers and perceive the world differently.

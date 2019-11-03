@@ -1,0 +1,18 @@
+name: Air Dance
+attr: dex
+action: free
+strain: 2
+skill_use: no
+description:
+  The adept floats on a thin cushion of air, allowing him to perform quick,
+  gliding movements and rapid attacks. Air Dance requires that the adept be able
+  to move. Windlings may use this talent while flying, but it cannot be combined
+  with other talents that use forms of magical flight, such as Gliding Stride.
+
+  The adept substitutes his Air Dance Step for his Dexterity Step when making
+  his Initiative test (see Determine Initiative, p. 372), suffering Initiative
+  penalties for armor as normal. If making a close combat attack that round, the
+  adept compares his Initiative test result against his opponent’s. If he scores
+  three successes, the adept may make an additional close combat attack after
+  his opponent’s action. This talent does not allow an adept to remain suspended
+  in midair, or do anything to reduce falling damage.

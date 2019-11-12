@@ -11,3 +11,7 @@ table:
   rows:
     - []
 description: <The description>
+
+optional_rule:
+  name: <name>
+  description: <desc>

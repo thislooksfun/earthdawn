@@ -1,0 +1,18 @@
+name: Stealthy Stride
+attr: dex
+action: simple
+strain: 0
+skill_use: novice
+description:
+  "The adept combines fluid movement with magical effects that dampen sound and
+  mask his presence, including deepening shadows and using illusion to remain
+  unobserved. The adept makes a Stealthy Stride test, the result being the
+  Difficulty Number for any Perception tests made to notice the adept.
+
+  This talent does not allow the adept to vanish while being observed—once a
+  character is aware of the adept’s presence and watching him the talent will
+  not work. Using Stealthy Stride halves the adept’s Movement Rate and the
+  effect of any abilities used to increase movement speed.
+
+  Skill Use: The non-magical version of this talent does not include the magical
+  effects, but otherwise works the same way as the talent."

@@ -1,0 +1,17 @@
+name: Picking Pockets
+attr: dex
+action: standard
+strain: 0
+skill_use: novice
+description:
+  "The adept combines a deft touch with minor levitation magic to remove an item
+  from the pocket or pouch of another character. The adept makes a Picking
+  Pockets test, the result being the Difficulty Number for attempts made to
+  notice the theft.
+
+  Anyone able to observe the adept’s action, including the target character, may
+  make a Perception test to notice the action immediately after the act has
+  occurred.
+
+  Skill Use: The non-magical version of this skill does not include the
+  levitation magic, but is otherwise identical."

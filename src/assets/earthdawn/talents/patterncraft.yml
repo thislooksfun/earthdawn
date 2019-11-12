@@ -1,0 +1,31 @@
+name: Patterncraft
+attr: per
+action: standard
+strain: 0
+skill_use: no
+description:
+  The adept gains a greater understanding of the mysteries and applications of
+  magic. This includes the ability to read and write magical writing, such as
+  that found in grimoires or magical glyphs. For each page that he is attempting
+  to translate, the adept makes a Patterncraft test against the writing’s
+  Difficulty Number, determined by the gamemaster. If successful, the success
+  level determines how well he understands the content.
+
+  A single success allows the adept to understand the basic gist of the text,
+  but not any subtle or complex ideas it contains; two or three successes means
+  he understands the subtleties of the text, though he might misinterpret
+  obscure clues or riddles; four or more successes means the adept completely
+  understands content, easily deciphering any hints, clues, or hidden meanings.
+
+  This talent also allows magicians to learn new spells. A magician can attempt
+  to learn a spell by making a Patterncraft test against the spell’s Learning
+  Difficulty. If successful, he has learned the spell and can write it in his
+  grimoire. The magician can learn only one spell per day. He may learn more
+  spells by sacrificing Recovery tests— for each Recovery test sacrificed, the
+  magician may make an additional Patterncraft test. See Learning New Spells, p.
+  452, for more information on learning and scribing spells.
+
+  Other functions of this talent include identifying spells (Difficulty equal to
+  the Dispel Difficulty, with a +4 bonus if it is from the adept’s discipline),
+  designing new common magical items and thread items, and creating signature
+  spells.

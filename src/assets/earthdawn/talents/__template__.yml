@@ -5,4 +5,9 @@ strain: 1
 skill_use: no|novice|journeyman
 examples:
   - Some example
+table:
+  title: <title>
+  headers: []
+  rows:
+    - []
 description: <The description>

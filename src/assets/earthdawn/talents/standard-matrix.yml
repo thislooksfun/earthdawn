@@ -1,0 +1,18 @@
+name: Standard Matrix
+attr: NULL
+action: na
+strain: 0
+skill_use: no
+examples:
+  - Some example
+description:
+  A Standard Matrix is the most basic spell matrix, an astral construct that
+  allows magicians to cast spells without interference from the residents of
+  astral space. A magician may only safely cast a spell after he has first
+  placed it in a spell matrix. The rank determines the maximum spell circle that
+  the matrix can hold.
+
+  For example, a Rank 2 Standard Matrix can hold a single First or Second Circle
+  spell. Each matrix represents a separate talent with its own Rank, and is
+  improved independently. For more information on Spell Matrices and how they
+  are used, see the Spell Magic chapter, p. 246.

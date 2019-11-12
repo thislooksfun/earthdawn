@@ -26,13 +26,19 @@ export default function(char) {
     ...char.health,
 
     get unconsciousnessThreshold() {
-      return tou.val * 2 + char._effects._sum("unconsciousnessThreshold");
+      return (
+        tou.val * 2 +
+        char.discipline.durability * char.circle +
+        char._effects._sum("unconsciousnessThreshold")
+      );
     },
 
     get deathThreshold() {
       return (
-        this.unconsciousnessThreshold +
+        char.health.unconsciousnessThreshold +
         tou.step_raw +
+        // durability is already factored in above
+        char.circle +
         char._effects._sum("deathThreshold")
       );
     },

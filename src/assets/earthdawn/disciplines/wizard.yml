@@ -1,0 +1,129 @@
+name: Wizard
+isSpellcaster: true
+durability: 3
+threadType: Wizardry
+importantAttrs:
+  - cha
+  - per
+  - wil
+
+description:
+  Wizards are spellcasters focusing on the theoretical aspects of magic. Those
+  who follow other spellcasting Disciplines sometimes disparage Wizards as being
+  “book magicians,” but it is interesting to note that very few have the guts to
+  call a Wizard that to his face.
+
+karmaRitual:
+  The Wizard draws a circle at least two yards in diameter, then inscribes a
+  triangle within the circle. Making any corrections necessary for accuracy in
+  drawing the first circle, the Wizard draws another circle inside the triangle.
+  Then a triangle within that circle, and so on. Soon the Wizard will be forced
+  to create figures smaller than hand and stylus can possibly draw. He uses the
+  power of magic to continue to draw, even when the results become too small to
+  be seen with the naked eye. The sequence ends with a triangle and is complete
+  once this final triangle is drawn.
+
+artisanSkills:
+  - Manuscript Illumination
+  - Robe Embroidery
+
+halfMagic:
+  Wizards may use half-magic to recognize different types of magic use, identify
+  specific uses of Wizardry, and for knowledge of magical rituals.
+
+talentOptions:
+  novice:
+    - Arcane Mutterings
+    - Awareness
+    - Book Memory
+    - Conversation,
+    - Creature Analysis
+    - Etiquette
+    - Item History
+    - Read and Write Language
+    - Speak Language
+    - Standard Matrix
+  journeyman:
+    - Avoid Blow
+    - Diplomacy
+    - Enhanced Matrix,
+    - Evidence Analysis
+    - Hypnotize
+    - Lifesight
+    - Mystic Pursuit
+    - Power Mask
+    - Resist Taunt
+    - True Sight
+
+circles:
+  # First circle
+  - freeTalents:
+      - Standard Matrix 1
+      - Standard Matrix 2
+    talents:
+      - Dispel Magic
+      - Patterncraft
+      - Research
+      - Spellcasting
+      - Thread Weaving
+
+  # Second circle
+  - effects:
+      mysticDefense: 1
+    talents:
+      - Astral Sight
+
+  # Third circle
+  - karma:
+      other: The adept may spend a Karma Point on any test to recall information
+        (including Knowledge tests).
+    talents:
+      - Tenacious Weave
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Steel Thought
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept may spend a Karma Point to change the range of a spell from
+        Self to Touch.
+    # # TODO: Figure out how to implement this upgrade
+    # freeTalents:
+    #   _other:
+    #     One of the adept’s free Standard Matrix talents is upgraded to an
+    #     Enhanced Matrix.
+    talents:
+      - Astral Interference
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Book Mage
+        action: free
+        strain: 1
+        description:
+          For 1 Strain, the adept gains a +5 to a Thread Weaving test to
+          reattune on the fly if they are looking at the spell in their
+          grimoire.
+
+  # Sixth circle
+  - effects:
+      mysticDefense: 2
+    talents:
+      - Willforce
+
+  # Seventh circle
+  - effects:
+      mysticArmor: 1
+    talents:
+      - Hold Thread
+
+  # Eighth circle
+  - effects:
+      mysticDefense: 3
+    talents:
+      - Suppress Curse

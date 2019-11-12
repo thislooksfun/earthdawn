@@ -2,6 +2,9 @@ name: Swordsmaster
 isSpellcaster: false
 durability: 7
 threadType: Weapon Weaving
+importantAttrs:
+  - cha
+  - dex
 
 talentOptions:
   novice:
@@ -37,8 +40,9 @@ circles:
       - Thread Weaving
 
   # Second circle
-  - defense:
-      social: 1
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      socialDefense: 1
     talents:
       - First Impression
 
@@ -49,33 +53,45 @@ circles:
       - Riposte
 
   # Fourth circle
-  - defense:
-      physical: 1
+  - effects:
+      physicalDefense: 1
     talents:
       - Heartening Laugh
-    journeyman_talent_option: true
 
   # Fifth circle
   - karma:
       on_damage_tests:
         - melee
     talents:
-      - Size Up,
       - Second Weapon
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Size Up
+        action: simple
+        strain: 2
+        description:
+          As a Simple Action, the adept takes 2 Strain, and makes a Weapon
+          Weaving test against an opponent’s Mystic Defense. If successful, he
+          may ask one specific question about one of that opponent’s traits.
+          This ability works like the Creature Analysis talent (p. 136), but
+          only against Name-giver targets, and only allows one question.
 
   # Sixth circle
-  - defense:
-      social: 2
+  - effects:
+      socialDefense: 2
     talents:
       - Disarm
 
   # Seventh circle
-  - initiative: 1,
+  - effects:
+      initiative: 1
     talents:
       - Resist Taunt
 
   # Eighth circle
-  - defense:
-      physical: 2
+  - effects:
+      physicalDefense: 2
     talents:
       - Second Attack

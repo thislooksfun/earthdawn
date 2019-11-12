@@ -1,0 +1,132 @@
+name: Illusionist
+isSpellcaster: true
+durability: 3
+threadType: Illusionism
+importantAttrs:
+  - cha
+  - per
+  - wil
+
+description: Illusionists cast spells that work through deception. However, some
+  Illusionist spells do have real effects; Illusionists learned long ago that if
+  everything they did was an illusion, people quickly caught on and their magic
+  became less effective. Now they balance real magic, illusions, trickery, and
+  sleight of hand.
+
+karmaRitual:
+  "The Illusionist does not use the same ritual each time. His Karma ritual does
+  require him to incorporate certain elements every time, however: showy spells,
+  tricks or snappy banter, and an assistant. Other than that, the Illusionist
+  makes up his ritual on the spot. The Illusionist must do his best during this
+  time to convince his assistant that the ritual is very serious and must
+  conform to a precise formula."
+
+artisanSkills:
+  - Acting
+  - Robe Embroidery
+
+halfMagic:
+  Illusionists make Half-Magic tests to recognize different types of magic use,
+  as well as specific uses of illusion magic. They also make Half-Magic tests
+  when attempting to perceive the “truth” of a given situation.
+
+talentOptions:
+  novice:
+    - Arcane Mutterings
+    - Astral Sight
+    - Awareness
+    - Dead Fall
+    - Mimic Voice
+    - Speak Language
+    - Standard Matrix
+    - Stealthy Stride
+    - Taunt
+    - Winning Smile
+  journeyman:
+    - Conceal Object
+    - Dispel Magic
+    - Engaging Banter
+    - Enhanced Matrix
+    - Fast Hand
+    - Frighten
+    - Resist Taunt
+    - Slough Blame
+    - Steel Thought
+    - Tenacious Weave
+
+circles:
+  # First circle
+  - freeTalents:
+      - Standard Matrix 1
+      - Standard Matrix 2
+    talents:
+      - False Sight
+      - First Impression
+      - Patterncraft
+      - Spellcasting
+      - Thread Weaving
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      mysticDefense: 1
+    talents:
+      - True Sight
+
+  # Third circle
+  - karma:
+      on_interaction_tests: true
+    talents:
+      - Conversation
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Disguise Self
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept may spend a Karma Point to add a +2 bonus to a spell’s Effect
+        Step. The bonus lasts for the full spell duration, even if the spell has
+        multiple Effect tests.
+    # # TODO: Figure out how to implement this upgrade
+    # freeTalents:
+    #   _other:
+    #     One of the adept’s free Standard Matrix talents is upgraded to an
+    #     Enhanced Matrix.
+    talents:
+      - Power Mask
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Glamour
+        action: standard
+        strain: 2
+        description:
+          For 2 Strain, the adept creates a clearly illusory scene (no Sensing
+          test necessary) to delight and entertain onlookers as a Standard
+          action. The adept makes an Illusionism test against the highest Social
+          Defense in the crowd. If successful, the adept gains a +2 bonus to
+          Making an Impression tests for a number of hours equal to the
+          successes scored.
+
+  # Sixth circle
+  - effects:
+      mysticDefense: 2
+    talents:
+      - Willforce
+
+  # Seventh circle
+  - effects:
+      initiative: 1
+    talents:
+      - Hypnotize
+
+  # Eighth circle
+  - effects:
+      mysticDefense: 3
+    talents:
+      - Hold Thread

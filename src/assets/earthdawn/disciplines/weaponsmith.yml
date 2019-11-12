@@ -1,0 +1,132 @@
+name: Weaponsmith
+isSpellcaster: false
+durability: 5
+threadType: Thread Smithing
+importantAttrs:
+  - cha
+  - per
+  - wil
+
+description:
+  A Weaponsmith trains to gain an iron will and a highly critical eye. In
+  addition to their role as craftsmen that make mundane weapons, armor, and
+  other goods, Weaponsmiths help identify and create legendary weapons. Nearly
+  every community places great value on their Weaponsmiths.
+
+karmaRitual:
+  The Weaponsmith heats a thin strip of metal in a hot fire or forge. Over the
+  next half hour, he fashions the metal into a blade, arrowhead, or spear-tip,
+  but instead of forging an effective item, he intentionally tempers the metal
+  too soon, making it brittle. The Weaponsmith then shatters the defective piece
+  of metalwork, ending the ritual.
+
+artisanSkills:
+  - Rune Carving
+  - Wood Carving
+
+halfMagic:
+  Weaponsmiths may use half-magic when caring for weapons and armor and to
+  recognize different types of weapons and armor used or worn by different
+  Namegiver races or their creators.
+
+talentOptions:
+  novice:
+    - Avoid Blow
+    - Awareness
+    - Danger Sense
+    - Disarm Trap,
+    - Fireblood,
+    - First Impression
+    - Haggle
+    - Read and Write Language
+    - Shield Bash
+    - Speak Language
+  journeyman:
+    - Battle Shout
+    - Diplomacy
+    - Earth Skin,
+    - Etiquette
+    - Fire Heal
+    - Heartening Laugh
+    - Iron Constitution
+    - Leadership,
+    - Missile Weapons
+    - Resist Taunt
+
+circles:
+  # First circle
+  - freeTalents:
+      # TODO: Add this flavor somehow (Craftsman)
+      # BODY: Probably just add it to the talents list
+      #
+      # This talent is similar to the Craftsman skill (p. 195), allowing the
+      # adept to make tests to craft and repair mundane items, including weapons
+      # and armor.
+      - Craftsman
+    karma:
+      other: The adept can spend a Karma Point on any test to craft or repair an
+        item.
+    talents:
+      - Forge Weapon
+      - Item History
+      - Melee Weapons
+      - Steel Thought
+      - Thread Weaving
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      mysticDefense: 1
+    talents:
+      - Conversation
+
+  # Third circle
+  - karma:
+      on_recovery_tests: true
+    talents:
+      - Suppress Curse
+
+  # Fourth circle
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Wound Balance
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept can spend a Karma Point on Damage tests he makes with a weapon
+        he crafted.
+    talents:
+      - Forge Armor
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Traveling Smithy
+        action: sustained
+        strain: 2
+        description:
+          For 2 Strain, the adept uses magic to create an improvised forge,
+          provided he has the minimum requirements necessary, such as a fire for
+          working metal. The smithy lasts for one day, and gives a -3 penalty to
+          any tests made that use it. Only the Weaponsmith may use the forge for
+          tests.
+
+  # Sixth circle
+  - effects:
+      mysticDefense: 2
+    talents:
+      - Temper Flesh
+
+  # Seventh circle
+  - effects:
+      mysticArmor: 1
+    talents:
+      - Spot Armor Flaw
+
+  # Eighth circle
+  - effects:
+      mysticDefense: 3
+    talents:
+      - Lion Heart

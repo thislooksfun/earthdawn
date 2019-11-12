@@ -1,0 +1,130 @@
+name: Cavalryman
+isSpellcaster: false
+durability: 7
+threadType: Rider Weaving
+importantAttrs:
+  - cha
+  - dex
+  - per
+
+description:
+  "Members of the Cavalryman Discipline are fierce, mounted warriors. They train
+  with their mounts and form a close empathic bond with them. A Cavalryman
+  typically respects his mount more than any Namegiver, with the possible
+  exception of other Cavalrymen. This Discipline emphasizes motion and empathy
+  for one’s mount.
+
+  Mount: Cavalrymen begin the game with a mount of the gamemaster’s approval
+  (see p. 431 for a selection). The mount is trained for riding only; the
+  Cavalryman needs to combat-train it (p. 395). Humans, orks, and elves prefer
+  horses, although many tribal ork Cavalrymen use thundra beasts. Trolls,
+  windlings and dwarfs find horses awkward to ride. Some dwarf Cavalrymen ride
+  ponies due to their short size; some use the troajin or the huttawa. Because
+  of their size and weight, troll Cavalrymen are known to ride large war horses,
+  but most ride an unusually strong and sturdy breed of horse called a granlain.
+  Too small to ride normal horses, windling Cavalrymen most often ride small
+  lizard-like mounts known as kues, or large birds called zoaks."
+
+karmaRitual:
+  The Cavalryman plants a target in the ground, then rides his mount several
+  minutes distance away. Blindfolding himself, he directs his mount to return to
+  the target. Once he closes to about 100 yards, the Cavalryman uses the almost
+  psychic connection with his mount, and whatever other empathic talents he
+  possesses, to urge his mount to charge the target. Still blindfolded, the
+  Cavalryman strikes the target with one of his weapons. He then removes the
+  blindfold to end the ritual.
+
+artisanSkills:
+  - Body Painting
+  - Braiding
+
+halfMagic:
+  Cavalrymen may use half-magic for knowledge of different types of mounts used
+  by the Namegiver races, upkeep of riding gear, animal husbandry and first aid,
+  and knowledge of significant cavalry units in Barsaive.
+
+talentOptions:
+  novice:
+    - Avoid Blow
+    - Battle Shout
+    - Blood Share
+    - Conversation
+    - Creature Analysis
+    - Dominate Beast
+    - First Impression
+    - Heartening Laugh
+    - Speak Language
+    - Sure Mount
+  journeyman:
+    - Animal Companion Durability
+    - Empathic Sense
+    - Etiquette
+    - Fearsome Charge
+    - Leadership
+    - Lion Heart
+    - Missile Weapons
+    - Mount Attack
+    - Spirit Mount
+    - Tactics
+
+circles:
+  # First circle
+  - talents:
+      - Animal Bond
+      - Charge
+      - Melee Weapons
+      - Thread Weaving
+      - Trick Riding
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Animal Training
+
+  # Third circle
+  - karma:
+      other: The adept may spend a Karma Point on Attack tests made while charging.
+    talents:
+      - Enhance Animal Companion
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Call Animal Companion
+
+  # Fifth circle
+  - karma:
+      other: The adept may spend a Karma Point on any Damage tests made while mounted.
+    talents:
+      - Armor Mount
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: One Soul, Two Bodies
+        description:
+          The adept gains a +2 bonus to any non-combat test involving his
+          connection to his favored mount. For example, Animal Bond, Animal
+          Training, and Blood Share would get the bonus, but Trick Riding in
+          combat would not.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Wheeling Attack
+
+  # Seventh circle
+  - effects:
+      recoveryTestsPerDay: 1
+    talents:
+      - Wheeling Defense
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 3
+    talents:
+      - Double-Charge

@@ -1,0 +1,15 @@
+name: Distract
+attr: cha
+action: simple
+strain: 1
+skill_use: novice
+description:
+  The adept diverts an opponent’s attention by making himself a more tempting
+  target. He makes a Distract test against the target’s Social Defense. For each
+  success, the adept suffers a -1 penalty to his Physical Defense against
+  attacks by his target, but the target is distracted, suffering the same
+  penalty to his Physical Defense against attacks from other characters. The
+  target is considered Blindsided (see p. 386) for the rest of the round. The
+  normal Physical Defense penalty for being Blindsided is replaced with the
+  penalty from this talent, but restrictions still apply—such as being unable to
+  use active defenses.

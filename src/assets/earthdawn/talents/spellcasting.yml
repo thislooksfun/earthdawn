@@ -1,0 +1,10 @@
+name: Spellcasting
+attr: per
+action: standard
+strain: 0
+skill_use: no
+description:
+  The magician casts spells by making a Spellcasting test against the Casting
+  Difficulty given in the spell’s description. If successful, the spell is
+  successfully cast and the effect determined. See the Spell Magic chapter,
+  p.246 for more information on casting spells and spell descriptions.

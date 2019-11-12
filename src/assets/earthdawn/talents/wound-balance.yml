@@ -1,0 +1,10 @@
+name: Wound Balance
+attr: str
+action: free
+strain: 0
+skill_use: novice
+description:
+  The adept firmly stands his ground, substituting his Wound Balance Step for
+  his Strength Step when making any Knockdown tests while supporting and
+  balancing his own weight (as opposed to being mounted or carried by another
+  character).

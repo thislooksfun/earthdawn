@@ -1,0 +1,18 @@
+name: First Impression
+attr: cha
+action: standard
+strain: 0
+skill_use: novice
+description:
+  The adept favorably impresses a gamemaster character he has met by making a
+  First Impression test against the target’s Social Defense. If successful, the
+  target’s Attitude improves toward the adept by one degree (a Neutral character
+  becomes Friendly; an Unfriendly character becomes Neutral; and so on). With
+  three or more successes, it improves by two degrees. The new Attitude may be
+  changed for better or worse through future interactions, but reverts back to
+  the original level at a rate of one degree per day. Any hostile act the adept
+  commits against the target immediately erases the impression.
+
+  The adept may not use this talent again on a given target until the effects of
+  a prior use have faded. More information on Attitudes can be found in the
+  Gamemaster’s Guide.

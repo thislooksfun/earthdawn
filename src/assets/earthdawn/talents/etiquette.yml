@@ -1,0 +1,24 @@
+name: Etiquette
+attr: cha
+action: sustained
+strain: 0
+skill_use: novice
+description:
+  Etiquette is the art of proper behavior in social situations and can be
+  extremely important—improper behavior may be punished by responses ranging
+  from the scorn of nobles to beheading at the hands of enraged ork scorchers.
+  The adept observes the surrounding culture for a minute, then makes an
+  Etiquette test against the Difficulty Number of knowing the proper behavior
+  for a given social situation. The base Difficulty Number is 5, with the
+  gamemaster modifying the target depending on how unfamiliar the adept is with
+  that culture. The Difficulty Number is typically increased by +3 for each
+  differing aspect. Typical sources for modification include different social
+  standing, different race, a foreign land with different customs, and so on.
+
+  If successful, the number of successes alters the reaction of observers. A
+  single success means observers believe the adept possesses the rudiments of
+  proper behavior; two successes means those same people approve of the adept’s
+  manners; three or more successes so impresses observers with the adept’s
+  manners that their Attitude toward him improves by one degree (to a maximum of
+  Friendly). The effect lasts for a number of days equal to the adept’s
+  Etiquette rank or until the social situation ends, whichever comes first.

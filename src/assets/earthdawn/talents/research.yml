@@ -1,0 +1,34 @@
+name: Research
+attr: per
+action: sustained
+strain: 0
+skill_use: novice
+examples:
+  - At the Great Library of Throal, Tomas is looking for information on Cardael,
+    a ruined tower now rumored to be the base of a cult his group is pursuing.
+    Based on the nature of the information being sought, the gamemaster decides
+    the Difficulty Number for the Research test is 7.
+
+    Tomas rolls a 19—three successes! Tomas had been searching for the tower’s
+    general location, but the gamemaster decides that the high result earns a
+    bonus—Tomas learns not only the tower’s general location, but also that the
+    tower was built and used as a retreat for a Nethermancer, who had some
+    experience with the Horror the cult worships.
+
+table:
+  title: Research Table
+  headers: ["Difficulty Number", "Type of Information"]
+  rows:
+    - [5, "General"]
+    - [7, "Detailed"]
+    - [9, "Intricate"]
+    - [11, "Obscure"]
+
+description:
+  The adept finds information through study and investigation, including library
+  research and following up on rumors and legends. He makes a Research test
+  against a Difficulty Number determined by the type of information sought. The
+  gamemaster may use the numbers suggested in the Research Table, or the
+  guidelines for creating Difficulty Numbers in the Gamemaster’s Guide. The
+  success level determines how much information is obtained. More successes
+  often turns up more detailed information than the adept initially sought.

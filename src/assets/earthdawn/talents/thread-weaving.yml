@@ -1,0 +1,44 @@
+name: Thread Weaving
+attr: per
+action: standard
+strain: 0
+skill_use: no
+examples:
+  - Silar knows the Thread Weaving talent at Rank 3, allowing him to have up to
+    three threads active at any time, with each thread woven to a maximum Thread
+    Rank 3.
+description:
+  "The adept creates and manipulates magical threads. He can have a maximum
+  number of permanent threads active equal to his Thread Weaving rank. Each
+  individual thread can be woven to a maximum Thread Rank equal to the adept’s
+  Thread Weaving rank.
+
+  This limit does not apply to threads woven for spell patterns; such threads
+  are temporary, lasting only long enough for the spell to be cast. See the
+  Workings of Magic (p. 202) and Spell Magic (p. 246) chapters for more
+  information about threads and spell patterns.
+
+  Each Discipline has its own unique variant of the Thread Weaving talent, shown
+  in parentheses in the Discipline’s talent progression. If a rule calls for
+  this specific name, the Thread Weaving talent from that specific Discipline
+  must be used, not just any Thread Weaving talent. Ad- epts with more than one
+  Discipline learn and improve each of their Discipline’s Thread Weaving talents
+  independently. See Learning New Disciplines, p. 455, for more information on
+  multi-Disciplining and the Thread Weaving talent.
+
+  Mapping from discipline to thread weaving type:
+  - Air Sailor: Air Weaving
+  - Archer: Arrow Weaving
+  - Beastmaster: Beast Weaving
+  - Cavalryman: Rider Weaving
+  - Elementalist: Elementalism
+  - Illusionist: Illusionism
+  - Nethermancer: Nethermancy
+  - Scout: Scout Weaving
+  - Sky Raider: Sky Weaving
+  - Swordmaster: Weapon Weaving
+  - Thief: Thief Weaving
+  - Troubadour: Story Weaving
+  - Warrior: War Weaving
+  - Weaponsmith: Thread Smithing
+  - Wizard: Wizardry"

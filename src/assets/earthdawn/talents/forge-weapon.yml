@@ -1,7 +1,7 @@
 name: Forge Weapon
+attr: per
 action: sustained
 strain: 0
-attr: per
 skill_use: no
 examples:
   - Relayn is a Novice Weaponsmith with Rank 3 in Forge Weapon. While her master

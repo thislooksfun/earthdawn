@@ -17,41 +17,42 @@ describe("Characteristics decorator", () => {
     expect(char.characteristics).to.be.an("object");
   });
 
-  describe.each([
-    ["physical", "dex"],
-    ["mystic", "per"],
-    ["social", "cha"],
-  ])("char.characteristics.defense.%s", (defenseType, usedAttr) => {
-    // The defense ratings are calculated from the value of the relevant
-    // attribute. Below we stub those values to be 10. The expected defense
-    // rating for a value of 10 is 6.
-    const expectedRating = 6;
+  describe.each([["physical", "dex"], ["mystic", "per"], ["social", "cha"]])(
+    "char.characteristics.defense.%s",
+    (defenseType, usedAttr) => {
+      // The defense ratings are calculated from the value of the relevant
+      // attribute. Below we stub those values to be 10. The expected defense
+      // rating for a value of 10 is 6.
+      const expectedRating = 6;
 
-    beforeEach(() => {
-      // Stub char attrs
-      char.attrs = { [usedAttr]: { val: 10 } };
-      // Apply decorator
-      characteristicsDecorator(char);
-    });
+      beforeEach(() => {
+        // Stub char attrs
+        char.attrs = { [usedAttr]: { val: 10 } };
+        // Apply decorator
+        characteristicsDecorator(char);
+      });
 
-    it("should be a getter", () => {
-      const getter = getGetter(char.characteristics.defense, defenseType);
-      expect(getter).to.be.a("function");
-    });
+      it("should be a getter", () => {
+        const getter = getGetter(char.characteristics.defense, defenseType);
+        expect(getter).to.be.a("function");
+      });
 
-    it(`should be calculated from the ${usedAttr} val`, () => {
-      expect(char.characteristics.defense[defenseType]).to.eql(expectedRating);
-    });
+      it(`should be calculated from the ${usedAttr} val`, () => {
+        expect(char.characteristics.defense[defenseType]).to.eql(
+          expectedRating
+        );
+      });
 
-    it(`should be calculated from the ${usedAttr} val + the effects sum`, () => {
-      // Stub the effect sum calculator to always return non-0 for the
-      // relevant key
-      char._effects._sum = x => (x == `${defenseType}Defense` ? 3 : 0);
-      expect(char.characteristics.defense[defenseType]).to.eql(
-        expectedRating + 3
-      );
-    });
-  });
+      it(`should be calculated from the ${usedAttr} val + the effects sum`, () => {
+        // Stub the effect sum calculator to always return non-0 for the
+        // relevant key
+        char._effects._sum = x => (x == `${defenseType}Defense` ? 3 : 0);
+        expect(char.characteristics.defense[defenseType]).to.eql(
+          expectedRating + 3
+        );
+      });
+    }
+  );
 
   describe.each(["physical", "mystic"])(
     "char.characteristics.armor.%s",

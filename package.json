@@ -52,7 +52,7 @@
     "prettier": "1.19.1",
     "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
-    "snyk": "^1.241.0",
+    "snyk": "^1.247.0",
     "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
   }

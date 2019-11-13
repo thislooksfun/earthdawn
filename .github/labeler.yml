@@ -53,3 +53,7 @@ labeler: .github/labeler.yml
 vue:
   - vue.config.js
   - "**/*.vue"
+
+dependencies:
+  - package.json
+  - package-lock.json

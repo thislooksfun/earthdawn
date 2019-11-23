@@ -101,6 +101,10 @@ export default {
     commit("CREATION_WIZARD_CLOSE", { uuid: routedUUID() });
   },
 
+  // Items
+  addItem({ commit }, { name, count = 1 }) {
+    commit("ADD_ITEM", { uuid: routedUUID(), name, count });
+  },
   // Misc
   addEffect({ commit }, { name, value }) {
     commit("ADD_EFFECT", { uuid: routedUUID(), name, value });

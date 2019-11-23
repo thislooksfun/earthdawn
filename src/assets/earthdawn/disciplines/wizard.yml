@@ -36,7 +36,7 @@ talentOptions:
     - Arcane Mutterings
     - Awareness
     - Book Memory
-    - Conversation,
+    - Conversation
     - Creature Analysis
     - Etiquette
     - Item History
@@ -46,7 +46,7 @@ talentOptions:
   journeyman:
     - Avoid Blow
     - Diplomacy
-    - Enhanced Matrix,
+    - Enhanced Matrix
     - Evidence Analysis
     - Hypnotize
     - Lifesight

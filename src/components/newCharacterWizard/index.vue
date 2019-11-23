@@ -39,6 +39,10 @@
       <skill-ranks :uuid="uuid" @completed="onStageCompletion" />
     </div>
 
+    <div v-if="stage == 'equipment'" class="solid padded block">
+      <equipment :uuid="uuid" @completed="onStageCompletion" />
+    </div>
+
     <div v-if="stage == 'flesh-out'" class="solid padded block">
       <!-- <flesh-out-character :uuid="uuid" @completed="onStageCompletion" /> -->
     </div>
@@ -76,6 +80,7 @@ import SpellRanks from "./SpellRanks";
 import SkillRanksKnowledge from "./SkillRanksKnowledge";
 import SkillRanksArtisan from "./SkillRanksArtisan";
 import SkillRanks from "./SkillRanks";
+import Equipment from "./Equipment";
 // import FleshOutCharacter from "./FleshOutCharacter";
 
 export default {
@@ -87,6 +92,7 @@ export default {
     SkillRanksKnowledge,
     SkillRanksArtisan,
     SkillRanks,
+    Equipment,
     // FleshOutCharacter,
   },
   data() {
@@ -139,7 +145,8 @@ export default {
       if (ss == 4) return "skill-ranks::knowledge";
       if (ss == 5) return "skill-ranks::artisan";
       if (ss == 6) return "skill-ranks";
-      if (ss == 7) return "flesh-out";
+      if (ss == 7) return "equipment";
+      if (ss == 8) return "flesh-out";
 
       // Something went wrong! This line of code should never be reached.
       // If it was, reset the stage to a known state (the beginning).

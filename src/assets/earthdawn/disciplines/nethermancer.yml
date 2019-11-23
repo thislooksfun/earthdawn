@@ -62,10 +62,9 @@ talentOptions:
 
 circles:
   # First circle
-  - freeTalents:
-      - Standard Matrix 1
-      - Standard Matrix 2
-    talents:
+  # NOTE: Spellcasters get two free Standard Matrixes, but those are handled
+  # specially, not via 'freeTalents'
+  - talents:
       - Astral Sight
       - Frighten
       - Patterncraft

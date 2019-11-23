@@ -1,0 +1,22 @@
+name: Air Armor
+threads: 0
+weaving: 5/10
+casting: TMD
+range: touch
+duration: Rank+5 rounds
+effect: +3 Physical Armor
+successLevels:
+  - Increase Duration (+2 rounds)
+extraThreads:
+  - Increase Duration (minutes)
+  - Increase Effect (+1 Physical Armor)
+
+description:
+  Air. This spell creates a protective cushion of air. The magician exhales
+  slowly and makes a Spellcasting test against the target’s Mystic Defense. If
+  successful, air rushes in under the target’s clothing, pushing outward to
+  create a cushion and providing padding as well as ventilation. The target adds
+  +3 Physical Armor and the effects of fatigue are reduced (GM’s discretion). If
+  the target is not wearing clothing or armor he receives no benefit—there is
+  nothing to constrain the air cushion, so it disperses. This spell is popular
+  with elemental fire mining crews working near Death’s Sea.

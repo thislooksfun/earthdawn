@@ -1,0 +1,39 @@
+name: Summon Fog Ghost
+threads: 1
+weaving: 6/11
+casting: TMD
+range: 10 yards
+duration: Rank rounds
+effect: Nethermancer Circle+10 / Mystic
+areaOfEffect: <area>
+successLevels:
+  - Increase Duration (+2 rounds)
+extraThreads:
+  - Increase Effect (+2 Effect Step)
+  - Increase Range (+10 yards)
+
+description:
+  Summoning. This spell coalesces fog from the surrounding air and coaxes a
+  maleficent spirit to inhabit it. The magician blows openly into the air and
+  makes a Spellcasting test against the spirit’s Mystic Defense (see below); the
+  magician may choose a lower effective Circle for the spell effect. If
+  successful, the fog ghost appears where the magician wishes within the spell’s
+  range, whereupon it immediately attacks the nearest character (even the
+  magician himself). Each round, the fog ghost indiscriminately attacks whoever
+  is nearest to it using the Effect Step for Attack and Damage tests until it is
+  destroyed or the spell ends.
+
+  The fog is nearly impervious to physical attacks but the astral pattern
+  containing the spirit can be disrupted by any attack which targets the fog
+  ghost’s Mystic Defense (Nethermancer Circle+5) or Physical Defense
+  (Nethermancer Circle+15). To successfully disrupt the pattern, a character
+  must inflict damage in a single attack equal to or greater than the Effect
+  Step. Destroying the fog does not harm the spirit, which simply returns to its
+  netherworld and waits for another chance to harm the living.
+
+  A fog ghost will not attack undead or other spirits. The spell cannot be cast
+  in desert or other very dry environments, nor can it be cast when the
+  temperature is below freezing. This spell may only have one active casting at
+  a time (including Aspect of the Fog Ghost).
+
+  This spell may be stored in the same spell matrix as Aspect of the Fog Ghost.

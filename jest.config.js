@@ -18,6 +18,7 @@ module.exports = {
     "^Races$": "<rootDir>/src/assets/earthdawn/races/index.js",
     "^Talents$": "<rootDir>/src/assets/earthdawn/talents/index.js",
     "^Skills$": "<rootDir>/src/assets/earthdawn/skills/index.js",
+    "^Spells$": "<rootDir>/src/assets/earthdawn/spells/index.js",
   },
   setupFilesAfterEnv: ["./tests/setup/expect.js"],
   snapshotSerializers: ["jest-serializer-vue"],

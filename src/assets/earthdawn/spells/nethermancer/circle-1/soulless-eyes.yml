@@ -1,0 +1,22 @@
+name: Soulless Eyes
+threads: 1
+weaving: 5/10
+casting: TMD
+range: Touch
+duration: Rank+5 minutes
+effect: +3 to Intimidation tests
+areaOfEffect: <area>
+successLevels:
+  - Increase Duration (+2 minutes)
+extraThreads:
+  - Increase Duration (+2 minutes)
+  - Increase Effect (+2 bonus)
+
+description:
+  This spell enhances the ability to intimidate others. Traditionally it gives
+  the target’s eyes a cruel cast that makes viewers have no doubt about what
+  they are willing to do, though it manifests in different fashions for some
+  magicians. The magician glares and smiles cruelly, then places his hand on the
+  target and makes a Spellcasting test against the target’s Mystic Defense. If
+  successful, the target gains a +3 bonus to any Intimidation tests made for the
+  duration of the spell.

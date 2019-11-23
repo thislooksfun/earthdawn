@@ -7,6 +7,7 @@ module.exports = {
         Disciplines$: path.join(__dirname, "src/assets/earthdawn/disciplines"),
         Races$: path.join(__dirname, "src/assets/earthdawn/races"),
         Skills$: path.join(__dirname, "src/assets/earthdawn/skills"),
+        Spells$: path.join(__dirname, "src/assets/earthdawn/spells"),
         Talents$: path.join(__dirname, "src/assets/earthdawn/talents"),
       },
     },

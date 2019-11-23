@@ -1,0 +1,21 @@
+name: Soul Armor
+threads: 1
+weaving: 5/10
+casting: TMD
+range: 10 yards
+duration: Rank minutes
+effect: +3 to Mystic Armor
+successLevels:
+  - Increase Duration (+2 minutes)
+extraThreads:
+  - Increase Duration (+2 minutes)
+  - Increase Effect (+2 Mystic Armor)
+  - Increase Range (+10 yards)
+  - Additional Target (+1)
+
+description:
+  This spell enhances a character’s Mystic Armor. The magician draws jagged blue
+  sigils of protection in the air and makes a Spellcasting test against the
+  target’s Mystic Defense. If successful, a glimmering suit of blue chain mail
+  appears, momentarily covering the target before it sinks into his body. The
+  target adds +3 to his Mystic Armor.

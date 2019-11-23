@@ -1,0 +1,15 @@
+name: <name>
+threads: 0
+weaving: <1>/<2>
+casting: <target>
+range: <range>
+duration: <duration>
+# TODO: Make the effect actually cause an effect when cast on self.
+effect: <effect>
+areaOfEffect: <area>
+successLevels:
+  - <on extra success>
+extraThreads:
+  - <on extra thread>
+
+description: <description>

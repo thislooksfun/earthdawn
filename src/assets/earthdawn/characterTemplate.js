@@ -98,6 +98,11 @@ export default {
     //   rank: 4,
     // },
   ],
+  spells: {
+    // The value is technically arbetrary, but this is easier managed as an
+    // object rather than an array, so some value is needed.
+    // <name>: null
+  },
   skills: {
     "Speak Language": 2,
     "Read and Write Language": 1,

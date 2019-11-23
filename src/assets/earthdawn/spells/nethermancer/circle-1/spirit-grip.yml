@@ -1,0 +1,20 @@
+name: Spirit Grip
+threads: 0
+weaving: 5/10
+casting: TMD
+range: Touch
+duration: 2 rounds
+effect: WIL+2 / Mystic and reduce Defenses by 2
+areaOfEffect: <area>
+successLevels:
+  - Increase Duration (+2 rounds)
+extraThreads:
+  - Increase Effect (+2 Effect Step)
+  - Increase Effect (-1 Defenses)
+
+description:
+  This spell draws on the malevolent energy of the spirits of the dead to harm
+  others. The magician touches his victim and makes a Spellcasting test against
+  the target’s Mystic Defense. If successful, the Effect test determines how
+  much damage is inflicted and the target’s Defenses (Mystic and Physical) are
+  reduced by 2 until the end of the next round.

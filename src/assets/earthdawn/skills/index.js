@@ -1,5 +1,5 @@
 /**
- * The file enables `Races` to import all races in a one-shot manner. There
+ * The file enables `Skills` to import all races in a one-shot manner. There
  * should not be any reason to edit this file.
  */
 

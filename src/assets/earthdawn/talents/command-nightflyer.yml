@@ -1,0 +1,17 @@
+name: Command Nightflyer
+attr: wil
+action: sustained
+strain: 1
+skill_use: no
+description:
+  The adept can converse with and command nocturnal, flying creatures, such as
+  owls, bats, and krilworms. A successful Command Nightflyer test against the
+  target’s Mystic Defense allows the adept to converse with the creature in
+  their “tongue” for Rank minutes. He may also give it simple commands equal to
+  the number of successes that will be obeyed during this time. The commands
+  will still be followed even if the talent has ended, but the adept needs to
+  use the talent again if the result of the action will require another
+  conversation. The creature’s survival instincts cannot be overridden, nor can
+  it be ordered to behave against its basic nature. For example, a bat could not
+  be forced to scout around during daylight hours when it would normally be
+  resting.

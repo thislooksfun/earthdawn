@@ -136,35 +136,31 @@ export default {
 
   // Equipment
   equipment: {
-    "Adventurer's Kit": {
-      subItems: {
-        Backpack: { _container: true },
-        Bedroll: {},
-        "Flint & Steel": {},
-        Torch: {},
-        Waterskin: {},
-        "Large Sack": { _container: true },
-      },
-    },
-    "Artisan Tools": {
-      note: "Relevant to character's Artisan skill.",
-      warning: "Needs gamemaster approval.",
-    },
-    Grimoire: { _conditions: ["disciplineIsMagician"] },
-    "Traveler's Garb": {
-      subItems: {
-        _choices: [
-          {
-            Robe: {},
-            Breeches: {},
-          },
-        ],
-        "Soft Boots": {},
-        Shirt: {},
-        Belt: {},
-        "Traveller's Cloak": {},
-      },
-    },
+    // This object is a list of items in the top-level 'container' that is the
+    // player.
+
+    // Adventurer's Kit:
+    Backpack: 1,
+    Bedroll: 1,
+    "Flint & Steel": 1,
+    Torch: 1,
+    Waterskin: 1,
+    "Large Sack": 1,
+
+    // Artisan Tools (set manually in the picker)
+    // Artisan Tools:
+    // "Artisan Tools": {
+    //   note: "Relevant to character's Artisan skill.",
+    //   warning: "Needs gamemaster approval.",
+    // },
+
+    // Grimoire (set if the character is a spellcaster)
+
+    // Robe or Breeches (set in picker)
+    "Soft Boots": 1,
+    Shirt: 1,
+    Belt: 1,
+    "Traveller's Cloak": 1,
   },
 
   // Money and Treasures

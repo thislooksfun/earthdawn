@@ -1,0 +1,72 @@
+name: Read and Write Language
+attr: per
+action: sustained
+strain: 1
+skill_use: no
+table:
+  title: Language Table
+  headers: ["Learning Difficulty", "Language"]
+  rows:
+    - [5, "Dwarf"]
+    - [6, "Sperethiel (Elf)"]
+    - [6, "Human"]
+    - [7, "Obsidiman"]
+    - [6, "Or'zet (Ork)"]
+    - [7, "T'skrang"]
+    - [6, "Troll"]
+    - [7, "Windling"]
+description:
+  The adept magically learns to read and write different languages. Using this
+  talent he can learn a number of languages equal to his Read and Write Language
+  Difficulty rank.
+
+  If he has not reached this maximum, the adept can attempt to learn a new
+  language by reading at least one page of text 6 written in the language for at
+  least one minute, then making a Read and Write Language test against the
+  language’s Learning Difficulty. If successful, he learns 7 the language and
+  notes it on his Character Record Sheet. If the test fails, the adept cannot
+  attempt to learn that specific language again until he improves his Read and
+  Write Language rank.
+
+  The Learning Difficulty for the different racial languages is shown in the
+  Language Table. The numbers reflect the difficulty of learning the base
+  "racial" versions of these languages. Dialects are considered different
+  languages for the purposes of this talent (see below).
+
+  When reading a language learned through this talent, the adept makes a Read
+  and Write Language test against the Learning Difficulty of the language. The
+  success level determines how well he understands the content.
+
+  Simple sentences or ideas, such as “The mayor’s house lies east of here,” may
+  only require a single success; histories or legends containing peculiar idioms
+  or flowery phrases may require two; manuals or other books filled with jargon
+  specific to a field of study require three successes; understanding
+  philosophical treatises on the nature of magic, or other writings filled with
+  specialized academic language and abstract ideas, may require four or more.
+  Partial successes may convey more or less detail at the gamemaster’s
+  discretion.
+
+  When writing, use the same process as for reading, depending on the complexity
+  of the topic the adept is writing about.
+
+  The effect of each test lasts for a number of hours equal to the adept’s Read
+  and Write Language rank, allowing reading and writing at the level achieved by
+  the test result. If the adept needs to read or write at a higher level, he
+  must make another Read and Write Language test. The Strain cost reflects the
+  concentration required. It takes about one minute to read a page of text;
+  writing a page of text takes about ten minutes.
+
+
+  ::Dialects
+
+  Languages are often complex and most possess many different variations, called
+  dialects. These dialects are sometimes regional, others by city, or even by
+  kaer. The Learning Difficulty of a dialect is based on the original language,
+  usually the base DN +2, but higher difficulties are possible. The adept must
+  know how to read and write the base language before he can attempt to learn a
+  dialect of that language. If the adept knows the base language of a dialect,
+  he can communicate, but his ability to do so may be limited at the
+  gamemaster’s discretion.
+
+  There is a non-magical version of this talent, but it is different enough that
+  it is covered in more depth in the Skills chapter, p. 182.

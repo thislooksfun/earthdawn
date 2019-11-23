@@ -1,0 +1,10 @@
+name: Tiger Spring
+attr: NULL
+action: free
+strain: 1
+skill_use: no
+description:
+  The adept reacts more quickly than normal in combat, adding his Tiger Spring
+  rank as a bonus to his Initiative Step that round. For example, an adept with
+  Tiger Spring at Rank 3 gains a +3 bonus to his Initiative Step. Tiger Spring
+  can be used with other talents that improve Initiative, such as Air Dance.

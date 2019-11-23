@@ -1,0 +1,123 @@
+name: Beastmaster
+isSpellcaster: false
+durability: 7
+threadType: Beast Weaving
+importantAttrs:
+  - cha
+  - dex
+  - wil
+
+description:
+  "Beastmasters are adepts that use magic to emulate and interact with animals
+  and other creatures. Some develop these abilities to become expert trackers
+  and survivalists, while others forge magical bonds with animal companions, or
+  train and care for the domestic animals that support day to day life in
+  Barsaive.
+
+  Note: Many of the Beastmaster’s talents and abilities refer to Animal
+  Companions. An animal may be considered an Animal Companion if it has a Loyal
+  attitude towards the Beastmaster. See the Animal Bond talent on p. 125 for
+  details."
+
+karmaRitual:
+  The Beastmaster walks off a large circle around the area on which he last
+  slept. Then he sits in the center of the circle and makes a silent, meditative
+  call to the animals of the area. At the end of the half-hour-long ritual, an
+  animal typical of the local wildlife approaches, but does not enter, the
+  circle. The adept motions for the animal to enter the circle, thus completing
+  the ritual. The animal then leaves the circle and departs.
+
+artisanSkills:
+  - Body Painting
+  - Wood Carving
+
+halfMagic:
+  Beastmasters may use half-magic when dealing with or caring for animals in
+  ways beyond those described by their talents, including animal husbandry and
+  first aid. Beastmasters may use half-magic when recognizing different animals,
+  animal tracks, and abnormal behavior among animals and creatures.
+
+talentOptions:
+  novice:
+    - Acrobatic Defense
+    - Animal Bond
+    - Animal Training
+    - Borrow Sense
+    - Climbing
+    - Creature Analysis
+    - Danger Sense
+    - Enhance Animal Companion
+    - Stealthy Stride
+    - Tracking
+  journeyman:
+    - Animal Companion Durability
+    - Animal Possession
+    - Battle Bellow
+    - Call Animal Companion
+    - Cobra Strike
+    - Iron Constitution
+    - Lion Heart
+    - Sprint
+    - Swift Kick
+    - Tiger Spring
+
+circles:
+  # First circle
+  - talents:
+      - Avoid Blow
+      - Claw Shape
+      - Thread Weaving
+      - Unarmed Combat
+      - Wilderness Survival
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Awareness
+
+  # Third circle
+  - karma:
+      on_recovery_tests: true
+    talents:
+      - Dominate Beast
+
+  # Fourth circle
+  - effects:
+      socialDefense: 1
+    talents:
+      - Great Leap
+
+  # Fifth circle
+  - karma:
+      other: The adept may spend a point of Karma on any unarmed Damage test.
+    talents:
+      - Blood Share
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Cat’s Grace
+        description:
+          The adept automatically succeeds at tests to maintain balance (not
+          including Knockdown tests) and may stand up as a simple action with no
+          cost or test.
+
+  # Sixth circle
+  - effects:
+      physicalDefense: 2
+    talents:
+      - Animal Talk
+
+  # Seventh circle
+  - effects:
+      recoveryTestsPerDay: 1
+    talents:
+      - Down Strike
+
+  # Eighth circle
+  - effects:
+      physicalDefense: 3
+    talents:
+      - Claw Frenzy

@@ -1,0 +1,10 @@
+name: Swift Kick
+attr: dex
+action: simple
+strain: 1
+skill_use: novice
+description:
+  If the adept has free use of a leg he may kick an opponent as an additional
+  attack in close combat. The adept must have a higher Initiative, then makes a
+  Swift Kick test against the target’s Physical Defense. If successful, the
+  adept makes an unarmed Damage test as normal.

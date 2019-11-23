@@ -1,0 +1,21 @@
+name: Astral Sight
+attr: per
+action: simple
+strain: 1
+skill_use: no
+description:
+  The adept sees into the astral plane, and is able to view the astral patterns
+  and imprints. He makes an Astral Sight test against a base Difficulty Number
+  of 6, modified by the local conditions of astral space. If successful, he can
+  see the astral imprints, magical auras, and patterns of any target with a
+  Mystic Defense equal to or lower than the test result.
+
+  Each use of the talent lasts for a number of rounds equal to the Astral Sight
+  rank, and the adept can only see astral impressions that are within his Astral
+  Sight rank x10 yards.
+
+  More information on perceiving astral space and the Difficulty Numbers
+  associated with it are explained in the Workings of Magic chapter (see Using
+  Astral Sensing, p. 209). Examining magical items using Astral Sight does not
+  provide any information about the item’s history or reveal any Key Knowledges
+  (p. 221).

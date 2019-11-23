@@ -1,0 +1,45 @@
+name: Riposte
+attr: dex
+action: free
+strain: 2
+skill_use: journeyman
+
+examples:
+  - Mica, a dwarf Swordmaster, is in melee combat with an ork scorcher. The ork
+    attacks and scores a 13 on his Attack test. Mica uses Riposte, and rolls a
+    21 on his Riposte test—two successes. He successfully parries the ork’s
+    attack and counterattacks.
+
+    The ork’s Physical Defense is 9. Mica’s attack hits, scoring two extra
+    successes. But only one counts for the purposes of bonus damage.
+
+description:
+  The adept uses his melee weapon to block an opponent’s melee attack, possibly
+  turning it back on his attacker. He makes a Riposte test against his
+  opponent’s Attack test result. If successful, the adept parries or blocks the
+  attack and avoids any damage.
+
+  If the Riposte test scores any extra successes, the adept counterattacks using
+  the Riposte test as an Attack test. The Riposte test result is compared to the
+  target’s Physical Defense. If successful, the adept makes a Damage test, but
+  reduces the number of successes by one for the purposes of bonus damage.
+
+  The adept can only riposte attacks that he is aware of. If he is blindsided or
+  surprised, he cannot use this talent. The adept can use this talent a number
+  of times each round equal to his Riposte rank, but may only make a single
+  counterattack per round. Riposte tests can only be made against melee attacks
+  directed against the adept. An adept may not use Riposte and another talent
+  that negates being hit, such as Avoid Blow, against the same attack.
+
+optional_rule:
+  name: Riposting Longer Weapons
+  description:
+    When using Riposte against longer melee weapons, the adept may not be able
+    to reach his opponent to make an effective counterattack. He must have a
+    higher Initiative than his opponent or be wielding a weapon with a Size no
+    smaller than his opponent’s weapon Size–2, to be able to inflict a return
+    attack and therefore damage him. For example, a counterattack to an attack
+    from a lance (Size 6) may be made with a successful two-handed sword (Size
+    5), but not with a broadsword (Size 3). The Riposte test is made as normal
+    against long weapons and can deflect such attacks, thus avoiding harm, but
+    the adept cannot inflict a return blow if his weapon is not large enough.

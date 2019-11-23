@@ -1,0 +1,59 @@
+################
+# CI / Testing #
+################
+
+# CI
+ci: .github/**/*
+
+# Tests
+tests:
+  - tests/**/*
+  - jest.config.js
+tests/e2e: tests/e2e/**/*
+tests/unit: tests/unit/**/*
+
+########
+# Code #
+########
+
+# Any code
+src: src/**/*
+# Assets
+assets: src/assets/**/*
+# Decorators
+decorators: src/charDecorator/**/*
+# Any component(s)
+components: src/components/**/*
+# Play mode
+components/sheet: src/components/characterSheet/**/*
+# Character creation
+components/wizard: src/components/newCharacterWizard/**/*
+# Helpers
+helpers: src/helper/**/*
+# Vuex
+vuex: src/store/**/*
+# Main views
+views: src/views/**/*
+
+########
+# Misc #
+########
+
+# Any changes to Mergify config
+mergify: .mergify.yml
+# Any changes to styling
+style:
+  - "**/.eslintrc.js"
+  - .prettierrc.yml
+  - .restyled.yaml
+# Any changes to this config
+labeler: .github/labeler.yml
+
+# Any changes to Vue files / config
+vue:
+  - vue.config.js
+  - "**/*.vue"
+
+dependencies:
+  - package.json
+  - package-lock.json

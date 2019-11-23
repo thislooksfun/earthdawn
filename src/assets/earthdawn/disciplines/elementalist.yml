@@ -1,0 +1,136 @@
+name: Elementalist
+isSpellcaster: true
+durability: 3
+threadType: Elementalism
+importantAttrs:
+  - per
+  - wil
+
+description:
+  "An Elementalist is a magician who focuses on learning about, and gaining power
+  over, the five magical elements: air, earth, fire, water, and wood."
+
+karmaRitual:
+  The Elementalist draws a large triangle on the ground. The Elementalist sits
+  in the triangle and boils a pot of water, singing to the fire to encourage its
+  heat. Then the Elementalist extinguishes the fire and adds earth to the water,
+  turning it into hot mud. After letting it cool for a few minutes, the
+  Elementalist covers his face with the mud like war paint, and sings to the
+  wind, calling a small breeze. As the wind dries the mud, much of it cracks
+  and blows away, leaving behind a series of intricate, swirling patterns. The
+  Karma ritual is then complete.
+
+artisanSkills:
+  - Robe Embroidery
+  - Sculpting
+
+halfMagic:
+  Elementalists use half-magic for knowledge of nature, the elements, uses of
+  elemental magic, and other magical rituals. The Elementalist may make a
+  Perception-based Half-Magic test to detect the presence of elemental spirits
+  within 30 yards. The Difficulty Number for sensing an elemental spirit is the
+  spirit’s Mystic Defense. If the test succeeds, the character can sense the
+  presence of the elemental spirit and can use spells, or talents such as
+  Elemental Tongues and Elemental Hold, to communicate and interact with it.
+  The gamemaster may choose to make this Half-Magic Test on behalf of an
+  Elementalist character at any time, as this innate sense is always active.
+
+talentOptions:
+  novice:
+    - Air Speaking
+    - Arcane Mutterings
+    - Astral Sight
+    - Avoid Blow
+    - Climbing
+    - Item History
+    - Standard Matrix
+    - Tracking
+    - Wilderness Survival
+    - Wind Catcher
+  journeyman:
+    - First
+    - Second
+
+circles:
+  # First circle
+  - freeTalents:
+      - Standard Matrix 1
+      - Standard Matrix 2
+    talents:
+      - Awareness
+      - Patterncraft
+      - Spellcasting
+      - Thread Weaving
+      - Wood Skin
+
+  # Second circle
+  # NOT 'effects!'. These have to be selected and applied based on the circle.
+  - effects:
+      mysticDefense: 1
+    talents:
+      - Fire Heal
+
+  # Third circle
+  - karma:
+      on_recovery_tests: true
+    talents:
+      - Elemental Tongues
+
+  # Fourth circle
+  - effects:
+      physicalDefense: 1
+    talents:
+      - Elemental Hold
+
+  # Fifth circle
+  - karma:
+      other:
+        The adept may spend a Karma Point to target an additional ally with a
+        spell he is casting.
+    # # TODO: Figure out how to implement this upgrade
+    # freeTalents:
+    #   _other:
+    #     One of the adept’s free Standard Matrix talents is upgraded to an
+    #     Enhanced Matrix.
+    talents:
+      # TODO: Figure out how to specify summon type
+      - Summon [Elemental Spirits]
+    # TODO: Implement Actions
+    # BODY: Some disciplines grant an action that can be taken that is neither
+    # BODY: a talent or a skill, and thus needs to be treated seperately.
+    actions:
+      - name: Fire and Ice
+        action: standard
+        strain: 1
+        description:
+          "For 1 Strain the adept may do one of the following as a Standard
+          action with a successful Elementalism Test against the higher of the
+          target’s Mystic Defense or a Difficulty Number of 6:
+
+          1. Create a small flame between his thumb and forefinger. This fire
+          lasts for only one round, but is intense enough to light a torch.
+          If used in combat, it inflicts Step 4/ D6 fire damage (Physical
+          Armor provides protection).
+
+          2. Freeze water by touching it with his middle three fingers. The
+          adept can freeze up to one quart of water from each use of this
+          ability. If used in combat, it inflicts Step 4/D6 cold damage
+          (Physical Armor provides protection)."
+
+  # Sixth circle
+  - effects:
+      mysticDefense: 2
+    talents:
+      - Willforce
+
+  # Seventh circle
+  - effects:
+      recoveryTestsPerDay: 1
+    talents:
+      - Earth Skin
+
+  # Eighth circle
+  - effects:
+      mysticDefense: 3
+    talents:
+      - Hold Thread

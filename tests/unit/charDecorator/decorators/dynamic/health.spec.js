@@ -8,6 +8,8 @@ describe("Health decorator", () => {
     // Stub a character
     char = {
       attrs: { tou: { val: 10, step_raw: 5, step: 2 } },
+      discipline: { durability: 0 },
+      circle: 0,
       health: {},
       // Stub the effect sum calculator to always return 0.
       _effects: { _sum: () => 0 },
@@ -47,12 +49,36 @@ describe("Health decorator", () => {
       expect(char.health.unconsciousnessThreshold).to.eql(expectedThreshold);
     });
 
+    it("should be calculated from the toughness step + the durability * the circle", () => {
+      // Stub the durability and circle.
+      char.discipline.durability = 5;
+      char.circle = 3;
+
+      expect(char.health.unconsciousnessThreshold).to.eql(
+        expectedThreshold + 15
+      );
+    });
+
     it("should be calculated from the toughness step + the effects sum", () => {
       // Stub the effect sum calculator to always return non-0 for the
       // unconsciousnessThreshold key
       char._effects._sum = x => (x == "unconsciousnessThreshold" ? 3 : 0);
       expect(char.health.unconsciousnessThreshold).to.eql(
         expectedThreshold + 3
+      );
+    });
+
+    it("should be calculated from the toughness step + the durability * the circle + the effects sum", () => {
+      // Stub the durability and circle.
+      char.discipline.durability = 5;
+      char.circle = 3;
+
+      // Stub the effect sum calculator to always return non-0 for the
+      // unconsciousnessThreshold key
+      char._effects._sum = x => (x == "unconsciousnessThreshold" ? 3 : 0);
+
+      expect(char.health.unconsciousnessThreshold).to.eql(
+        expectedThreshold + 15 + 3
       );
     });
   });
@@ -78,11 +104,29 @@ describe("Health decorator", () => {
       expect(char.health.deathThreshold).to.eql(expectedThreshold);
     });
 
+    it("should be calculated from the unconsciousnessThreshold + toughness step + the circle", () => {
+      // Stub the circle
+      char.circle = 5;
+
+      expect(char.health.deathThreshold).to.eql(expectedThreshold + 5);
+    });
+
     it("should be calculated from the unconsciousnessThreshold + toughness step + the effects sum", () => {
       // Stub the effect sum calculator to always return non-0 for the
       // deathThreshold key
       char._effects._sum = x => (x == "deathThreshold" ? 3 : 0);
       expect(char.health.deathThreshold).to.eql(expectedThreshold + 3);
+    });
+
+    it("should be calculated from the unconsciousnessThreshold + toughness step + the circle + the effects sum", () => {
+      // Stub the circle
+      char.circle = 5;
+
+      // Stub the effect sum calculator to always return non-0 for the
+      // deathThreshold key
+      char._effects._sum = x => (x == "deathThreshold" ? 3 : 0);
+
+      expect(char.health.deathThreshold).to.eql(expectedThreshold + 5 + 3);
     });
   });
 

@@ -1,0 +1,56 @@
+name: Navigation
+attr: per
+action: sustained
+strain: 0
+skill_use: novice
+examples:
+  - Some example
+table:
+  title: Navigation Table
+  headers: ["Difficulty Number", "Condition"]
+  rows:
+    - [5, "Clear"]
+    - [
+        5,
+        "Clear night sky, few obstructions blocking the character’s view (on an
+        open plain, for instance)",
+      ]
+    - [7, "Scattered clouds and/or minor obstructions, such as low buildings"]
+    - [
+        9,
+        "Partly cloudy or significant obstructions (trees, nearby mountains, and
+        so on)",
+      ]
+    - [
+        12,
+        "Overcast, heavy foliage or other conditions blocking the character’s
+        view of the sky",
+      ]
+    - [18, "Severe rainstorm or blizzard blocking the sky"]
+description:
+  The adept can read maps, chart courses, and travel safely, minimizing
+  environmental challenges and other hazards. To pinpoint their location,
+  navigators must be able to see the sky and possess a set of navigator’s
+  charts. Navigation often relies on the movement of the sun, the
+  constellations, and similar astronomical phenomena for direction.
+  Consequently, navigation is most effective on clear nights when the stars
+  shine brightest. The adept spends ten minutes determining his current position
+  and makes a Navigation test against a Difficulty Number determined by the
+  gamemaster, based on the Navigation Table, and modified depending on the
+  circumstances. Incomplete or inaccurate charts can increase the Difficulty
+  Number by +1 to +5.
+
+  The test result determines the adept’s accuracy. A single success gives a
+  position accurate to within 10 miles; two successes within 5 miles; three
+  successes, within 2 miles; four or more successes places the navigator within
+  a mile of his target location. If the test fails, the adept inadvertently
+  plots a destination 20 to 25 miles wide of his intended destination. He only
+  recognizes his mistake if a subsequent Navigation test yields a better result,
+  or he arrives at the destination and realizes that it’s not the place he
+  intended to travel to.
+
+  A Rule of One Result positions the adept more than 25 miles away from the
+  intended destination—he is completely lost, but will be adamant that he knows
+  exactly where he is. Any further Navigation tests the adept makes add +2 to
+  the Difficulty Number (assuming his friends can convince him to make another
+  test).

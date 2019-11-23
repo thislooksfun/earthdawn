@@ -102,6 +102,14 @@ export default {
     state.characters[uuid].creationWizardStage--;
   },
 
+  // Items
+  ADD_ITEM(state, { uuid, name, count }) {
+    if (!(name in state.characters[uuid].equipment)) {
+      Vue.set(state.characters[uuid].equipment, name, count);
+    } else {
+      state.characters[uuid].equipment[name] += count;
+    }
+  },
   // Misc
   ADD_EFFECT(state, { uuid, name, value }) {
     Vue.set(state.characters[uuid]["effects!"], name, value);

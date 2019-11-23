@@ -110,6 +110,19 @@ export default {
       state.characters[uuid].equipment[name] += count;
     }
   },
+  REMOVE_ITEM(state, { uuid, name, count }) {
+    if (!(name in state.characters[uuid].equipment)) {
+      // No item to remove
+      return;
+    }
+
+    state.characters[uuid].equipment[name] -= count;
+
+    if (state.characters[uuid].equipment[name] <= 0) {
+      Vue.delete(state.characters[uuid].equipment, name);
+    }
+  },
+
   // Misc
   ADD_EFFECT(state, { uuid, name, value }) {
     Vue.set(state.characters[uuid]["effects!"], name, value);

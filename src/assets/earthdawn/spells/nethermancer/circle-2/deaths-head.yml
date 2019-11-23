@@ -1,0 +1,17 @@
+name: Death’s Head
+threads: 0
+weaving: 6/11
+casting: TMD
+range: Self
+duration: Rank+5 rounds
+effect: Use Frighten talent as Simple Action
+successLevels:
+  - Increase Duration (+2 rounds)
+extraThreads:
+  - Increase Effect (+2 bonus to Frighten)
+
+description:
+  This spell transforms the magician’s head into a gore-spattered skull,
+  terrifying those whom he sets his gaze on. The magician touches his face and
+  makes a Spellcasting test against his Mystic Defense. If successful, he may
+  use the Frighten talent as a Simple action for the duration of the spell.

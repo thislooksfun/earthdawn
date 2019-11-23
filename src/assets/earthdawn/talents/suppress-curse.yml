@@ -1,0 +1,16 @@
+name: Suppress Curse
+attr: wil
+action: standard
+strain: 1
+skill_use: no
+description:
+  The adept temporarily nullifies any curses or negative magical effects
+  affecting a target. The adept makes a Suppress Curse test against the highest
+  Step Number or Dispel Difficulty (p.265) of any negative effects on the
+  target, +1 for each additional effect. If successful, all of the effects are
+  neutralized for a number of rounds equal to the adept’s Suppress Curse rank.
+
+  The duration of any negative effects continue as normal; if their duration
+  ends while Suppress Curse is in effect, they do not resume when the talent
+  expires. The adept must remain within his Suppress Curse rank in yards of the
+  target throughout the talent’s duration, or the effect ends.

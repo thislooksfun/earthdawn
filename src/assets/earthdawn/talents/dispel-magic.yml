@@ -1,0 +1,12 @@
+name: Dispel Magic
+attr: wil
+action: standard
+strain: 1
+skill_use: no
+description:
+  The adept stops any ongoing magical effect that is the result of a spell or
+  talent. The adept must be within Rank x2 yards of the target effect, and makes
+  a Dispel Magic test against a Difficulty Number based on the power of the
+  effect (see Dispelling Magic, p. 265). If successful, the spell or talent ends
+  immediately. This talent has no effect on creature or Horror powers that are
+  not spells.

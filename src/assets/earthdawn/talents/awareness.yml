@@ -1,0 +1,16 @@
+name: Awareness
+attr: per
+action: simple
+strain: 0
+skill_use: novice
+description:
+  The adept has trained to be more aware of his surroundings, noticing things
+  that he might otherwise miss. When trying to spot someone or
+  something—including hidden vaults, secret doors, or disguised or concealed
+  characters—the adept makes an Awareness test instead of a Perception test. If
+  successful, he notices the target of his search if it is within short range of
+  Visibility (see the Gamemaster’s Guide).
+
+  With three or more successes, he notices the target within medium range of
+  Visibility. If the adept possess the Disarm Trap talent or skill, he may use
+  this to find traps and wards.

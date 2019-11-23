@@ -21,7 +21,7 @@ src: src/**/*
 # Assets
 assets: src/assets/**/*
 # Decorators
-decorators: src/assets/**/*
+decorators: src/charDecorator/**/*
 # Any component(s)
 components: src/components/**/*
 # Play mode

@@ -1,0 +1,22 @@
+name: Shield Mist
+threads: 0
+weaving: 6/11
+casting: TMD
+range: Self
+duration: Rank+5 rounds
+effect: +4 bonus to Avoid Blow tests
+areaOfEffect: <area>
+successLevels:
+  - Increase Duration (+2 rounds)
+extraThreads:
+  - Increase Effect (+2 bonus)
+
+description:
+  This spell creates a shield of mist that hardens and moves to deflect blows
+  directed against the magician. The magician moves his hands over his body
+  while wisps of mist pour from his fingertips and then makes a Spellcasting
+  test against his Mystic Defense. If successful, he gains a +4 bonus to Avoid
+  Blow tests (p. 129) against close and ranged combat Attack tests directed at
+  him. If the Avoid Blow test succeeds, the mist deflects the blow and the
+  magician suffers no harm. The magician is visible within the mist and can
+  easily see out. The mist does not hinder his actions.

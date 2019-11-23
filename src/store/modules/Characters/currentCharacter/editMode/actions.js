@@ -105,6 +105,11 @@ export default {
   addItem({ commit }, { name, count = 1 }) {
     commit("ADD_ITEM", { uuid: routedUUID(), name, count });
   },
+  removeItem({ commit }, { name, count = 1 }) {
+    console.log("Removing item " + name);
+    commit("REMOVE_ITEM", { uuid: routedUUID(), name, count });
+  },
+
   // Misc
   addEffect({ commit }, { name, value }) {
     commit("ADD_EFFECT", { uuid: routedUUID(), name, value });

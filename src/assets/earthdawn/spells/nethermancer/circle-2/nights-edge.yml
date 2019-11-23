@@ -1,0 +1,25 @@
+name: Night’s Edge
+threads: 0
+weaving: 6/11
+casting: TMD
+range: Touch
+duration: Rank+5 rounds
+effect:
+  Adds Step 3/D4 cold damage to weapon/Physical and reduces target’s Mystic
+  Defense by 2.
+successLevels:
+  - Increase Duration (+2 rounds)
+extraThreads:
+  - Increase Effect (+2 Damage Step)
+  - Increase Range (+10 yards)
+  - Additional Target (+Rank)
+
+description:
+  Water–Cold. This spell coats a weapon with a layer of inky frost pulled
+  directly from astral space. The magician exhales into his clenched fist and
+  makes a Spellcasting test against the target’s Mystic Defense. If successful,
+  shadowy tendrils of freezing fog swirl out of his fist and envelop the weapon.
+  The wielder adds a D4 Bonus Die to the weapon’s Damage test and any target
+  that takes damage from the weapon suffers a -2 penalty to their Mystic Defense
+  until the end of the next round. The spell can be cast on weapons made from
+  any material—wood, metal, bone, and so on.

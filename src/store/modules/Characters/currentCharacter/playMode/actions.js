@@ -16,14 +16,16 @@ export default {
 
     const armor = type == "strain" ? 0 : char.characteristics.armor[type];
     const amount = Math.max(dmg - armor, 0);
-    const wounds = Math.floor(amount / char.health.woundThreshold);
 
-    console.log(
-      `Dealing ${amount} damage of type ${type}\n(raw damage: ${dmg}, relevant armor: ${armor}, resulting wounds: ${wounds})`
-    );
+    const msg1 = `Dealing ${amount} damage of type ${type}`;
+    const msg2 = `(raw damage: ${dmg}, relevant armor: ${armor})`;
+    console.log(`${msg1}\n${msg2}`);
 
     commit("DEAL_DAMAGE", { uuid, amount });
-    commit("CAUSE_WOUNDS", { uuid, wounds });
+
+    if (amount >= char.health.woundThreshold) {
+      commit("CAUSE_WOUND", { uuid });
+    }
   },
 
   recoverHealth({ commit }, amount) {

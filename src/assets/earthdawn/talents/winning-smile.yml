@@ -1,0 +1,23 @@
+name: Winning Smile
+attr: cha
+action: standard
+strain: 0
+skill_use: no
+description:
+  The adept appears more attractive to another person. The adept makes a
+  Winning Smile test against the target’s Social Defense. If successful, the
+  target finds his appearance very pleasing. The adept adds +2 per success to
+  any Interaction tests he makes against the target for a number of hours equal
+  to his Winning Smile rank. An adept may attempt a Winning Smile test only once
+  against a given character each day.
+
+  While most effective against members of the same race, the adept can use this
+  talent on characters of other races, though typically with greater difficulty.
+  The gamemaster should determine whether such an attempt requires a higher
+  success level to be effective and, if so, how much higher.
+
+  For example, a human trying to impress a dwarf may require two successes on
+  his Winning Smile test. That same human attempting to impress a t’skrang might
+  need three successes, while an attempt to win over a dragon would require four
+  or more (if it is even possible). By contrast, if the target in question had a
+  preference for humans, the test might require only a single success.

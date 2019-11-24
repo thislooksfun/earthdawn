@@ -1,0 +1,20 @@
+name: Impressive Display
+attr: NULL
+action: simple
+strain: 1
+skill_use: journeyman
+description:
+  The adept impresses a character with a display of skill of his choice. The
+  display can be of any kind, as long as the target character observes it. Most
+  adepts will use a display that fits their style—an Archer, for example, will
+  perform a called shot with his bow, while a Troubadour will play a stirring
+  epic, and a Swordmaster might cut the buttons off an opponent’s coat. The
+  adept activates this talent, and then uses the appropriate talent or skill for
+  his chosen display. Instead of its normal use, the test result is compared to
+  the target’s Social Defense.
+
+  If successful, the target becomes favorably impressed and the adept adds +2
+  per success to any Interaction tests he makes against that character for a
+  number of hours equal to his Impressive Display rank. Combat talents used in
+  conjunction with this talent cannot deal damage. The maximum number of
+  successes that will count as a bonus is the adept’s Impressive Display rank.

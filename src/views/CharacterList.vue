@@ -72,9 +72,9 @@ export default {
       return chars.sort((a, b) => {
         // Sort based on name first, and UUID second (so sort order is still
         // defined if two characters have the same name).
-        if (a.name + a.uuid < b.name + b.uuid) return -1;
-        if (a.name + a.uuid > b.name + b.uuid) return 1;
-        return 0;
+        const aa = a.name.toLowerCase() + a.uuid;
+        const bb = b.name.toLowerCase() + b.uuid;
+        return aa < bb ? -1 : aa > bb ? 1 : 0;
       });
     },
   },

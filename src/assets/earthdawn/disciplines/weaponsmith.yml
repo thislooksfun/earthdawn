@@ -34,8 +34,8 @@ talentOptions:
     - Avoid Blow
     - Awareness
     - Danger Sense
-    - Disarm Trap,
-    - Fireblood,
+    - Disarm Trap
+    - Fireblood
     - First Impression
     - Haggle
     - Read and Write Language
@@ -44,12 +44,12 @@ talentOptions:
   journeyman:
     - Battle Shout
     - Diplomacy
-    - Earth Skin,
+    - Earth Skin
     - Etiquette
     - Fire Heal
     - Heartening Laugh
     - Iron Constitution
-    - Leadership,
+    - Leadership
     - Missile Weapons
     - Resist Taunt
 

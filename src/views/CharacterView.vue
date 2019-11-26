@@ -29,3 +29,31 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.character-view {
+  top: 0;
+  padding: 1rem;
+  background-color: var(--background-secondary);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.block {
+  margin-bottom: 1rem;
+
+  &.solid {
+    background-color: var(--background-primary);
+  }
+  &.padded {
+    padding: 1rem;
+    &.lightly {
+      padding: 0.5rem;
+    }
+  }
+  &.centered {
+    text-align: center;
+  }
+}
+</style>

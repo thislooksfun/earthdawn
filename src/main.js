@@ -1,14 +1,34 @@
 import Vue from "vue";
 
-import BootstrapVue from "bootstrap-vue";
-import Argon from "vue-argon-theme";
+import { TooltipPlugin } from "bootstrap-vue";
+import "@/assets/scss/global.scss";
+// import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap-vue/dist/bootstrap-vue.css";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faPlus,
+  faMinus,
+  faExclamationTriangle,
+} from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import App from "./App";
 import router from "./router";
 import store from "./store";
 
-Vue.use(Argon);
-Vue.use(BootstrapVue);
+import BaseButton from "./components/helper/BaseButton";
+
+library.add(faPlus);
+library.add(faMinus);
+library.add(faTrashAlt);
+library.add(faExclamationTriangle);
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.component("BaseButton", BaseButton);
+
+Vue.use(TooltipPlugin);
 
 Vue.config.productionTip = false;
 

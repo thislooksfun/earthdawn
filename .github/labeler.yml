@@ -18,6 +18,8 @@ tests/unit: tests/unit/**/*
 
 # Any assets
 assets: src/assets/**/*
+# Theming
+theme: src/assets/scss
 # Disciplines
 disciplines: src/assets/earthdawn/disciplines/**/*
 # Races

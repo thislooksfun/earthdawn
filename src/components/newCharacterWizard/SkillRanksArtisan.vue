@@ -88,7 +88,7 @@ export default {
     &,
     th,
     td {
-      border: 1px solid #aaa;
+      border: 1px solid var(--table-primary);
     }
 
     th,

@@ -305,7 +305,7 @@ $health-bar-animation-timing: 1s linear infinite !default;
       overflow: visible;
 
       .hp-info {
-        color: black;
+        color: var(--text-primary);
       }
     }
   }
@@ -324,7 +324,7 @@ $health-bar-animation-timing: 1s linear infinite !default;
     color: white;
 
     &.health-ok {
-      color: #333;
+      color: var(--text-primary);
     }
 
     .hp-info {
@@ -348,7 +348,7 @@ $health-bar-animation-timing: 1s linear infinite !default;
       width: 100%;
       text-align: center;
       font-size: 2rem;
-      color: white;
+      color: var(--text-secondary);
       font-weight: bold;
     }
   }

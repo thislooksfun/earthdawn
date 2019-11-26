@@ -170,7 +170,7 @@ export default {
   .labelled-row {
     grid-area: cost;
 
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid var(--table-primary);
     &.section-end {
       border-bottom-width: 2px;
     }
@@ -190,7 +190,7 @@ export default {
       padding-right: 0.5rem;
     }
     .value {
-      border-left: 1px solid #aaa;
+      border-left: 1px solid var(--table-primary);
 
       grid-area: value;
       display: inline-block;
@@ -206,7 +206,7 @@ export default {
     grid-template-rows: auto;
     grid-template-areas: "attrname attrbase main result cost";
 
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid var(--table-primary);
 
     .attrname {
       grid-area: attrname;
@@ -260,7 +260,7 @@ export default {
 
     .cost {
       grid-area: cost;
-      border-left: 1px solid #aaa;
+      border-left: 1px solid var(--table-primary);
       padding-left: 0.25rem;
 
       display: grid;

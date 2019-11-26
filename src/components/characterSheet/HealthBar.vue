@@ -321,10 +321,10 @@ $health-bar-animation-timing: 1s linear infinite !default;
     box-sizing: border-box;
     vertical-align: top;
     overflow: hidden;
-    color: white;
+    color: var(--color-light-1);
 
     &.health-ok {
-      color: var(--text-primary);
+      color: var(--color-light-1);
     }
 
     .hp-info {
@@ -348,7 +348,7 @@ $health-bar-animation-timing: 1s linear infinite !default;
       width: 100%;
       text-align: center;
       font-size: 2rem;
-      color: var(--text-secondary);
+      color: var(--background-primary);
       font-weight: bold;
     }
   }

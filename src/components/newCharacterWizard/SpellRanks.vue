@@ -31,7 +31,7 @@
               <base-button
                 type="danger"
                 size="sm"
-                icon="fa fa-trash-o"
+                :icon="['far', 'trash-alt']"
                 @click="removeSpell(spell.name)"
                 style="font-size: 0.9rem"
                 class="remove-btn"
@@ -89,7 +89,7 @@
               <base-button
                 type="danger"
                 size="sm"
-                icon="fa fa-trash-o"
+                :icon="['far', 'trash-alt']"
                 @click="removeSpell(spell.name)"
                 style="font-size: 0.9rem"
                 class="remove-btn"
@@ -200,7 +200,7 @@ export default {
     &,
     th,
     td {
-      border: 1px solid #aaa;
+      border: 1px solid var(--table-primary);
     }
 
     th,

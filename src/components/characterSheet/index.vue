@@ -45,31 +45,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-.character-sheet {
-  top: 0;
-  padding: 1rem;
-  background-color: #ddd;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.block {
-  margin-bottom: 1rem;
-
-  &.solid {
-    background-color: #fff;
-  }
-  &.padded {
-    padding: 1rem;
-    &.lightly {
-      padding: 0.5rem;
-    }
-  }
-  &.centered {
-    text-align: center;
-  }
-}
-</style>

@@ -124,19 +124,21 @@
         <tr v-for="(skill, name) in skillGroups.other" :key="name">
           <td>
             <div class="other-skill">
-              <span class="name"
-                ><span
+              <span class="name">
+                <span
                   v-if="isRedundant(name)"
-                  class="fa fa-exclamation-triangle redundant"
+                  class="redundant"
                   v-b-tooltip.hover.down
                   title="You already have this skill as a talent"
-                ></span>
+                >
+                  <font-awesome-icon :icon="['fas', 'exclamation-triangle']" />
+                </span>
                 {{ name }}</span
               >
               <base-button
                 type="danger"
                 size="sm"
-                icon="fa fa-trash-o"
+                :icon="['far', 'trash-alt']"
                 @click="removeSkill(name)"
                 style="font-size: 0.9rem"
                 class="remove-btn"
@@ -295,7 +297,7 @@ export default {
     &,
     th,
     td {
-      border: 1px solid #aaa;
+      border: 1px solid var(--table-primary);
     }
 
     th,

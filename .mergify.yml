@@ -2,6 +2,22 @@ pull_request_rules:
   # Automatic Merging (humans)
   - name: "Automatic merge for my changes to master when tagged"
     conditions:
+      # By me
+      - author=thislooksfun
+      # Tagged ready
+      - label=ready-to-merge
+      # On master branch
+      - base=master
+    actions:
+      merge:
+        method: merge
+        strict: true
+
+  # Automatic Merging (humans)
+  - name: "Automatic merge for other changes to master when tagged"
+    conditions:
+      # At least one review
+      - "#approved-reviews-by>=1"
       # Tagged ready
       - label=ready-to-merge
       # On master branch

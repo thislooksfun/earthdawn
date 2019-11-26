@@ -1,0 +1,36 @@
+@import "./theme/colors";
+
+#app {
+  // Default color
+  color: var(--text-primary);
+
+  // Override headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary);
+  }
+
+  // Override links
+  a {
+    color: var(--text-primary);
+  }
+
+  // Override buttons
+  .btn-primary,
+  .btn-success,
+  .btn-danger {
+    color: var(--text-secondary);
+  }
+  .btn-secondary {
+    color: var(--text-primary);
+  }
+
+  // Override inputs
+  input {
+    color: var(--text-primary);
+  }
+}

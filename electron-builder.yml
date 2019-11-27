@@ -1,0 +1,10 @@
+appId: io.github.thislooksfun.earthdawn
+productName: Earthdawn
+
+publish:
+  provider: github
+  owner: thislooksfun
+  project: earthdawn
+
+mac:
+  category: public.app-category.utilities

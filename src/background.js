@@ -1,5 +1,7 @@
 "use strict";
 
+import "./menubar";
+
 import { app, protocol, BrowserWindow, nativeTheme } from "electron";
 import {
   createProtocol,

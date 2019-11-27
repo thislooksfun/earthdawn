@@ -1,0 +1,14 @@
+#app.dark {
+  --background-primary: var(--color-dark-3);
+  --background-secondary: var(--color-dark-2);
+
+  --text-primary: var(--color-light-2);
+  --text-secondary: var(--color-mid-1);
+
+  --table-primary: var(--color-dark-4);
+
+  .btn-secondary {
+    background-color: var(--table-primary);
+    border-color: var(--table-primary);
+  }
+}

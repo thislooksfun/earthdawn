@@ -2,6 +2,7 @@
   <div class="character-sheet">
     <div class="block no-bg">
       <base-button
+        :class="char.editMode ? '' : 'primary-bg'"
         block
         :type="char.editMode ? 'primary' : 'secondary'"
         @click="toggleEditMode"

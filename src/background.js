@@ -1,6 +1,6 @@
 "use strict";
 
-import { app, protocol, BrowserWindow } from "electron";
+import { app, protocol, BrowserWindow, nativeTheme } from "electron";
 import {
   createProtocol,
   installVueDevtools,
@@ -33,6 +33,8 @@ function createWindow() {
     width: mainWindowState.width,
     height: mainWindowState.height,
     webPreferences: { nodeIntegration: true },
+    show: false,
+    backgroundColor: nativeTheme.shouldUseDarkColors ? "#111" : "#fff",
   });
 
   // Track when window state changes
@@ -41,12 +43,16 @@ function createWindow() {
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL);
-    if (!process.env.IS_TEST) win.webContents.openDevTools();
   } else {
     createProtocol("app");
     // Load the index.html when not in development
     win.loadURL("app://./index.html");
   }
+
+  win.once("ready-to-show", () => {
+    win.show();
+    if (!process.env.IS_TEST) win.webContents.openDevTools();
+  });
 
   win.on("closed", () => {
     win = null;
@@ -88,6 +94,12 @@ app.on("ready", async () => {
     }
   }
   createWindow();
+});
+
+nativeTheme.on("updated", () => {
+  if (win) {
+    win.setBackgroundColor(nativeTheme.shouldUseDarkColors ? "#111" : "#fff");
+  }
 });
 
 // Exit cleanly on request from parent process in development mode.

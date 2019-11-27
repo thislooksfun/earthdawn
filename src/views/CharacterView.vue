@@ -4,7 +4,7 @@
       <new-character-wizard :uuid="uuid" />
     </div>
 
-    <div v-if="char.creationWizardStage == null" class="wizard">
+    <div v-if="char.creationWizardStage == null" class="play">
       <character-sheet :uuid="uuid" />
     </div>
   </div>
@@ -38,22 +38,22 @@ export default {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-}
 
-.block {
-  margin-bottom: 1rem;
+  .block {
+    margin-bottom: 1rem;
 
-  &.solid {
-    background-color: var(--background-primary);
-  }
-  &.padded {
-    padding: 1rem;
-    &.lightly {
-      padding: 0.5rem;
+    &.solid {
+      background-color: var(--background-primary);
     }
-  }
-  &.centered {
-    text-align: center;
+    &.padded {
+      padding: 1rem;
+      &.lightly {
+        padding: 0.5rem;
+      }
+    }
+    &.centered {
+      text-align: center;
+    }
   }
 }
 </style>

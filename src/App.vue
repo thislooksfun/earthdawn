@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     updateTheme() {
-      console.log("Updating theme...");
       const useDark = remote.nativeTheme.shouldUseDarkColors;
       this.themeClass = useDark ? "dark" : "light";
     },
@@ -31,7 +30,6 @@ export default {
     remote.nativeTheme.on("updated", this.updateTheme);
   },
   mounted() {
-    console.log("mounted!");
     this.updateTheme();
   },
 };

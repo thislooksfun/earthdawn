@@ -2,8 +2,6 @@ import Vue from "vue";
 
 import { TooltipPlugin } from "bootstrap-vue";
 import "@/assets/scss/global.scss";
-// import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {

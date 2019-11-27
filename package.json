@@ -1,6 +1,6 @@
 {
   "name": "earthdawn",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -17,7 +17,8 @@
     "prettier:fix": "prettier --write '**/*'",
     "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron",
     "snyk:test": "snyk test",
-    "snyk:monitor": "snyk monitor"
+    "snyk:monitor": "snyk monitor",
+    "dist": "electron-builder -wml"
   },
   "main": "background.js",
   "dependencies": {

@@ -2,6 +2,11 @@
   "name": "earthdawn",
   "version": "1.0.0-alpha.1",
   "private": true,
+  "author": {
+    "name": "thislooksfun",
+    "email": "thislooksfun@repbot.org",
+    "url": "https://github.com/thislooksfun"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,7 +20,7 @@
     "test:unit:cover": "vue-cli-service test:unit --coverage",
     "prettier:check": "prettier --check '**/*'",
     "prettier:fix": "prettier --write '**/*'",
-    "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron",
+    "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron ; rm -rf coverage",
     "snyk:test": "snyk test",
     "snyk:monitor": "snyk monitor",
     "dist": "electron-builder -wml"

@@ -26,5 +26,6 @@ yarn-error.log*
 # Coverage
 /coverage
 
-# Publication script
+# Publication scripts
+/sanitize
 /ship

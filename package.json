@@ -2,6 +2,11 @@
   "name": "earthdawn",
   "version": "1.0.0-alpha.1",
   "private": true,
+  "author": {
+    "name": "thislooksfun",
+    "email": "thislooksfun@repbot.org",
+    "url": "https://github.com/thislooksfun"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

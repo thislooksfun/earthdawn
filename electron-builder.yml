@@ -8,3 +8,9 @@ publish:
 
 mac:
   category: public.app-category.utilities
+
+# TODO: Also upload to Snap?
+linux:
+  target:
+    - AppImage
+    - 7z

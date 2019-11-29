@@ -34,7 +34,6 @@ export default {
 .character-view {
   top: 0;
   padding: 1rem;
-  background-color: var(--background-secondary);
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;

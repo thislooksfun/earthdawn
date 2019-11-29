@@ -58,6 +58,7 @@ $argon-blue: #5e72e4;
 
   .main {
     grid-area: main;
+    background-color: var(--background-secondary);
   }
 
   // Global styles

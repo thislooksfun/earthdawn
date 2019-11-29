@@ -293,18 +293,6 @@ export default {
 
 <style scoped lang="scss">
 .skill-ranks {
-  table {
-    &,
-    th,
-    td {
-      border: 1px solid var(--table-primary);
-    }
-
-    th,
-    td {
-      padding: 0.25rem 0.5rem;
-    }
-  }
 }
 
 .new-skill {

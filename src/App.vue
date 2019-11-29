@@ -117,5 +117,18 @@ $argon-blue: #5e72e4;
       }
     }
   }
+
+  table {
+    &,
+    th,
+    td {
+      border: 1px solid var(--table-primary);
+    }
+
+    th,
+    td {
+      padding: 0.25rem 0.5rem;
+    }
+  }
 }
 </style>

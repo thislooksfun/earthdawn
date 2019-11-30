@@ -38,4 +38,7 @@ export default {
   USE_KARMA(state, { uuid }) {
     useAndClampKarma(state.characters[uuid], 1);
   },
+  RESET_KARMA(state, { uuid }) {
+    state.characters[uuid].karma.used = 0;
+  },
 };

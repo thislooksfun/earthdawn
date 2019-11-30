@@ -37,6 +37,10 @@
     <div class="solid padded block">
       <character-equipment :uuid="uuid" />
     </div>
+
+    <div class="solid padded block">
+      <legend-points :uuid="uuid" />
+    </div>
   </div>
 </template>
 
@@ -48,6 +52,7 @@ import CharacterTalents from "./CharacterTalents";
 import CharacterSkills from "./CharacterSkills";
 import CharacterSpells from "./CharacterSpells";
 import CharacterEquipment from "./CharacterEquipment";
+import LegendPoints from "./LegendPoints";
 
 import decorate from "@/charDecorator";
 
@@ -60,6 +65,7 @@ export default {
     CharacterSkills,
     CharacterSpells,
     CharacterEquipment,
+    LegendPoints,
   },
   props: {
     uuid: {

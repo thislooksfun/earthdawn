@@ -242,7 +242,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 $argon-green: #2dce89;
 $argon-orange: #fb6340;
 $argon-red: #f5365c;

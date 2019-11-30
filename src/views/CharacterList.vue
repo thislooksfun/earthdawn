@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .character-list {
   position: relative;
   height: 100%;

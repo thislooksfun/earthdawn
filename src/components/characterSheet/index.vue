@@ -49,29 +49,29 @@
 </template>
 
 <script>
-import CharacterHeader from "./CharacterHeader";
+import decorate from "@/charDecorator";
+
+import KarmaPoints from "./KarmaPoints";
+import LegendPoints from "./LegendPoints";
 import HealthSection from "./HealthSection";
 import CharacterAttrs from "./CharacterAttrs";
-import CharacterTalents from "./CharacterTalents";
-import CharacterSkills from "./CharacterSkills";
+import CharacterHeader from "./CharacterHeader";
 import CharacterSpells from "./CharacterSpells";
+import CharacterSkills from "./CharacterSkills";
+import CharacterTalents from "./CharacterTalents";
 import CharacterEquipment from "./CharacterEquipment";
-import LegendPoints from "./LegendPoints";
-import KarmaPoints from "./KarmaPoints";
-
-import decorate from "@/charDecorator";
 
 export default {
   components: {
-    CharacterHeader,
+    KarmaPoints,
+    LegendPoints,
     HealthSection,
     CharacterAttrs,
-    CharacterTalents,
-    CharacterSkills,
+    CharacterHeader,
     CharacterSpells,
+    CharacterSkills,
+    CharacterTalents,
     CharacterEquipment,
-    LegendPoints,
-    KarmaPoints,
   },
   props: {
     uuid: {

@@ -34,6 +34,7 @@
 <script>
 import decorate from "@/charDecorator";
 import HealthBar from "./HealthBar";
+
 export default {
   props: {
     uuid: {
@@ -63,7 +64,9 @@ export default {
     },
   },
   computed: {
-    // State helpers
+    dChar() {
+      return decorate(this.char);
+    },
     valid() {
       const dt = this.health.deathThreshold;
       const ut = this.health.unconsciousnessThreshold;
@@ -74,7 +77,7 @@ export default {
       return !this.valid;
     },
     health() {
-      return decorate(this.char).health;
+      return this.dChar.health;
     },
   },
 };

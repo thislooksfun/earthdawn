@@ -13,6 +13,13 @@ const addAndClampDamage = (char, dmg) => {
   );
 };
 
+const useAndClampKarma = (char, amnt) => {
+  const {
+    karma: { max },
+  } = decorate(char);
+  char.karma.used = clamp(char.karma.used + amnt, 0, max);
+};
+
 export default {
   DEAL_DAMAGE(state, { uuid, amount }) {
     addAndClampDamage(state.characters[uuid], amount);
@@ -25,5 +32,10 @@ export default {
   },
   HEAL_WOUND(state, { uuid }) {
     state.characters[uuid].health.wounds--;
+  },
+
+  // Karma
+  USE_KARMA(state, { uuid }) {
+    useAndClampKarma(state.characters[uuid], 1);
   },
 };

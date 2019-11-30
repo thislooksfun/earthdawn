@@ -293,27 +293,26 @@ export default {
 
 <style scoped lang="scss">
 .skill-ranks {
-}
+  .new-skill {
+    margin-top: 0.25rem;
 
-.new-skill {
-  margin-top: 0.25rem;
-
-  select {
-    margin-right: 1rem;
+    select {
+      margin-right: 1rem;
+    }
   }
-}
 
-.other-skill {
-  display: grid;
-  grid-template-columns: auto 2rem;
-  grid-template-rows: auto;
-  grid-template-areas: "name remove-btn";
+  .other-skill {
+    display: grid;
+    grid-template-columns: auto 2rem;
+    grid-template-rows: auto;
+    grid-template-areas: "name remove-btn";
 
-  .name {
-    grid-area: name;
-  }
-  .remove-btn {
-    grid-area: remove-btn;
+    .name {
+      grid-area: name;
+    }
+    .remove-btn {
+      grid-area: remove-btn;
+    }
   }
 }
 </style>

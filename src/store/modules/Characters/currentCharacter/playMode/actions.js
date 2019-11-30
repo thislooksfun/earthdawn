@@ -36,4 +36,7 @@ export default {
   useKarma({ commit }) {
     commit("USE_KARMA", { uuid: routedUUID() });
   },
+  resetKarma({ commit }) {
+    commit("RESET_KARMA", { uuid: routedUUID() });
+  },
 };

@@ -76,44 +76,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="progress-wrapper">
-    <div :class="`progress-${type}`">
-      <div class="progress-percentage">
-        <slot>
-          <span>{{ unconsciousness - damage }} hitpoints until unconscious</span>
-          <br />
-          <span>{{ death - damage }} hitpoints until dead</span>
-          <br />
-        </slot>
-      </div>
-    </div>
-    <div class="progress" style="height: 3rem">
-      <div
-        class="progress-bar"
-        :class="computedClassesDeath"
-        role="progressbar"
-        :aria-valuenow="fillPercent"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        :style="`width: ${fillPercent}%;`"
-      >
-        <span>{{ death - damage }} hitpoints until dead</span>
-      </div>
-      
-      <div
-        class="progress-bar unconcious"
-        :class="computedClassesUnconscious"
-        role="progressbar"
-        :aria-valuenow="unconsciousPercent"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        :style="`position: absolute; height:auto; width: ${unconsciousPercent}%;`"
-      >
-        <span>{{ unconsciousness - damage }} hitpoints until unconscious</span>
-      </div>
-    </div>
-  </div>-->
 </template>
 
 <script>

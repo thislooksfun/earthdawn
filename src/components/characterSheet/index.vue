@@ -1,6 +1,6 @@
 <template>
   <div class="character-sheet">
-    <div class="block no-bg">
+    <div class="block">
       <base-button
         :class="char.editMode ? '' : 'primary-bg'"
         block

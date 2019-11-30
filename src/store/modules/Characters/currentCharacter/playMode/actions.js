@@ -31,4 +31,9 @@ export default {
   recoverHealth({ commit }, amount) {
     commit("RECOVER_HEALTH", { uuid: routedUUID(), amount });
   },
+
+  // Karma
+  useKarma({ commit }) {
+    commit("USE_KARMA", { uuid: routedUUID() });
+  },
 };

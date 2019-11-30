@@ -39,6 +39,8 @@ import CharacterAttrs from "./CharacterAttrs";
 import CharacterTalents from "./CharacterTalents";
 import CharacterSkills from "./CharacterSkills";
 
+import decorate from "@/charDecorator";
+
 export default {
   components: {
     CharacterHeader,
@@ -60,6 +62,11 @@ export default {
   methods: {
     toggleEditMode() {
       this.$store.dispatch("ccToggleEditMode");
+    },
+  },
+  computed: {
+    dChar() {
+      return decorate(this.char);
     },
   },
 };

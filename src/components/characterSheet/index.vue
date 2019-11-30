@@ -41,6 +41,10 @@
     <div class="solid padded block">
       <legend-points :uuid="uuid" />
     </div>
+
+    <div class="solid padded block">
+      <karma-points :uuid="uuid" />
+    </div>
   </div>
 </template>
 
@@ -53,6 +57,7 @@ import CharacterSkills from "./CharacterSkills";
 import CharacterSpells from "./CharacterSpells";
 import CharacterEquipment from "./CharacterEquipment";
 import LegendPoints from "./LegendPoints";
+import KarmaPoints from "./KarmaPoints";
 
 import decorate from "@/charDecorator";
 
@@ -66,6 +71,7 @@ export default {
     CharacterSpells,
     CharacterEquipment,
     LegendPoints,
+    KarmaPoints,
   },
   props: {
     uuid: {

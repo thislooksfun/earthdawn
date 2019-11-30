@@ -29,6 +29,10 @@
     <div class="solid padded block">
       <character-skills :uuid="uuid" />
     </div>
+
+    <div v-if="dChar.discipline.isSpellcaster" class="solid padded block">
+      <character-spells :uuid="uuid" />
+    </div>
   </div>
 </template>
 
@@ -38,6 +42,7 @@ import HealthSection from "./HealthSection";
 import CharacterAttrs from "./CharacterAttrs";
 import CharacterTalents from "./CharacterTalents";
 import CharacterSkills from "./CharacterSkills";
+import CharacterSpells from "./CharacterSpells";
 
 import decorate from "@/charDecorator";
 
@@ -48,6 +53,7 @@ export default {
     CharacterAttrs,
     CharacterTalents,
     CharacterSkills,
+    CharacterSpells,
   },
   props: {
     uuid: {

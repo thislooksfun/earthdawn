@@ -25,6 +25,10 @@
     <div class="solid padded block">
       <character-talents :uuid="uuid" />
     </div>
+
+    <div class="solid padded block">
+      <character-skills :uuid="uuid" />
+    </div>
   </div>
 </template>
 
@@ -33,6 +37,7 @@ import CharacterHeader from "./CharacterHeader";
 import HealthSection from "./HealthSection";
 import CharacterAttrs from "./CharacterAttrs";
 import CharacterTalents from "./CharacterTalents";
+import CharacterSkills from "./CharacterSkills";
 
 export default {
   components: {
@@ -40,6 +45,7 @@ export default {
     HealthSection,
     CharacterAttrs,
     CharacterTalents,
+    CharacterSkills,
   },
   props: {
     uuid: {

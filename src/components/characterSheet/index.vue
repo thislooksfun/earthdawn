@@ -17,17 +17,23 @@
     <div class="solid padded block">
       <health-section :disabled="char.editMode" :uuid="uuid" />
     </div>
+
+    <div class="solid padded block">
+      <character-attrs :uuid="uuid" />
+    </div>
   </div>
 </template>
 
 <script>
 import CharacterHeader from "./CharacterHeader";
 import HealthSection from "./HealthSection";
+import CharacterAttrs from "./CharacterAttrs";
 
 export default {
   components: {
     CharacterHeader,
     HealthSection,
+    CharacterAttrs,
   },
   props: {
     uuid: {

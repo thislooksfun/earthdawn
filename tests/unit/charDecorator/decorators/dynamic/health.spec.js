@@ -170,7 +170,7 @@ describe("Health decorator", () => {
       expect(char.health.recoveryTests.foo).to.eql("bar");
     });
 
-    it.each(["perDay", "step"])(
+    it.each(["remaining", "perDay", "step"])(
       "should overwrite char.health.recoveryTests.%s with a getter",
       key => {
         char.health.recoveryTests[key] = "bar";
@@ -178,6 +178,27 @@ describe("Health decorator", () => {
         expect(getGetter(char.health.recoveryTests, key)).to.be.a("function");
       }
     );
+
+    describe("recoveryTests.remaining", () => {
+      // The tou value defined above is 10. The # of recovery tests per day is
+      // calculated from that value. The expected number of recovery tests for
+      // a toughness value of 10 is 2
+      const expectedCount = 2;
+
+      beforeEach(() => {
+        healthDecorator(char);
+      });
+
+      it("should be a getter", () => {
+        const getter = getGetter(char.health.recoveryTests, "remaining");
+        expect(getter).to.be.a("function");
+      });
+
+      it("should be from perDay - used", () => {
+        char.health.recoveryTests.used = 1;
+        expect(char.health.recoveryTests.remaining).to.eql(expectedCount - 1);
+      });
+    });
 
     describe("recoveryTests.perDay", () => {
       // The tou value defined above is 10. The # of recovery tests per day is

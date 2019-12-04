@@ -26,6 +26,11 @@ describe("Skills decorator", () => {
     char = { _stored: { skills: {} } };
   });
 
+  it("should define char.skills", () => {
+    skillsDecorator(char);
+    expect(char.skills).to.be.an("object");
+  });
+
   it("should group skills with the type", () => {
     char._stored.skills = {
       TestSkill1: { rank: 1, type: "type1" },

@@ -19,6 +19,11 @@ jest.mock("Talents", () => {
   };
 });
 
+// Mock actionDiceForStep to return controlled, more easily testable, values
+jest.mock("@/helper/actionDiceForStep", () => {
+  return s => `ad for step ${s}`;
+});
+
 describe("Skills decorator", () => {
   let char;
 
@@ -82,6 +87,20 @@ describe("Skills decorator", () => {
             char.skills.test_type.TestSkill2.rank + 4
           );
         });
+      });
+    });
+
+    describe("char.skills.<skill>.actionDice", () => {
+      beforeEach(() => {
+        // Stub the attr step
+        char.attrs = { dex: { step: 3 } };
+      });
+
+      it("should return the action dice for the given step", () => {
+        expect(char.skills.other.TestSkill1.actionDice).to.eql("ad for step 2");
+        expect(char.skills.test_type.TestSkill2.actionDice).to.eql(
+          "ad for step 4"
+        );
       });
     });
   });

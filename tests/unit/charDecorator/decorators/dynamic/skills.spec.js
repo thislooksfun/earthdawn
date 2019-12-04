@@ -39,8 +39,8 @@ describe("Skills decorator", () => {
   describe("Mapping skills", () => {
     beforeEach(() => {
       char._stored.skills = {
-        TestSkill1: { rank: 1 },
-        TestSkill2: { rank: 2, type: "test_type" },
+        TestSkill1: { rank: 2 },
+        TestSkill2: { rank: 1, type: "test_type" },
       };
       // Apply decorator
       skillsDecorator(char);

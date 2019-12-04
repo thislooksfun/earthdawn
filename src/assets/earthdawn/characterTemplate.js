@@ -51,7 +51,8 @@ export default {
   // Health
   health: {
     recoveryTests: {
-      remaining: 0,
+      used: 0,
+      //   remaining: 0, (calcuated from perDay - used)
       //   perDay: 3,  (calculated from attributes [tou])
       //   step: 7,    (calculated from attributes [tou step])
     },

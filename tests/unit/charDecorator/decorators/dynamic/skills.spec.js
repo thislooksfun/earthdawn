@@ -58,28 +58,20 @@ describe("Skills decorator", () => {
   });
 
   it("should fall back on talents if skill not found", () => {
-    char._stored.skills = {
-      TestTalent1: { rank: 1 },
-      TestTalent2: { rank: 2 },
-    };
+    char._stored.skills = { TestTalent1: { rank: 1 } };
     skillsDecorator(char);
-    // Has replaced first skill
-    expect(char.skills).to.deep.eql({
-      other: {
-        TestTalent1: { name: "TestTalent1", rank: 1 },
-        TestTalent2: { name: "TestTalent2", rank: 2 },
-      },
-    });
+
+    expect(char.skills).to.have.keys(["other"]);
+    expect(char.skills.other).to.have.keys(["TestTalent1"]);
+    expect(char.skills.other.TestTalent1.name).to.eql("TestTalent1");
   });
 
   it("should prefer skill over talents if name is the same", () => {
     char._stored.skills = { SharedName: { rank: 1 } };
     skillsDecorator(char);
-    // Has replaced first skill
-    expect(char.skills).to.deep.eql({
-      other: {
-        SharedName: { name: "SharedName", rank: 1 },
-      },
-    });
+
+    expect(char.skills).to.have.keys(["other"]);
+    expect(char.skills.other).to.have.keys(["SharedName"]);
+    expect(char.skills.other.SharedName.name).to.eql("SharedName");
   });
 });

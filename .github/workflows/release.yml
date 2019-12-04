@@ -1,0 +1,24 @@
+name: Release Builder
+
+on:
+  release:
+    types: [published, created, edited, prereleased]
+
+jobs:
+  build-win:
+    name: Build (Windows)
+    runs-on: windows-latest
+    steps:
+      - run: npm run electron:build -- -w # -p always
+
+  build-mac:
+    name: Build (macOS)
+    runs-on: macos-latest
+    steps:
+      - run: npm run electron:build -- -m # -p always
+
+  build-linux:
+    name: Build (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run electron:build -- -l # -p always

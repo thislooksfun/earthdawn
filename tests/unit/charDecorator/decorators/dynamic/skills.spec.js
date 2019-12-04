@@ -24,7 +24,11 @@ describe("Skills decorator", () => {
 
   beforeEach(() => {
     // Stub a character
-    char = { _stored: { skills: {} } };
+    char = {
+      _stored: { skills: {} },
+      // Stub the effect sum calculator to always return 0.
+      _effects: { _sum: () => 0 },
+    };
   });
 
   it("should define char.skills", () => {

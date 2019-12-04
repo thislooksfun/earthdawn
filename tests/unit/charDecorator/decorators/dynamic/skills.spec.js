@@ -2,22 +2,20 @@ import skillsDecorator from "@/charDecorator/decorators/dynamic/skills";
 
 // Mock with known, controlled skills
 jest.mock("Skills", () => {
-  const skills = {};
-  for (let i = 0; i < 10; i++) {
-    skills[`TestSkill${i}`] = { name: `TestSkill${i} Name` };
-  }
-  skills["SharedName"] = { name: "SharedSkill Name" };
-  return skills;
+  return {
+    TestSkill1: { name: "TestSkill1 Name" },
+    TestSkill2: { name: "TestSkill2 Name" },
+    SharedName: { name: "SharedSkill Name" },
+  };
 });
 
 // Mock with known, controlled talents
 jest.mock("Talents", () => {
-  const talents = {};
-  for (let i = 0; i < 10; i++) {
-    talents[`TestTalent${i}`] = { name: `TestTalent${i} Name` };
-  }
-  talents["SharedName"] = { name: "SharedTalent Name" };
-  return talents;
+  return {
+    TestTalent1: { name: "TestTalent1 Name" },
+    TestTalent2: { name: "TestTalent2 Name" },
+    SharedName: { name: "SharedTalent Name" },
+  };
 });
 
 describe("Skills decorator", () => {
@@ -38,13 +36,13 @@ describe("Skills decorator", () => {
     char._stored.skills = {
       TestSkill1: { rank: 1, type: "type1" },
       TestSkill2: { rank: 2, type: "type2" },
-      TestSkill3: { rank: 3 },
+      SharedName: { rank: 3 },
     };
     skillsDecorator(char);
     expect(char.skills).to.have.keys(["type1", "type2", "other"]);
     expect(char.skills.type1).to.have.keys(["TestSkill1"]);
     expect(char.skills.type2).to.have.keys(["TestSkill2"]);
-    expect(char.skills.other).to.have.keys(["TestSkill3"]);
+    expect(char.skills.other).to.have.keys(["SharedName"]);
   });
 
   it("should augment the character's stored skill with the full skill", () => {

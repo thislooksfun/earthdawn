@@ -41,7 +41,7 @@ describe("Skills decorator", () => {
       skillsDecorator(char);
     });
 
-    it("should group skills with the type", () => {
+    it("should group the character's stored skills by type", () => {
       expect(char.skills).to.have.keys(["other", "test_type"]);
       expect(char.skills.other).to.have.keys(["TestSkill1"]);
       expect(char.skills.test_type).to.have.keys(["TestSkill2"]);

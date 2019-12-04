@@ -65,6 +65,25 @@ describe("Skills decorator", () => {
         expect(getter).to.be.a("function");
       });
     });
+
+    describe("char.skills.<skill>.step", () => {
+      describe("If the skill has no associated attribute", () => {
+        it("should return the rank", () => {
+          expect(char.skills.other.TestSkill1.step).to.eql(
+            char.skills.other.TestSkill1.rank
+          );
+        });
+      });
+      describe("If the skill has an associated attribute", () => {
+        it("should return the rank plus the attr step", () => {
+          // Stub the attr step
+          char.attrs = { dex: { step: 4 } };
+          expect(char.skills.test_type.TestSkill2.step).to.eql(
+            char.skills.test_type.TestSkill2.rank + 4
+          );
+        });
+      });
+    });
   });
 
   describe("Mapping skills", () => {

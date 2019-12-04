@@ -3,18 +3,18 @@ import skillsDecorator from "@/charDecorator/decorators/dynamic/skills";
 // Mock with known, controlled skills
 jest.mock("Skills", () => {
   return {
-    TestSkill1: { name: "TestSkill1 Name" },
-    TestSkill2: { name: "TestSkill2 Name" },
-    SharedName: { name: "SharedSkill Name" },
+    TestSkill1: { name: "TestSkill1" },
+    TestSkill2: { name: "TestSkill2" },
+    SharedName: { name: "SharedName" },
   };
 });
 
 // Mock with known, controlled talents
 jest.mock("Talents", () => {
   return {
-    TestTalent1: { name: "TestTalent1 Name" },
-    TestTalent2: { name: "TestTalent2 Name" },
-    SharedName: { name: "SharedTalent Name" },
+    TestTalent1: { name: "TestTalent1" },
+    TestTalent2: { name: "TestTalent2" },
+    SharedName: { name: "SharedName" },
   };
 });
 
@@ -51,8 +51,8 @@ describe("Skills decorator", () => {
     // Has replaced first skill
     expect(char.skills).to.deep.eql({
       other: {
-        TestSkill1: { name: "TestSkill1 Name", rank: 1 },
-        TestSkill2: { name: "TestSkill2 Name", rank: 2 },
+        TestSkill1: { name: "TestSkill1", rank: 1 },
+        TestSkill2: { name: "TestSkill2", rank: 2 },
       },
     });
   });
@@ -66,8 +66,8 @@ describe("Skills decorator", () => {
     // Has replaced first skill
     expect(char.skills).to.deep.eql({
       other: {
-        TestTalent1: { name: "TestTalent1 Name", rank: 1 },
-        TestTalent2: { name: "TestTalent2 Name", rank: 2 },
+        TestTalent1: { name: "TestTalent1", rank: 1 },
+        TestTalent2: { name: "TestTalent2", rank: 2 },
       },
     });
   });
@@ -78,7 +78,7 @@ describe("Skills decorator", () => {
     // Has replaced first skill
     expect(char.skills).to.deep.eql({
       other: {
-        SharedName: { name: "SharedSkill Name", rank: 1 },
+        SharedName: { name: "SharedName", rank: 1 },
       },
     });
   });

@@ -3,11 +3,11 @@ import getGetter from "@t/utils/get-getter";
 
 // Mock with known, controlled talents
 jest.mock("Talents", () => {
-  const talents = {};
-  talents.TestTalent1 = { name: "TestTalent1", foo: "bar1" };
-  talents.TestTalent2 = { name: "TestTalent2", foo: "bar2", attr: "dex" };
-  talents.FreeTestTalent = { name: "FreeTestTalent", foo: "bar-free" };
-  return talents;
+  return {
+    TestTalent1: { name: "TestTalent1", foo: "bar1" },
+    TestTalent2: { name: "TestTalent2", foo: "bar2", attr: "dex" },
+    FreeTestTalent: { name: "FreeTestTalent", foo: "bar-free" },
+  };
 });
 
 // Mock actionDiceForStep to return controlled, more easily testable, values

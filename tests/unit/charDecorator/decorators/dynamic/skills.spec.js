@@ -35,16 +35,16 @@ describe("Skills decorator", () => {
     beforeEach(() => {
       char._stored.skills = {
         TestSkill1: { rank: 1 },
-        TestSkill2: { rank: 2, type: "type2" },
+        TestSkill2: { rank: 2, type: "test_type" },
       };
       // Apply decorator
       skillsDecorator(char);
     });
 
     it("should group skills with the type", () => {
-      expect(char.skills).to.have.keys(["other", "type2"]);
+      expect(char.skills).to.have.keys(["other", "test_type"]);
       expect(char.skills.other).to.have.keys(["TestSkill1"]);
-      expect(char.skills.type2).to.have.keys(["TestSkill2"]);
+      expect(char.skills.test_type).to.have.keys(["TestSkill2"]);
     });
 
     it("should augment the character's stored skill with the full skill", () => {
@@ -53,7 +53,7 @@ describe("Skills decorator", () => {
         other: {
           TestSkill1: { name: "TestSkill1", rank: 1 },
         },
-        type2: {
+        test_type: {
           TestSkill2: { name: "TestSkill2", rank: 2 },
         },
       });

@@ -1,4 +1,5 @@
 import skillsDecorator from "@/charDecorator/decorators/dynamic/skills";
+import getGetter from "@t/utils/get-getter";
 
 // Mock with known, controlled skills
 jest.mock("Skills", () => {
@@ -52,6 +53,13 @@ describe("Skills decorator", () => {
       // Use some arbetrary key (foo) just to test that it is being passed
       // through
       expect(char.skills.other.TestSkill1.foo).to.eql("bar1s");
+    });
+
+    describe.each(["step", "actionDice"])("char.skills.<skill>.%s", key => {
+      it("should be a getter", () => {
+        const getter = getGetter(char.skills.other.TestSkill1, key);
+        expect(getter).to.be.a("function");
+      });
     });
   });
 

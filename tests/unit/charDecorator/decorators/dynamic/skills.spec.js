@@ -3,18 +3,18 @@ import skillsDecorator from "@/charDecorator/decorators/dynamic/skills";
 // Mock with known, controlled skills
 jest.mock("Skills", () => {
   return {
-    TestSkill1: { name: "TestSkill1" },
-    TestSkill2: { name: "TestSkill2" },
-    SharedName: { name: "SharedName" },
+    TestSkill1: { name: "TestSkill1", foo: "bar1s" },
+    TestSkill2: { name: "TestSkill2", foo: "bar2s" },
+    SharedName: { name: "SharedName", foo: "bar3s" },
   };
 });
 
 // Mock with known, controlled talents
 jest.mock("Talents", () => {
   return {
-    TestTalent1: { name: "TestTalent1" },
-    TestTalent2: { name: "TestTalent2" },
-    SharedName: { name: "SharedName" },
+    TestTalent1: { name: "TestTalent1", foo: "bar1t" },
+    TestTalent2: { name: "TestTalent2", foo: "bar2t" },
+    SharedName: { name: "SharedName", foo: "bar3t" },
   };
 });
 
@@ -64,6 +64,8 @@ describe("Skills decorator", () => {
     expect(char.skills).to.have.keys(["other"]);
     expect(char.skills.other).to.have.keys(["TestTalent1"]);
     expect(char.skills.other.TestTalent1.name).to.eql("TestTalent1");
+    // Use some arbetrary key (foo) just to test that it is being passed through
+    expect(char.skills.other.TestTalent1.foo).to.eql("bar1t");
   });
 
   it("should prefer skill over talents if name is the same", () => {
@@ -73,5 +75,7 @@ describe("Skills decorator", () => {
     expect(char.skills).to.have.keys(["other"]);
     expect(char.skills.other).to.have.keys(["SharedName"]);
     expect(char.skills.other.SharedName.name).to.eql("SharedName");
+    // Use some arbetrary key (foo) just to test that it is being passed through
+    expect(char.skills.other.SharedName.foo).to.eql("bar3s");
   });
 });

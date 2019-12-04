@@ -28,6 +28,13 @@
       :disabled="disabled || invalid"
       @click="recover1Health"
     ></base-button>
+
+    <div class="wounds">
+      <center>
+        <span class="label">Wounds:</span>
+        <span class="count">{{ health.wounds }}</span>
+      </center>
+    </div>
   </div>
 </template>
 
@@ -86,9 +93,9 @@ export default {
 <style scoped lang="scss">
 .health-section {
   display: grid;
-  grid-template-columns: 5rem auto 5rem;
+  grid-template-columns: 5rem auto 5rem 5rem;
   grid-template-rows: auto;
-  grid-template-areas: "damage bar recover";
+  grid-template-areas: "damage bar recover wounds";
 
   .damage {
     margin-right: 0.5rem;
@@ -100,6 +107,29 @@ export default {
   .recover {
     margin-left: 0.5rem;
     grid-area: recover;
+  }
+  .wounds {
+    position: relative;
+    grid-area: wounds;
+
+    .label,
+    .count {
+      display: block;
+    }
+
+    .label {
+      position: absolute;
+      top: -0.75rem;
+      width: 100%;
+      color: var(--text-secondary);
+    }
+
+    .count {
+      $offset: 0.35rem;
+      margin-top: $offset;
+      margin-bottom: -$offset;
+      font-size: 2rem;
+    }
   }
 }
 </style>

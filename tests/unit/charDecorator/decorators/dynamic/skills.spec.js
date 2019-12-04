@@ -59,7 +59,9 @@ describe("Skills decorator", () => {
         },
       });
     });
+  });
 
+  describe("Mapping skills", () => {
     it("should fall back on talents if skill not found", () => {
       char._stored.skills = { TestTalent1: { rank: 1 } };
       skillsDecorator(char);

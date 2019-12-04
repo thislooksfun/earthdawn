@@ -48,15 +48,10 @@ describe("Skills decorator", () => {
     });
 
     it("should augment the character's stored skill with the full skill", () => {
-      // Has replaced first skill
-      expect(char.skills).to.deep.eql({
-        other: {
-          TestSkill1: { name: "TestSkill1", rank: 1 },
-        },
-        test_type: {
-          TestSkill2: { name: "TestSkill2", rank: 2 },
-        },
-      });
+      expect(char.skills.other).to.have.keys(["TestSkill1"]);
+      // Use some arbetrary key (foo) just to test that it is being passed
+      // through
+      expect(char.skills.other.TestSkill1.foo).to.eql("bar1s");
     });
   });
 

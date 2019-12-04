@@ -5,7 +5,7 @@ import getGetter from "@t/utils/get-getter";
 jest.mock("Skills", () => {
   return {
     TestSkill1: { name: "TestSkill1", foo: "bar1s" },
-    TestSkill2: { name: "TestSkill2", foo: "bar2s" },
+    TestSkill2: { name: "TestSkill2", foo: "bar2s", attr: "dex" },
     SharedName: { name: "SharedName", foo: "bar3s" },
   };
 });
@@ -14,7 +14,7 @@ jest.mock("Skills", () => {
 jest.mock("Talents", () => {
   return {
     TestTalent1: { name: "TestTalent1", foo: "bar1t" },
-    TestTalent2: { name: "TestTalent2", foo: "bar2t" },
+    TestTalent2: { name: "TestTalent2", foo: "bar2t", attr: "dex" },
     SharedName: { name: "SharedName", foo: "bar3t" },
   };
 });

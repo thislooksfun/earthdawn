@@ -34,7 +34,7 @@ describe("Skills decorator", () => {
   describe("Mapping skills", () => {
     beforeEach(() => {
       char._stored.skills = {
-        TestSkill1: { rank: 1, type: "type1" },
+        TestSkill1: { rank: 1 },
         TestSkill2: { rank: 2, type: "type2" },
       };
       // Apply decorator
@@ -42,15 +42,15 @@ describe("Skills decorator", () => {
     });
 
     it("should group skills with the type", () => {
-      expect(char.skills).to.have.keys(["type1", "type2"]);
-      expect(char.skills.type1).to.have.keys(["TestSkill1"]);
+      expect(char.skills).to.have.keys(["other", "type2"]);
+      expect(char.skills.other).to.have.keys(["TestSkill1"]);
       expect(char.skills.type2).to.have.keys(["TestSkill2"]);
     });
 
     it("should augment the character's stored skill with the full skill", () => {
       // Has replaced first skill
       expect(char.skills).to.deep.eql({
-        type1: {
+        other: {
           TestSkill1: { name: "TestSkill1", rank: 1 },
         },
         type2: {

@@ -24,7 +24,9 @@
       style="font-size: 1rem"
       :icon="['fas', 'plus']"
       v-b-tooltip.hover.down
-      title="Recover Health"
+      :title="
+        `Recover Health (${health.recoveryTests.remaining} recovery tests remaining)`
+      "
       :disabled="disabled || invalid"
       @click="recover1Health"
     ></base-button>

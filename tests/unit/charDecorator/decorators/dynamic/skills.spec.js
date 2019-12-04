@@ -26,12 +26,6 @@ describe("Skills decorator", () => {
     char = { _stored: { skills: {} } };
   });
 
-  it("should do nothing to the skills array if it is empty", () => {
-    char.skills = {};
-    skillsDecorator(char);
-    expect(char.skills).to.deep.eql({});
-  });
-
   it("should group skills with the type", () => {
     char._stored.skills = {
       TestSkill1: { rank: 1, type: "type1" },

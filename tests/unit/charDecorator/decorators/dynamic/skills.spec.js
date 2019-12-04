@@ -47,15 +47,21 @@ describe("Skills decorator", () => {
 
     it("should augment the character's stored skill with the full skill", () => {
       char._stored.skills = {
-        TestSkill1: { rank: 1 },
-        TestSkill2: { rank: 2 },
+        TestSkill1: { rank: 1, type: "type1" },
+        TestSkill2: { rank: 2, type: "type2" },
+        SharedName: { rank: 3 },
       };
       skillsDecorator(char);
       // Has replaced first skill
       expect(char.skills).to.deep.eql({
-        other: {
+        type1: {
           TestSkill1: { name: "TestSkill1", rank: 1 },
+        },
+        type2: {
           TestSkill2: { name: "TestSkill2", rank: 2 },
+        },
+        other: {
+          SharedName: { name: "SharedName", rank: 3 },
         },
       });
     });

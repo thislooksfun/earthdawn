@@ -31,50 +31,55 @@ describe("Skills decorator", () => {
     expect(char.skills).to.be.an("object");
   });
 
-  it("should group skills with the type", () => {
-    char._stored.skills = {
-      TestSkill1: { rank: 1, type: "type1" },
-      TestSkill2: { rank: 2, type: "type2" },
-      SharedName: { rank: 3 },
-    };
-    skillsDecorator(char);
-    expect(char.skills).to.have.keys(["type1", "type2", "other"]);
-    expect(char.skills.type1).to.have.keys(["TestSkill1"]);
-    expect(char.skills.type2).to.have.keys(["TestSkill2"]);
-    expect(char.skills.other).to.have.keys(["SharedName"]);
-  });
-
-  it("should augment the character's stored skill with the full skill", () => {
-    char._stored.skills = { TestSkill1: { rank: 1 }, TestSkill2: { rank: 2 } };
-    skillsDecorator(char);
-    // Has replaced first skill
-    expect(char.skills).to.deep.eql({
-      other: {
-        TestSkill1: { name: "TestSkill1", rank: 1 },
-        TestSkill2: { name: "TestSkill2", rank: 2 },
-      },
+  describe("Mapping skills", () => {
+    it("should group skills with the type", () => {
+      char._stored.skills = {
+        TestSkill1: { rank: 1, type: "type1" },
+        TestSkill2: { rank: 2, type: "type2" },
+        SharedName: { rank: 3 },
+      };
+      skillsDecorator(char);
+      expect(char.skills).to.have.keys(["type1", "type2", "other"]);
+      expect(char.skills.type1).to.have.keys(["TestSkill1"]);
+      expect(char.skills.type2).to.have.keys(["TestSkill2"]);
+      expect(char.skills.other).to.have.keys(["SharedName"]);
     });
-  });
 
-  it("should fall back on talents if skill not found", () => {
-    char._stored.skills = { TestTalent1: { rank: 1 } };
-    skillsDecorator(char);
+    it("should augment the character's stored skill with the full skill", () => {
+      char._stored.skills = {
+        TestSkill1: { rank: 1 },
+        TestSkill2: { rank: 2 },
+      };
+      skillsDecorator(char);
+      // Has replaced first skill
+      expect(char.skills).to.deep.eql({
+        other: {
+          TestSkill1: { name: "TestSkill1", rank: 1 },
+          TestSkill2: { name: "TestSkill2", rank: 2 },
+        },
+      });
+    });
 
-    expect(char.skills).to.have.keys(["other"]);
-    expect(char.skills.other).to.have.keys(["TestTalent1"]);
-    expect(char.skills.other.TestTalent1.name).to.eql("TestTalent1");
-    // Use some arbetrary key (foo) just to test that it is being passed through
-    expect(char.skills.other.TestTalent1.foo).to.eql("bar1t");
-  });
+    it("should fall back on talents if skill not found", () => {
+      char._stored.skills = { TestTalent1: { rank: 1 } };
+      skillsDecorator(char);
 
-  it("should prefer skill over talents if name is the same", () => {
-    char._stored.skills = { SharedName: { rank: 1 } };
-    skillsDecorator(char);
+      expect(char.skills).to.have.keys(["other"]);
+      expect(char.skills.other).to.have.keys(["TestTalent1"]);
+      expect(char.skills.other.TestTalent1.name).to.eql("TestTalent1");
+      // Use some arbetrary key (foo) just to test that it is being passed through
+      expect(char.skills.other.TestTalent1.foo).to.eql("bar1t");
+    });
 
-    expect(char.skills).to.have.keys(["other"]);
-    expect(char.skills.other).to.have.keys(["SharedName"]);
-    expect(char.skills.other.SharedName.name).to.eql("SharedName");
-    // Use some arbetrary key (foo) just to test that it is being passed through
-    expect(char.skills.other.SharedName.foo).to.eql("bar3s");
+    it("should prefer skill over talents if name is the same", () => {
+      char._stored.skills = { SharedName: { rank: 1 } };
+      skillsDecorator(char);
+
+      expect(char.skills).to.have.keys(["other"]);
+      expect(char.skills.other).to.have.keys(["SharedName"]);
+      expect(char.skills.other.SharedName.name).to.eql("SharedName");
+      // Use some arbetrary key (foo) just to test that it is being passed through
+      expect(char.skills.other.SharedName.foo).to.eql("bar3s");
+    });
   });
 });

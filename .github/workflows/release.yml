@@ -28,13 +28,13 @@ jobs:
 
       # Build
       - name: Build for Windows
-        if: matrix.os == windows-latest
+        if: matrix.os == 'windows-latest'
         run: npm run electron:build -- -w # -p always
 
       - name: Build for macOS
-        if: matrix.os == macos-latest
+        if: matrix.os == 'macos-latest'
         run: npm run electron:build -- -m # -p always
 
       - name: Build for Linux
-        if: matrix.os == linux-latest
+        if: matrix.os == 'linux-latest'
         run: npm run electron:build -- -l # -p always

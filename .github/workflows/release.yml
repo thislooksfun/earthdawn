@@ -25,6 +25,17 @@ jobs:
           node-version: 12.x
       - run: npm install
 
+      # Patch
+      # TODO: Remove this patch once once electron-builder v22.x is out
+      # BODY: The GITHUB_TOKEN is of the form 'v1.xxx...', but
+      # BODY: electron-builder versions older than v22.x don't support that
+      # BODY: format. Once vue-cli-plugin-electron-builder switches to using
+      # BODY: electron-builder v22.x or later, this patch can be removed.
+      # BODY: For reference, see electron-userland/electron-builder#4176
+      - name: Temporarily fix electron-builder
+        run: sed -i 's/\^\[\\w/\^\[.\\w/g' node_modules/builder-util/out/util.js
+        shell: bash
+
       # Build
       - name: Build on ${{ matrix.os }}
         run: ./scripts/build "${{ matrix.os }}"

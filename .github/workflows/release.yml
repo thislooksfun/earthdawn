@@ -2,12 +2,8 @@ name: Release Builder
 
 on:
   push:
-    branches:
-      - master
     tags:
       - v**
-  release:
-    types: [published, created, edited, prereleased]
 
 jobs:
   build:

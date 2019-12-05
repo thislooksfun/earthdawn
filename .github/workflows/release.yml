@@ -29,3 +29,5 @@ jobs:
       - name: Build on ${{ matrix.os }}
         run: ./scripts/build "${{ matrix.os }}"
         shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

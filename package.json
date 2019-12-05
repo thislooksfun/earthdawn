@@ -23,6 +23,7 @@
     "purge": "rm -rf node_modules ; rm -rf dist ; rm -rf dist_electron ; rm -rf coverage",
     "snyk:test": "snyk test",
     "snyk:monitor": "snyk monitor",
+    "failure": "exit 1",
     "dist": "electron-builder -wml"
   },
   "main": "background.js",
@@ -63,7 +64,7 @@
     "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
     "snyk": "^1.247.0",
-    "vue-cli-plugin-electron-builder": "^1.4.0",
+    "vue-cli-plugin-electron-builder": "^1.4.3",
     "vue-template-compiler": "^2.6.10"
   }
 }

@@ -28,4 +28,4 @@ jobs:
       # Build
       - name: Build on ${{ matrix.os }}
         run: ./scripts/build "${{ matrix.os }}"
-        shell: sh
+        shell: bash

@@ -27,11 +27,5 @@ jobs:
 
       # Build
       - name: Build on ${{ matrix.os }}
-        run: |
-          if [ "${{ matrix.os }}" == 'windows-latest' ]; then
-            npm run electron:build -- -w # -p always
-          elif [ "${{ matrix.os }}" == 'macos-latest' ]; then
-            npm run electron:build -- -m # -p always
-          elif [ "${{ matrix.os }}" == 'ubuntu-latest' ]; then
-            npm run electron:build -- -l # -p always
-          fi
+        run: ./scripts/build "${{ matrix.os }}"
+        shell: sh

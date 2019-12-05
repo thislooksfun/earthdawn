@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ "$1" == 'windows-latest' ]; then target="-w"
+elif [ "$1" == 'macos-latest' ]; then target="-m"
+elif [ "$1" == 'ubuntu-latest' ]; then target="-l"
+fi
+
+npm run electron:build -- $target -p always

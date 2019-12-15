@@ -64,7 +64,7 @@
     "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
     "snyk": "^1.247.0",
-    "vue-cli-plugin-electron-builder": "^1.4.3",
+    "vue-cli-plugin-electron-builder": "^1.4.4",
     "vue-template-compiler": "^2.6.10"
   }
 }

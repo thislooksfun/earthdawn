@@ -11,7 +11,7 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-        strict: true
+        strict: smart
 
   # Automatic Merging (humans)
   - name: "Automatic merge for other changes to master when tagged"
@@ -25,7 +25,7 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-        strict: true
+        strict: smart
 
   # This is awaiting #71
   # # Automatic Merging (bots)
@@ -39,7 +39,7 @@ pull_request_rules:
   #   actions:
   #     merge:
   #       method: merge
-  #       strict: true
+  #       strict: smart
 
   # Quality of life
   - name: Delete head branch after merge

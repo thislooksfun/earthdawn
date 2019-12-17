@@ -16,7 +16,7 @@
   <a href="https://github.com/thislooksfun/earthdawn/releases"><img src="https://flat.badgen.net/github/release/thislooksfun/earthdawn" title="Latest Release" alt="Latest Release"></a>
   <a href="https://github.com/thislooksfun/earthdawn/releases/latest"><img src="https://flat.badgen.net/github/release/thislooksfun/earthdawn/stable" title="Latest Stable Release" alt="Latest Stable Release"></a>
   <img src="https://flat.badgen.net/github/status/thislooksfun/earthdawn" alt="Status">
-  <a href="https://codecov.io/gh/thislooksfun/earthdawn/"><img src="https://badgen.now.sh/codecov/c/github/thislooksfun/earthdawn" alt="Codecov"></a>
+  <a href="https://codecov.io/gh/thislooksfun/earthdawn/"><img src="https://flat.badgen.now.sh/codecov/c/github/thislooksfun/earthdawn" alt="Codecov"></a>
 </p>
 
 # Disclaimer

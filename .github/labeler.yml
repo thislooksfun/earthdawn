@@ -12,14 +12,33 @@ tests:
 tests/e2e: tests/e2e/**/*
 tests/unit: tests/unit/**/*
 
+##########
+# Assets #
+##########
+
+# Any assets
+assets: src/assets/**/*
+# Theming
+theme: src/assets/scss
+# Disciplines
+disciplines: src/assets/earthdawn/disciplines/**/*
+# Races
+races: src/assets/earthdawn/races/**/*
+# Skills
+skills: src/assets/earthdawn/skills/**/*
+# Spells
+spells: src/assets/earthdawn/spells/**/*
+# Talents
+talents: src/assets/earthdawn/talents/**/*
+# Template
+template: src/assets/earthdawn/characterTemplate.js
+
 ########
 # Code #
 ########
 
 # Any code
 src: src/**/*
-# Assets
-assets: src/assets/**/*
 # Decorators
 decorators: src/charDecorator/**/*
 # Any component(s)

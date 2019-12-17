@@ -1,0 +1,24 @@
+name: Anticipate Blow
+attr: per
+action: simple
+strain: 1
+skill_use: novice
+examples:
+  - Mica has Anticipate Blow at Rank 5, and rolls two successes on his test. He
+    gains a +4 bonus to his Physical Defense against attacks from that opponent
+    this round. When he attacks that target with his Melee Weapons talent, he
+    adds +4 Steps. He also uses his Second Weapon talent, but does not receive a
+    bonus to that test, since Anticipate Blow only adds a bonus to the first
+    Attack test.
+description:
+  The adept anticipates attacks made against him, making him harder to hit. The
+  adept must have a higher Initiative result than his target, and makes an
+  Anticipate Blow test against the target’s Mystic Defense. Each success adds +2
+  to his Physical Defense against the target’s attacks until the end of the
+  round. The adept can use this talent a number of times equal to his Anticipate
+  Blow rank each round, taking the strain for each new target.
+
+  After a successful Anticipate Blow test, the adept also adds +2 per success as
+  a bonus to the first Attack test they make against that target. Anticipate
+  Blow does not convey any additional attacks—the adept must use other talents
+  or skills to attack as normal.

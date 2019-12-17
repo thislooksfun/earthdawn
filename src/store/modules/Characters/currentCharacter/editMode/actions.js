@@ -55,9 +55,37 @@ export default {
     commit("SET_TALENT_RANK", { uuid: routedUUID(), talent, rank });
   },
 
-  // TODO: Implement Talent Options
+  // Talent Options
+  setTalentOption({ commit }, { slot, name, rank }) {
+    console.log(
+      `Setting talent option slot ${slot} to ${name} at rank ${rank}`
+    );
+    commit("SET_TALENT_OPTION", { uuid: routedUUID(), slot, name, rank });
+  },
 
-  // TODO: Implement Skills
+  // Spells
+  addSpell({ commit }, { name }) {
+    console.log(`Adding spell ${name}`);
+    commit("ADD_SPELL", { uuid: routedUUID(), name });
+  },
+  removeSpell({ commit }, { name }) {
+    console.log(`Removing spell ${name}`);
+    commit("REMOVE_SPELL", { uuid: routedUUID(), name });
+  },
+
+  // Skills
+  addSkill({ commit }, { name, rank, type = "" }) {
+    console.log(`Adding ${type} skill ${name} of rank ${rank}`);
+    commit("ADD_SKILL", { uuid: routedUUID(), name, rank, type });
+  },
+  setSkillRank({ commit }, { name, rank }) {
+    console.log(`Setting skill ${name} to rank ${rank}`);
+    commit("SET_SKILL_RANK", { uuid: routedUUID(), name, rank });
+  },
+  removeSkill({ commit }, { name }) {
+    console.log(`Removing skill ${name}`);
+    commit("REMOVE_SKILL", { uuid: routedUUID(), name });
+  },
 
   // Creation Wizard
   creationWizardFirstStage({ commit }) {
@@ -73,9 +101,21 @@ export default {
     commit("CREATION_WIZARD_CLOSE", { uuid: routedUUID() });
   },
 
+  // Items
+  addItem({ commit }, { name, count = 1 }) {
+    commit("ADD_ITEM", { uuid: routedUUID(), name, count });
+  },
+  removeItem({ commit }, { name, count = 1 }) {
+    console.log("Removing item " + name);
+    commit("REMOVE_ITEM", { uuid: routedUUID(), name, count });
+  },
+
   // Misc
   addEffect({ commit }, { name, value }) {
     commit("ADD_EFFECT", { uuid: routedUUID(), name, value });
+  },
+  removeEffect({ commit }, { name }) {
+    commit("REMOVE_EFFECT", { uuid: routedUUID(), name });
   },
   // 'circle' is 1-based
   // TODO: Implement this:

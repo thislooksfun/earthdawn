@@ -1,0 +1,11 @@
+name: Unarmed Combat
+attr: dex
+action: standard
+strain: 0
+skill_use: novice
+description:
+  The adept makes an attack in close combat using his hands, feet, or another
+  body part against an opponent. The adept makes an Unarmed Combat test against
+  the target’s Physical Defense. If successful, the attack hits the target.
+  Unless noted otherwise, the adept uses his Strength Step only for the Damage
+  test. See Close Combat, p. 391, for more information.

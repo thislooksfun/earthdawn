@@ -13,7 +13,7 @@
           <base-button
             type="danger"
             size="sm"
-            icon="fa fa-trash-o"
+            :icon="['far', 'trash-alt']"
             @click="deleteCharacter(char.name, char.uuid)"
             style="font-size: 0.9rem"
           ></base-button>
@@ -72,9 +72,9 @@ export default {
       return chars.sort((a, b) => {
         // Sort based on name first, and UUID second (so sort order is still
         // defined if two characters have the same name).
-        if (a.name + a.uuid < b.name + b.uuid) return -1;
-        if (a.name + a.uuid > b.name + b.uuid) return 1;
-        return 0;
+        const aa = a.name.toLowerCase() + a.uuid;
+        const bb = b.name.toLowerCase() + b.uuid;
+        return aa < bb ? -1 : aa > bb ? 1 : 0;
       });
     },
   },
@@ -84,14 +84,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .character-list {
   position: relative;
   height: 100%;
 
+  background-color: var(--background-primary);
   overflow: scroll;
-
-  padding: 0.25rem;
 
   h1 {
     width: 100%;
@@ -115,9 +114,9 @@ export default {
       &.character {
         font-size: 1.25rem;
 
-        padding: 0.25rem;
+        padding: 0.4rem 0.5rem;
 
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid var(--background-secondary);
 
         display: grid;
         grid-template-columns: 2.25rem auto;
@@ -139,11 +138,8 @@ export default {
       }
 
       &.selected {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        a {
-          color: white;
-        }
+        background-color: var(--background-secondary);
+        font-weight: 500;
       }
     }
   }

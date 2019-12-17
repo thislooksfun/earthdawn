@@ -1,0 +1,43 @@
+@import "./theme/common";
+@import "./theme/light";
+@import "./theme/dark";
+
+#app {
+  // Default color
+  color: var(--text-primary);
+
+  // Override headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary);
+  }
+
+  // Override links
+  a {
+    color: var(--text-primary);
+  }
+
+  // Override buttons
+  .btn-primary,
+  .btn-success,
+  .btn-danger {
+    color: var(--color-light-1);
+  }
+  .btn-secondary {
+    color: var(--text-primary);
+  }
+
+  // Override inputs
+  input {
+    color: var(--text-primary);
+  }
+
+  .btn-secondary.primary-bg {
+    background-color: var(--background-primary);
+    border-color: var(--background-primary);
+  }
+}

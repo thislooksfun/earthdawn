@@ -47,9 +47,38 @@ export default {
     }
   },
 
-  // TODO: Implement Talent Options
+  // Talent Options
+  SET_TALENT_OPTION(state, { uuid, slot, name, rank }) {
+    Vue.set(state.characters[uuid].talentOptions, slot, { name, rank });
+  },
 
-  // TODO: Implement Skills
+  // Spells
+  ADD_SPELL(state, { uuid, name }) {
+    if (name in state.characters[uuid].spells) {
+      throw new Error(`Spell ${name} already exists!`);
+    }
+    Vue.set(state.characters[uuid].spells, name, null);
+  },
+  REMOVE_SPELL(state, { uuid, name }) {
+    Vue.delete(state.characters[uuid].spells, name);
+  },
+
+  // Skills
+  ADD_SKILL(state, { uuid, name, rank, type }) {
+    if (name in state.characters[uuid].skills) {
+      throw new Error(`Skill ${name} already exists!`);
+    }
+    Vue.set(state.characters[uuid].skills, name, { rank, type });
+  },
+  SET_SKILL_RANK(state, { uuid, name, rank }) {
+    if (!(name in state.characters[uuid].skills)) {
+      throw new Error(`Attempting to change rank of unknown skill ${name}`);
+    }
+    Vue.set(state.characters[uuid].skills[name], "rank", rank);
+  },
+  REMOVE_SKILL(state, { uuid, name }) {
+    Vue.delete(state.characters[uuid].skills, name);
+  },
 
   // Languages
   SET_SPOKEN_LANGUAGES(state, { uuid, languages }) {
@@ -73,8 +102,32 @@ export default {
     state.characters[uuid].creationWizardStage--;
   },
 
+  // Items
+  ADD_ITEM(state, { uuid, name, count }) {
+    if (!(name in state.characters[uuid].equipment)) {
+      Vue.set(state.characters[uuid].equipment, name, count);
+    } else {
+      state.characters[uuid].equipment[name] += count;
+    }
+  },
+  REMOVE_ITEM(state, { uuid, name, count }) {
+    if (!(name in state.characters[uuid].equipment)) {
+      // No item to remove
+      return;
+    }
+
+    state.characters[uuid].equipment[name] -= count;
+
+    if (state.characters[uuid].equipment[name] <= 0) {
+      Vue.delete(state.characters[uuid].equipment, name);
+    }
+  },
+
   // Misc
   ADD_EFFECT(state, { uuid, name, value }) {
     Vue.set(state.characters[uuid]["effects!"], name, value);
+  },
+  REMOVE_EFFECT(state, { uuid, name }) {
+    Vue.delete(state.characters[uuid]["effects!"], name);
   },
 };

@@ -13,5 +13,4 @@ files.keys().forEach(key => {
   skills[s.name] = s;
 });
 
-// TODO: MERGE RESULT WITH TALENTS THAT CAN BE USED AS A SKILL
 export default skills;

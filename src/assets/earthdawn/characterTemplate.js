@@ -93,10 +93,7 @@ export default {
   },
   // array is keyed on the 0-based circle of the slot
   talentOptions: [
-    // {
-    //   name: 'name',
-    //   rank: 4,
-    // },
+    // { name: <name>, rank: n },
   ],
   spells: {
     // The value is technically arbetrary, but this is easier managed as an
@@ -104,8 +101,12 @@ export default {
     // <name>: null
   },
   skills: {
-    "Speak Language": 2,
-    "Read and Write Language": 1,
+    // <name>: { rank: n }  // normal skill
+    // <name>: { rank: n, type: "knowledge"}                  // knowledge skill
+    // <name>: { rank: n, type: "artisan"}                    // artisan skill
+    // <name>: { rank: n, type: <type>, data: { <the data> }} // custom skill
+    "Speak Language": { rank: 2, type: "language" },
+    "Read and Write Language": { rank: 1, type: "language" },
   },
 
   // Talent Knacks
@@ -135,35 +136,31 @@ export default {
 
   // Equipment
   equipment: {
-    "Adventurer's Kit": {
-      subItems: {
-        Backpack: { _container: true },
-        Bedroll: {},
-        "Flint & Steel": {},
-        Torch: {},
-        Waterskin: {},
-        "Large Sack": { _container: true },
-      },
-    },
-    "Artisan Tools": {
-      note: "Relevant to character's Artisan skill.",
-      warning: "Needs gamemaster approval.",
-    },
-    Grimoire: { _conditions: ["disciplineIsMagician"] },
-    "Traveler's Garb": {
-      subItems: {
-        _choices: [
-          {
-            Robe: {},
-            Breeches: {},
-          },
-        ],
-        "Soft Boots": {},
-        Shirt: {},
-        Belt: {},
-        "Traveller's Cloak": {},
-      },
-    },
+    // This object is a list of items in the top-level 'container' that is the
+    // player.
+
+    // Adventurer's Kit:
+    Backpack: 1,
+    Bedroll: 1,
+    "Flint & Steel": 1,
+    Torch: 1,
+    Waterskin: 1,
+    "Large Sack": 1,
+
+    // Artisan Tools (set manually in the picker)
+    // Artisan Tools:
+    // "Artisan Tools": {
+    //   note: "Relevant to character's Artisan skill.",
+    //   warning: "Needs gamemaster approval.",
+    // },
+
+    // Grimoire (set if the character is a spellcaster)
+
+    // Robe or Breeches (set in picker)
+    "Soft Boots": 1,
+    Shirt: 1,
+    Belt: 1,
+    "Traveller's Cloak": 1,
   },
 
   // Money and Treasures

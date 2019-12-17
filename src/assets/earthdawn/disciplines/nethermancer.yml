@@ -41,12 +41,12 @@ talentOptions:
     - Arcane Mutterings
     - Avoid Blow
     - Awareness
-    - Command Nightflyer,
+    - Command Nightflyer
     - Dispel Magic
     - Read and Write Language
-    - Speak Language,
+    - Speak Language
     - Standard Matrix
-    - Stealthy Stride,
+    - Stealthy Stride
     - Suppress Curse
   journeyman:
     - Astral Interference
@@ -62,10 +62,9 @@ talentOptions:
 
 circles:
   # First circle
-  - freeTalents:
-      - Standard Matrix 1
-      - Standard Matrix 2
-    talents:
+  # NOTE: Spellcasters get two free Standard Matrixes, but those are handled
+  # specially, not via 'freeTalents'
+  - talents:
       - Astral Sight
       - Frighten
       - Patterncraft

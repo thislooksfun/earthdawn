@@ -20,7 +20,10 @@ export default {
   RECOVER_HEALTH(state, { uuid, amount }) {
     addAndClampDamage(state.characters[uuid], -amount);
   },
-  CAUSE_WOUNDS(state, { uuid, wounds }) {
-    state.characters[uuid].health.wounds += wounds;
+  CAUSE_WOUND(state, { uuid }) {
+    state.characters[uuid].health.wounds++;
+  },
+  HEAL_WOUND(state, { uuid }) {
+    state.characters[uuid].health.wounds--;
   },
 };

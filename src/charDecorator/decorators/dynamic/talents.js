@@ -43,5 +43,27 @@ export default function(char) {
   // Convert from array to object
   char.talents = decoratedTalents.reduce((o, t) => ({ ...o, [t.name]: t }), {});
 
-  // TODO: Decorate talent options
+  // Assign all info for each talent
+  const decoratedTalentOptions = char._stored.talentOptions.map(
+    ({ name }, i) => {
+      return {
+        ...talents[name],
+        get rank() {
+          return char._stored.talentOptions[i].rank;
+        },
+        get step() {
+          if (this.attr) {
+            return this.rank + char.attrs[this.attr].step;
+          } else {
+            return this.rank;
+          }
+        },
+        get actionDice() {
+          return actionDiceForStep(this.step);
+        },
+      };
+    }
+  );
+
+  char.talentOptions = decoratedTalentOptions;
 }

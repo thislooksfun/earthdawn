@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="themeClass">
     <div class="sidebar">
       <character-list />
     </div>
@@ -10,10 +10,27 @@
 </template>
 
 <script>
+import { remote } from "electron";
 import CharacterList from "./views/CharacterList";
+
 export default {
   components: {
     CharacterList,
+  },
+  data() {
+    return { themeClass: "dark" };
+  },
+  methods: {
+    updateTheme() {
+      const useDark = remote.nativeTheme.shouldUseDarkColors;
+      this.themeClass = useDark ? "dark" : "light";
+    },
+  },
+  created() {
+    remote.nativeTheme.on("updated", this.updateTheme);
+  },
+  mounted() {
+    this.updateTheme();
   },
 };
 </script>
@@ -25,7 +42,6 @@ $argon-blue: #5e72e4;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
 
   width: 100vw;
   height: 100vh;
@@ -62,7 +78,7 @@ $argon-blue: #5e72e4;
       z-index: 1;
       font-size: 1.25rem;
 
-      color: #888;
+      color: var(--text-secondary);
     }
 
     select {
@@ -72,6 +88,8 @@ $argon-blue: #5e72e4;
       background-repeat: no-repeat;
       background-image: url("./assets/dropdownArrow.svg");
       padding-right: 1.5rem;
+
+      color: var(--text-primary);
 
       cursor: pointer;
 
@@ -85,11 +103,11 @@ $argon-blue: #5e72e4;
       width: 100%;
       padding-top: 1.25rem;
 
-      background-color: white;
+      background-color: var(--background-primary);
 
       border: 0;
       border-radius: 0;
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid var(--color-mid-1);
 
       margin-bottom: 1rem;
 

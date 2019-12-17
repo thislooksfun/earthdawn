@@ -7,44 +7,32 @@ _templates:
 
 pull_request_rules:
   # Automatic Merging (humans)
-  - name: automatic merge
+  - <<: *pr
+    name: automatic merge
     conditions:
       - "#approved-reviews-by>=1"
       - base=master
-    actions:
-      merge:
-        method: merge
-        strict: smart
 
-  - name: automatic merge without review
+  - <<: *pr
+    name: automatic merge without review
     conditions:
       - author=thislooksfun
       - base=master
-    actions:
-      merge:
-        method: merge
-        strict: smart
 
   # Automatic Merging (bots)
   # These are awaiting #71
-  # - name: automatic merge from greenkeeper
+  # - <<: *pr
+  #   name: automatic merge from greenkeeper
   #   conditions:
   #     - author=greenkeeper[bot]
   #     - status-success=greenkeeper/verify
   #     - base=master
-  #   actions:
-  #     merge:
-  #       method: merge
-  #       strict: smart
   #
-  # - name: automatic merge from dependabot
+  # - <<: *pr
+  #   name: automatic merge from dependabot
   #   conditions:
   #     - author~=^dependabot(|-preview)\[bot\]$
   #     - base=master
-  #   actions:
-  #     merge:
-  #       method: merge
-  #       strict: smart
 
   # Quality of life
   - name: Delete head branch after merge

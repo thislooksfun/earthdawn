@@ -1,6 +1,6 @@
 pull_request_rules:
   # Automatic Merging (humans)
-  - name: "Automatic merge for my changes to master when tagged"
+  - name: automatic merge without review
     conditions:
       # By me
       - author=thislooksfun
@@ -14,7 +14,7 @@ pull_request_rules:
         strict: smart
 
   # Automatic Merging (humans)
-  - name: "Automatic merge for other changes to master when tagged"
+  - name: automatic merge
     conditions:
       # At least one review
       - "#approved-reviews-by>=1"
@@ -29,7 +29,7 @@ pull_request_rules:
 
   # This is awaiting #71
   # # Automatic Merging (bots)
-  # - name: "Automatic merge for Greenkeeper pull requests"
+  # - name: automatic merge from greenkeeper
   #   conditions:
   #     # Was sent from Greenkeeper
   #     - author=greenkeeper[bot]

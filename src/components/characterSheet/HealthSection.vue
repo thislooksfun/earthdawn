@@ -4,7 +4,7 @@
       class="damage"
       type="danger"
       style="font-size: 1rem"
-      icon="fa fa-minus"
+      :icon="['fas', 'minus']"
       v-b-tooltip.hover.down
       title="Deal Damage"
       :disabled="disabled || invalid"
@@ -22,7 +22,7 @@
       class="recover"
       type="success"
       style="font-size: 1rem"
-      icon="fa fa-plus"
+      :icon="['fas', 'plus']"
       v-b-tooltip.hover.down
       title="Recover Health"
       :disabled="disabled || invalid"

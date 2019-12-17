@@ -85,6 +85,12 @@ export default {
       },
       set(value) {
         this.$store.dispatch("ccSetRace", value);
+
+        // Clear any attribute modifiers
+        ["dex", "str", "tou", "per", "wil", "cha"].forEach(attrName =>
+          this.$store.dispatch("ccRemoveEffect", { name: `${attrName}Val` })
+        );
+
         this.$emit("completed", this.completed);
       },
     },

@@ -2,6 +2,7 @@
   <div class="character-sheet">
     <div class="block no-bg">
       <base-button
+        :class="char.editMode ? '' : 'primary-bg'"
         block
         :type="char.editMode ? 'primary' : 'secondary'"
         @click="toggleEditMode"
@@ -45,26 +46,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-.character-sheet {
-  position: relative;
-  top: 0;
-  padding: 1rem;
-  background-color: #ddd;
-  height: 100vh;
-}
-.block {
-  margin-bottom: 1rem;
-
-  &.solid {
-    background-color: #fff;
-  }
-  &.padded {
-    padding: 1rem;
-    &.lightly {
-      padding: 0.5rem;
-    }
-  }
-}
-</style>

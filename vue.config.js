@@ -20,6 +20,13 @@ module.exports = {
       .loader("js-yaml-loader")
       .end();
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/assets/scss/_shared.scss";`,
+      },
+    },
+  },
   pluginOptions: {
     electronBuilder: {
       chainWebpackMainProcess: config => {

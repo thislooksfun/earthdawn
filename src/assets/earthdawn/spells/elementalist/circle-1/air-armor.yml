@@ -5,11 +5,8 @@ casting: TMD
 range: touch
 duration: Rank+5 rounds
 effect: +3 Physical Armor
-successLevels:
-  - Increase Duration (+2 rounds)
-extraThreads:
-  - Increase Duration (minutes)
-  - Increase Effect (+1 Physical Armor)
+successLevels: Increase Duration (+2 rounds)
+extraThreads: Increase Duration (minutes), Increase Effect (+1 Physical Armor)
 
 description:
   Air. This spell creates a protective cushion of air. The magician exhales

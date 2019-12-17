@@ -62,13 +62,3 @@ pull_request_rules:
     conditions: []
     actions:
       dismiss_reviews: {}
-
-  - name: Assign me
-    conditions:
-      - -author=greenkeeper[bot]
-      - -author=thislooksfun
-      - base=master
-    actions:
-      assign:
-        users:
-          - thislooksfun

@@ -3,7 +3,6 @@ pull_request_rules:
   - name: automatic merge without review
     conditions:
       - author=thislooksfun
-      - label=ready-to-merge
       - base=master
     actions:
       merge:
@@ -13,7 +12,6 @@ pull_request_rules:
   - name: automatic merge
     conditions:
       - "#approved-reviews-by>=1"
-      - label=ready-to-merge
       - base=master
     actions:
       merge:

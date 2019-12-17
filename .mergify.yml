@@ -59,8 +59,7 @@ pull_request_rules:
       delete_head_branch: {}
 
   - name: Remove outdated reviews
-    conditions:
-      - base=master
+    conditions: []
     actions:
       dismiss_reviews: {}
 

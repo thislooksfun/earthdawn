@@ -1,17 +1,14 @@
-_templates:
-  pull_request: &pr
-    actions:
-      merge:
-        method: merge
-        strict: smart
-
 pull_request_rules:
   # Automatic Merging (humans)
-  - <<: *pr
+  - &pr
     name: automatic merge
     conditions:
       - "#approved-reviews-by>=1"
       - base=master
+    actions:
+      merge:
+        method: merge
+        strict: smart
 
   - <<: *pr
     name: automatic merge without review

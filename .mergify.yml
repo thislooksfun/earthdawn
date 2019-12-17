@@ -2,25 +2,18 @@ pull_request_rules:
   # Automatic Merging (humans)
   - name: automatic merge without review
     conditions:
-      # By me
       - author=thislooksfun
-      # Tagged ready
       - label=ready-to-merge
-      # On master branch
       - base=master
     actions:
       merge:
         method: merge
         strict: smart
 
-  # Automatic Merging (humans)
   - name: automatic merge
     conditions:
-      # At least one review
       - "#approved-reviews-by>=1"
-      # Tagged ready
       - label=ready-to-merge
-      # On master branch
       - base=master
     actions:
       merge:
@@ -31,10 +24,8 @@ pull_request_rules:
   # These are awaiting #71
   # - name: automatic merge from greenkeeper
   #   conditions:
-  #     # Was sent from Greenkeeper
   #     - author=greenkeeper[bot]
   #     - status-success=greenkeeper/verify
-  #     # On master branch
   #     - base=master
   #   actions:
   #     merge:
@@ -43,9 +34,7 @@ pull_request_rules:
   #
   # - name: automatic merge from dependabot
   #   conditions:
-  #     # Was sent from dependabot
   #     - author~=^dependabot(|-preview)\[bot\]$
-  #     # On master branch
   #     - base=master
   #   actions:
   #     merge:

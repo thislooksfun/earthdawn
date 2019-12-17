@@ -1,45 +1,35 @@
 pull_request_rules:
   # Automatic Merging (humans)
-  - name: "Automatic merge for my changes to master when tagged"
+  - &pr
+    name: automatic merge
     conditions:
-      # By me
-      - author=thislooksfun
-      # Tagged ready
-      - label=ready-to-merge
-      # On master branch
-      - base=master
-    actions:
-      merge:
-        method: merge
-        strict: true
-
-  # Automatic Merging (humans)
-  - name: "Automatic merge for other changes to master when tagged"
-    conditions:
-      # At least one review
       - "#approved-reviews-by>=1"
-      # Tagged ready
-      - label=ready-to-merge
-      # On master branch
       - base=master
     actions:
       merge:
         method: merge
-        strict: true
+        strict: smart
 
-  # This is awaiting #71
-  # # Automatic Merging (bots)
-  # - name: "Automatic merge for Greenkeeper pull requests"
+  - <<: *pr
+    name: automatic merge without review
+    conditions:
+      - author=thislooksfun
+      - base=master
+
+  # Automatic Merging (bots)
+  # These are awaiting #71
+  # - <<: *pr
+  #   name: automatic merge from greenkeeper
   #   conditions:
-  #     # Was sent from Greenkeeper
   #     - author=greenkeeper[bot]
   #     - status-success=greenkeeper/verify
-  #     # On master branch
   #     - base=master
-  #   actions:
-  #     merge:
-  #       method: merge
-  #       strict: true
+  #
+  # - <<: *pr
+  #   name: automatic merge from dependabot
+  #   conditions:
+  #     - author~=^dependabot(|-preview)\[bot\]$
+  #     - base=master
 
   # Quality of life
   - name: Delete head branch after merge
@@ -48,17 +38,13 @@ pull_request_rules:
       delete_head_branch: {}
 
   - name: Remove outdated reviews
-    conditions:
-      - base=master
+    conditions: []
     actions:
       dismiss_reviews: {}
 
-  - name: Assign me
+  - name: warn on conflicts
     conditions:
-      - -author=greenkeeper[bot]
-      - -author=thislooksfun
-      - base=master
+      - conflict
     actions:
-      assign:
-        users:
-          - thislooksfun
+      comment:
+        message: This pull request is now in conflict :(

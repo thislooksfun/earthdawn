@@ -34,7 +34,7 @@ function createWindow() {
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
-    webPreferences: { nodeIntegration: true },
+    webPreferences: { nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION },
     show: false,
     backgroundColor: nativeTheme.shouldUseDarkColors ? "#111" : "#fff",
   });

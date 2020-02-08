@@ -1,0 +1,36 @@
+name: E2E Tests
+
+on: [push]
+
+jobs:
+  e2e-tests:
+    name: E2E Tests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm install
+
+      # npm run <script> --slient suppresses any npm ELIFECYCLE errors, but does
+      # not silence the script output.
+
+      # Test
+      - name: Test
+        run: npm run test:e2e:cover --silent
+        env:
+          CI: true
+
+      # After test
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage/lcov.info
+          flags: e2etests
+          name: Node.js@${{ matrix.node-version }}

@@ -3,22 +3,25 @@
     class="character-header"
     :class="{ editMode: char.editMode, playMode: !char.editMode }"
   >
-    <!-- Edit Mode -->
-    <h1 v-if="char.editMode" class="editing">
-      Name:
-      <input class="inline" type="text" v-model="name" />
-      <br />Discipline:
-      <input class="inline" type="text" v-model="discipline" />
-      <br />Circle:
-      <input type="number" v-model="circle" />
-      <br />Race:
-      <input class="inline" type="text" v-model="race" />
-    </h1>
+    <div class="section name">
+      <span class="label">Name</span>
+      <span>{{ name }}</span>
+    </div>
 
-    <!-- Play Mode -->
-    <h1 v-if="!char.editMode">
-      {{ name }}: Circle {{ circle }} {{ race }} {{ discipline }}
-    </h1>
+    <div class="section race">
+      <span class="label">Race</span>
+      <span>{{ race }}</span>
+    </div>
+
+    <div class="section discipline">
+      <span class="label">Discipline</span>
+      <span>{{ discipline }}</span>
+    </div>
+
+    <div class="section circle">
+      <span class="label">Circle</span>
+      <span>{{ circle }}</span>
+    </div>
   </div>
 </template>
 
@@ -81,12 +84,47 @@ export default {
 
 <style scoped lang="scss">
 .character-header {
-  .playMode {
-    text-align: center;
-  }
+  display: grid;
+  grid-template-columns: 33% auto auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: "name race discipline circle";
 
   h1 {
     margin: 0;
+  }
+
+  .section {
+    position: relative;
+    display: inline-block;
+    font-size: 1.75rem;
+
+    span {
+      display: block;
+    }
+
+    .label {
+      top: 0;
+      left: 0;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: -0.5rem;
+    }
+
+    &.name {
+      grid-area: name;
+    }
+
+    &.race {
+      grid-area: race;
+    }
+
+    &.discipline {
+      grid-area: discipline;
+    }
+
+    &.circle {
+      grid-area: circle;
+    }
   }
 }
 </style>

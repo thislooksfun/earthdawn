@@ -18,7 +18,7 @@
       <health-section :disabled="char.editMode" :uuid="uuid" />
     </div>
 
-    <div class="solid padded block">
+    <div class="block attrs">
       <character-attrs :uuid="uuid" />
     </div>
 
@@ -95,3 +95,13 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+// .character-sheet {
+//   display: grid;
+// }
+
+.attrs {
+  width: 4.5rem;
+}
+</style>

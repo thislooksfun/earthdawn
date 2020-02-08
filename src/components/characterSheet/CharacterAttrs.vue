@@ -1,23 +1,18 @@
 <template>
   <div class="character-attrs">
-    <center><h2>Attributes</h2></center>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Value</th>
-          <th>Step</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(vals, attr) in attrs" :key="attr">
-          <td>{{ attr }}</td>
-          <td>{{ vals.val }}</td>
-          <td>{{ vals.step }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div
+      v-for="(vals, attr) in attrs"
+      :key="attr"
+      class="solid padded block attr"
+    >
+      <span class="name">{{ attr }}</span>
+      <span
+        class="step"
+        :title="`${attr} value: ${vals.val}; step: ${vals.step}`"
+        v-b-tooltip.hover.right
+        >{{ vals.step }}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -45,3 +40,29 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+.attr {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "name" "step";
+  text-align: center;
+
+  .name {
+    margin: -0.5rem;
+
+    grid-area: name;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .step {
+    margin-top: 0.25rem;
+    margin-bottom: -0.5rem;
+    grid-area: step;
+    font-size: 2rem;
+  }
+}
+</style>

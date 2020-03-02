@@ -1,9 +1,10 @@
 <template>
   <div class="karma-points">
-    <div class="centered val-label-group">
-      <span class="label">Karma</span>
-      <span class="value">{{ karma.current }} / {{ karma.max }}</span>
-    </div>
+    <value-label-group centered label="Karma"
+      ><span class="points"
+        >{{ karma.current }} / {{ karma.max }}</span
+      ></value-label-group
+    >
 
     <div class="controls">
       <base-button
@@ -59,10 +60,8 @@ export default {
 
 <style scoped lang="scss">
 .karma-points {
-  .val-label-group {
-    .value {
-      font-size: 1.75rem;
-    }
+  .points {
+    font-size: 1.75rem;
   }
 
   .controls {

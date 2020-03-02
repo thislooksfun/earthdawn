@@ -3,8 +3,8 @@
     <step-value-item
       v-for="(vals, attr) in attrs"
       :key="attr"
-      :class="`centered val-label-group attr ${attr}`"
       :label="attr"
+      :class="attr"
       :step="vals.step"
       :value="vals.val"
     />

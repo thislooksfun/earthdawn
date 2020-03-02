@@ -2,10 +2,10 @@
   <value-label-group
     centered
     :label="label"
+    :value="value"
     :title="[`value: ${value}`, ...ttrows].join('<br />')"
     v-b-tooltip.html
-    >{{ value }}</value-label-group
-  >
+  />
 </template>
 
 <script>

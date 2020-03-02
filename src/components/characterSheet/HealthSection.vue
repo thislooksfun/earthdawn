@@ -31,9 +31,12 @@
       @click="recover1Health"
     ></base-button>
 
-    <value-label-group class="wounds" centered label="Wounds">{{
-      health.wounds
-    }}</value-label-group>
+    <value-label-group
+      class="wounds"
+      centered
+      label="Wounds"
+      :value="health.wounds"
+    />
   </div>
 </template>
 

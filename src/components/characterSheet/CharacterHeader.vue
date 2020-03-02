@@ -5,12 +5,12 @@
   >
     <value-label-group class="name" label="Name">{{ name }}</value-label-group>
     <value-label-group class="race" label="Race">{{ race }}</value-label-group>
-    <value-label-group class="discipline" label="Discipline">{{
-      discipline
-    }}</value-label-group>
-    <value-label-group class="circle" label="Circle">{{
-      circle
-    }}</value-label-group>
+    <value-label-group
+      class="discipline"
+      label="Discipline"
+      :value="discipline"
+    />
+    <value-label-group class="circle" label="Circle" :value="circle" />
   </div>
 </template>
 

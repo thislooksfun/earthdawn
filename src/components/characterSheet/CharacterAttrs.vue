@@ -10,9 +10,12 @@
       :ttrows="ttRowsFor(attr)"
     />
 
-    <value-label-group centered label="Speed" class="speed">{{
-      chars.movementRate
-    }}</value-label-group>
+    <value-label-group
+      centered
+      label="Speed"
+      :value="chars.movementRate"
+      class="speed"
+    />
     <step-item label="Initiative" :step="chars.initiative" class="init" />
   </div>
 </template>

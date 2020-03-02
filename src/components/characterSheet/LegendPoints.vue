@@ -3,10 +3,10 @@
     <value-label-group
       centered
       label="Legend Points"
+      :value="lp.current"
       :title="`Current: ${lp.current}<br />Total: ${lp.total}`"
       v-b-tooltip.html
-      >{{ lp.current }}</value-label-group
-    >
+    />
   </div>
 </template>
 

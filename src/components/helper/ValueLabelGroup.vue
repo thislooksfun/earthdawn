@@ -4,7 +4,7 @@
       <span>{{ label }}</span>
     </div>
     <div class="value">
-      <slot></slot>
+      <slot>{{ value }}</slot>
     </div>
   </div>
 </template>
@@ -13,6 +13,7 @@
 export default {
   props: {
     label: { type: String, required: true },
+    value: { type: String, default: "" },
     centered: { type: Boolean, default: false },
     outlined: { type: Boolean, default: false },
   },

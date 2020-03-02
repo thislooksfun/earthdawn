@@ -7,6 +7,7 @@
       :label="attr.toUpperCase()"
       :step="vals.step"
       :value="vals.val"
+      :ttrows="ttRowsFor(attr)"
     />
   </div>
 </template>
@@ -29,12 +30,25 @@ export default {
     const char = this.$store.state.Characters.characters[this.uuid];
     return { char };
   },
+  methods: {
+    ttRowsFor(attr) {
+      switch (attr) {
+        case "str":
+          return [`Carrying Capacity: ${this.chars.carryingCapacity}`];
+        default:
+          return [];
+      }
+    },
+  },
   computed: {
     dChar() {
       return decorate(this.char);
     },
     attrs() {
       return this.dChar.attrs;
+    },
+    chars() {
+      return this.dChar.characteristics;
     },
   },
 };

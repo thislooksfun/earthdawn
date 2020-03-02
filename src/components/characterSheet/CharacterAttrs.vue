@@ -1,25 +1,24 @@
 <template>
   <div class="character-attrs">
-    <div
+    <step-value-item
       v-for="(vals, attr) in attrs"
       :key="attr"
       :class="`centered val-label-group attr ${attr}`"
-    >
-      <span class="label">{{ attr }}</span>
-      <span
-        class="value"
-        :title="`${attr} value: ${vals.val}; step: ${vals.step}`"
-        v-b-tooltip.hover.right
-        >{{ vals.step }}
-      </span>
-    </div>
+      :label="attr"
+      :step="vals.step"
+      :value="vals.val"
+    />
   </div>
 </template>
 
 <script>
 import decorate from "@/charDecorator";
+import StepValueItem from "../helper/StepValueItem";
 
 export default {
+  components: {
+    StepValueItem,
+  },
   props: {
     uuid: {
       type: String,

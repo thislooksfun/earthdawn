@@ -65,7 +65,7 @@ export default {
   }
 
   .controls {
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
   }
 }
 </style>

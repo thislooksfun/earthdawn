@@ -2,8 +2,8 @@
   <value-label-group
     centered
     :label="label"
-    :title="`value: ${value}; step: ${step}`"
-    v-b-tooltip.hovers
+    :title="[`value: ${value}`, `step: ${step}`, ...ttrows].join('<br />')"
+    v-b-tooltip.html
     >{{ step }}</value-label-group
   >
 </template>
@@ -22,6 +22,10 @@ export default {
     step: {
       type: Number,
       default: 0,
+    },
+    ttrows: {
+      type: Array,
+      default: () => [],
     },
   },
 };

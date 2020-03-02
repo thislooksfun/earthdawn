@@ -3,8 +3,8 @@
     <step-value-item
       v-for="(vals, attr) in attrs"
       :key="attr"
-      :label="attr"
       :class="attr"
+      :label="attr.toUpperCase()"
       :step="vals.step"
       :value="vals.val"
     />

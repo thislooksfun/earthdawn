@@ -5,7 +5,7 @@
       <span class="value">{{ karma.current }} / {{ karma.max }}</span>
     </div>
 
-    <div class="ctrls">
+    <div class="controls">
       <base-button
         class="add-skill-btn"
         type="primary"
@@ -56,3 +56,17 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+.karma-points {
+  .val-label-group {
+    .value {
+      font-size: 1.75rem;
+    }
+  }
+
+  .controls {
+    margin-top: 0.25rem;
+  }
+}
+</style>

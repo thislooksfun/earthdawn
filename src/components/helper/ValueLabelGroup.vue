@@ -3,7 +3,7 @@
     <div class="label">
       <span>{{ label }}</span>
     </div>
-    <div class="value">
+    <div class="value" :class="`size-${size}`">
       <slot>{{ value }}</slot>
     </div>
   </div>
@@ -16,6 +16,7 @@ export default {
     value: { type: String, default: "" },
     centered: { type: Boolean, default: false },
     outlined: { type: Boolean, default: false },
+    size: { type: String, default: "medium" },
   },
 };
 </script>
@@ -55,7 +56,16 @@ export default {
   & > .value {
     display: block;
     margin-bottom: -0.5rem;
-    font-size: 2rem;
+
+    &.size-large {
+      font-size: 2rem;
+    }
+    &.size-medium {
+      font-size: 1.75rem;
+    }
+    &.size-small {
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

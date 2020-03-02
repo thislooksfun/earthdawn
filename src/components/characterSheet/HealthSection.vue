@@ -32,6 +32,7 @@
     ></base-button>
 
     <value-label-group
+      size="large"
       class="wounds"
       centered
       label="Wounds"

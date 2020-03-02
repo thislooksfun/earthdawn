@@ -3,6 +3,7 @@
     centered
     :label="label"
     :value="step"
+    :size="size"
     :title="
       [`value: ${value}`, `step: ${step} (dice: ${d4s})`, ...ttrows].join(
         '<br />'
@@ -20,6 +21,7 @@ export default {
     label: { type: String, required: true },
     value: { type: Number, required: true },
     step: { type: Number, required: true },
+    size: { type: String, default: "large" },
     ttrows: { type: Array, default: () => [] },
   },
   computed: {

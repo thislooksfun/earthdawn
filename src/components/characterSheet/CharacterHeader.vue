@@ -3,14 +3,24 @@
     class="character-header"
     :class="{ editMode: char.editMode, playMode: !char.editMode }"
   >
-    <value-label-group class="name" label="Name">{{ name }}</value-label-group>
-    <value-label-group class="race" label="Race">{{ race }}</value-label-group>
+    <value-label-group size="large" class="name" label="Name">{{
+      name
+    }}</value-label-group>
+    <value-label-group size="large" class="race" label="Race">{{
+      race
+    }}</value-label-group>
     <value-label-group
+      size="large"
       class="discipline"
       label="Discipline"
       :value="discipline"
     />
-    <value-label-group class="circle" label="Circle" :value="circle" />
+    <value-label-group
+      size="large"
+      class="circle"
+      label="Circle"
+      :value="circle"
+    />
   </div>
 </template>
 

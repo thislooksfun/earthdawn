@@ -3,6 +3,7 @@
     centered
     :label="label"
     :value="step"
+    :size="size"
     :title="[`step: ${step} (dice: ${d4s})`, ...ttrows].join('<br />')"
     v-b-tooltip.html
   />
@@ -15,6 +16,7 @@ export default {
   props: {
     label: { type: String, required: true },
     step: { type: Number, required: true },
+    size: { type: String, default: "large" },
     ttrows: { type: Array, default: () => [] },
   },
   computed: {

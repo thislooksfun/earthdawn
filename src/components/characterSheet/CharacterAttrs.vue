@@ -12,6 +12,7 @@
 
     <value-label-group
       centered
+      size="large"
       label="Speed"
       :value="chars.movementRate"
       class="speed"

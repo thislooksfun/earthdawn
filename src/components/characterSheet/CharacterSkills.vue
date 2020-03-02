@@ -1,86 +1,38 @@
 <template>
   <div class="character-skills">
-    <center><h2>Skills</h2></center>
+    <value-label-group outlined label="Knowledge Skills" class="skill-group">
+      <skill
+        v-for="(skill, name) in skillGroups.knowledge"
+        :key="name"
+        :skill="skill"
+      />
+    </value-label-group>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Action</th>
-          <th>Strain</th>
-          <th>Attribute</th>
-          <th>Rank</th>
-          <th>Step</th>
-          <th>Action Dice</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Knowledge Skills -->
-        <tr align="center">
-          <td colspan="7">Knowledge Skills</td>
-        </tr>
-        <tr v-for="(skill, name) in skillGroups.knowledge" :key="name">
-          <td>{{ name }}</td>
-          <td>{{ skill.action }}</td>
-          <td>{{ skill.strain }}</td>
-          <td>{{ skill.attr }}</td>
-          <td>{{ skill.rank }}</td>
-          <td>{{ skill.step }}</td>
-          <td>{{ skill.actionDice }}</td>
-        </tr>
+    <value-label-group outlined label="Artisan Skills" class="skill-group">
+      <skill
+        v-for="(skill, name) in skillGroups.artisan"
+        :key="name"
+        :skill="skill"
+      />
+    </value-label-group>
 
-        <!-- Artisan Skills -->
-        <tr align="center">
-          <td colspan="7">Artisan Skills</td>
-        </tr>
-        <tr v-for="(skill, name) in skillGroups.artisan" :key="name">
-          <td>{{ name }}</td>
-          <td>{{ skill.action }}</td>
-          <td>{{ skill.strain }}</td>
-          <td>{{ skill.attr }}</td>
-          <td>{{ skill.rank }}</td>
-          <td>{{ skill.step }}</td>
-          <td>{{ skill.actionDice }}</td>
-        </tr>
+    <value-label-group outlined label="Language Skills" class="skill-group">
+      <skill :skill="speakLang" />
+      <skill :skill="readWriteLang" />
+    </value-label-group>
 
-        <!-- Language Skills -->
-        <tr align="center">
-          <td colspan="7">Language Skills</td>
-        </tr>
-        <tr>
-          <td>{{ speakLang.name }}</td>
-          <td>{{ speakLang.action }}</td>
-          <td>{{ speakLang.strain }}</td>
-          <td>{{ speakLang.attr }}</td>
-          <td>{{ speakLang.rank }}</td>
-          <td>{{ speakLang.step }}</td>
-          <td>{{ speakLang.actionDice }}</td>
-        </tr>
-        <tr>
-          <td>{{ readWriteLang.name }}</td>
-          <td>{{ readWriteLang.action }}</td>
-          <td>{{ readWriteLang.strain }}</td>
-          <td>{{ readWriteLang.attr }}</td>
-          <td>{{ readWriteLang.rank }}</td>
-          <td>{{ readWriteLang.step }}</td>
-          <td>{{ readWriteLang.actionDice }}</td>
-        </tr>
-
-        <!-- Other Skills -->
-        <tr align="center">
-          <td colspan="7">Other Skills</td>
-        </tr>
-        <tr v-for="(skill, name) in skillGroups.other" :key="name">
-          <td>{{ name }}</td>
-          <td>{{ skill.action }}</td>
-          <td>{{ skill.strain }}</td>
-          <td>{{ skill.attr }}</td>
-          <td>{{ skill.rank }}</td>
-          <td>{{ skill.step }}</td>
-          <td>{{ skill.actionDice }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <value-label-group
+      v-if="skillGroups.other"
+      outlined
+      label="Other Skills"
+      class="skill-group"
+    >
+      <skill
+        v-for="(skill, name) in skillGroups.other"
+        :key="name"
+        :skill="skill"
+      />
+    </value-label-group>
   </div>
 </template>
 
@@ -88,6 +40,7 @@
 import decorate from "@/charDecorator";
 import skills from "Skills";
 import talents from "Talents";
+import Skill from "./helper/Skill";
 
 const upperFirst = require("lodash/upperFirst");
 
@@ -97,6 +50,9 @@ export default {
       type: String,
       default: null,
     },
+  },
+  components: {
+    Skill,
   },
   data() {
     const char = this.$store.state.Characters.characters[this.uuid];
@@ -161,3 +117,22 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+.character-skills {
+  .skill-group {
+    .skill {
+      margin: 0.75rem 0;
+      padding: 0 0.5rem;
+
+      &:first-child {
+        margin-top: 0.25rem;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+}
+</style>

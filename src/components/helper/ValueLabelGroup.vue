@@ -12,18 +12,9 @@
 <script>
 export default {
   props: {
-    label: {
-      type: String,
-      default: "",
-    },
-    centered: {
-      type: Boolean,
-      default: false,
-    },
-    outlined: {
-      type: Boolean,
-      default: false,
-    },
+    label: { type: String, required: true },
+    centered: { type: Boolean, default: false },
+    outlined: { type: Boolean, default: false },
   },
 };
 </script>

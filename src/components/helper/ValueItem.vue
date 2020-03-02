@@ -11,18 +11,9 @@
 <script>
 export default {
   props: {
-    label: {
-      type: String,
-      default: "",
-    },
-    value: {
-      type: Number,
-      default: 0,
-    },
-    ttrows: {
-      type: Array,
-      default: () => [],
-    },
+    label: { type: String, required: true },
+    value: { type: Number, required: true },
+    ttrows: { type: Array, default: () => [] },
   },
 };
 </script>

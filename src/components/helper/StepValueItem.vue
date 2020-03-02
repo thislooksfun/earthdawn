@@ -17,22 +17,10 @@ import d4s from "@/helper/actionDiceForStep";
 
 export default {
   props: {
-    label: {
-      type: String,
-      default: "",
-    },
-    value: {
-      type: Number,
-      default: 0,
-    },
-    step: {
-      type: Number,
-      default: 0,
-    },
-    ttrows: {
-      type: Array,
-      default: () => [],
-    },
+    label: { type: String, required: true },
+    value: { type: Number, required: true },
+    step: { type: Number, required: true },
+    ttrows: { type: Array, default: () => [] },
   },
   computed: {
     d4s() {

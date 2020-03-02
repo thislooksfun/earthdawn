@@ -3,7 +3,7 @@
     <div
       v-for="(vals, attr) in attrs"
       :key="attr"
-      class="centered val-label-group attr"
+      :class="`centered val-label-group attr ${attr}`"
     >
       <span class="label">{{ attr }}</span>
       <span

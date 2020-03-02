@@ -10,7 +10,7 @@
       >
     </div>
 
-    <div class="solid lightly padded block">
+    <div class="solid padded block">
       <character-header :uuid="uuid" />
     </div>
 
@@ -18,8 +18,13 @@
       <health-section :disabled="char.editMode" :uuid="uuid" />
     </div>
 
-    <div class="block attrs">
-      <character-attrs :uuid="uuid" />
+    <div class="attr-bar">
+      <div class="solid padded block">
+        <character-attrs :uuid="uuid" />
+      </div>
+      <div class="solid padded block">
+        <karma-points :uuid="uuid" />
+      </div>
     </div>
 
     <div class="solid padded block">
@@ -40,10 +45,6 @@
 
     <div class="solid padded block">
       <legend-points :uuid="uuid" />
-    </div>
-
-    <div class="solid padded block">
-      <karma-points :uuid="uuid" />
     </div>
   </div>
 </template>
@@ -97,11 +98,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// .character-sheet {
-//   display: grid;
-// }
+.character-sheet {
+  & > * {
+    position: relative;
+    width: 100%;
+  }
 
-.attrs {
-  width: 4.5rem;
+  .attr-bar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > :first-child {
+      flex-grow: 1;
+    }
+
+    & > :not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
 }
+
+// .attrs {
+//   width: 4.5rem;
+// }
 </style>

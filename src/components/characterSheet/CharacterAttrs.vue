@@ -3,11 +3,11 @@
     <div
       v-for="(vals, attr) in attrs"
       :key="attr"
-      class="solid padded block attr"
+      class="centered val-label-group attr"
     >
-      <span class="name">{{ attr }}</span>
+      <span class="label">{{ attr }}</span>
       <span
-        class="step"
+        class="value"
         :title="`${attr} value: ${vals.val}; step: ${vals.step}`"
         v-b-tooltip.hover.right
         >{{ vals.step }}
@@ -42,27 +42,51 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.attr {
+.character-attrs {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
-  grid-template-areas: "name" "step";
-  text-align: center;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: auto;
+  grid-template-areas: "dex str tou per wil cha";
+  align-items: center;
+  height: 100%;
 
-  .name {
-    margin: -0.5rem;
-
-    grid-area: name;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    text-transform: uppercase;
+  // TODO: Tune these breakpoints
+  @media screen and (max-width: 50rem) {
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "dex per" "str wil" "tou cha";
+  }
+  @media screen and (max-width: 25rem) {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "dex" "str" "tou" "per" "wil" "cha";
   }
 
-  .step {
-    margin-top: 0.25rem;
-    margin-bottom: -0.5rem;
-    grid-area: step;
-    font-size: 2rem;
+  .attr {
+    background-color: var(--background-primary);
+
+    &.dex {
+      grid-area: dex;
+    }
+    &.str {
+      grid-area: str;
+    }
+    &.tou {
+      grid-area: tou;
+    }
+    &.per {
+      grid-area: per;
+    }
+    &.wil {
+      grid-area: wil;
+    }
+    &.cha {
+      grid-area: cha;
+    }
+
+    .label {
+      text-transform: uppercase;
+    }
   }
 }
 </style>

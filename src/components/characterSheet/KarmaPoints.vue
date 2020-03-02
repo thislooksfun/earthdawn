@@ -1,21 +1,9 @@
 <template>
   <div class="karma-points">
-    <center><h2>Karma</h2></center>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Current</th>
-          <th>Max</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ karma.current }}</td>
-          <td>{{ karma.max }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="centered val-label-group">
+      <span class="label">Karma</span>
+      <span class="value">{{ karma.current }} / {{ karma.max }}</span>
+    </div>
 
     <div class="ctrls">
       <base-button

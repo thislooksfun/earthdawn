@@ -31,11 +31,9 @@
       @click="recover1Health"
     ></base-button>
 
-    <div class="wounds">
-      <center>
-        <span class="label">Wounds:</span>
-        <span class="count">{{ health.wounds }}</span>
-      </center>
+    <div class="centered val-label-group wounds">
+      <span class="label">Wounds:</span>
+      <span class="value">{{ health.wounds }}</span>
     </div>
   </div>
 </template>
@@ -113,25 +111,6 @@ export default {
   .wounds {
     position: relative;
     grid-area: wounds;
-
-    .label,
-    .count {
-      display: block;
-    }
-
-    .label {
-      position: absolute;
-      top: -0.75rem;
-      width: 100%;
-      color: var(--text-secondary);
-    }
-
-    .count {
-      $offset: 0.35rem;
-      margin-top: $offset;
-      margin-bottom: -$offset;
-      font-size: 2rem;
-    }
   }
 }
 </style>

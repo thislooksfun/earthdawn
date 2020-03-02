@@ -54,5 +54,26 @@ export default {
       text-align: center;
     }
   }
+
+  .val-label-group {
+    position: relative;
+
+    &.centered {
+      text-align: center;
+    }
+
+    .label {
+      position: relative;
+      display: block;
+      margin: -0.25rem 0 -0.5rem 0;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    .value {
+      display: block;
+      margin-bottom: -0.5rem;
+      font-size: 2rem;
+    }
+  }
 }
 </style>

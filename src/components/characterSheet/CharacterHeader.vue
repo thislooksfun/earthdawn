@@ -3,24 +3,24 @@
     class="character-header"
     :class="{ editMode: char.editMode, playMode: !char.editMode }"
   >
-    <div class="section name">
+    <div class="val-label-group name">
       <span class="label">Name</span>
-      <span>{{ name }}</span>
+      <span class="value">{{ name }}</span>
     </div>
 
-    <div class="section race">
+    <div class="val-label-group race">
       <span class="label">Race</span>
-      <span>{{ race }}</span>
+      <span class="value">{{ race }}</span>
     </div>
 
-    <div class="section discipline">
+    <div class="val-label-group discipline">
       <span class="label">Discipline</span>
-      <span>{{ discipline }}</span>
+      <span class="value">{{ discipline }}</span>
     </div>
 
-    <div class="section circle">
+    <div class="val-label-group circle">
       <span class="label">Circle</span>
-      <span>{{ circle }}</span>
+      <span class="value">{{ circle }}</span>
     </div>
   </div>
 </template>
@@ -89,42 +89,17 @@ export default {
   grid-template-rows: auto;
   grid-template-areas: "name race discipline circle";
 
-  h1 {
-    margin: 0;
+  & > .name {
+    grid-area: name;
   }
-
-  .section {
-    position: relative;
-    display: inline-block;
-    font-size: 1.75rem;
-
-    span {
-      display: block;
-    }
-
-    .label {
-      top: 0;
-      left: 0;
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-bottom: -0.5rem;
-    }
-
-    &.name {
-      grid-area: name;
-    }
-
-    &.race {
-      grid-area: race;
-    }
-
-    &.discipline {
-      grid-area: discipline;
-    }
-
-    &.circle {
-      grid-area: circle;
-    }
+  & > .race {
+    grid-area: race;
+  }
+  & > .discipline {
+    grid-area: discipline;
+  }
+  & > .circle {
+    grid-area: circle;
   }
 }
 </style>

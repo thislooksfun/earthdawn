@@ -19,11 +19,18 @@
     </div>
 
     <div class="attr-bar">
-      <div class="solid padded block">
-        <character-attrs :uuid="uuid" />
+      <div>
+        <div class="solid padded block">
+          <character-attrs :uuid="uuid" />
+        </div>
+        <div class="solid padded block">
+          <character-characteristics :uuid="uuid" />
+        </div>
       </div>
-      <div class="solid padded block">
+      <div class="solid padded block aside">
         <karma-points :uuid="uuid" />
+        <span class="hbar"></span>
+        <legend-points :uuid="uuid" />
       </div>
     </div>
 
@@ -42,10 +49,6 @@
     <div class="solid padded block">
       <character-equipment :uuid="uuid" />
     </div>
-
-    <div class="solid padded block">
-      <legend-points :uuid="uuid" />
-    </div>
   </div>
 </template>
 
@@ -61,6 +64,7 @@ import CharacterSpells from "./CharacterSpells";
 import CharacterSkills from "./CharacterSkills";
 import CharacterTalents from "./CharacterTalents";
 import CharacterEquipment from "./CharacterEquipment";
+import CharacterCharacteristics from "./CharacterCharacteristics";
 
 export default {
   components: {
@@ -73,6 +77,7 @@ export default {
     CharacterSkills,
     CharacterTalents,
     CharacterEquipment,
+    CharacterCharacteristics,
   },
   props: {
     uuid: {
@@ -115,6 +120,12 @@ export default {
 
     & > :not(:last-child) {
       margin-right: 1rem;
+    }
+
+    & > .aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
   }
 }

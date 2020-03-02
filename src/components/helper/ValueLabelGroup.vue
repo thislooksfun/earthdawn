@@ -1,6 +1,8 @@
 <template>
-  <div class="val-label-group" :class="{ centered }">
-    <span class="label">{{ label }}</span>
+  <div class="val-label-group" :class="{ centered, outlined }">
+    <div class="label">
+      <span>{{ label }}</span>
+    </div>
     <div class="value">
       <slot></slot>
     </div>
@@ -18,6 +20,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    outlined: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -28,6 +34,23 @@ export default {
 
   &.centered {
     text-align: center;
+  }
+  &.outlined {
+    border: 0.1rem dashed var(--table-primary);
+    margin-bottom: 0.1rem;
+
+    & > .label {
+      top: -0.5rem;
+      left: 0.25rem;
+      & > span {
+        background-color: var(--background-primary);
+        padding: 0 0.1rem;
+      }
+    }
+
+    & > .value {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .label {

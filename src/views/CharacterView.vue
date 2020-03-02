@@ -54,5 +54,12 @@ export default {
       text-align: center;
     }
   }
+
+  .hbar {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: var(--table-primary);
+  }
 }
 </style>

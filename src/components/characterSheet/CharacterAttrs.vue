@@ -65,23 +65,10 @@ export default {
   .attr {
     background-color: var(--background-primary);
 
-    &.dex {
-      grid-area: dex;
-    }
-    &.str {
-      grid-area: str;
-    }
-    &.tou {
-      grid-area: tou;
-    }
-    &.per {
-      grid-area: per;
-    }
-    &.wil {
-      grid-area: wil;
-    }
-    &.cha {
-      grid-area: cha;
+    @each $area in dex, str, tou, per, wil, cha {
+      &.#{$area} {
+        grid-area: $area;
+      }
     }
 
     .label {

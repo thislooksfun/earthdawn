@@ -1,24 +1,12 @@
 <template>
   <div class="legend-points">
-    <center><h2>Legend Points</h2></center>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Current</th>
-          <th>Total</th>
-          <!-- TODO: Implement these: -->
-          <!-- <th>Reputation</th> -->
-          <!-- <th>Renown</th> -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ legendPoints.current }}</td>
-          <td>{{ legendPoints.total }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <value-label-group
+      centered
+      label="Legend Points"
+      :title="`Current: ${lp.current}<br />Total: ${lp.total}`"
+      v-b-tooltip.html
+      >{{ lp.current }}</value-label-group
+    >
   </div>
 </template>
 
@@ -40,7 +28,7 @@ export default {
     dChar() {
       return decorate(this.char);
     },
-    legendPoints() {
+    lp() {
       return this.dChar.legendPoints;
     },
   },

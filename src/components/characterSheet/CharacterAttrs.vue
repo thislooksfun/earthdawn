@@ -75,17 +75,9 @@ export default {
     grid-template-areas: "dex" "str" "tou" "per" "wil" "cha";
   }
 
-  .attr {
-    background-color: var(--background-primary);
-
-    @each $area in dex, str, tou, per, wil, cha {
-      &.#{$area} {
-        grid-area: $area;
-      }
-    }
-
-    .label {
-      text-transform: uppercase;
+  @each $area in dex, str, tou, per, wil, cha {
+    .#{$area} {
+      grid-area: $area;
     }
   }
 }

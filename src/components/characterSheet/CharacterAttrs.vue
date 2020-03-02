@@ -9,16 +9,23 @@
       :value="vals.val"
       :ttrows="ttRowsFor(attr)"
     />
+
+    <value-label-group centered label="Speed" class="speed">{{
+      chars.movementRate
+    }}</value-label-group>
+    <step-item label="Initiative" :step="chars.initiative" class="init" />
   </div>
 </template>
 
 <script>
 import decorate from "@/charDecorator";
 import StepValueItem from "../helper/StepValueItem";
+import StepItem from "../helper/StepValueItem";
 
 export default {
   components: {
     StepValueItem,
+    StepItem,
   },
   props: {
     uuid: {
@@ -57,28 +64,32 @@ export default {
 <style scoped lang="scss">
 .character-attrs {
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(8, auto);
   grid-template-rows: auto;
-  grid-template-areas: "dex str tou per wil cha";
+  grid-template-areas: "dex str tou per wil cha speed init";
   align-items: center;
   height: 100%;
 
   // TODO: Tune these breakpoints
   @media screen and (max-width: 50rem) {
     grid-template-columns: auto auto;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "dex per" "str wil" "tou cha";
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "dex per" "str wil" "tou cha" "speed init";
   }
   @media screen and (max-width: 25rem) {
     grid-template-columns: auto;
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas: "dex" "str" "tou" "per" "wil" "cha";
+    grid-template-rows: repeat(8, auto);
+    grid-template-areas: "dex" "str" "tou" "per" "wil" "cha" "speed" "init";
   }
 
-  @each $area in dex, str, tou, per, wil, cha {
+  @each $area in dex, str, tou, per, wil, cha, speed, init {
     .#{$area} {
       grid-area: $area;
     }
+  }
+
+  .speed {
+    border-left: 1px solid var(--table-primary);
   }
 }
 </style>

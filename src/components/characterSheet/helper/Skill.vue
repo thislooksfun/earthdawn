@@ -1,6 +1,13 @@
 <template>
   <div class="skill">
-    <value-label-group class="name" label="Name" :value="skill.name" />
+    <value-label-group
+      class="name"
+      label="Name"
+      :title="skill.name"
+      v-b-tooltip
+    >
+      <div class="name-container">{{ skill.name }}</div>
+    </value-label-group>
     <value-label-group class="action" label="Action" :value="skill.action" />
     <value-label-group
       class="strain"
@@ -35,7 +42,7 @@ export default {
 <style scoped lang="scss">
 .skill {
   display: grid;
-  grid-template-columns: auto 7rem repeat(3, 3rem);
+  grid-template-columns: minmax(0, 100%) 7rem repeat(3, 3rem);
   grid-template-rows: auto;
   grid-template-areas: "name action strain rank step";
   grid-gap: 1rem;
@@ -44,6 +51,12 @@ export default {
     .#{$area} {
       grid-area: $area;
     }
+  }
+
+  .name-container {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 </style>

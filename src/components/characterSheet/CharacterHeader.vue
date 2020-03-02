@@ -3,24 +3,32 @@
     class="character-header"
     :class="{ editMode: char.editMode, playMode: !char.editMode }"
   >
-    <value-label-group size="large" class="name" label="Name">{{
-      name
-    }}</value-label-group>
-    <value-label-group size="large" class="race" label="Race">{{
-      race
-    }}</value-label-group>
     <value-label-group
       size="large"
+      class="name"
+      label="Name"
+      :title="name"
+      v-b-tooltip
+    >
+      <div class="wrap-container">{{ name }}</div>
+    </value-label-group>
+
+    <value-label-group class="race" label="Race" :title="race" v-b-tooltip>
+      <div class="wrap-container">{{ race }}</div>
+    </value-label-group>
+
+    <value-label-group
       class="discipline"
       label="Discipline"
-      :value="discipline"
-    />
-    <value-label-group
-      size="large"
-      class="circle"
-      label="Circle"
-      :value="circle"
-    />
+      :title="discipline"
+      v-b-tooltip
+    >
+      <div class="wrap-container">{{ discipline }}</div>
+    </value-label-group>
+
+    <value-label-group class="circle" label="Circle">
+      <div class="wrap-container">{{ circle }}</div>
+    </value-label-group>
   </div>
 </template>
 
@@ -84,9 +92,10 @@ export default {
 <style scoped lang="scss">
 .character-header {
   display: grid;
-  grid-template-columns: 33% auto auto auto;
+  grid-template-columns: minmax(0, 100%) 11rem 11rem 3rem;
   grid-template-rows: auto;
   grid-template-areas: "name race discipline circle";
+  grid-gap: 1rem;
 
   & > .name {
     grid-area: name;
@@ -99,6 +108,12 @@ export default {
   }
   & > .circle {
     grid-area: circle;
+  }
+
+  .wrap-container {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 </style>

@@ -4,18 +4,8 @@
       <div class="name-container">{{ talent.name }}</div>
     </value-label-group>
     <value-label-group class="action" label="Action" :value="talent.action" />
-    <value-label-group
-      class="strain"
-      centered
-      label="Strain"
-      :value="talent.strain"
-    />
-    <value-label-group
-      class="rank"
-      centered
-      label="Rank"
-      :value="talent.rank"
-    />
+    <value-label-group class="strain" label="Strain" :value="talent.strain" />
+    <value-label-group class="rank" label="Rank" :value="talent.rank" />
     <step-item
       size="medium"
       class="step"

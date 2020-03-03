@@ -1,7 +1,6 @@
 <template>
   <div class="legend-points">
     <value-label-group
-      centered
       label="Legend Points"
       :value="lp.current"
       :ttrows="[`Current: ${lp.current}`, `Total: ${lp.total}`]"

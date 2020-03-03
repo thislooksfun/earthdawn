@@ -1,14 +1,14 @@
 <template>
   <div
     class="val-label-group"
-    :class="{ centered, outlined }"
+    :class="{ center, outline }"
     :title="ttrows.length > 0 ? ttrows.join('<br />') : undefined"
     v-b-tooltip.html
   >
     <div class="label">
       <span>{{ label }}</span>
     </div>
-    <div class="value" :class="`size-${size}`">
+    <div class="value" :class="sizeClass">
       <slot>{{ value }}</slot>
     </div>
   </div>
@@ -18,11 +18,27 @@
 export default {
   props: {
     label: { type: String, required: true },
-    centered: { type: Boolean, default: false },
-    outlined: { type: Boolean, default: false },
     value: { type: [String, Number], default: "" },
-    size: { type: String, default: "medium" },
+    centered: { type: Boolean, default: null },
+    outlined: { type: Boolean, default: null },
+    size: { type: String, default: null },
     ttrows: { type: Array, default: () => [] },
+  },
+  computed: {
+    valIsNum() {
+      return typeof this.value === "number";
+    },
+    center() {
+      return this.centered != null ? this.centered : this.valIsNum;
+    },
+    outline() {
+      return this.outlined;
+    },
+    sizeClass() {
+      return `size-${
+        this.size != null ? this.size : this.valIsNum ? "large" : "medium"
+      }`;
+    },
   },
 };
 </script>
@@ -31,10 +47,10 @@ export default {
 .val-label-group {
   position: relative;
 
-  &.centered {
+  &.center {
     text-align: center;
   }
-  &.outlined {
+  &.outline {
     border: 0.1rem dashed var(--table-primary);
     margin-bottom: 0.1rem;
 

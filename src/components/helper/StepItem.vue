@@ -1,6 +1,5 @@
 <template>
   <value-label-group
-    centered
     :label="label"
     :value="step"
     :size="size"
@@ -15,7 +14,7 @@ export default {
   props: {
     label: { type: String, required: true },
     step: { type: Number, required: true },
-    size: { type: String, default: "large" },
+    size: { type: String, default: null },
     ttrows: { type: Array, default: () => [] },
   },
   computed: {

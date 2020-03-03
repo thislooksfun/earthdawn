@@ -1,6 +1,5 @@
 <template>
   <value-label-group
-    centered
     :label="label"
     :value="value"
     :size="size"
@@ -13,7 +12,7 @@ export default {
   props: {
     label: { type: String, required: true },
     value: { type: Number, required: true },
-    size: { type: String, default: "large" },
+    size: { type: String, default: null },
     ttrows: { type: Array, default: () => [] },
   },
 };

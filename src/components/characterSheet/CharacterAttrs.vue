@@ -24,7 +24,7 @@
 <script>
 import decorate from "@/charDecorator";
 import StepValueItem from "../helper/StepValueItem";
-import StepItem from "../helper/StepValueItem";
+import StepItem from "../helper/StepItem";
 
 export default {
   components: {

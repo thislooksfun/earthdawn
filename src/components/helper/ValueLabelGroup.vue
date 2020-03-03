@@ -18,9 +18,9 @@
 export default {
   props: {
     label: { type: String, required: true },
-    value: { type: String, default: "" },
     centered: { type: Boolean, default: false },
     outlined: { type: Boolean, default: false },
+    value: { type: [String, Number], default: "" },
     size: { type: String, default: "medium" },
     ttrows: { type: Array, default: () => [] },
   },

@@ -35,20 +35,6 @@
         />
       </div>
     </value-label-group>
-
-    <!-- <div
-      v-for="(vals, ch) in chars"
-      :key="attr"
-      :class="`centered val-label-group attr ${attr}`"
-    >
-      <span class="label">{{ attr }}</span> -->
-    <!-- <span
-        class="value"
-        :title="`${attr} value: ${vals.val}; step: ${vals.step}`"
-        v-b-tooltip.hover.right
-        >{{ vals.step }}
-      </span> -->
-    <!-- </div> -->
   </div>
 </template>
 

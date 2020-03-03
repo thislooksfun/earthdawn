@@ -3,25 +3,18 @@
     class="character-header"
     :class="{ editMode: char.editMode, playMode: !char.editMode }"
   >
-    <value-label-group
-      size="large"
-      class="name"
-      label="Name"
-      :title="name"
-      v-b-tooltip
-    >
+    <value-label-group size="large" class="name" label="Name" :ttrows="[name]">
       <div class="wrap-container">{{ name }}</div>
     </value-label-group>
 
-    <value-label-group class="race" label="Race" :title="race" v-b-tooltip>
+    <value-label-group class="race" label="Race" :ttrows="[race]">
       <div class="wrap-container">{{ race }}</div>
     </value-label-group>
 
     <value-label-group
       class="discipline"
       label="Discipline"
-      :title="discipline"
-      v-b-tooltip
+      :ttrows="[discipline]"
     >
       <div class="wrap-container">{{ discipline }}</div>
     </value-label-group>

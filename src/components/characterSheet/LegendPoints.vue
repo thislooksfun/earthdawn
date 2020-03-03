@@ -4,8 +4,7 @@
       centered
       label="Legend Points"
       :value="lp.current"
-      :title="`Current: ${lp.current}<br />Total: ${lp.total}`"
-      v-b-tooltip.html
+      :ttrows="[`Current: ${lp.current}`, `Total: ${lp.total}`]"
     />
   </div>
 </template>

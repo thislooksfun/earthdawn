@@ -4,8 +4,7 @@
     :label="label"
     :value="step"
     :size="size"
-    :title="[`step: ${step} (dice: ${d4s})`, ...ttrows].join('<br />')"
-    v-b-tooltip.html
+    :ttrows="[`step: ${step} (dice: ${d4s})`, ...ttrows]"
   />
 </template>
 

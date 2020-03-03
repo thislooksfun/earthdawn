@@ -1,5 +1,10 @@
 <template>
-  <div class="val-label-group" :class="{ centered, outlined }">
+  <div
+    class="val-label-group"
+    :class="{ centered, outlined }"
+    :title="ttrows.length > 0 ? ttrows.join('<br />') : undefined"
+    v-b-tooltip.html
+  >
     <div class="label">
       <span>{{ label }}</span>
     </div>
@@ -17,6 +22,7 @@ export default {
     centered: { type: Boolean, default: false },
     outlined: { type: Boolean, default: false },
     size: { type: String, default: "medium" },
+    ttrows: { type: Array, default: () => [] },
   },
 };
 </script>

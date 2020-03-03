@@ -1,11 +1,6 @@
 <template>
   <div class="skill">
-    <value-label-group
-      class="name"
-      label="Name"
-      :title="skill.name"
-      v-b-tooltip
-    >
+    <value-label-group class="name" label="Name" :ttrows="[skill.name]">
       <div class="name-container">{{ skill.name }}</div>
     </value-label-group>
     <value-label-group class="action" label="Action" :value="skill.action" />

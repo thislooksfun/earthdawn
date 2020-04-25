@@ -1,6 +1,8 @@
 name: Night’s Edge
 threads: 0
-weaving: 6/11
+difficulty:
+  weaving: 6
+  reattuning: 11
 casting: TMD
 range: Touch
 duration: Rank+5 rounds

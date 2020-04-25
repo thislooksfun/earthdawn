@@ -1,6 +1,8 @@
 name: Astral Spear
 threads: 1
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: 40 yards
 duration: 1 round

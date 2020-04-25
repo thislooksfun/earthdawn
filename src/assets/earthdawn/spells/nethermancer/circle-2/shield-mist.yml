@@ -1,6 +1,8 @@
 name: Shield Mist
 threads: 0
-weaving: 6/11
+difficulty:
+  weaving: 6
+  reattuning: 11
 casting: TMD
 range: Self
 duration: Rank+5 rounds

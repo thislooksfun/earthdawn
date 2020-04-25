@@ -1,6 +1,8 @@
 name: Ethereal Darkness
 threads: 1
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: Touch
 duration: Rank+5 rounds

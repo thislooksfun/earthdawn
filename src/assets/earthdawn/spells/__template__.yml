@@ -1,6 +1,8 @@
 name: <name>
 threads: 0
-weaving: <1>/<2>
+weaving: # <1>/<2>
+  difficulty: <1>
+  reattuning: <2>
 casting: <target>
 range: <range>
 duration: <duration>

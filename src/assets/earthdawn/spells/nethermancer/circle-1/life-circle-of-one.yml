@@ -1,6 +1,8 @@
 name: Life Circle of One
 threads: 1
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: 6; TMD (see text)
 range: Touch
 duration: Rank minutes

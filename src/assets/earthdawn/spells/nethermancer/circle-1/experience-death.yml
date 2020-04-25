@@ -1,6 +1,8 @@
 name: Experience Death
 threads: 1
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: 20 yards
 duration: Rank+5 rounds

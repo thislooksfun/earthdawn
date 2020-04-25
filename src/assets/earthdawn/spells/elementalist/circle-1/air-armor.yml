@@ -1,6 +1,8 @@
 name: Air Armor
 threads: 0
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: touch
 duration: Rank+5 rounds

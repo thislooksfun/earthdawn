@@ -24,8 +24,7 @@ jobs:
       - name: Test
         uses: GabrielBB/xvfb-action@v1.0
         with:
-          # run: npm run test:e2e:cover --silent
-          run: echo "test"
+          run: npm run test:e2e:cover
         env:
           CI: true
 

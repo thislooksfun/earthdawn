@@ -70,7 +70,7 @@
     "sass-loader": "^8.0.2",
     "snyk": "^1.290.1",
     "spectron": "^9.0.0",
-    "vue-cli-plugin-electron-builder": "^2.0.0-beta.1",
+    "vue-cli-plugin-electron-builder": "github:thislooksfun/vue-cli-plugin-electron-builder#0465526a60433314521aa879234f677994733440",
     "vue-template-compiler": "^2.6.11"
   },
   "husky": {

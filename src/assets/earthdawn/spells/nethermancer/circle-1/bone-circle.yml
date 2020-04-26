@@ -1,9 +1,11 @@
 name: Bone Circle
 threads: 3 (ritual; see text)
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: Touch
-duration: Rank months
+duration: "{{rank}} months"
 effect: Nethermancer Circle
 areaOfEffect: 2-yard radius circle
 successLevels:

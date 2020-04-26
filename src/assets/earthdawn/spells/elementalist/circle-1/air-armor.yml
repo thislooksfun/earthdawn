@@ -1,9 +1,11 @@
 name: Air Armor
 threads: 0
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: touch
-duration: Rank+5 rounds
+duration: "{{rank}}+5 rounds"
 effect: +3 Physical Armor
 successLevels: Increase Duration (+2 rounds)
 extraThreads: Increase Duration (minutes), Increase Effect (+1 Physical Armor)

@@ -1,10 +1,12 @@
 name: Spirit Grip
 threads: 0
-weaving: 5/10
+difficulty:
+  weaving: 5
+  reattuning: 10
 casting: TMD
 range: Touch
 duration: 2 rounds
-effect: WIL+2 / Mystic and reduce Defenses by 2
+effect: "{{wil+2}} / Mystic and reduce Defenses by 2"
 areaOfEffect: <area>
 successLevels:
   - Increase Duration (+2 rounds)

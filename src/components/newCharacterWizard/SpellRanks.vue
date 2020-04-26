@@ -196,39 +196,26 @@ export default {
 
 <style scoped lang="scss">
 .spell-ranks {
-  table {
-    &,
-    th,
-    td {
-      border: 1px solid var(--table-primary);
-    }
+  .new-spell {
+    margin-top: 0.25rem;
 
-    th,
-    td {
-      padding: 0.25rem 0.5rem;
+    select {
+      margin-right: 1rem;
     }
   }
-}
 
-.new-spell {
-  margin-top: 0.25rem;
+  .other-spell {
+    display: grid;
+    grid-template-columns: auto 2rem;
+    grid-template-rows: auto;
+    grid-template-areas: "name remove-btn";
 
-  select {
-    margin-right: 1rem;
-  }
-}
-
-.other-spell {
-  display: grid;
-  grid-template-columns: auto 2rem;
-  grid-template-rows: auto;
-  grid-template-areas: "name remove-btn";
-
-  .name {
-    grid-area: name;
-  }
-  .remove-btn {
-    grid-area: remove-btn;
+    .name {
+      grid-area: name;
+    }
+    .remove-btn {
+      grid-area: remove-btn;
+    }
   }
 }
 </style>

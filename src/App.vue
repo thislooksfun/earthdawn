@@ -58,6 +58,7 @@ $argon-blue: #5e72e4;
 
   .main {
     grid-area: main;
+    background-color: var(--background-secondary);
   }
 
   // Global styles
@@ -115,6 +116,19 @@ $argon-blue: #5e72e4;
         outline: none;
         border-color: $argon-blue;
       }
+    }
+  }
+
+  table {
+    &,
+    th,
+    td {
+      border: 1px solid var(--table-primary);
+    }
+
+    th,
+    td {
+      padding: 0.25rem 0.5rem;
     }
   }
 }

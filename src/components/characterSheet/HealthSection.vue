@@ -24,16 +24,21 @@
       style="font-size: 1rem"
       :icon="['fas', 'plus']"
       v-b-tooltip.hover.down
-      title="Recover Health"
+      :title="
+        `Recover Health (${health.recoveryTests.remaining} recovery tests remaining)`
+      "
       :disabled="disabled || invalid"
       @click="recover1Health"
     ></base-button>
+
+    <value-label-group class="wounds" label="Wounds" :value="health.wounds" />
   </div>
 </template>
 
 <script>
 import decorate from "@/charDecorator";
 import HealthBar from "./HealthBar";
+
 export default {
   props: {
     uuid: {
@@ -63,7 +68,9 @@ export default {
     },
   },
   computed: {
-    // State helpers
+    dChar() {
+      return decorate(this.char);
+    },
     valid() {
       const dt = this.health.deathThreshold;
       const ut = this.health.unconsciousnessThreshold;
@@ -74,7 +81,7 @@ export default {
       return !this.valid;
     },
     health() {
-      return decorate(this.char).health;
+      return this.dChar.health;
     },
   },
 };
@@ -83,9 +90,9 @@ export default {
 <style scoped lang="scss">
 .health-section {
   display: grid;
-  grid-template-columns: 5rem auto 5rem;
+  grid-template-columns: 5rem auto 5rem 5rem;
   grid-template-rows: auto;
-  grid-template-areas: "damage bar recover";
+  grid-template-areas: "damage bar recover wounds";
 
   .damage {
     margin-right: 0.5rem;
@@ -97,6 +104,10 @@ export default {
   .recover {
     margin-left: 0.5rem;
     grid-area: recover;
+  }
+  .wounds {
+    position: relative;
+    grid-area: wounds;
   }
 }
 </style>

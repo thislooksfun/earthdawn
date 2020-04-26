@@ -17,6 +17,7 @@ import router from "./router";
 import store from "./store";
 
 import BaseButton from "./components/helper/BaseButton";
+import ValueLabelGroup from "./components/helper/ValueLabelGroup";
 
 library.add(faPlus);
 library.add(faMinus);
@@ -25,6 +26,7 @@ library.add(faExclamationTriangle);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("BaseButton", BaseButton);
+Vue.component("ValueLabelGroup", ValueLabelGroup);
 
 Vue.use(TooltipPlugin);
 

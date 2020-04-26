@@ -8,6 +8,10 @@ export default function(char) {
   char.health.recoveryTests = {
     ...char.health.recoveryTests,
 
+    get remaining() {
+      const { perDay: max, used } = char.health.recoveryTests;
+      return max - used;
+    },
     get perDay() {
       // Offset tou.val by 1 so the math works easier
       return (

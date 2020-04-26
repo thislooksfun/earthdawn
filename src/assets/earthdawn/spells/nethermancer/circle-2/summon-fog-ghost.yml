@@ -1,6 +1,8 @@
 name: Summon Fog Ghost
 threads: 1
-weaving: 6/11
+difficulty:
+  weaving: 6
+  reattuning: 11
 casting: TMD
 range: 10 yards
 duration: Rank rounds

@@ -1,6 +1,8 @@
 name: Shadow’s Whisper
 threads: 1
-weaving: 6/11
+difficulty:
+  weaving: 6
+  reattuning: 11
 casting: TMD
 range: 100 yards
 duration: Rank+5 minutes

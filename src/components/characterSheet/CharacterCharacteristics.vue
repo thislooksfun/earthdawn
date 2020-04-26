@@ -2,11 +2,11 @@
   <div class="character-characteristics">
     <value-label-group outlined label="Defense" class="defense-group">
       <div class="defense">
-        <step-item
+        <value-item
           v-for="(val, def) in chars.defense"
           :key="`defense-${def}`"
           :label="sCap(def)"
-          :step="val"
+          :value="val"
           :class="def"
         />
       </div>
@@ -14,11 +14,11 @@
 
     <value-label-group outlined label="Armor" class="armor-group">
       <div class="armor">
-        <step-item
+        <value-item
           v-for="(val, arm) in chars.armor"
           :key="`armor-${arm}`"
           :label="sCap(arm)"
-          :step="val"
+          :value="val"
           :class="arm"
         />
       </div>
@@ -26,11 +26,11 @@
 
     <value-label-group outlined label="Shield" class="shield-group">
       <div class="shield">
-        <step-item
+        <value-item
           v-for="(val, shd) in chars.shield"
           :key="`armor-${shd}`"
           :label="sCap(shd)"
-          :step="val"
+          :value="val"
           :class="shd"
         />
       </div>
@@ -41,11 +41,11 @@
 <script>
 import decorate from "@/charDecorator";
 import upperFirst from "lodash/upperFirst";
-import StepItem from "../helper/StepItem";
+import ValueItem from "../helper/ValueItem";
 
 export default {
   components: {
-    StepItem,
+    ValueItem,
   },
   props: {
     uuid: {

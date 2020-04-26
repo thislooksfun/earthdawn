@@ -85,7 +85,7 @@ export default {
 <style scoped lang="scss">
 .character-header {
   display: grid;
-  grid-template-columns: minmax(0, 100%) 11rem 11rem 3rem;
+  grid-template-columns: minmax(0, 100%) 11rem 12rem 3rem;
   grid-template-rows: auto;
   grid-template-areas: "name race discipline circle";
   grid-gap: 1rem;

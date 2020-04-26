@@ -5,15 +5,15 @@ difficulty:
   reattuning: 10
 casting: 6; TMD (see text)
 range: Touch
-duration: Rank minutes
-effect: WIL+2 / Mystic
+duration: "{{spellRank+1}} minutes"
+effect: "{{wil+2}} / Mystic"
 areaOfEffect: 4-yard radius
 successLevels:
-  - Increase Duration (+2 minutes)
+  - "duration: +2 minutes"
 extraThreads:
-  - Increase Duration (+2 minutes)
-  - Increase Effect (+2 Effect Step)
-  - Increase Area (+2 yards)
+  - "duration: +2 minutes"
+  - "effect: +2 step"
+  - "area: +2 yards"
 
 description:
   This spell creates a magical circle to repel undead, Horrors, or Horror

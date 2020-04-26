@@ -5,8 +5,8 @@ difficulty:
   reattuning: 10
 casting: TMD
 range: 20 yards
-duration: Rank+5 rounds
-effect: WIL+5
+duration: "{{rank+5}} rounds"
+effect: "{{wil+5}}"
 successLevels:
   - Increase Effect (+2 Effect Step)
 extraThreads:

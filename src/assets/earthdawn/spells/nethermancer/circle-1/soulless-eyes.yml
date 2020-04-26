@@ -5,7 +5,7 @@ difficulty:
   reattuning: 10
 casting: TMD
 range: Touch
-duration: Rank+5 minutes
+duration: "{{rank+5}} minutes"
 effect: +3 to Intimidation tests
 areaOfEffect: <area>
 successLevels:

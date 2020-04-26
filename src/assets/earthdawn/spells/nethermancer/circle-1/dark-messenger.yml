@@ -5,7 +5,7 @@ difficulty:
   reattuning: 10
 casting: TMD
 range: Touch
-duration: Rank hours
+duration: "{{rank}} hours"
 effect: Sends nightflyer to deliver a message
 successLevels:
   - Increase Duration (+2 hours)

@@ -6,7 +6,7 @@ difficulty:
 casting: TMD
 range: 40 yards
 duration: 1 round
-effect: WIL+4 / Mystic
+effect: "{{wil+4}} / Mystic"
 successLevels:
   - Increase Effect (+2 Effect Step)
 extraThreads:

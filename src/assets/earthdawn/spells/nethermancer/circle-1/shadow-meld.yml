@@ -5,7 +5,7 @@ difficulty:
   reattuning: 10
 casting: TMD
 range: Touch
-duration: Rank minutes
+duration: "{{rank}} minutes"
 effect: +4 to Stealthy Stride tests
 areaOfEffect: <area>
 successLevels:

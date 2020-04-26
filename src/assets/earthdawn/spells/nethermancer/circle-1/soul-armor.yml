@@ -5,7 +5,7 @@ difficulty:
   reattuning: 10
 casting: TMD
 range: 10 yards
-duration: Rank minutes
+duration: "{{rank}} minutes"
 effect: +3 to Mystic Armor
 successLevels:
   - Increase Duration (+2 minutes)

@@ -5,7 +5,7 @@ difficulty:
   reattuning: 10
 casting: TMD
 range: Touch
-duration: Rank+5 rounds
+duration: "{{rank+5}} rounds"
 effect: Creates magical darkness
 areaOfEffect: 4-yard radius
 successLevels:

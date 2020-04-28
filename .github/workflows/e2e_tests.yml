@@ -22,9 +22,7 @@ jobs:
 
       # Test (using XVFB)
       - name: Test
-        uses: GabrielBB/xvfb-action@v1.0
-        with:
-          run: npm run test:e2e:cover
+        run: xvfb-run npm run test:e2e:cover -- --runInBand
         env:
           CI: true
 

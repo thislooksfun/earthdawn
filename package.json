@@ -24,7 +24,9 @@
     "snyk:test": "snyk test",
     "snyk:monitor": "snyk monitor",
     "failure": "exit 1",
-    "dist": "electron-builder -wml"
+    "dist": "electron-builder -wml",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "main": "background.js",
   "dependencies": {
@@ -43,7 +45,8 @@
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2",
-    "vuex-electron": "^1.0.3"
+    "vuex-electron": "^1.0.3",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -66,7 +69,6 @@
     "prettier": "1.19.1",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
-    "snyk": "^1.290.1",
     "vue-cli-plugin-electron-builder": "^1.4.4",
     "vue-template-compiler": "^2.6.11"
   },
@@ -74,5 +76,6 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "snyk": true
 }

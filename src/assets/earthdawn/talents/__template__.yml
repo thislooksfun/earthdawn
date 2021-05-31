@@ -1,6 +1,6 @@
 name: <name>
 attr: NULL|dex|str|tou|per|wil|cha
-action: free|simple|standard|sustained
+action: na|free|simple|standard|sustained
 strain: 1
 skill_use: no|novice|journeyman
 examples:

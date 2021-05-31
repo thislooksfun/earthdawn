@@ -1,0 +1,12 @@
+name: Animal Companion Durability
+attr: NULL
+action: na
+strain: 0
+skill_use: no
+description:
+  An animal companion’s ability to take damage is improved in a similar manner
+  to the Durability ability (p. 85), with each rank increasing the companion’s
+  Health Ratings by +5. The maximum number of animal companions that can benefit
+  from this talent is equal to the adept’s Animal Companion Durability rank. An
+  animal companion may only benefit from a single Durability-type talent at a
+  time.

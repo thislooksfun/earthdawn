@@ -1,0 +1,26 @@
+name: Orbiting Spy
+attr: per
+action: standard
+strain: 0
+skill_use: no
+description:
+  The adept summons a spy spirit to serve as a lookout by making an Orbiting Spy
+  (6) test. If successful, the spirit travels in a circular pattern around the
+  adept, up to 20 yards distance, for one hour per success.
+
+  Conjured spy spirits cannot affect or be affected by the physical world and
+  are immune to most spells, except those which disrupt or dispel magic. An
+  adept can only have one orbiting spy active at a time.
+
+  Whenever the adept wants to use the spirit to detect something, he makes an
+  Orbiting Spy test instead of a Perception test. If successful, the spy spirit
+  informs him of anything unusual it notices. The spirit can be given specific
+  instructions on what to look for, to prevent unpleasant surprises; the maximum
+  number of instructions is equal to his Orbiting Spy rank. The spirit will
+  remain on alert for these creatures or objects and will notify the adept if
+  they are detected—the gamemaster makes Orbiting Spy tests for the spirit and
+  advises the adept of the results, if applicable.
+
+  Spy spirits can see into the astral plane as well as the physical world—though
+  this follows the normal rules for astral sensing (p. 209)—so they can inform
+  the adept of anything lurking around in astral space.

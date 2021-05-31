@@ -1,0 +1,12 @@
+name: Astral Interference
+attr: wil
+action: standard
+strain: 1
+skill_use: no
+description:
+  The adept increases the local astral background interference to make
+  spellcasting more difficult. He makes an Astral Interference test against the
+  highest Mystic Defense within Rank x4 yards. If successful, a shimmering wave
+  emanates from the adept to cover the area. All Spellcasting tests made inside
+  the area, or that target someone in the area, suffer a -2 penalty per success
+  for Rank rounds. This penalty also affects astral sensing tests (p. 209).

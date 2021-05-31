@@ -1,0 +1,11 @@
+name: Armor Mount
+attr: wil
+action: simple
+strain: 1
+skill_use: no
+description:
+  The adept wills an increase to his mount’s natural armor, making an Armor
+  Mount test against the animal’s Mystic Defense. If successful, the adept adds
+  his Armor Mount rank to the animal’s Physical Armor for a number of minutes
+  equal to his Armor Mount rank. The adept must be in contact with the mount to
+  use this talent.

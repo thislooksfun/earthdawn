@@ -1,0 +1,22 @@
+name: Air Sailing
+attr: wil
+action: sustained
+strain: 0
+skill_use: novice
+description:
+  "The adept knows how to work the rigging, tiller, and oars of airships. The
+  adept makes an Air Sailing (5) test to help propel an airship. If successful,
+  he counts as one crew member for each success scored.
+
+  An adept who wishes to join an airship crew must know Air Sailing at Rank 1 or
+  higher. Positions of command require greater ability: the higher an adept’s
+  Air Sailing Rank, the bigger the ship he can command or the higher the
+  position he can fill within a ship’s crew. For an airship to stay airborne, at
+  least 25 percent of the required crew must make successful Air Sailing tests
+  each hour. For example, an airship with a crew of twenty needs at least five
+  rowers to succeed to stay afloat. This might be an equivalent number, such as
+  two rowers, one of whom achieved four successes on his test. If at least 50
+  percent of the crew make successful tests, the airship can maneuver at its
+  current altitude, dive, or climb slowly in a straight line. If 75 percent of
+  the crew are successful, the airship can speed up, maneuver while climbing, or
+  perform aerobatics."

@@ -1,3 +1,4 @@
+import spectron from "spectron";
 import testWithSpectron from "vue-cli-plugin-electron-builder/lib/testWithSpectron";
 import chai from "chai";
 import chaiAsPromised from "chai-as-promised";
@@ -10,12 +11,7 @@ describe("Application launch", function() {
   let stopServe;
 
   beforeEach(function() {
-    // TODO: THIS CALL IS BUGGED
-    // BODY: Calling this function causes it to open as many windows as it can
-    // BODY: until it times out
-    // BODY: (pending nklayman/vue-cli-plugin-electron-builder#467)
-
-    return testWithSpectron().then(instance => {
+    return testWithSpectron(spectron).then(instance => {
       app = instance.app;
       stopServe = instance.stopServe;
     });
@@ -27,6 +23,10 @@ describe("Application launch", function() {
 
   afterEach(function() {
     if (app && app.isRunning()) {
+      // TODO: This call is also bugged
+      // BODY: This is pending nklayman/vue-cli-plugin-electron-builder#647.
+      // BODY: See https://github.com/thislooksfun/earthdawn/issues/154 for more
+      // BODY: info.
       return stopServe();
     }
   });

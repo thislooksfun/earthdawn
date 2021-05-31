@@ -19,6 +19,8 @@
   <a href="https://codecov.io/gh/thislooksfun/earthdawn/"><img src="https://flat.badgen.now.sh/codecov/c/github/thislooksfun/earthdawn" alt="Codecov"></a>
 </p>
 
+# This project is being retired in favor of [ecs](https://github.com/thislooksfun/ecs)
+
 # Disclaimer
 
 This project is still a work in progress. Things will change. Use at your own risk.

@@ -1,0 +1,20 @@
+name: Crunch Climb
+threads: 1
+weaving: 5/10
+casting: TMD
+range: Touch
+duration: Rank+5 minutes
+effect: +3 Climbing test bonus
+areaOfEffect: <area>
+successLevels:
+  - Increase Duration (+2 minutes)
+extraThreads:
+  - Increase Duration (+2 minutes)
+  - Increase Effect (+2 bonus)
+  - Additional Target (+Rank)
+
+description:
+  Earth. This spell enhances climbing ability. The magician crouches down on all
+  fours and then touches the target as he begins to climb and makes a
+  Spellcasting test against the target’s Mystic Defense. If successful, the
+  target gains a +3 Climbing test bonus.
